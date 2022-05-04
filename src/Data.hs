@@ -14,6 +14,18 @@ addN :: N -> N -> N
 addN Z n = n
 addN (S m) n = S (addN m n)
 
+{-@ reflect subN @-}
+subN :: N -> N -> N
+subN Z n = Z
+subN m Z = m
+subN (S m) (S n) = subN m n
+
+{-@ reflect leqN @-}
+leqN :: N -> N -> Bool
+leqN Z n = True
+leqN (S m) Z = False
+leqN (S m) (S n) = leqN m n
+
 -- NL
 
 {-@

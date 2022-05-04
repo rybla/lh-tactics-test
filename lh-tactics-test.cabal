@@ -28,6 +28,9 @@ library
       Data
       Prop1
       Prop2
+      Prop3
+      Prop4
+      Prop6
       Test1
       Test2
       Test3
@@ -36,7 +39,7 @@ library
   hs-source-dirs:
       src
   build-depends:
-      lh-tactics ==0.1.0.7
+      lh-tactics ==0.1.0.10
     , liquid-base ==4.15.0.0
     , liquidhaskell ==0.8.10.7
     , template-haskell ==2.17.0.0

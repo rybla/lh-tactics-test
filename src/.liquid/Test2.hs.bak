@@ -25,18 +25,18 @@ add (S m) n = S (add m n)
 
 return []
 
--- {-@ automatic-instances add_m_Sn @-}
--- {-@
--- add_m_Sn :: m:N -> n:N -> {add m (S n) == S (add m n)}
--- @-}
--- [tactic|
--- add_m_Sn :: N -> N -> Proof
--- add_m_Sn m n =
---   induct m;
---   auto [Z, S] 3
--- |]
+{-@ automatic-instances add_m_Sn @-}
+{-@
+add_m_Sn :: m:N -> n:N -> {add m (S n) == S (add m n)}
+@-}
+[tactic|
 add_m_Sn :: N -> N -> Proof
-add_m_Sn = undefined
+add_m_Sn m n =
+  induct m;
+  auto [Z, S] 3
+|]
+-- add_m_Sn :: N -> N -> Proof
+-- add_m_Sn = undefined
 
 -- {-@ automatic-instances add_n_Z @-}
 -- {-@
@@ -48,10 +48,10 @@ add_m_Sn = undefined
 --   induct n;
 --   auto [Z, S, add] 2
 -- |]
-add_n_Z :: N -> Proof 
-add_n_Z n = undefined
+-- -- add_n_Z :: N -> Proof 
+-- -- add_n_Z n = undefined
 
--- return [] -- since add_comm uses add_m_Sn, add_n_Z
+-- -- return [] -- since add_comm uses add_m_Sn, add_n_Z
 
 -- {-@ automatic-instances add_comm @-}
 -- {-@
@@ -63,5 +63,5 @@ add_n_Z n = undefined
 --   induct m;
 --   auto [Z, S, add, add_n_Z, add_m_Sn] 2
 -- |]
-add_comm :: N -> N -> Proof 
-add_comm m n = undefined
+-- -- add_comm :: N -> N -> Proof 
+-- -- add_comm m n = undefined

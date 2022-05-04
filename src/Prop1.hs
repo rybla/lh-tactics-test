@@ -18,27 +18,27 @@ prop1 n xs = concatNL (takeNL n xs) (dropNL n xs) == xs
 
 return []
 
-{-@ automatic-instances prop1_check @-}
+{-@ automatic-instances prop1_proof @-}
 {-@
-prop1_check :: n:N -> l:NL -> {prop1 n l}
+prop1_proof :: n:N -> l:NL -> {prop1 n l}
 @-}
 [tactic|
-prop1_check :: N -> NL -> Proof
-prop1_check n l =
+prop1_proof :: N -> NL -> Proof
+prop1_proof n l =
   induct n;
   induct l;
   auto [] 2
 |]
 
--- {-@ automatic-instances prop1_check @-}
+-- {-@ automatic-instances prop1_proof @-}
 -- {-@
--- prop1_check :: x:N -> l:NL -> {prop1 x l}
+-- prop1_proof :: x:N -> l:NL -> {prop1 x l}
 -- @-}
--- prop1_check :: N -> NL -> Proof
--- -- prop1_check x l = undefined
--- prop1_check Z l = trivial
--- prop1_check (S n) Nil = trivial
--- prop1_check (S n) (Cons x l) = prop1_check n l
+-- prop1_proof :: N -> NL -> Proof
+-- -- prop1_proof x l = undefined
+-- prop1_proof Z l = trivial
+-- prop1_proof (S n) Nil = trivial
+-- prop1_proof (S n) (Cons x l) = prop1_proof n l
 --   -- -- HYP
 --   -- concatNL (takeNL (S n) (Cons x l)) (dropNL (S n) (Cons x l))
 --   -- concatNL (Cons x (takeNL n l)) (dropNL n l)

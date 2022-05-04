@@ -10,7 +10,7 @@ module Test3 where
 
 import Proof
 import Tactic.Core.Quote
-import Test2 (N (..), add, add_comm, add_m_Sn, add_n_Z)
+-- import Test2 (N (..), add, add_comm, add_m_Sn, add_n_Z)
 
 -- {-@ automatic-instances add_assoc @-}
 -- {-@

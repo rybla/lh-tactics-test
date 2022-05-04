@@ -18,20 +18,20 @@ prop2 n xs ys = addN (countNL n xs) (countNL n ys) == countNL n (concatNL xs ys)
 
 return []
 
-{-@ automatic-instances prop2_check @-}
+{-@ automatic-instances prop2_proof @-}
 {-@
-prop2_check :: n:N -> xs:NL -> ys:NL -> {prop2 n xs ys}
+prop2_proof :: n:N -> xs:NL -> ys:NL -> {prop2 n xs ys}
 @-}
 [tactic|
-prop2_check :: N -> NL -> NL -> Proof
-prop2_check n xs ys =
+prop2_proof :: N -> NL -> NL -> Proof
+prop2_proof n xs ys =
   induct xs;
   auto [] 2
 |]
 
 
--- prop2_check :: N -> NL -> NL -> Proof
--- prop2_check n xs ys =
+-- prop2_proof :: N -> NL -> NL -> Proof
+-- prop2_proof n xs ys =
 --   case xs of
 --     Cons x xs ->
 --       -- addN (countNL n (Cons x xs)) (countNL n ys) == countNL n (concatNL (Cons x xs) ys)
@@ -41,7 +41,7 @@ prop2_check n xs ys =
 --       --   addN (countNL n xs) (countNL n ys) == countNL n (concatNL xs ys) ***
 --       -- else
 --       --   addN (countNL n xs) (countNL n ys) ==  countNL n (concatNL xs ys) ***
---       prop2_check n xs ys
+--       prop2_proof n xs ys
 --     Nil -> 
 --       -- addN (countNL n Nil) (countNL n ys) == countNL n (concatNL Nil ys)
 --       -- addN Z (countNL n ys) == countNL n ys ***

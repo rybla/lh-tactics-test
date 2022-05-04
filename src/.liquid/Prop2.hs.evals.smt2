@@ -29,452 +29,194 @@
 (define-fun Z3_OP_DIV ((x Int) (y Int)) Int (div x y))
 (declare-datatypes ((Data.N 0)) ((par () (Data.Z (Data.S (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 Data.N))))))
 (declare-datatypes ((Data.NL 0)) ((par () (Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 Data.N) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 Data.NL))))))
-(declare-fun Language.Haskell.TH.Syntax.CharL () Int)
 (declare-fun GHC.List.replicate () Int)
 (declare-fun GHC.Types.LT () Int)
 (declare-fun GHC.Num.$45$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.GADTs () Int)
-(declare-fun GHC.LanguageExtensions.Type.TemplateHaskellQuotes () Int)
-(declare-fun Language.Haskell.TH.Syntax.LitE () Int)
 (declare-fun x_Tuple22 () Int)
-(declare-fun Language.Haskell.TH.Syntax.ImplicitParamT () Int)
 (declare-fun Data.Either.Right () Int)
-(declare-fun Language.Haskell.TH.Syntax.TupleT () Int)
 (declare-fun Language.Haskell.TH.Syntax.DataD () Int)
 (declare-fun GHC.Classes.$62$$61$ () Int)
 (declare-fun Data.Foldable.length () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboxedSumP () Int)
 (declare-fun Data.countNL () Int)
 (declare-fun papp6 () Int)
 (declare-fun Data.takeNL () Int)
-(declare-fun Language.Haskell.TH.Syntax.AppTypeE () Int)
-(declare-fun GHC.LanguageExtensions.Type.CUSKs () Int)
-(declare-fun Language.Haskell.TH.Syntax.ArithSeqE () Int)
-(declare-fun Language.Haskell.TH.Syntax.TupE () Int)
-(declare-fun GHC.LanguageExtensions.Type.NumDecimals () Int)
 (declare-fun GHC.List.iterate () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveLift () Int)
-(declare-fun GHC.LanguageExtensions.Type.AllowAmbiguousTypes () Int)
 (declare-fun GHC.Classes.$61$$61$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.ClassI () Int)
 (declare-fun GHC.List.scanl1 () Int)
-(declare-fun GHC.LanguageExtensions.Type.MultiParamTypeClasses () Int)
 (declare-fun GHC.Types.True () Bool)
-(declare-fun GHC.LanguageExtensions.Type.ApplicativeDo () Int)
 (declare-fun Language.Haskell.TH.Syntax.ClassD () Int)
 (declare-fun GHC.List.splitAt () Int)
 (declare-fun fst () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Types.$58$$35$$35$2 () Int)
 (declare-fun Language.Haskell.TH.Syntax.ForeignD () Int)
-(declare-fun GHC.LanguageExtensions.Type.DuplicateRecordFields () Int)
 (declare-fun snd () Int)
 (declare-fun GHC.List.repeat () Int)
 (declare-fun GHC.List.break () Int)
-(declare-fun GHC.LanguageExtensions.Type.ImplicitParams () Int)
-(declare-fun GHC.LanguageExtensions.Type.RankNTypes () Int)
+(declare-fun n_0$35$$35$a3Is () Data.N)
 (declare-fun Data.addN () Int)
-(declare-fun GHC.LanguageExtensions.Type.ExplicitForAll () Int)
-(declare-fun GHC.LanguageExtensions.Type.MonoLocalBinds () Int)
+(declare-fun lq_tmp$36$x$35$$35$771 () Data.NL)
 (declare-fun GHC.Maybe.Just () Int)
 (declare-fun Language.Haskell.TH.Syntax.TySynInstD () Int)
-(declare-fun Language.Haskell.TH.Syntax.Code () Int)
 (declare-fun GHC.List.tail () Int)
-(declare-fun Language.Haskell.TH.Syntax.LitT () Int)
-(declare-fun GHC.LanguageExtensions.Type.DatatypeContexts () Int)
 (declare-fun Language.Haskell.TH.Syntax.PatSynD () Int)
 (declare-fun Language.Haskell.TH.Syntax.InstanceD () Int)
 (declare-fun Language.Haskell.TH.Syntax.TySynD () Int)
-(declare-fun GHC.LanguageExtensions.Type.TemplateHaskell () Int)
-(declare-fun GHC.LanguageExtensions.Type.FlexibleContexts () Int)
-(declare-fun n$35$$35$a3In () Data.N)
-(declare-fun GHC.ForeignSrcLang.Type.RawObject () Int)
-(declare-fun Language.Haskell.TH.Syntax.DecidedLazy () Int)
 (declare-fun GHC.Num.Integer.IP () Int)
-(declare-fun Language.Haskell.TH.Syntax.Infix () Int)
-(declare-fun GHC.LanguageExtensions.Type.ParallelArrays () Int)
-(declare-fun GHC.LanguageExtensions.Type.StandaloneDeriving () Int)
 (declare-fun GHC.Real.quotRem () Int)
-(declare-fun GHC.LanguageExtensions.Type.EmptyDataDeriving () Int)
-(declare-fun Language.Haskell.TH.Syntax.TildeP () Int)
+(declare-fun xs$35$$35$a3HZ () Data.NL)
 (declare-fun GHC.Maybe.Nothing () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveAnyClass () Int)
-(declare-fun Language.Haskell.TH.Syntax.LetE () Int)
-(declare-fun GHC.LanguageExtensions.Type.NondecreasingIndentation () Int)
 (declare-fun Language.Haskell.TH.Syntax.NewtypeD () Int)
-(declare-fun GHC.LanguageExtensions.Type.ForeignFunctionInterface () Int)
-(declare-fun GHC.LanguageExtensions.Type.ExtendedDefaultRules () Int)
-(declare-fun GHC.LanguageExtensions.Type.UnliftedNewtypes () Int)
-(declare-fun Data.Maybe.maybe () Int)
 (declare-fun GHC.Num.$42$ () Int)
 (declare-fun GHC.Real.mod () Int)
-(declare-fun lq_tmp$36$x$35$$35$799 () Data.NL)
-(declare-fun Language.Haskell.TH.Syntax.LabelE () Int)
-(declare-fun Language.Haskell.TH.Syntax.MDoE () Int)
-(declare-fun Language.Haskell.TH.Syntax.PhantomR () Int)
 (declare-fun Data.Foldable.null () Int)
-(declare-fun Language.Haskell.TH.Syntax.RecConE () Int)
 (declare-fun Data.concatNL () Int)
-(declare-fun Language.Haskell.TH.Syntax.MultiIfE () Int)
 (declare-fun papp1 () Int)
-(declare-fun Language.Haskell.TH.Syntax.DataConI () Int)
-(declare-fun Language.Haskell.TH.Syntax.Fixity () Int)
-(declare-fun GHC.LanguageExtensions.Type.BinaryLiterals () Int)
-(declare-fun GHC.LanguageExtensions.Type.LiberalTypeSynonyms () Int)
-(declare-fun GHC.LanguageExtensions.Type.LexicalNegation () Int)
-(declare-fun GHC.ForeignSrcLang.Type.LangC () Int)
-(declare-fun Language.Haskell.TH.Syntax.WildCardT () Int)
-(declare-fun GHC.ForeignSrcLang.Type.LangCxx () Int)
+(declare-fun lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$6lICFxXVHY31MfrqHLaYxI () Str)
 (declare-fun GHC.Enum.C$58$Bounded () Int)
-(declare-fun GHC.LanguageExtensions.Type.FlexibleInstances () Int)
-(declare-fun Language.Haskell.TH.Syntax.ParensE () Int)
 (declare-fun papp4 () Int)
-(declare-fun nL_1$35$$35$a3Ir () Data.NL)
-(declare-fun Language.Haskell.TH.Syntax.DoE () Int)
 (declare-fun GHC.Types.$58$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.GADTSyntax () Int)
 (declare-fun Data.dropNL () Int)
-(declare-fun Language.Haskell.TH.Syntax.LamCaseE () Int)
-(declare-fun Language.Haskell.TH.Syntax.TExp () Int)
 (declare-fun Language.Haskell.TH.Syntax.FunD () Int)
-(declare-fun GHC.LanguageExtensions.Type.MonadFailDesugaring () Int)
-(declare-fun Language.Haskell.TH.Syntax.Alone () Int)
-(declare-fun GHC.LanguageExtensions.Type.TypeFamilies () Int)
-(declare-fun GHC.LanguageExtensions.Type.NumericUnderscores () Int)
 (declare-fun Language.Haskell.TH.Syntax.SigD () Int)
-(declare-fun Language.Haskell.TH.Syntax.VarI () Int)
-(declare-fun Language.Haskell.TH.Syntax.CompE () Int)
-(declare-fun Language.Haskell.TH.Syntax.AppE () Int)
-(declare-fun GHC.LanguageExtensions.Type.QualifiedDo () Int)
-(declare-fun Language.Haskell.TH.Syntax.EqualityT () Int)
 (declare-fun is$36$GHC.Types.$91$$93$ () Int)
 (declare-fun GHC.Base.. () Int)
-(declare-fun Language.Haskell.TH.Syntax.InfixT () Int)
-(declare-fun Language.Haskell.TH.Syntax.AnnLookupName () Int)
 (declare-fun Proof.trivial () Int)
-(declare-fun Language.Haskell.TH.Syntax.NominalR () Int)
 (declare-fun GHC.Base.id () Int)
 (declare-fun cast_as_int () Int)
 (declare-fun GHC.Classes.$124$$124$ () Int)
-(declare-fun GHC.Ptr.Ptr () Int)
-(declare-fun Language.Haskell.TH.Syntax.FamilyI () Int)
-(declare-fun Language.Haskell.TH.Syntax.PromotedConsT () Int)
 (declare-fun addrLen () Int)
 (declare-fun Data.Either.Left () Int)
 (declare-fun GHC.Classes.$38$$38$ () Int)
 (declare-fun GHC.Classes.C$58$IP () Int)
-(declare-fun GHC.LanguageExtensions.Type.QuasiQuotes () Int)
-(declare-fun Language.Haskell.TH.Syntax.ParensT () Int)
-(declare-fun Language.Haskell.TH.Syntax.DoublePrimL () Int)
-(declare-fun GHC.LanguageExtensions.Type.Cpp () Int)
 (declare-fun is$36$GHC.Types.C$35$ () Int)
 (declare-fun GHC.Real.$58$$37$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.ImportQualifiedPost () Int)
-(declare-fun GHC.LanguageExtensions.Type.AlternativeLayoutRule () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$44$$41$$35$$35$2 () Int)
-(declare-fun GHC.LanguageExtensions.Type.ScopedTypeVariables () Int)
-(declare-fun xs$35$$35$a3HX () Data.NL)
 (declare-fun Data.Tuple.snd () Int)
 (declare-fun GHC.Base.$43$$43$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.BangP () Int)
+(declare-fun xs$35$$35$a3Iq () Data.NL)
 (declare-fun GHC.Classes.C$58$Eq () Int)
-(declare-fun Language.Haskell.TH.Syntax.FloatPrimL () Int)
-(declare-fun lq_tmp$36$x$35$$35$797 () Data.NL)
-(declare-fun Language.Haskell.TH.Syntax.UInfixP () Int)
-(declare-fun Language.Haskell.TH.Syntax.InfixE () Int)
-(declare-fun GHC.LanguageExtensions.Type.PackageImports () Int)
-(declare-fun lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$GcNvOh9hmbmCdIYseQTY91 () Str)
-(declare-fun Language.Haskell.TH.Syntax.SigP () Int)
+(declare-fun lq_tmp$36$x$35$$35$661 () Data.NL)
 (declare-fun totalityError () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE () Data.NL)
 (declare-fun GHC.List.cycle () Int)
 (declare-fun GHC.Stack.Types.EmptyCallStack () Int)
-(declare-fun Language.Haskell.TH.Syntax.AppKindT () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$41$$35$$35$1 () Int)
 (declare-fun GHC.List.reverse () Int)
 (declare-fun x_Tuple32 () Int)
-(declare-fun Language.Haskell.TH.Syntax.AppT () Int)
-(declare-fun Language.Haskell.TH.Syntax.ImplicitParamVarE () Int)
-(declare-fun Language.Haskell.TH.Syntax.StarT () Int)
 (declare-fun GHC.List.scanr () Int)
-(declare-fun GHC.Types.W$35$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboxedSumT () Int)
 (declare-fun papp2 () Int)
 (declare-fun GHC.Real.divMod () Int)
-(declare-fun GHC.LanguageExtensions.Type.EmptyCase () Int)
-(declare-fun GHC.LanguageExtensions.Type.NullaryTypeClasses () Int)
-(declare-fun GHC.LanguageExtensions.Type.GHCForeignImportPrim () Int)
-(declare-fun GHC.LanguageExtensions.Type.RecursiveDo () Int)
-(declare-fun GHC.LanguageExtensions.Type.OverlappingInstances () Int)
+(declare-fun nL_1$35$$35$a3It () Data.NL)
+(declare-fun ys$35$$35$a3Ir () Data.NL)
 (declare-fun VV$35$$35$F$35$$35$5 () Int)
-(declare-fun lq_tmp$36$x$35$$35$690 () Data.NL)
-(declare-fun Language.Haskell.TH.Syntax.PkgName () Int)
-(declare-fun GHC.LanguageExtensions.Type.CApiFFI () Int)
-(declare-fun Foreign.C.Types.CInt () Int)
-(declare-fun GHC.LanguageExtensions.Type.StandaloneKindSignatures () Int)
 (declare-fun tail () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboxedTupE () Int)
-(declare-fun GHC.LanguageExtensions.Type.TupleSections () Int)
-(declare-fun GHC.LanguageExtensions.Type.NamedWildCards () Int)
 (declare-fun charX () Int)
-(declare-fun GHC.LanguageExtensions.Type.ConstrainedClassMethods () Int)
-(declare-fun Language.Haskell.TH.Syntax.CondE () Int)
-(declare-fun lq_tmp$36$x$35$$35$689 () Data.NL)
-(declare-fun GHC.LanguageExtensions.Type.TypeInType () Int)
-(declare-fun GHC.LanguageExtensions.Type.TransformListComp () Int)
+(declare-fun Data.leqN () Int)
 (declare-fun GHC.Tuple.$40$$44$$44$$41$ () Int)
 (declare-fun GHC.Types.I$35$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.ListT () Int)
-(declare-fun GHC.LanguageExtensions.Type.OverloadedStrings () Int)
 (declare-fun GHC.Types.TrNameS () Int)
 (declare-fun GHC.List.scanl () Int)
-(declare-fun Language.Haskell.TH.Syntax.ConT () Int)
-(declare-fun GHC.LanguageExtensions.Type.ExistentialQuantification () Int)
 (declare-fun GHC.List.zip () Int)
 (declare-fun GHC.Tuple.$40$$41$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.TyConI () Int)
+(declare-fun Prop2.prop2_proof () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Types.$58$$35$$35$1 () Int)
-(declare-fun Language.Haskell.TH.Syntax.LitP () Int)
-(declare-fun Language.Haskell.TH.Syntax.TyVarI () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboundVarE () Int)
-(declare-fun GHC.LanguageExtensions.Type.RoleAnnotations () Int)
-(declare-fun Language.Haskell.TH.Syntax.MulArrowT () Int)
-(declare-fun Language.Haskell.TH.Syntax.ModName () Int)
-(declare-fun GHC.LanguageExtensions.Type.MonomorphismRestriction () Int)
 (declare-fun GHC.Types.False () Bool)
-(declare-fun GHC.LanguageExtensions.Type.EmptyDataDecls () Int)
 (declare-fun isJust () Int)
 (declare-fun GHC.Classes.$62$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboxedSumE () Int)
 (declare-fun GHC.List.span () Int)
 (declare-fun GHC.List.scanr1 () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveGeneric () Int)
-(declare-fun Language.Haskell.TH.Syntax.TupP () Int)
 (declare-fun GHC.Types.C$35$ () Int)
 (declare-fun GHC.List.zipWith () Int)
-(declare-fun Language.Haskell.TH.Syntax.DecidedUnpack () Int)
-(declare-fun GHC.LanguageExtensions.Type.RelaxedPolyRec () Int)
-(declare-fun Language.Haskell.TH.Syntax.WordPrimL () Int)
+(declare-fun lq_tmp$36$x$35$$35$769 () Data.NL)
+(declare-fun lq_tmp$36$x$35$$35$770 () Data.NL)
 (declare-fun len () Int)
-(declare-fun xs$35$$35$a3Io () Data.NL)
-(declare-fun Language.Haskell.TH.Syntax.ModuleInfo () Int)
-(declare-fun GHC.LanguageExtensions.Type.HexFloatLiterals () Int)
 (declare-fun is$36$GHC.Tuple.$40$$44$$41$ () Int)
 (declare-fun Language.Haskell.TH.Syntax.DataInstD () Int)
-(declare-fun Language.Haskell.TH.Syntax.ListE () Int)
-(declare-fun Language.Haskell.TH.Syntax.DataName () Int)
 (declare-fun Language.Haskell.TH.Syntax.ValD () Int)
-(declare-fun GHC.LanguageExtensions.Type.StarIsType () Int)
-(declare-fun GHC.LanguageExtensions.Type.FunctionalDependencies () Int)
-(declare-fun Proof.$38$$38$$38$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.LinearTypes () Int)
+(declare-fun lq_tmp$36$x$35$$35$663 () Data.NL)
 (declare-fun GHC.List.last () Int)
-(declare-fun Language.Haskell.TH.Syntax.ConE () Int)
-(declare-fun Language.Haskell.TH.Syntax.Name () Int)
-(declare-fun GHC.LanguageExtensions.Type.PatternGuards () Int)
-(declare-fun GHC.LanguageExtensions.Type.ExplicitNamespaces () Int)
 (declare-fun GHC.Real.rem () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveTraversable () Int)
-(declare-fun GHC.LanguageExtensions.Type.MagicHash () Int)
-(declare-fun Proof.use () Int)
-(declare-fun GHC.ForeignSrcLang.Type.LangAsm () Int)
-(declare-fun GHC.LanguageExtensions.Type.TypeOperators () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveDataTypeable () Int)
+(declare-fun ys$35$$35$a3I0 () Data.NL)
 (declare-fun Language.Haskell.TH.Syntax.DefaultSigD () Int)
-(declare-fun Language.Haskell.TH.Syntax.Module () Int)
-(declare-fun ys$35$$35$a3Ip () Data.NL)
 (declare-fun Language.Haskell.TH.Syntax.RoleAnnotD () Int)
 (declare-fun GHC.Real.$47$ () Int)
 (declare-fun GHC.Num.$43$ () Int)
 (declare-fun GHC.Err.error () Int)
-(declare-fun lq_tmp$36$x$35$$35$798 () Data.NL)
-(declare-fun GHC.LanguageExtensions.Type.NegativeLiterals () Int)
-(declare-fun ys$35$$35$a3HY () Data.NL)
-(declare-fun lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai () Int)
-(declare-fun Language.Haskell.TH.Syntax.VarName () Int)
 (declare-fun GHC.Classes.not () Int)
 (declare-fun GHC.Types.$91$$93$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.StaticE () Int)
-(declare-fun GHC.LanguageExtensions.Type.UnboxedTuples () Int)
 (declare-fun GHC.Num.negate () Int)
-(declare-fun GHC.LanguageExtensions.Type.RecordWildCards () Int)
 (declare-fun papp7 () Int)
-(declare-fun Language.Haskell.TH.Syntax.VarP () Int)
-(declare-fun GHC.LanguageExtensions.Type.AutoDeriveTypeable () Int)
 (declare-fun GHC.List.filter () Int)
-(declare-fun GHC.LanguageExtensions.Type.PostfixOperators () Int)
-(declare-fun GHC.LanguageExtensions.Type.NPlusKPatterns () Int)
-(declare-fun GHC.Word.W8$35$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.MonoPatBinds () Int)
 (declare-fun Prop2.prop2 () Int)
-(declare-fun Foreign.C.Types.CSize () Int)
-(declare-fun GHC.LanguageExtensions.Type.MonadComprehensions () Int)
-(declare-fun GHC.LanguageExtensions.Type.InterruptibleFFI () Int)
-(declare-fun GHC.LanguageExtensions.Type.UndecidableInstances () Int)
 (declare-fun GHC.List.$33$$33$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.MultiWayIf () Int)
-(declare-fun Language.Haskell.TH.Syntax.UInfixE () Int)
-(declare-fun Language.Haskell.TH.Syntax.InfixP () Int)
-(declare-fun GHC.LanguageExtensions.Type.BangPatterns () Int)
-(declare-fun GHC.LanguageExtensions.Type.RelaxedLayout () Int)
-(declare-fun Language.Haskell.TH.Syntax.Loc () Int)
-(declare-fun n$35$$35$a3HW () Data.N)
-(declare-fun Language.Haskell.TH.Syntax.PatSynI () Int)
-(declare-fun Language.Haskell.TH.Syntax.SigE () Int)
 (declare-fun Language.Haskell.TH.Syntax.ClosedTypeFamilyD () Int)
-(declare-fun GHC.LanguageExtensions.Type.IncoherentInstances () Int)
 (declare-fun is$36$GHC.Types.$58$ () Int)
-(declare-fun GHC.LanguageExtensions.Type.BlockArguments () Int)
 (declare-fun Language.Haskell.TH.Syntax.NewtypeInstD () Int)
-(declare-fun GHC.LanguageExtensions.Type.DerivingStrategies () Int)
 (declare-fun GHC.Real.toInteger () Int)
-(declare-fun GHC.LanguageExtensions.Type.ImpredicativeTypes () Int)
-(declare-fun Language.Haskell.TH.Syntax.OccName () Int)
-(declare-fun GHC.LanguageExtensions.Type.AlternativeLayoutRuleTransitional () Int)
-(declare-fun Language.Haskell.TH.Syntax.BytesPrimL () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Types.C$35$$35$$35$1 () Int)
 (declare-fun head () Int)
 (declare-fun GHC.Real.$94$ () Int)
 (declare-fun GHC.Classes.$60$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.ParensP () Int)
 (declare-fun cast_as () Int)
 (declare-fun GHC.Classes.max () Int)
-(declare-fun GHC.LanguageExtensions.Type.DerivingVia () Int)
 (declare-fun GHC.Stack.Types.FreezeCallStack () Int)
 (declare-fun GHC.List.dropWhile () Int)
 (declare-fun Language.Haskell.TH.Syntax.KiSigD () Int)
-(declare-fun GHC.LanguageExtensions.Type.JavaScriptFFI () Int)
 (declare-fun GHC.Base.map () Int)
-(declare-fun GHC.LanguageExtensions.Type.TypeFamilyDependencies () Int)
 (declare-fun GHC.Classes.$60$$61$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.PromotedT () Int)
 (declare-fun GHC.IO.Exception.IOError () Int)
-(declare-fun GHC.LanguageExtensions.Type.InstanceSigs () Int)
-(declare-fun GHC.LanguageExtensions.Type.DoAndIfThenElse () Int)
-(declare-fun GHC.LanguageExtensions.Type.DisambiguateRecordFields () Int)
 (declare-fun Language.Haskell.TH.Syntax.OpenTypeFamilyD () Int)
-(declare-fun Language.Haskell.TH.Syntax.PromotedTupleT () Int)
-(declare-fun GHC.LanguageExtensions.Type.UnliftedFFITypes () Int)
+(declare-fun n$35$$35$a3Ip () Data.N)
 (declare-fun GHC.Num.Integer.IN () Int)
 (declare-fun GHC.Base.$36$ () Int)
+(declare-fun n$35$$35$a3HY () Data.N)
 (declare-fun lit$36$Prop2 () Str)
 (declare-fun GHC.Types.TrNameD () Int)
 (declare-fun GHC.Real.$36$W$58$$37$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.Bytes () Int)
-(declare-fun Language.Haskell.TH.Syntax.IntPrimL () Int)
-(declare-fun GHC.LanguageExtensions.Type.ParallelListComp () Int)
 (declare-fun GHC.Real.fromRational () Int)
-(declare-fun Language.Haskell.TH.Syntax.StringL () Int)
-(declare-fun Language.Haskell.TH.Syntax.UInfixT () Int)
-(declare-fun GHC.LanguageExtensions.Type.ImplicitPrelude () Int)
-(declare-fun Language.Haskell.TH.Syntax.ConstraintT () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$44$$41$$35$$35$1 () Int)
-(declare-fun Language.Haskell.TH.Syntax.SigT () Int)
-(declare-fun Language.Haskell.TH.Syntax.TcClsName () Int)
-(declare-fun Prop2.prop2_check () Int)
-(declare-fun Proof.$61$$61$$61$ () Int)
 (declare-fun Language.Haskell.TH.Syntax.PragmaD () Int)
-(declare-fun GHC.LanguageExtensions.Type.RebindableSyntax () Int)
 (declare-fun x_Tuple33 () Int)
-(declare-fun Language.Haskell.TH.Syntax.InferR () Int)
 (declare-fun Language.Haskell.TH.Syntax.InfixD () Int)
 (declare-fun GHC.List.drop () Int)
-(declare-fun GHC.LanguageExtensions.Type.RecordPuns () Int)
-(declare-fun Language.Haskell.TH.Syntax.RecP () Int)
 (declare-fun GHC.Types.GT () Int)
 (declare-fun papp5 () Int)
-(declare-fun Language.Haskell.TH.Syntax.StringPrimL () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveFunctor () Int)
-(declare-fun GHC.IORef.IORef () Int)
-(declare-fun GHC.LanguageExtensions.Type.ConstraintKinds () Int)
-(declare-fun GHC.ForeignPtr.ForeignPtr () Int)
-(declare-fun GHC.LanguageExtensions.Type.QuantifiedConstraints () Int)
+(declare-fun Data.subN () Int)
 (declare-fun x_Tuple21 () Int)
 (declare-fun GHC.List.init () Int)
-(declare-fun GHC.LanguageExtensions.Type.ViewPatterns () Int)
-(declare-fun GHC.LanguageExtensions.Type.UnicodeSyntax () Int)
-(declare-fun GHC.LanguageExtensions.Type.Strict () Int)
-(declare-fun Language.Haskell.TH.Syntax.ListP () Int)
-(declare-fun Language.Haskell.TH.Syntax.CharPrimL () Int)
-(declare-fun Proof.by () Int)
 (declare-fun Data.Tuple.fst () Int)
-(declare-fun Language.Haskell.TH.Syntax.ConP () Int)
 (declare-fun Language.Haskell.TH.Syntax.DataFamilyD () Int)
-(declare-fun Language.Haskell.TH.Syntax.ForallVisT () Int)
 (declare-fun GHC.Real.quot () Int)
-(declare-fun lq_tmp$36$x$35$$35$691 () Data.NL)
-(declare-fun GHC.LanguageExtensions.Type.LambdaCase () Int)
-(declare-fun Language.Haskell.TH.Syntax.AsP () Int)
-(declare-fun GHC.LanguageExtensions.Type.DataKinds () Int)
-(declare-fun GHC.LanguageExtensions.Type.StrictData () Int)
-(declare-fun GHC.LanguageExtensions.Type.TypeSynonymInstances () Int)
 (declare-fun GHC.Tuple.$40$$44$$41$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.IntegerL () Int)
-(declare-fun GHC.LanguageExtensions.Type.DefaultSignatures () Int)
-(declare-fun GHC.LanguageExtensions.Type.GeneralizedNewtypeDeriving () Int)
 (declare-fun Language.Haskell.TH.Syntax.ImplicitParamBindD () Int)
-(declare-fun GHC.LanguageExtensions.Type.OverloadedLabels () Int)
-(declare-fun Language.Haskell.TH.Syntax.ViewP () Int)
 (declare-fun GHC.Classes.min () Int)
 (declare-fun Data.$36$fEqN () Int)
 (declare-fun GHC.Classes.$47$$61$ () Int)
-(declare-fun Language.Haskell.TH.Syntax.LamE () Int)
-(declare-fun Language.Haskell.TH.Syntax.ArrowT () Int)
 (declare-fun GHC.List.head () Int)
-(declare-fun Language.Haskell.TH.Syntax.DecidedStrict () Int)
 (declare-fun fromJust () Int)
 (declare-fun GHC.Real.fromIntegral () Int)
-(declare-fun Language.Haskell.TH.Syntax.Applied () Int)
 (declare-fun Language.Haskell.TH.Syntax.StandaloneDerivD () Int)
-(declare-fun GHC.LanguageExtensions.Type.PartialTypeSignatures () Int)
-(declare-fun Language.Haskell.TH.Syntax.PromotedNilT () Int)
-(declare-fun n_0$35$$35$a3Iq () Data.N)
-(declare-fun Language.Haskell.TH.Syntax.ClassOpI () Int)
-(declare-fun Language.Haskell.TH.Syntax.RecUpdE () Int)
-(declare-fun Language.Haskell.TH.Syntax.PrimTyConI () Int)
 (declare-fun GHC.Classes.compare () Int)
-(declare-fun Language.Haskell.TH.Syntax.VarE () Int)
-(declare-fun GHC.LanguageExtensions.Type.TypeApplications () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah () Data.NL)
 (declare-fun is$36$GHC.Tuple.$40$$44$$44$$41$ () Int)
 (declare-fun Language.Haskell.TH.Syntax.PatSynSigD () Int)
-(declare-fun GHC.LanguageExtensions.Type.PolyKinds () Int)
 (declare-fun GHC.Types.EQ () Int)
 (declare-fun GHC.Real.recip () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboxedTupleT () Int)
-(declare-fun GHC.LanguageExtensions.Type.DeriveFoldable () Int)
-(declare-fun GHC.LanguageExtensions.Type.Arrows () Int)
 (declare-fun GHC.Num.Integer.IS () Int)
-(declare-fun GHC.LanguageExtensions.Type.PatternSynonyms () Int)
 (declare-fun autolen () Int)
-(declare-fun Data.Typeable.Internal.C$58$Typeable () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$44$$41$$35$$35$3 () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$41$$35$$35$2 () Int)
-(declare-fun Language.Haskell.TH.Syntax.RepresentationalR () Int)
 (declare-fun x_Tuple31 () Int)
-(declare-fun GHC.LanguageExtensions.Type.TraditionalRecordSyntax () Int)
 (declare-fun GHC.Stack.Types.PushCallStack () Int)
-(declare-fun Language.Haskell.TH.Syntax.ForallT () Int)
-(declare-fun GHC.LanguageExtensions.Type.UnboxedSums () Int)
 (declare-fun GHC.Show.C$58$Show () Int)
-(declare-fun Language.Haskell.TH.Syntax.UnboxedTupP () Int)
-(declare-fun GHC.LanguageExtensions.Type.KindSignatures () Int)
-(declare-fun Language.Haskell.TH.Syntax.RationalL () Int)
-(declare-fun Language.Haskell.TH.Syntax.WildP () Int)
 (declare-fun GHC.Real.div () Int)
-(declare-fun GHC.LanguageExtensions.Type.UndecidableSuperClasses () Int)
+(declare-fun lq_tmp$36$x$35$$35$662 () Data.NL)
 (declare-fun GHC.Types.Module () Int)
 (declare-fun GHC.List.take () Int)
 (declare-fun GHC.Num.fromInteger () Int)
-(declare-fun Language.Haskell.TH.Syntax.AnnLookupModule () Int)
 (declare-fun Proof.QED () Int)
-(declare-fun GHC.ForeignSrcLang.Type.LangObjcxx () Int)
 (declare-fun GHC.List.takeWhile () Int)
 (declare-fun VV$35$$35$F$35$$35$4 () Int)
-(declare-fun Language.Haskell.TH.Syntax.CaseE () Int)
-(declare-fun GHC.LanguageExtensions.Type.OverloadedLists () Int)
-(declare-fun GHC.LanguageExtensions.Type.StaticPointers () Int)
-(declare-fun GHC.ForeignSrcLang.Type.LangObjc () Int)
 (declare-fun papp3 () Int)
-(declare-fun Language.Haskell.TH.Syntax.VarT () Int)
 (declare-fun apply$35$$35$17 (Int Str) Data.NL)
 (declare-fun apply$35$$35$32 (Int Data.NL) Str)
 (declare-fun apply$35$$35$19 (Int (_ BitVec 32)) Bool)
@@ -625,29 +367,20 @@
 (declare-fun lam_arg$35$$35$5$35$$35$30 () Data.NL)
 (declare-fun lam_arg$35$$35$6$35$$35$30 () Data.NL)
 (declare-fun lam_arg$35$$35$7$35$$35$30 () Data.NL)
-(assert (distinct lit$36$Prop2 lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$GcNvOh9hmbmCdIYseQTY91))
-(assert (distinct Language.Haskell.TH.Syntax.PromotedNilT Language.Haskell.TH.Syntax.ArrowT Language.Haskell.TH.Syntax.ConstraintT Language.Haskell.TH.Syntax.MulArrowT Language.Haskell.TH.Syntax.ListT Language.Haskell.TH.Syntax.StarT Language.Haskell.TH.Syntax.PromotedConsT Language.Haskell.TH.Syntax.EqualityT Language.Haskell.TH.Syntax.WildCardT))
+(assert (distinct lit$36$Prop2 lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$6lICFxXVHY31MfrqHLaYxI))
 
 
-(assert (distinct Language.Haskell.TH.Syntax.Applied Language.Haskell.TH.Syntax.Alone Language.Haskell.TH.Syntax.Infix))
-
-(assert (distinct Language.Haskell.TH.Syntax.RepresentationalR Language.Haskell.TH.Syntax.InferR Language.Haskell.TH.Syntax.NominalR Language.Haskell.TH.Syntax.PhantomR))
-(assert (distinct Language.Haskell.TH.Syntax.DecidedStrict Language.Haskell.TH.Syntax.DecidedUnpack Language.Haskell.TH.Syntax.DecidedLazy))
 (assert (distinct GHC.Types.False GHC.Types.True))
 
-(assert (distinct GHC.LanguageExtensions.Type.StaticPointers GHC.LanguageExtensions.Type.OverloadedLists GHC.LanguageExtensions.Type.UndecidableSuperClasses GHC.LanguageExtensions.Type.KindSignatures GHC.LanguageExtensions.Type.UnboxedSums GHC.LanguageExtensions.Type.TraditionalRecordSyntax GHC.LanguageExtensions.Type.PatternSynonyms GHC.LanguageExtensions.Type.Arrows GHC.LanguageExtensions.Type.DeriveFoldable GHC.LanguageExtensions.Type.PolyKinds GHC.LanguageExtensions.Type.TypeApplications GHC.LanguageExtensions.Type.PartialTypeSignatures GHC.LanguageExtensions.Type.OverloadedLabels GHC.LanguageExtensions.Type.GeneralizedNewtypeDeriving GHC.LanguageExtensions.Type.DefaultSignatures GHC.LanguageExtensions.Type.TypeSynonymInstances GHC.LanguageExtensions.Type.StrictData GHC.LanguageExtensions.Type.DataKinds GHC.LanguageExtensions.Type.LambdaCase GHC.LanguageExtensions.Type.Strict GHC.LanguageExtensions.Type.UnicodeSyntax GHC.LanguageExtensions.Type.ViewPatterns GHC.LanguageExtensions.Type.QuantifiedConstraints GHC.LanguageExtensions.Type.ConstraintKinds GHC.LanguageExtensions.Type.DeriveFunctor GHC.LanguageExtensions.Type.RecordPuns GHC.LanguageExtensions.Type.RebindableSyntax GHC.LanguageExtensions.Type.ImplicitPrelude GHC.LanguageExtensions.Type.ParallelListComp GHC.LanguageExtensions.Type.UnliftedFFITypes GHC.LanguageExtensions.Type.DisambiguateRecordFields GHC.LanguageExtensions.Type.DoAndIfThenElse GHC.LanguageExtensions.Type.InstanceSigs GHC.LanguageExtensions.Type.TypeFamilyDependencies GHC.LanguageExtensions.Type.JavaScriptFFI GHC.LanguageExtensions.Type.DerivingVia GHC.LanguageExtensions.Type.AlternativeLayoutRuleTransitional GHC.LanguageExtensions.Type.ImpredicativeTypes GHC.LanguageExtensions.Type.DerivingStrategies GHC.LanguageExtensions.Type.BlockArguments GHC.LanguageExtensions.Type.IncoherentInstances GHC.LanguageExtensions.Type.RelaxedLayout GHC.LanguageExtensions.Type.BangPatterns GHC.LanguageExtensions.Type.MultiWayIf GHC.LanguageExtensions.Type.UndecidableInstances GHC.LanguageExtensions.Type.InterruptibleFFI GHC.LanguageExtensions.Type.MonadComprehensions GHC.LanguageExtensions.Type.MonoPatBinds GHC.LanguageExtensions.Type.NPlusKPatterns GHC.LanguageExtensions.Type.PostfixOperators GHC.LanguageExtensions.Type.AutoDeriveTypeable GHC.LanguageExtensions.Type.RecordWildCards GHC.LanguageExtensions.Type.UnboxedTuples GHC.LanguageExtensions.Type.NegativeLiterals GHC.LanguageExtensions.Type.DeriveDataTypeable GHC.LanguageExtensions.Type.TypeOperators GHC.LanguageExtensions.Type.MagicHash GHC.LanguageExtensions.Type.DeriveTraversable GHC.LanguageExtensions.Type.ExplicitNamespaces GHC.LanguageExtensions.Type.PatternGuards GHC.LanguageExtensions.Type.LinearTypes GHC.LanguageExtensions.Type.FunctionalDependencies GHC.LanguageExtensions.Type.StarIsType GHC.LanguageExtensions.Type.HexFloatLiterals GHC.LanguageExtensions.Type.RelaxedPolyRec GHC.LanguageExtensions.Type.DeriveGeneric GHC.LanguageExtensions.Type.EmptyDataDecls GHC.LanguageExtensions.Type.MonomorphismRestriction GHC.LanguageExtensions.Type.RoleAnnotations GHC.LanguageExtensions.Type.ExistentialQuantification GHC.LanguageExtensions.Type.OverloadedStrings GHC.LanguageExtensions.Type.TransformListComp GHC.LanguageExtensions.Type.TypeInType GHC.LanguageExtensions.Type.ConstrainedClassMethods GHC.LanguageExtensions.Type.NamedWildCards GHC.LanguageExtensions.Type.TupleSections GHC.LanguageExtensions.Type.StandaloneKindSignatures GHC.LanguageExtensions.Type.CApiFFI GHC.LanguageExtensions.Type.OverlappingInstances GHC.LanguageExtensions.Type.RecursiveDo GHC.LanguageExtensions.Type.GHCForeignImportPrim GHC.LanguageExtensions.Type.NullaryTypeClasses GHC.LanguageExtensions.Type.EmptyCase GHC.LanguageExtensions.Type.PackageImports GHC.LanguageExtensions.Type.ScopedTypeVariables GHC.LanguageExtensions.Type.AlternativeLayoutRule GHC.LanguageExtensions.Type.ImportQualifiedPost GHC.LanguageExtensions.Type.Cpp GHC.LanguageExtensions.Type.QuasiQuotes GHC.LanguageExtensions.Type.QualifiedDo GHC.LanguageExtensions.Type.NumericUnderscores GHC.LanguageExtensions.Type.TypeFamilies GHC.LanguageExtensions.Type.MonadFailDesugaring GHC.LanguageExtensions.Type.GADTSyntax GHC.LanguageExtensions.Type.FlexibleInstances GHC.LanguageExtensions.Type.LexicalNegation GHC.LanguageExtensions.Type.LiberalTypeSynonyms GHC.LanguageExtensions.Type.BinaryLiterals GHC.LanguageExtensions.Type.UnliftedNewtypes GHC.LanguageExtensions.Type.ExtendedDefaultRules GHC.LanguageExtensions.Type.ForeignFunctionInterface GHC.LanguageExtensions.Type.NondecreasingIndentation GHC.LanguageExtensions.Type.DeriveAnyClass GHC.LanguageExtensions.Type.EmptyDataDeriving GHC.LanguageExtensions.Type.StandaloneDeriving GHC.LanguageExtensions.Type.ParallelArrays GHC.LanguageExtensions.Type.FlexibleContexts GHC.LanguageExtensions.Type.TemplateHaskell GHC.LanguageExtensions.Type.DatatypeContexts GHC.LanguageExtensions.Type.MonoLocalBinds GHC.LanguageExtensions.Type.ExplicitForAll GHC.LanguageExtensions.Type.RankNTypes GHC.LanguageExtensions.Type.ImplicitParams GHC.LanguageExtensions.Type.DuplicateRecordFields GHC.LanguageExtensions.Type.ApplicativeDo GHC.LanguageExtensions.Type.MultiParamTypeClasses GHC.LanguageExtensions.Type.AllowAmbiguousTypes GHC.LanguageExtensions.Type.DeriveLift GHC.LanguageExtensions.Type.NumDecimals GHC.LanguageExtensions.Type.CUSKs GHC.LanguageExtensions.Type.TemplateHaskellQuotes GHC.LanguageExtensions.Type.GADTs))
-(assert (distinct GHC.ForeignSrcLang.Type.LangObjc GHC.ForeignSrcLang.Type.LangObjcxx GHC.ForeignSrcLang.Type.LangAsm GHC.ForeignSrcLang.Type.LangCxx GHC.ForeignSrcLang.Type.LangC GHC.ForeignSrcLang.Type.RawObject))
 (assert (distinct GHC.Types.EQ GHC.Types.GT GHC.Types.LT))
 
-(assert (distinct Language.Haskell.TH.Syntax.TcClsName Language.Haskell.TH.Syntax.VarName Language.Haskell.TH.Syntax.DataName))
 
-(assert (= (strLen lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$GcNvOh9hmbmCdIYseQTY91) 46))
+(assert (= (strLen lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$6lICFxXVHY31MfrqHLaYxI) 46))
 (assert (= (strLen lit$36$Prop2) 5))
 (push 1)
 (push 1)
+(assert (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE xs$35$$35$a3Iq))
 (assert (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0))
-(assert (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah xs$35$$35$a3Io))
-(assert (and (= Proof.trivial GHC.Tuple.$40$$41$) (= Proof.trivial Proof.trivial)))
 (assert (= (is-Data.S Data.Z) false))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false))
 (assert (= (is-Data.Cons Data.Nil) false))
@@ -658,23 +391,21 @@
 (assert (and (is-Data.Nil Data.Nil) (not (is-Data.Cons Data.Nil))))
 (assert GHC.Types.True)
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true))
-(assert (= Proof.trivial GHC.Tuple.$40$$41$))
 (assert (and (is-Data.Z Data.Z) (not (is-Data.S Data.Z)) (= Data.Z Data.Z)))
 (assert (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false))
 (assert (and (is-Data.Nil Data.Nil) (not (is-Data.Cons Data.Nil)) (= Data.Nil Data.Nil)))
 (assert true)
 (push 1)
+(assert (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE xs$35$$35$a3Iq))
 (assert (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0))
-(assert (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah xs$35$$35$a3Io))
-(assert (and (= VV$35$$35$F$35$$35$5 GHC.Tuple.$40$$41$) (= VV$35$$35$F$35$$35$5 Proof.trivial)))
-(assert (and (is-Data.Nil lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) (not (is-Data.Cons lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah)) (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah Data.Nil) (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah xs$35$$35$a3Io)))
+(assert (and (is-Data.Nil lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) (not (is-Data.Cons lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE)) (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE Data.Nil) (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE xs$35$$35$a3Iq)))
 (assert (= (is-Data.S Data.Z) false))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false))
 (assert (= (is-Data.Cons Data.Nil) false))
 (assert (= (is-Data.Z Data.Z) true))
+(assert (= VV$35$$35$F$35$$35$5 Proof.trivial))
 (assert (= (is-Data.Nil Data.Nil) true))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true))
-(assert (= Proof.trivial GHC.Tuple.$40$$41$))
 (assert (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false))
 (assert true)
 (push 1)
@@ -708,7 +439,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)))))
+(assert (not (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -718,7 +449,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip))))
+(assert (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -728,7 +459,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil xs$35$$35$a3Io)))
+(assert (not (is-Data.Nil xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Unsat
 (pop 1)
@@ -738,7 +469,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil xs$35$$35$a3Io))
+(assert (is-Data.Nil xs$35$$35$a3Iq))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -748,7 +479,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -758,7 +489,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -768,7 +499,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -778,7 +509,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -803,7 +534,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -813,7 +544,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -823,7 +554,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil xs$35$$35$a3Io)))
+(assert (not (is-Data.Nil xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Unsat
 (pop 1)
@@ -833,7 +564,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil xs$35$$35$a3Io))
+(assert (is-Data.Nil xs$35$$35$a3Iq))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -843,7 +574,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -853,7 +584,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -867,24 +598,14 @@
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
-(assert (and (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) (= (is-Data.S Data.Z) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Data.Cons Data.Nil) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) true) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip) ys$35$$35$a3Ip) (= (is-Data.Nil lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) true) (= (is-Data.Z Data.Z) true) (= (= (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) true) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io) Data.Z) (= (is-Data.Nil Data.Nil) true) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip))) (= (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))))) (= (is-Data.Cons lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= Proof.trivial GHC.Tuple.$40$$41$) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false)))
+(assert (and (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir) ys$35$$35$a3Ir) (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq) Data.Z) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))) (= (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))))) (= (is-Data.S Data.Z) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) true) (= (is-Data.Cons Data.Nil) false) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) (= (is-Data.Z Data.Z) true) (= (is-Data.Nil Data.Nil) true) (= (is-Data.Cons lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (= (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) true) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir)))) (= (is-Data.Nil lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) true)))
 (push 1)
 (assert (not false))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -894,7 +615,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -904,7 +625,57 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil ys$35$$35$a3Ir))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil ys$35$$35$a3Ir))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -929,7 +700,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -939,7 +710,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -949,7 +720,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -959,7 +730,18 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(assert (and (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir) ys$35$$35$a3Ir) (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq) Data.Z) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))) (= (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))))) (= (is-Data.S Data.Z) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) true) (= (is-Data.Cons Data.Nil) false) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) (= (is-Data.Z Data.Z) true) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir)) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) (= (is-Data.Nil Data.Nil) true) (= (is-Data.Cons lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) false) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (= (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) true) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir)))) (= (is-Data.Nil lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) true)))
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -969,75 +751,22 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(assert (and (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) (= (is-Data.S Data.Z) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Data.Cons Data.Nil) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) true) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip) ys$35$$35$a3Ip) (= (is-Data.Nil lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) true) (= (is-Data.Z Data.Z) true) (= (= (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) true) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io) Data.Z) (= (is-Data.Nil Data.Nil) true) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip))) (= (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))))) (= (is-Data.Cons lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= Proof.trivial GHC.Tuple.$40$$41$) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))))))
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (pop 1)
 (push 1)
+(assert (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE xs$35$$35$a3Iq))
 (assert (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0))
-(assert (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah xs$35$$35$a3Io))
-(assert (and (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (= lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai (apply$35$$35$30 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2_check n$35$$35$a3In) nL_1$35$$35$a3Ir) ys$35$$35$a3Ip))))
-(assert (and (= VV$35$$35$F$35$$35$4 lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai) (= VV$35$$35$F$35$$35$4 (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai) Proof.trivial))))
-(assert (and (is-Data.Cons lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) (not (is-Data.Nil lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah)) (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah xs$35$$35$a3Io) (= lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah (Data.Cons n_0$35$$35$a3Iq nL_1$35$$35$a3Ir)) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) nL_1$35$$35$a3Ir) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 lq_anf$36$$35$$35$7205759403792811225$35$$35$d4Ah) n_0$35$$35$a3Iq)))
+(assert (and (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) nL_1$35$$35$a3It) ys$35$$35$a3Ir) (= VV$35$$35$F$35$$35$4 (apply$35$$35$30 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2_proof n$35$$35$a3Ip) nL_1$35$$35$a3It) ys$35$$35$a3Ir))))
 (assert (= (is-Data.S Data.Z) false))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false))
 (assert (= (is-Data.Cons Data.Nil) false))
 (assert (= (is-Data.Z Data.Z) true))
+(assert (and (is-Data.Cons lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) (not (is-Data.Nil lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE)) (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE xs$35$$35$a3Iq) (= lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE (Data.Cons n_0$35$$35$a3Is nL_1$35$$35$a3It)) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) nL_1$35$$35$a3It) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 lq_anf$36$$35$$35$7205759403792810628$35$$35$d4qE) n_0$35$$35$a3Is)))
 (assert (= (is-Data.Nil Data.Nil) true))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true))
-(assert (= Proof.trivial GHC.Tuple.$40$$41$))
 (assert (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false))
 (assert true)
 (push 1)
@@ -1046,7 +775,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)))))
+(assert (not (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1056,7 +785,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip))))
+(assert (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1066,7 +795,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil xs$35$$35$a3Io)))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1076,7 +805,327 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil xs$35$$35$a3Io))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil ys$35$$35$a3Ir))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil ys$35$$35$a3Ir))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil xs$35$$35$a3Iq))
 (check-sat)
 ; SMT Says: Unsat
 (pop 1)
@@ -1086,7 +1135,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1096,7 +1145,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1106,7 +1155,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1116,7 +1165,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1126,7 +1175,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1136,7 +1185,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1146,7 +1195,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1156,7 +1205,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1166,7 +1215,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1176,7 +1225,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1186,7 +1235,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1196,7 +1245,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1206,7 +1255,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1216,7 +1265,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1226,7 +1275,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1236,7 +1285,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1246,7 +1295,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))))
+(assert (not (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1256,7 +1305,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))))
+(assert (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1266,7 +1315,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil xs$35$$35$a3Io)))
+(assert (not (is-Data.Nil xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1276,7 +1325,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil xs$35$$35$a3Io))
+(assert (is-Data.Nil xs$35$$35$a3Iq))
 (check-sat)
 ; SMT Says: Unsat
 (pop 1)
@@ -1286,7 +1335,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1296,7 +1345,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1306,7 +1355,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1316,7 +1365,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1326,7 +1375,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1336,7 +1385,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1346,7 +1395,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1356,7 +1405,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1406,7 +1455,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1416,7 +1465,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))))))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1426,7 +1475,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1436,7 +1485,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1446,7 +1495,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1456,7 +1505,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1466,7 +1515,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1476,7 +1525,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1486,7 +1535,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))))))
+(assert (not (= (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1496,7 +1545,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))))))
+(assert (= (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1506,7 +1555,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1516,7 +1565,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1526,7 +1575,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1536,7 +1585,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1546,7 +1595,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))))
+(assert (not (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1556,7 +1605,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))))
+(assert (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1566,7 +1615,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1576,7 +1625,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1586,7 +1635,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1596,17 +1645,18 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
+(assert (and (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) false) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir) (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))) (= (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir)) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (= (is-Data.S Data.Z) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Data.Cons Data.Nil) false) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) true) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) nL_1$35$$35$a3It) ys$35$$35$a3Ir) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir)))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) (= (is-Data.Z Data.Z) true) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It) (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))) (= (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))))) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) false) (= (is-Data.Nil Data.Nil) true) (= (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))))) (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir))) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir)) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) nL_1$35$$35$a3It) ys$35$$35$a3Ir) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) (= (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))))) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) true) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))))))
 (push 1)
 (assert (not false))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip)))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1616,7 +1666,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip))))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1626,7 +1676,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1636,7 +1686,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1646,7 +1696,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1656,788 +1706,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(assert (and (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip)))) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) true) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) true) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) false) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))) (= (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai) Proof.trivial) lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai) (= (is-Data.S Data.Z) false) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Data.Cons Data.Nil) false) (= (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip)) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip))) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (= (is-Data.Z Data.Z) true) (= (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))))) (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))) (= (is-Data.Nil Data.Nil) true) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) (= (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))))) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))))) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip)) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir) (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip))) (= (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))))) (= Proof.trivial GHC.Tuple.$40$$41$) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false)))
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2487,7 +1756,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2497,7 +1766,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2507,7 +1776,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2517,7 +1786,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2527,7 +1796,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2537,7 +1806,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2547,7 +1816,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2557,7 +1826,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2567,7 +1836,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2577,7 +1846,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2587,7 +1856,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2597,7 +1866,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2607,7 +1876,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2617,7 +1886,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2627,7 +1896,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2637,7 +1906,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2647,7 +1916,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2657,7 +1926,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2667,7 +1936,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2677,7 +1946,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2687,7 +1956,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2697,7 +1966,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2707,7 +1976,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2717,7 +1986,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2727,7 +1996,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2737,7 +2006,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2747,7 +2016,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2757,7 +2026,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2767,7 +2036,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2777,7 +2046,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2787,7 +2056,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2797,7 +2066,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2807,7 +2076,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2817,7 +2086,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2827,7 +2096,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2837,18 +2106,17 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
-(assert (and (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip)))) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) true) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))))))) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) true) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) false) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))) (= (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai) Proof.trivial) lq_anf$36$$35$$35$7205759403792811226$35$$35$d4Ai) (= (is-Data.S Data.Z) false) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Data.Cons Data.Nil) false) (= (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip)) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip))) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (= (is-Data.Z Data.Z) true) (= (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))))) (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))) (= (is-Data.Nil Data.Nil) true) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) (= (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))))) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) nL_1$35$$35$a3Ir) ys$35$$35$a3Ip) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))))) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3In) xs$35$$35$a3Io) ys$35$$35$a3Ip) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip)) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip)))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip)) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3Ir) ys$35$$35$a3Ip)) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))))) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))))))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) nL_1$35$$35$a3Ir) (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) xs$35$$35$a3Io)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) ys$35$$35$a3Ip)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Io) ys$35$$35$a3Ip))) (= (ite (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))) (ite (is-Data.Nil ys$35$$35$a3Ip) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ip)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ip))))))) (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) ys$35$$35$a3Ip))))))) (= Proof.trivial GHC.Tuple.$40$$41$) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false)))
 (push 1)
 (assert (not false))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2858,7 +2126,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2868,7 +2136,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil ys$35$$35$a3Ip)))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2878,7 +2146,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil ys$35$$35$a3Ip))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2888,7 +2156,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2898,7 +2166,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2908,7 +2176,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2918,7 +2186,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2928,7 +2196,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2938,7 +2206,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2948,7 +2216,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip))))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2958,7 +2226,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3Ir) ys$35$$35$a3Ip (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)) ys$35$$35$a3Ip)))))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2968,7 +2236,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2978,7 +2246,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2988,7 +2256,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir)))))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -2998,7 +2266,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3Ir))))))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3008,7 +2276,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3018,7 +2286,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3028,7 +2296,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3038,7 +2306,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3048,7 +2316,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3058,7 +2326,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3068,7 +2336,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Nil nL_1$35$$35$a3Ir)))
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3078,7 +2346,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Nil nL_1$35$$35$a3Ir))
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3088,7 +2356,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3098,7 +2366,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3108,7 +2376,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3118,7 +2386,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Nil ys$35$$35$a3Ir))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3128,7 +2396,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3138,7 +2406,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3148,7 +2416,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3158,7 +2426,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3168,7 +2436,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3178,7 +2446,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3188,7 +2456,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io))))
+(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3198,7 +2466,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)))
+(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3208,7 +2476,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))))))
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -3218,7 +2486,468 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Data.Z (ite (= n$35$$35$a3In (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Io)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3In) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Io)))))
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(assert (and (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir)) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))))) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))))))) (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) false) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir) (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir)) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))))) (= (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))) (= (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir)) (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (= (is-Data.S Data.Z) false) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Data.Cons Data.Nil) false) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) true) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) nL_1$35$$35$a3It) ys$35$$35$a3Ir) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir)))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))) (= (is-Data.Z Data.Z) true) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It) (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))) (= (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))))) (= (is-Data.Nil (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) false) (= (is-Data.Nil Data.Nil) true) (= (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir)))))) (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))) (= (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) nL_1$35$$35$a3It)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL nL_1$35$$35$a3It) ys$35$$35$a3Ir))) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir)) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) nL_1$35$$35$a3It) ys$35$$35$a3Ir) (= (ite (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))))) (= (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) (= (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))))))) (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))))) (= (is-Data.Cons (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (ite (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) ys$35$$35$a3Ir))))) true) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (ite (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))) (Data.S (apply$35$$35$28 (apply$35$$35$24 Data.addN (lqdc$35$$35$$36$select$35$$35$Data.S$35$$35$1 (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))) (ite (is-Data.Nil ys$35$$35$a3Ir) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 ys$35$$35$a3Ir)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 ys$35$$35$a3Ir)))))))) (= (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)) ys$35$$35$a3Ir))) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (apply$35$$35$31 (apply$35$$35$30 (apply$35$$35$24 Prop2.prop2 n$35$$35$a3Ip) xs$35$$35$a3Iq) ys$35$$35$a3Ir) (= (apply$35$$35$28 (apply$35$$35$24 Data.addN (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) xs$35$$35$a3Iq)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) ys$35$$35$a3Ir)) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL xs$35$$35$a3Iq) ys$35$$35$a3Ir))))))
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil ys$35$$35$a3Ir)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil ys$35$$35$a3Ir))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil (ite (is-Data.Nil nL_1$35$$35$a3It) ys$35$$35$a3Ir (Data.Cons (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It) (apply$35$$35$35 (apply$35$$35$30 Data.concatNL (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)) ys$35$$35$a3Ir)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil nL_1$35$$35$a3It)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil nL_1$35$$35$a3It))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It)))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Z (ite (is-Data.Nil nL_1$35$$35$a3It) Data.Z (ite (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 nL_1$35$$35$a3It)) (Data.S (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))) (apply$35$$35$34 (apply$35$$35$24 Data.countNL n$35$$35$a3Ip) (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 nL_1$35$$35$a3It))))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (= n$35$$35$a3Ip (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$2 xs$35$$35$a3Iq)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq))))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Data.Nil (lqdc$35$$35$$36$select$35$$35$Data.Cons$35$$35$1 xs$35$$35$a3Iq)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
