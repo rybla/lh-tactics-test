@@ -25,36 +25,19 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Data
+      Prop1
+      Prop2
+      Test1
+      Test2
+      Test3
   other-modules:
       Paths_lh_tactics_test
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
-  default-language: Haskell2010
-
-executable lh-tactics-test-exe
-  main-is: Main.hs
-  other-modules:
-      Paths_lh_tactics_test
-  hs-source-dirs:
-      app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      base >=4.7 && <5
-    , lh-tactics-test
-  default-language: Haskell2010
-
-test-suite lh-tactics-test-test
-  type: exitcode-stdio-1.0
-  main-is: Spec.hs
-  other-modules:
-      Paths_lh_tactics_test
-  hs-source-dirs:
-      test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      base >=4.7 && <5
-    , lh-tactics-test
+      lh-tactics ==0.1.0.7
+    , liquid-base ==4.15.0.0
+    , liquidhaskell ==0.8.10.7
+    , template-haskell ==2.17.0.0
   default-language: Haskell2010

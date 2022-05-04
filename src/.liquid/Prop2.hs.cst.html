@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>src/Prop2.hs</title>
+</head>
+<head>
+<link type='text/css' rel='stylesheet' href='liquid.css' />
+</head>
+
+<body>
+<hr>
+Put mouse over identifiers to see inferred types
+<pre><span class=hs-linenum> 1: </span><a class=annot href="#"><span class=annottext>{VV##692 : GHC.Types.Module | $k_##693}</span><span class='hs-comment'>{-# LANGUAGE QuasiQuotes #-}</span></a>
+<span class=hs-linenum> 2: </span><span class='hs-comment'>{-# LANGUAGE TemplateHaskell #-}</span>
+<span class=hs-linenum> 3: </span>
+<span class=hs-linenum> 4: </span><span class='hs-comment'>-- {-@ LIQUID "--compile-spec" @-}</span>
+<span class=hs-linenum> 5: </span><span class='hs-keyword'>{-@</span> <span class='hs-conid'>LIQUID</span> <span class='hs-str'>"--reflection"</span> <span class='hs-keyword'>@-}</span>
+<span class=hs-linenum> 6: </span><span class='hs-keyword'>{-@</span> <span class='hs-conid'>LIQUID</span> <span class='hs-str'>"--ple-local"</span> <span class='hs-keyword'>@-}</span>
+<span class=hs-linenum> 7: </span>
+<span class=hs-linenum> 8: </span><span class='hs-keyword'>module</span> <span class='hs-conid'>Prop2</span> <span class='hs-keyword'>where</span>
+<span class=hs-linenum> 9: </span>
+<span class=hs-linenum>10: </span><span class='hs-keyword'>import</span> <span class='hs-conid'>Data</span>
+<span class=hs-linenum>11: </span><span class='hs-keyword'>import</span> <span class='hs-conid'>Language.Haskell.TH.Syntax</span>
+<span class=hs-linenum>12: </span><span class='hs-keyword'>import</span> <span class='hs-conid'>Proof</span>
+<span class=hs-linenum>13: </span><span class='hs-keyword'>import</span> <span class='hs-conid'>Tactic.Core.Quote</span>
+<span class=hs-linenum>14: </span>
+<span class=hs-linenum>15: </span><span class='hs-keyword'>{-@</span> <span class='hs-varid'>reflect</span> <span class='hs-varid'>prop2</span> <span class='hs-keyword'>@-}</span>
+<span class=hs-linenum>16: </span><span class='hs-definition'>prop2</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Bool</span>
+<span class=hs-linenum>17: </span><a class=annot href="#"><span class=annottext>lq_tmp$x##720:Data.N -&gt; lq_tmp$x##721:Data.NL -&gt; lq_tmp$x##722:Data.NL -&gt; {VV : GHC.Types.Bool | VV == Prop2.prop2 lq_tmp$x##720 lq_tmp$x##721 lq_tmp$x##722
+                                                                                                 &amp;&amp; VV == (Data.addN (Data.countNL lq_tmp$x##720 lq_tmp$x##721) (Data.countNL lq_tmp$x##720 lq_tmp$x##722) == Data.countNL lq_tmp$x##720 (Data.concatNL lq_tmp$x##721 lq_tmp$x##722))}</span><span class='hs-definition'>prop2</span></a> <a class=annot href="#"><span class=annottext>Data.N</span><span class='hs-varid'>n</span></a> <a class=annot href="#"><span class=annottext>Data.NL</span><span class='hs-varid'>xs</span></a> <a class=annot href="#"><span class=annottext>Data.NL</span><span class='hs-varid'>ys</span></a> <span class='hs-keyglyph'>=</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##751 : Data.N | lq_tmp$x##751 == Data.addN lq_anf$##7205759403792811231##d4An lq_anf$##7205759403792811232##d4Ao
+                          &amp;&amp; lq_tmp$x##751 == (if is$Data.Z lq_anf$##7205759403792811231##d4An then lq_anf$##7205759403792811232##d4Ao else Data.S (Data.addN (lqdc##$select##Data.S##1 lq_anf$##7205759403792811231##d4An) lq_anf$##7205759403792811232##d4Ao))}</span><span class='hs-varid'>addN</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##731 : Data.N | lq_tmp$x##731 == Data.countNL n##a3HW xs##a3HX
+                          &amp;&amp; lq_tmp$x##731 == (if is$Data.Nil xs##a3HX then Data.Z else (if n##a3HW == lqdc##$select##Data.Cons##2 xs##a3HX then Data.S (Data.countNL n##a3HW (lqdc##$select##Data.Cons##1 xs##a3HX)) else Data.countNL n##a3HW (lqdc##$select##Data.Cons##1 xs##a3HX)))}</span><span class='hs-layout'>(</span></a><span class='hs-varid'>countNL</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##736 : Data.N | lq_tmp$x##736 == n##a3HW}</span><span class='hs-varid'>n</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##737 : Data.NL | lq_tmp$x##737 == xs##a3HX}</span><span class='hs-varid'>xs</span></a><span class='hs-layout'>)</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##741 : Data.N | lq_tmp$x##741 == Data.countNL n##a3HW ys##a3HY
+                          &amp;&amp; lq_tmp$x##741 == (if is$Data.Nil ys##a3HY then Data.Z else (if n##a3HW == lqdc##$select##Data.Cons##2 ys##a3HY then Data.S (Data.countNL n##a3HW (lqdc##$select##Data.Cons##1 ys##a3HY)) else Data.countNL n##a3HW (lqdc##$select##Data.Cons##1 ys##a3HY)))}</span><span class='hs-layout'>(</span></a><span class='hs-varid'>countNL</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##746 : Data.N | lq_tmp$x##746 == n##a3HW}</span><span class='hs-varid'>n</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##747 : Data.NL | lq_tmp$x##747 == ys##a3HY}</span><span class='hs-varid'>ys</span></a><span class='hs-layout'>)</span> <span class='hs-varop'>==</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##771 : Data.N | lq_tmp$x##771 == Data.countNL n##a3HW lq_anf$##7205759403792811234##d4Aq
+                          &amp;&amp; lq_tmp$x##771 == (if is$Data.Nil lq_anf$##7205759403792811234##d4Aq then Data.Z else (if n##a3HW == lqdc##$select##Data.Cons##2 lq_anf$##7205759403792811234##d4Aq then Data.S (Data.countNL n##a3HW (lqdc##$select##Data.Cons##1 lq_anf$##7205759403792811234##d4Aq)) else Data.countNL n##a3HW (lqdc##$select##Data.Cons##1 lq_anf$##7205759403792811234##d4Aq)))}</span><span class='hs-varid'>countNL</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##776 : Data.N | lq_tmp$x##776 == n##a3HW}</span><span class='hs-varid'>n</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##761 : Data.NL | lq_tmp$x##761 == Data.concatNL xs##a3HX ys##a3HY
+                           &amp;&amp; lq_tmp$x##761 == (if is$Data.Nil xs##a3HX then ys##a3HY else Data.Cons (lqdc##$select##Data.Cons##2 xs##a3HX) (Data.concatNL (lqdc##$select##Data.Cons##1 xs##a3HX) ys##a3HY))}</span><span class='hs-layout'>(</span></a><span class='hs-varid'>concatNL</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##766 : Data.NL | lq_tmp$x##766 == xs##a3HX}</span><span class='hs-varid'>xs</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##767 : Data.NL | lq_tmp$x##767 == ys##a3HY}</span><span class='hs-varid'>ys</span></a><span class='hs-layout'>)</span>
+<span class=hs-linenum>18: </span>
+<span class=hs-linenum>19: </span><span class='hs-definition'>return</span> <span class='hs-conid'>[]</span>
+<span class=hs-linenum>20: </span>
+<span class=hs-linenum>21: </span><span class='hs-keyword'>{-@</span> <span class='hs-varid'>automatic</span><span class='hs-comment'>-</span><span class='hs-varid'>instances</span> <span class='hs-varid'>prop2_check</span> <span class='hs-keyword'>@-}</span>
+<span class=hs-linenum>22: </span><span class='hs-keyword'>{-@</span>
+<span class=hs-linenum>23: </span><span class='hs-definition'>prop2_check</span> <span class='hs-keyglyph'>::</span> <span class='hs-varid'>n</span><span class='hs-conop'>:</span><span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>xs</span><span class='hs-conop'>:</span><span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>ys</span><span class='hs-conop'>:</span><span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-keyword'>{prop2 n xs ys}</span>
+<span class=hs-linenum>24: </span><span class='hs-keyword'>@-}</span>
+<span class=hs-linenum>25: </span><span class='hs-comment'>-- %tactic:begin:prop2_check</span>
+<span class=hs-linenum>26: </span><span class='hs-definition'>prop2_check</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Proof</span>
+<span class=hs-linenum>27: </span><a class=annot href="#"><span class=annottext>lq_tmp$x##634:Data.N -&gt; lq_tmp$x##635:Data.NL -&gt; lq_tmp$x##636:Data.NL -&gt; {VV : () | Prop2.prop2 lq_tmp$x##634 lq_tmp$x##635 lq_tmp$x##636}</span><span class='hs-definition'>prop2_check</span></a> <span class='hs-keyglyph'>=</span> <span class='hs-keyglyph'>\</span><a class=annot href="#"><span class=annottext>Data.N</span><span class='hs-varid'>n</span></a> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-keyglyph'>\</span><a class=annot href="#"><span class=annottext>Data.NL</span><span class='hs-varid'>xs</span></a> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-keyglyph'>\</span><a class=annot href="#"><span class=annottext>Data.NL</span><span class='hs-varid'>ys</span></a> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-keyword'>case</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##641 : Data.NL | lq_tmp$x##641 == xs##a3Io}</span><span class='hs-varid'>xs</span></a> <span class='hs-keyword'>of</span>
+<span class=hs-linenum>28: </span>                                      <span class='hs-conid'>Data.Nil</span> <span class='hs-keyglyph'>-&gt;</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##648 : () | lq_tmp$x##648 == GHC.Tuple.()
+                      &amp;&amp; lq_tmp$x##648 == Proof.trivial}</span><span class='hs-varid'>trivial</span></a>
+<span class=hs-linenum>29: </span>                                      <span class='hs-conid'>Data.Cons</span> <span class='hs-varid'>n_0</span> <span class='hs-varid'>nL_1</span> <span class='hs-keyglyph'>-&gt;</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##669 : () | Prop2.prop2 n##a3In nL_1##a3Ir ys##a3Ip
+                      &amp;&amp; lq_tmp$x##669 == Prop2.prop2_check n##a3In nL_1##a3Ir ys##a3Ip}</span><span class='hs-varid'>prop2_check</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##676 : Data.N | lq_tmp$x##676 == n##a3In}</span><span class='hs-varid'>n</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##677 : Data.NL | lq_tmp$x##677 == nL_1##a3Ir}</span><span class='hs-varid'>nL_1</span></a> <a class=annot href="#"><span class=annottext>{lq_tmp$x##678 : Data.NL | lq_tmp$x##678 == ys##a3Ip}</span><span class='hs-varid'>ys</span></a> <span class='hs-varop'>&amp;&amp;&amp;</span> <a class=annot href="#"><span class=annottext>{lq_tmp$x##688 : () | lq_tmp$x##688 == GHC.Tuple.()
+                      &amp;&amp; lq_tmp$x##688 == Proof.trivial}</span><span class='hs-varid'>trivial</span></a>
+<span class=hs-linenum>30: </span><span class='hs-comment'>-- %tactic:end:prop2_check</span>
+<span class=hs-linenum>31: </span>
+<span class=hs-linenum>32: </span><span class='hs-comment'>-- prop2_check :: N -&gt; NL -&gt; NL -&gt; Proof</span>
+<span class=hs-linenum>33: </span><span class='hs-comment'>-- prop2_check n xs ys =</span>
+<span class=hs-linenum>34: </span><span class='hs-comment'>--   case xs of</span>
+<span class=hs-linenum>35: </span><span class='hs-comment'>--     Cons x xs -&gt;</span>
+<span class=hs-linenum>36: </span><span class='hs-comment'>--       -- addN (countNL n (Cons x xs)) (countNL n ys) == countNL n (concatNL (Cons x xs) ys)</span>
+<span class=hs-linenum>37: </span><span class='hs-comment'>--       -- addN (countNL n (Cons x xs)) (countNL n ys) == countNL n (Cons x (concatNL xs ys))</span>
+<span class=hs-linenum>38: </span><span class='hs-comment'>--       -- if n == x then</span>
+<span class=hs-linenum>39: </span><span class='hs-comment'>--       --   S (addN (countNL n xs) (countNL n ys)) == S (countNL n (concatNL xs ys))</span>
+<span class=hs-linenum>40: </span><span class='hs-comment'>--       --   addN (countNL n xs) (countNL n ys) == countNL n (concatNL xs ys) ***</span>
+<span class=hs-linenum>41: </span><span class='hs-comment'>--       -- else</span>
+<span class=hs-linenum>42: </span><span class='hs-comment'>--       --   addN (countNL n xs) (countNL n ys) ==  countNL n (concatNL xs ys) ***</span>
+<span class=hs-linenum>43: </span><span class='hs-comment'>--       prop2_check n xs ys</span>
+<span class=hs-linenum>44: </span><span class='hs-comment'>--     Nil -&gt;</span>
+<span class=hs-linenum>45: </span><span class='hs-comment'>--       -- addN (countNL n Nil) (countNL n ys) == countNL n (concatNL Nil ys)</span>
+<span class=hs-linenum>46: </span><span class='hs-comment'>--       -- addN Z (countNL n ys) == countNL n ys ***</span>
+<span class=hs-linenum>47: </span><span class='hs-comment'>--       -- countNL n ys == countNL n ys</span>
+<span class=hs-linenum>48: </span><span class='hs-comment'>--       trivial</span>
+</pre>
+</body>
+</html>
