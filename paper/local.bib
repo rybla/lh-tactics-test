@@ -1,0 +1,790 @@
+@INPROCEEDINGS{liu20typeclasses,
+  TITLE = {Verifying Replicated Data Types with Typeclass Refinements in Liquid Haskell},
+  AUTHOR = {Yiyun Liu and James Parker and Patrick Redmond and Lindsey Kuper and Michael Hicks and Niki Vazou},
+  BOOKTITLE = {Proceedings of the {ACM} Conference on Object-Oriented Programming Languages, Systems, and Applications (OOPSLA)},
+  MONTH = OCT,
+  YEAR = 2020
+}
+
+
+@article{Wadler15,
+author = {Wadler, Philip},
+title = {Propositions as Types},
+year = {2015},
+issue_date = {December 2015},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {58},
+number = {12},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/2699407},
+doi = {10.1145/2699407},
+abstract = {Connecting mathematical logic and computation, it ensures that some aspects of programming are absolute.},
+journal = {Commun. ACM},
+month = nov,
+pages = {75–84},
+numpages = {10}
+}
+
+@misc{FstarUnsound, 
+title="Functional Equality Discussions in F*", 
+author= "Github FStarLang", 
+year="2018", 
+note="\url{https://github.com/FStarLang/FStar/blob/cba5383bd0e84140a00422875de21a8a77bae116/ulib/FStar.FunctionalExtensionality.fsti\#L133-L134} and  
+     \url{https://github.com/FStarLang/FStar/issues/1542} and  
+     \url{https://github.com/FStarLang/FStar/wiki/SMT-Equality-and-Extensionality-in-F\%2A}"
+}
+
+@InProceedings{ART,
+author="Vazou, Niki
+and Rondon, Patrick M.
+and Jhala, Ranjit",
+editor="Felleisen, Matthias
+and Gardner, Philippa",
+title="Abstract Refinement Types",
+booktitle="Programming Languages and Systems",
+year="2013",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="209--228",
+abstract="We present abstract refinement types which enable quantification over the refinements of data- and function-types. Our key insight is that we can avail of quantification while preserving SMT-based decidability, simply by encoding refinement parameters as uninterpreted propositions within the refinement logic. We illustrate how this mechanism yields a variety of sophisticated means for reasoning about programs, including: parametric refinements for reasoning with type classes, index-dependent refinements for reasoning about key-value maps, recursive refinements for reasoning about recursive data types, and inductive refinements for reasoning about higher-order traversal routines. We have implemented our approach in a refinement type checker for Haskell and present experiments using our tool to verify correctness invariants of various programs.",
+isbn="978-3-642-37036-6"
+}
+
+@book{ATTAPL,
+author = {Pierce, Benjamin C.},
+title = {Advanced Topics in Types and Programming Languages},
+year = {2004},
+isbn = {0262162288},
+publisher = {The MIT Press}
+}
+
+@article{Barthe_2015,
+   title={Higher-Order Approximate Relational Refinement Types for Mechanism Design and Differential Privacy},
+   ISBN={9781450333009},
+   url={http://dx.doi.org/10.1145/2676726.2677000},
+   DOI={10.1145/2676726.2677000},
+   journal={Proceedings of the 42nd Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages - POPL  ’15},
+   publisher={ACM Press},
+   author={Barthe, Gilles and Gaboardi, Marco and Gallego Arias, Emilio Jesús and Hsu, Justin and Roth, Aaron and Strub, Pierre-Yves},
+   year={2015}
+}
+
+@article{toplas17,
+author = {Sekiyama, Taro and Igarashi, Atsushi and Greenberg, Michael},
+title = {Polymorphic Manifest Contracts, Revised and Resolved},
+year = {2017},
+issue_date = {March 2017},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {39},
+number = {1},
+issn = {0164-0925},
+url = {https://doi.org/10.1145/2994594},
+doi = {10.1145/2994594},
+journal = {ACM Trans. Program. Lang. Syst.},
+month = feb,
+articleno = {3},
+numpages = {36},
+keywords = {preconditions, corrections, syntactic proof, postconditions, abstract datatypes, logical relations, Contracts, dynamic checking, refinement types, runtime verification, parametric polymorphism}
+}
+
+
+@InProceedings{peytonjones2001playing,
+author = {Peyton Jones, Simon and Tolmach, Andrew and Hoare, Tony},
+title = {Playing by the rules: rewriting as a practical optimisation technique in GHC},
+organization = {ACM SIGPLAN},
+booktitle = {2001 Haskell Workshop},
+year = {2001},
+month = {September},
+url = {https://www.microsoft.com/en-us/research/publication/playing-by-the-rules-rewriting-as-a-practical-optimisation-technique-in-ghc/},
+edition = {2001 Haskell Workshop},
+}
+
+
+@InProceedings{Barbosa19,
+author="Barbosa, Haniel
+and Reynolds, Andrew
+and El Ouraoui, Daniel
+and Tinelli, Cesare
+and Barrett, Clark",
+editor="Fontaine, Pascal",
+title="Extending SMT Solvers to Higher-Order Logic",
+booktitle="Automated Deduction -- CADE 27",
+year="2019",
+publisher="Springer International Publishing",
+address="Cham",
+pages="35--54",
+abstract="SMT solvers have throughout the years been able to cope with increasingly expressive formulas, from ground logics to full first-order logic (FOL). In contrast, the extension of SMT solvers to higher-order logic (HOL) is mostly unexplored. We propose a pragmatic extension for SMT solvers to support HOL reasoning natively without compromising performance on FOL reasoning, thus leveraging the extensive research and implementation efforts dedicated to efficient SMT solving. We show how to generalize data structures and the ground decision procedure to support partial applications and extensionality, as well as how to reconcile quantifier instantiation techniques with higher-order variables. We also discuss a separate approach for redesigning an HOL SMT solver from the ground up via new data structures and algorithms. We apply our pragmatic extension to the CVC4 SMT solver and discuss a redesign of the veriT SMT solver. Our evaluation shows they are competitive with state-of-the-art HOL provers and often outperform the traditional encoding into FOL.",
+isbn="978-3-030-29436-6"
+}
+
+
+
+@TECHREPORT{BarST-RR-10,
+  author =	 {Clark Barrett and Aaron Stump and Cesare Tinelli},
+  title =	 {{The SMT-LIB Standard: Version 2.0}},
+  institution =	 {Department of Computer Science, The University of Iowa},
+  year =	 2010,
+  note =	 {Available at {\tt www.SMT-LIB.org}}
+}
+
+@article{Hybrid,
+author = {Knowles, Kenneth and Flanagan, Cormac},
+title = {Hybrid Type Checking},
+year = {2010},
+issue_date = {January 2010},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {32},
+number = {2},
+issn = {0164-0925},
+url = {https://doi.org/10.1145/1667048.1667051},
+doi = {10.1145/1667048.1667051},
+journal = {ACM Trans. Program. Lang. Syst.},
+month = feb,
+articleno = {Article 6},
+numpages = {34},
+keywords = {dynamic checking, static checking, Type systems, contracts}
+}
+
+
+@inproceedings{10.1145/2676726.2676974,
+author = {Sj\"{o}berg, Vilhelm and Weirich, Stephanie},
+title = {Programming up to Congruence},
+year = {2015},
+isbn = {9781450333009},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2676726.2676974},
+doi = {10.1145/2676726.2676974},
+booktitle = {Proceedings of the 42nd Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+pages = {369–382},
+numpages = {14},
+keywords = {dependent types, congruence closure},
+location = {Mumbai, India},
+series = {POPL ’15}
+}
+
+
+@inproceedings{xi1998eliminating,
+  title={Eliminating array bound checking through dependent types},
+  author={Xi, Hongwei and Pfenning, Frank},
+  booktitle={Proceedings of the ACM SIGPLAN 1998 conference on Programming language design and implementation},
+  pages={249--257},
+  year={1998}
+}
+
+@techreport{constable1987partial,
+  title={Partial objects in constructive type theory},
+  author={Constable, Robert L and Smith, Scott Fraser},
+  year={1987},
+  institution={Cornell University}
+}
+
+@article{rushby1998subtypes,
+  title={Subtypes for specifications: Predicate subtyping in PVS},
+  author={Rushby, John and Owre, Sam and Shankar, Natarajan},
+  journal={IEEE Transactions on Software Engineering},
+  volume={24},
+  number={9},
+  pages={709--720},
+  year={1998},
+  publisher={IEEE}
+}
+
+@article{DBLP:journals/corr/abs-1904-08562,
+  author    = {Jonathan Sterling and
+               Carlo Angiuli and
+               Daniel Gratzer},
+  title     = {Cubical Syntax for Reflection-Free Extensional Equality},
+  journal   = {CoRR},
+  volume    = {abs/1904.08562},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1904.08562},
+  archivePrefix = {arXiv},
+  eprint    = {1904.08562},
+  timestamp = {Fri, 26 Apr 2019 13:18:53 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1904-08562},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Miller1991ALP,
+  title={A Logic Programming Language with Lambda-Abstraction, Function Variables, and Simple Unification},
+  author={Dale Miller},
+  journal={J. Log. Comput.},
+  year={1991},
+  volume={1},
+  pages={497-536}
+}
+
+@article{VazouTCSNWJ18,
+  author    = {Niki Vazou and
+               Anish Tondwalkar and
+               Vikraman Choudhury and
+               Ryan G. Scott and
+               Ryan R. Newton and
+               Philip Wadler and
+               Ranjit Jhala},
+  title     = {Refinement reflection: complete verification with {SMT}},
+  journal   = {{PACMPL}},
+  volume    = {2},
+  number    = {{POPL}},
+  pages     = {53:1--53:31},
+  year      = {2018},
+  url       = {https://doi.org/10.1145/3158141},
+  doi       = {10.1145/3158141},
+  timestamp = {Tue, 06 Nov 2018 12:51:05 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/pacmpl/VazouTCSNWJ18},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@inproceedings{mumon,
+  author = {Nikhil Swamy and
+            Catalin Hritcu and
+            Chantal Keller and
+            Aseem Rastogi and
+            Antoine Delignat-Lavaud and
+            Simon Forest and
+            Karthikeyan Bhargavan and
+            C\'{e}dric Fournet and
+            Pierre-Yves Strub and
+            Markulf Kohlweiss and
+            Jean-Karim Zinzindohou\'e and
+            Santiago {Zanella-B\'eguelin}},
+  title = {Dependent Types and Multi-Monadic Effects in {F*}},
+  booktitle = {43rd ACM SIGPLAN-SIGACT
+    Symposium on Principles of Programming Languages (POPL)},
+  shortbooktitle = {POPL},
+  pages = {256-270},
+  publisher = {ACM},
+  isbn = {978-1-4503-3549-2},
+  month = jan,
+  year = {2016},
+  ee = {http://dx.doi.org/10.1145/2837614.2837655},
+  url = {https://www.fstar-lang.org/papers/mumon/},
+}
+@inproceedings{LT2008,
+ author = {Rondon, Patrick M. and Kawaguci, Ming and Jhala, Ranjit},
+ title = {Liquid Types},
+ booktitle = {Proceedings of the 29th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+ series = {PLDI '08},
+ year = {2008},
+ isbn = {978-1-59593-860-2},
+ location = {Tucson, AZ, USA},
+ pages = {159--169},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1375581.1375602},
+ doi = {10.1145/1375581.1375602},
+ acmid = {1375602},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dependent types, hindley-milner, predicate abstraction, type inference},
+} 
+
+
+@inproceedings{TPE2018,
+ author = {Vazou, Niki and Breitner, Joachim and Kunkel, Rose and Van Horn, David and Hutton, Graham},
+ title = {Theorem Proving for All: Equational Reasoning in Liquid Haskell (Functional Pearl)},
+ booktitle = {Proceedings of the 11th ACM SIGPLAN International Symposium on Haskell},
+ series = {Haskell 2018},
+ year = {2018},
+ isbn = {978-1-4503-5835-4},
+ location = {St. Louis, MO, USA},
+ pages = {132--144},
+ numpages = {13},
+ url = {http://doi.acm.org/10.1145/3242744.3242756},
+ doi = {10.1145/3242744.3242756},
+ acmid = {3242756},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Haskell, Liquid Haskell, equational reasoning, program optimization, theorem proving},
+}
+
+@inproceedings{10.1145/3009837.3009923,
+author = {Weirich, Stephanie},
+title = {The Influence of Dependent Types (Keynote)},
+year = {2017},
+isbn = {9781450346603},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3009837.3009923},
+doi = {10.1145/3009837.3009923},
+booktitle = {Proceedings of the 44th ACM SIGPLAN Symposium on Principles of Programming Languages},
+pages = {1},
+numpages = {1},
+keywords = {Functional Programming, Dependent Types, Haskell},
+location = {Paris, France},
+series = {POPL 2017}
+}
+
+@inproceedings{10.1145/1411204.1411218,
+author = {Guillemette, Louis-Julien and Monnier, Stefan},
+title = {A Type-Preserving Compiler in Haskell},
+year = {2008},
+isbn = {9781595939197},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1411204.1411218},
+doi = {10.1145/1411204.1411218},
+booktitle = {Proceedings of the 13th ACM SIGPLAN International Conference on Functional Programming},
+pages = {75–86},
+numpages = {12},
+keywords = {de Bruijn, typed assembly language, higher-order abstract syntax, compilation},
+location = {Victoria, BC, Canada},
+series = {ICFP ’08}
+}
+
+@article{DBLP:journals/jsc/Takahashi89,
+  author    = {Masako Takahashi},
+  title     = {Parallel Reductions in lambda-Calculus},
+  journal   = {J. Symb. Comput.},
+  volume    = {7},
+  number    = {2},
+  pages     = {113--123},
+  year      = {1989},
+  url       = {https://doi.org/10.1016/S0747-7171(89)80045-8},
+  doi       = {10.1016/S0747-7171(89)80045-8},
+  timestamp = {Wed, 17 May 2017 14:25:49 +0200},
+  biburl    = {https://dblp.org/rec/journals/jsc/Takahashi89.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@InProceedings{10.1007/978-3-540-71067-7_23,
+author="Sozeau, Matthieu
+and Oury, Nicolas",
+editor="Mohamed, Otmane Ait
+and Mu{\~{n}}oz, C{\'e}sar
+and Tahar, Sofi{\`e}ne",
+title="First-Class Type Classes",
+booktitle="Theorem Proving in Higher Order Logics",
+year="2008",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="278--293",
+abstract="Type Classes have met a large success in Haskell and Isabelle, as a solution for sharing notations by overloading and for specifying with abstract structures by quantification on contexts. However, both systems are limited by second-class implementations of these constructs, and these limitations are only overcomed by ad-hoc extensions to the respective systems. We propose an embedding of type classes into a dependent type theory that is first-class and supports some of the most popular extensions right away. The implementation is correspondingly cheap, general and integrates well inside the system, as we have experimented in Coq. We show how it can be used to help structured programming and proving by way of examples.",
+isbn="978-3-540-71067-7"
+}
+
+@InProceedings{10.1007/BFb0028402,
+author="Wenzel, Markus",
+editor="Gunter, Elsa L.
+and Felty, Amy",
+title="Type classes and overloading in higher-order logic",
+booktitle="Theorem Proving in Higher Order Logics",
+year="1997",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="307--322",
+abstract="Type classes and overloading are shown to be independent concepts that can both be added to simple higher-order logics in the tradition of Church and Gordon, without demanding more logical expressiveness. In particular, model-theoretic issues are not affected. Our metalogical results may serve as a foundation of systems like Isabelle/Pure that offer the user Haskell-style order-sorted polymorphism as an extended syntactic feature. The latter can be used to describe simple abstract theories with a single carrier type and a fixed signature of operations.",
+isbn="978-3-540-69526-4"
+}
+
+@inproceedings{10.1145/158511.158698,
+author = {Nipkow, Tobias and Prehofer, Christian},
+title = {Type Checking Type Classes},
+year = {1993},
+isbn = {0897915607},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/158511.158698},
+doi = {10.1145/158511.158698},
+booktitle = {Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+pages = {409–418},
+numpages = {10},
+location = {Charleston, South Carolina, USA},
+series = {POPL ’93}
+}
+  
+
+@inproceedings{10.5555/645420.652540,
+author = {Nipkow, Tobias and Snelting, Gregor},
+title = {Type Classes and Overloading Resolution via Order-Sorted Unification},
+year = {1991},
+isbn = {3540543961},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+booktitle = {Proceedings of the 5th ACM Conference on Functional Programming Languages and Computer Architecture},
+pages = {1–14},
+numpages = {14}
+}
+
+  
+
+@inproceedings{10.1145/351240.351266,
+author = {Claessen, Koen and Hughes, John},
+title = {QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs},
+year = {2000},
+isbn = {1581132026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/351240.351266},
+doi = {10.1145/351240.351266},
+booktitle = {Proceedings of the Fifth ACM SIGPLAN International Conference on Functional Programming},
+pages = {268–279},
+numpages = {12},
+series = {ICFP ’00}
+}
+
+@inproceedings{10.1145/75277.75283,
+author = {Wadler, P. and Blott, S.},
+title = {How to Make Ad-Hoc Polymorphism Less Ad Hoc},
+year = {1989},
+isbn = {0897912942},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/75277.75283},
+doi = {10.1145/75277.75283},
+booktitle = {Proceedings of the 16th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+pages = {60–76},
+numpages = {17},
+location = {Austin, Texas, USA},
+series = {POPL ’89}
+}
+
+@phdthesis{sozeau2008environnement,
+  title={Un environnement pour la programmation avec types d{\'e}pendants},
+  author={Sozeau, Matthieu},
+  year={2008},
+  month=dec,
+  school={Universit{\'e} Paris 11},
+  address={Orsay, France},
+}
+
+@article{DBLP:journals/jfp/DagandTT18,
+  author    = {Pierre{-}{\'{E}}variste Dagand and
+               Nicolas Tabareau and
+               {\'{E}}ric Tanter},
+  title     = {Foundations of dependent interoperability},
+  journal   = {J. Funct. Program.},
+  volume    = {28},
+  pages     = {e9},
+  year      = {2018},
+  url       = {https://doi.org/10.1017/S0956796818000011},
+  doi       = {10.1017/S0956796818000011},
+  timestamp = {Wed, 28 Mar 2018 12:00:19 +0200},
+  biburl    = {https://dblp.org/rec/journals/jfp/DagandTT18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@ARTICLE{2019arXiv190905027T,
+       author = {{Tabareau}, Nicolas and {Tanter}, {\'E}ric and {Sozeau}, Matthieu},
+        title = "{The Marriage of Univalence and Parametricity}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Programming Languages},
+         year = 2019,
+        month = sep,
+          eid = {arXiv:1909.05027},
+        pages = {arXiv:1909.05027},
+archivePrefix = {arXiv},
+       eprint = {1909.05027},
+ primaryClass = {cs.PL},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv190905027T},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+
+@misc{Altenkirch06towardsobservational,
+    author = {Thorsten Altenkirch and Conor McBride},
+    title = {Towards observational type theory},
+    year = {2006},
+    note = {Unpublished manuscript}
+}
+
+@InProceedings{10.1007/3-540-61780-9_68,
+author="Hofmann, Martin",
+editor="Berardi, Stefano
+and Coppo, Mario",
+title="Conservativity of equality reflection over intensional type theory",
+booktitle="Types for Proofs and Programs",
+year="1996",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="153--164",
+abstract="We investigate the relationship between intensional and extensional formulations of Martin-L{\"o}f type theory. We exhibit two principles which are not provable in the intensional formulation: uniqueness of identity and functional extensionality. We show that extensional type theory is conservative over the intensional one extended by these two principles, meaning that the same types are inhabited, whenever they make sense. The proof is non-constructive because it uses set-theoretic quotienting and choice of representatives.",
+isbn="978-3-540-70722-6"
+}
+
+@incollection{MARTINLOF197573,
+title = "An Intuitionistic Theory of Types: Predicative Part",
+editor = "H.E. Rose and J.C. Shepherdson",
+series = "Studies in Logic and the Foundations of Mathematics",
+publisher = "Elsevier",
+volume = "80",
+pages = "73 - 118",
+year = "1975",
+booktitle = "Logic Colloquium '73",
+issn = "0049-237X",
+doi = "https://doi.org/10.1016/S0049-237X(08)71945-1",
+url = "http://www.sciencedirect.com/science/article/pii/S0049237X08719451",
+author = {Per Martin-L{\"o}f},
+abstract = "Publisher Summary
+The theory of types is intended to be a full-scale system for formalizing intuitionistic mathematics as developed. The language of the theory is richer than the languages of traditional intuitionistic systems in permitting proofs to appear as parts of propositions so that the propositions of the theory can express properties of proofs. There are axioms for universes that link the generation of objects and types and play somewhat the same role for the present theory as does the replacement axiom for Zermelo–Fraenkel set theory. The present theory is based on a strongly impredicative axiom that there is a type of all types in symbols. This axiom has to be abandoned, however, after it has been shown to lead to a contraction. This chapter discusses Normalization theorem, which can be strengthened in two ways: it can be made to cover open terms and it can be proved that every reduction sequence starting from an arbitrary term leads to a unique normal term after a finite number of steps. The definition of the notion of convertibility and the proof that an arbitrary term is convertible can no longer be separated because the type symbols and the terms are generated simultaneously."
+}
+
+@book{martin1984intuitionistic,
+  title={Intuitionistic Type Theory},
+  author={Martin-L{\"o}f, Per},
+  series={Lecture notes},
+  url={https://books.google.com/books?id=\_D0ZAQAAIAAJ},
+  year={1984},
+  publisher={Bibliopolis},
+  note={As recorded by Giovanni Sambin}
+}
+
+@inproceedings{DBLP:conf/cade/MouraKADR15,
+  author    = {Leonardo Mendon{\c{c}}a de Moura and
+               Soonho Kong and
+               Jeremy Avigad and
+               Floris van Doorn and
+               Jakob von Raumer},
+  editor    = {Amy P. Felty and
+               Aart Middeldorp},
+  title     = {The Lean Theorem Prover (System Description)},
+  booktitle = {Automated Deduction - {CADE-25} - 25th International Conference on
+               Automated Deduction, Berlin, Germany, August 1-7, 2015, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {9195},
+  pages     = {378--388},
+  publisher = {Springer},
+  year      = {2015},
+  url       = {https://doi.org/10.1007/978-3-319-21401-6\_26},
+  doi       = {10.1007/978-3-319-21401-6\_26},
+  timestamp = {Tue, 14 May 2019 10:00:39 +0200},
+  biburl    = {https://dblp.org/rec/conf/cade/MouraKADR15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@book{DBLP:books/daglib/0068834,
+  author    = {Robert L. Constable and
+               Stuart F. Allen and
+               Mark Bromley and
+               Rance Cleaveland and
+               J. F. Cremer and
+               R. W. Harper and
+               Douglas J. Howe and
+               Todd B. Knoblock and
+               N. P. Mendler and
+               Prakash Panangaden and
+               James T. Sasaki and
+               Scott F. Smith},
+  title     = {Implementing mathematics with the Nuprl proof development system},
+  publisher = {Prentice Hall},
+  year      = {1986},
+  url       = {http://dl.acm.org/citation.cfm?id=10510},
+  isbn      = {978-0-13-451832-9},
+  timestamp = {Fri, 29 Dec 2017 12:05:12 +0100},
+  biburl    = {https://dblp.org/rec/books/daglib/0068834.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@software{the_coq_development_team_2020_3744225,
+  author       = {The Coq Development Team},
+  title        = {The Coq Proof Assistant, version 8.11.0},
+  month        = jan,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {8.11.0},
+  doi          = {10.5281/zenodo.3744225},
+  url          = {https://doi.org/10.5281/zenodo.3744225}
+}
+
+@INPROCEEDINGS{932499,
+  author={F. {Pfenning}},
+  booktitle={Proceedings 16th Annual IEEE Symposium on Logic in Computer Science}, 
+  title={Intensionality, extensionality, and proof irrelevance in modal type theory}, 
+  year={2001},
+  volume={},
+  number={},
+  pages={221-230},
+}
+
+@article{10.1145/138027.138060,
+author = {Harper, Robert and Honsell, Furio and Plotkin, Gordon},
+title = {A Framework for Defining Logics},
+year = {1993},
+issue_date = {Jan. 1993},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {40},
+number = {1},
+issn = {0004-5411},
+url = {https://doi.org/10.1145/138027.138060},
+doi = {10.1145/138027.138060},
+journal = {J. ACM},
+month = jan,
+pages = {143–184},
+numpages = {42},
+keywords = {formal systems, interactive theorem proving, proof checking, typed lambda calculus}
+}
+
+@phdthesis{vonGlehn,
+  author={Tamara von Glehn},
+  title={Polynomials and Models of Type Theory},
+  year={2014},
+  month=sep,
+  school={Magdalene College, University of Cambridge}
+}
+
+@inproceedings{DBLP:conf/sigada/Leino12,
+  author    = {K. Rustan M. Leino},
+  editor    = {Ben Brosgol and
+               Jeff Boleng and
+               S. Tucker Taft},
+  title     = {Developing verified programs with Dafny},
+  booktitle = {Proceedings of the 2012 {ACM} Conference on High Integrity Language
+               Technology, {HILT} '12, December 2-6, 2012, Boston, Massachusetts,
+               {USA}},
+  pages     = {9--10},
+  publisher = {{ACM}},
+  year      = {2012},
+  url       = {https://doi.org/10.1145/2402676.2402682},
+  doi       = {10.1145/2402676.2402682},
+  timestamp = {Tue, 06 Nov 2018 16:57:53 +0100},
+  biburl    = {https://dblp.org/rec/conf/sigada/Leino12.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/ifipTCS/OuTMW04,
+  author    = {Xinming Ou and
+               Gang Tan and
+               Yitzhak Mandelbaum and
+               David Walker},
+  editor    = {Jean{-}Jacques L{\'{e}}vy and
+               Ernst W. Mayr and
+               John C. Mitchell},
+  title     = {Dynamic Typing with Dependent Types},
+  booktitle = {Exploring New Frontiers of Theoretical Informatics, {IFIP} 18th World
+               Computer Congress, {TC1} 3rd International Conference on Theoretical
+               Computer Science (TCS2004), 22-27 August 2004, Toulouse, France},
+  series    = {{IFIP}},
+  volume    = {155},
+  pages     = {437--450},
+  publisher = {Kluwer/Springer},
+  year      = {2004},
+  url       = {https://doi.org/10.1007/1-4020-8141-3\_34},
+  doi       = {10.1007/1-4020-8141-3\_34},
+  timestamp = {Fri, 27 Sep 2019 10:35:17 +0200},
+  biburl    = {https://dblp.org/rec/conf/ifipTCS/OuTMW04.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DBLP:journals/jfp/BiermanGHL12,
+  author    = {Gavin M. Bierman and
+               Andrew D. Gordon and
+               Catalin Hritcu and
+               David E. Langworthy},
+  title     = {Semantic subtyping with an {SMT} solver},
+  journal   = {J. Funct. Program.},
+  volume    = {22},
+  number    = {1},
+  pages     = {31--105},
+  year      = {2012},
+  url       = {https://doi.org/10.1017/S0956796812000032},
+  doi       = {10.1017/S0956796812000032},
+  timestamp = {Sat, 27 May 2017 14:24:34 +0200},
+  biburl    = {https://dblp.org/rec/journals/jfp/BiermanGHL12.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@INPROCEEDINGS{Knowles06sage,
+    author = {Kenneth Knowles and Aaron Tomb and Jessica Gronski and
+                  Stephen N. Freund and Cormac Flanagan},
+    title = {Sage: Hybrid checking for flexible specifications},
+    booktitle = {Scheme and {F}unctional {P}rogramming {W}orkshop},
+    year = {2006},
+}
+
+@ARTICLE{Wright94syntactic,
+    author = {Andrew K. Wright and Matthias Felleisen},
+    title = {A Syntactic Approach to Type Soundness},
+    journal = {Information and {C}omputation},
+    year = {1994},
+    volume = 115,
+    issue = {1},
+    pages = {38--94},
+}
+
+@inproceedings{10.5555/1813347.1813352,
+author = {Norell, Ulf},
+title = {Dependently Typed Programming in Agda},
+year = {2008},
+isbn = {3642046517},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+booktitle = {Proceedings of the 6th International Conference on Advanced Functional Programming},
+pages = {230–266},
+numpages = {37},
+location = {Heijen, The Netherlands},
+series = {AFP’08}
+}
+
+@inproceedings{boulier:hal-01445835,
+  TITLE = {{The next 700 syntactical models of type theory}},
+  AUTHOR = {Boulier, Simon and P{\'e}drot, Pierre-Marie and Tabareau, Nicolas},
+  URL = {https://hal.inria.fr/hal-01445835},
+  BOOKTITLE = {{Certified Programs and Proofs (CPP 2017)}},
+  ADDRESS = {Paris, France},
+  PAGES = {182 - 194},
+  YEAR = {2017},
+  MONTH = Jan,
+  DOI = {10.1145/3018610.3018620},
+  KEYWORDS = { Program translation ; Dependent type theory},
+  PDF = {https://hal.inria.fr/hal-01445835/file/main.pdf},
+  HAL_ID = {hal-01445835},
+  HAL_VERSION = {v1},
+}
+
+@inproceedings{Zalewski20WGT,
+  author = {Jakub Zalewski and James McKinna and J. Garrett Morris and Philip Wadler},
+  title = {Blame tracking at higher fidelity},
+  booktitle = {{Workshop on Gradual Typing (WGT)}},
+  year = 2020
+}
+
+@inproceedings{10.1145/604131.604150,
+author = {Xi, Hongwei and Chen, Chiyan and Chen, Gang},
+title = {Guarded Recursive Datatype Constructors},
+year = {2003},
+isbn = {1581136285},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/604131.604150},
+doi = {10.1145/604131.604150},
+abstract = {We introduce a notion of guarded recursive (g.r.) datatype constructors, generalizing the notion of recursive datatypes in functional programming languages such as ML and Haskell. We address both theoretical and practical issues resulted from this generalization. On one hand, we design a type system to formalize the notion of g.r. datatype constructors and then prove the soundness of the type system. On the other hand, we present some significant applications (e.g., implementing objects, implementing staged computation, etc.) of g.r. datatype constructors, arguing that g.r. datatype constructors can have far-reaching consequences in programming. The main contribution of the paper lies in the recognition and then the formalization of a programming notion that is of both theoretical interest and practical use.},
+booktitle = {Proceedings of the 30th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+pages = {224–235},
+numpages = {12},
+keywords = {guarded recursive datatype constructors},
+location = {New Orleans, Louisiana, USA},
+series = {POPL '03}
+}
+
+@techreport{cheneyhinze03gadt,
+author = {James Cheney and Ralf Hinze},
+title = {First-Class Phantom Types},
+year = {2003},
+month = jul,
+day = 10,
+institution = {Cornell University},
+}
+
+@article{greenberg_pierce_weirich_2012,
+  title={Contracts Made Manifest},
+  volume={22},
+  DOI={10.1017/S0956796812000135},
+  number={3},
+  journal={Journal of Functional Programming},
+  publisher={Cambridge University Press},
+  author={Greenberg, Michael and Pierce, Benjamin C. and Weirich, Stephanie},
+  year={2012},
+  pages={225–274},
+}
+
+@inproceedings{mu2020declarative,
+  title={Declarative Pearl: Deriving Monadic Quicksort},
+  author={Mu, Shin-Cheng and Chiang, Tsung-Ju},
+  booktitle={International Symposium on Functional and Logic Programming},
+  pages={124--138},
+  year={2020},
+  organization={Springer}
+}
