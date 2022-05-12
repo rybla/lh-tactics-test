@@ -25,17 +25,17 @@ Put mouse over identifiers to see inferred types
 <span class=hs-linenum>13: </span><span class='hs-keyword'>import</span> <span class='hs-conid'>Tactic.Core.Quote</span>
 <span class=hs-linenum>14: </span>
 <span class=hs-linenum>15: </span><span class='hs-keyword'>{-@</span> <span class='hs-varid'>reflect</span> <span class='hs-varid'>prop1</span> <span class='hs-keyword'>@-}</span>
-<span class=hs-linenum>16: </span><span class='hs-definition'>prop1</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Bool</span>
-<span class=hs-linenum>17: </span><span class='hs-definition'>prop1</span> <span class='hs-varid'>n</span> <span class='hs-varid'>xs</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>concatNL</span> <span class='hs-layout'>(</span><span class='hs-varid'>takeNL</span> <span class='hs-varid'>n</span> <span class='hs-varid'>xs</span><span class='hs-layout'>)</span> <span class='hs-layout'>(</span><span class='hs-varid'>dropNL</span> <span class='hs-varid'>n</span> <span class='hs-varid'>xs</span><span class='hs-layout'>)</span> <span class='hs-varop'>==</span> <span class='hs-varid'>xs</span>
+<span class=hs-linenum>16: </span><span class='hs-definition'>prop1</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>ListN</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Bool</span>
+<span class=hs-linenum>17: </span><span class='hs-definition'>prop1</span> <span class='hs-varid'>n</span> <span class='hs-varid'>xs</span> <span class='hs-keyglyph'>=</span> <span class='hs-varid'>concatListN</span> <span class='hs-layout'>(</span><span class='hs-varid'>takeListN</span> <span class='hs-varid'>n</span> <span class='hs-varid'>xs</span><span class='hs-layout'>)</span> <span class='hs-layout'>(</span><span class='hs-varid'>dropListN</span> <span class='hs-varid'>n</span> <span class='hs-varid'>xs</span><span class='hs-layout'>)</span> <span class='hs-varop'>==</span> <span class='hs-varid'>xs</span>
 <span class=hs-linenum>18: </span>
 <span class=hs-linenum>19: </span><span class='hs-definition'>return</span> <span class='hs-conid'>[]</span>
 <span class=hs-linenum>20: </span>
 <span class=hs-linenum>21: </span><span class='hs-keyword'>{-@</span> <span class='hs-varid'>automatic</span><span class='hs-comment'>-</span><span class='hs-varid'>instances</span> <span class='hs-varid'>prop1_proof</span> <span class='hs-keyword'>@-}</span>
 <span class=hs-linenum>22: </span><span class='hs-keyword'>{-@</span>
-<span class=hs-linenum>23: </span><span class='hs-definition'>prop1_proof</span> <span class='hs-keyglyph'>::</span> <span class='hs-varid'>n</span><span class='hs-conop'>:</span><span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>l</span><span class='hs-conop'>:</span><span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-keyword'>{prop1 n l}</span>
+<span class=hs-linenum>23: </span><span class='hs-definition'>prop1_proof</span> <span class='hs-keyglyph'>::</span> <span class='hs-varid'>n</span><span class='hs-conop'>:</span><span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-varid'>l</span><span class='hs-conop'>:</span><span class='hs-conid'>ListN</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-keyword'>{prop1 n l}</span>
 <span class=hs-linenum>24: </span><span class='hs-keyword'>@-}</span>
 <span class=hs-linenum>25: </span><span class='hs-keyglyph'>[</span><span class='hs-varid'>tactic</span><span class='hs-keyglyph'>|</span>
-<span class=hs-linenum>26: </span><span class='hs-definition'>prop1_proof</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>NL</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Proof</span>
+<span class=hs-linenum>26: </span><span class='hs-definition'>prop1_proof</span> <span class='hs-keyglyph'>::</span> <span class='hs-conid'>N</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>ListN</span> <span class='hs-keyglyph'>-&gt;</span> <span class='hs-conid'>Proof</span>
 <span class=hs-linenum>27: </span><span class='hs-definition'>prop1_proof</span> <span class='hs-varid'>n</span> <span class='hs-varid'>l</span> <span class='hs-keyglyph'>=</span>
 <span class=hs-linenum>28: </span>  <span class='hs-varid'>induct</span> <span class='hs-varid'>n</span><span class='hs-layout'>;</span>
 <span class=hs-linenum>29: </span>  <span class='hs-varid'>induct</span> <span class='hs-varid'>l</span><span class='hs-layout'>;</span>
@@ -44,20 +44,20 @@ Put mouse over identifiers to see inferred types
 <span class=hs-linenum>32: </span>
 <span class=hs-linenum>33: </span><span class='hs-comment'>-- {-@ automatic-instances prop1_proof @-}</span>
 <span class=hs-linenum>34: </span><span class='hs-comment'>-- {-@</span>
-<span class=hs-linenum>35: </span><span class='hs-comment'>-- prop1_proof :: x:N -&gt; l:NL -&gt; {prop1 x l}</span>
+<span class=hs-linenum>35: </span><span class='hs-comment'>-- prop1_proof :: x:N -&gt; l:ListN -&gt; {prop1 x l}</span>
 <span class=hs-linenum>36: </span><span class='hs-comment'>-- @-}</span>
-<span class=hs-linenum>37: </span><span class='hs-comment'>-- prop1_proof :: N -&gt; NL -&gt; Proof</span>
+<span class=hs-linenum>37: </span><span class='hs-comment'>-- prop1_proof :: N -&gt; ListN -&gt; Proof</span>
 <span class=hs-linenum>38: </span><span class='hs-comment'>-- -- prop1_proof x l = undefined</span>
 <span class=hs-linenum>39: </span><span class='hs-comment'>-- prop1_proof Z l = trivial</span>
 <span class=hs-linenum>40: </span><span class='hs-comment'>-- prop1_proof (S n) Nil = trivial</span>
 <span class=hs-linenum>41: </span><span class='hs-comment'>-- prop1_proof (S n) (Cons x l) = prop1_proof n l</span>
 <span class=hs-linenum>42: </span><span class='hs-comment'>--   -- -- HYP</span>
-<span class=hs-linenum>43: </span><span class='hs-comment'>--   -- concatNL (takeNL (S n) (Cons x l)) (dropNL (S n) (Cons x l))</span>
-<span class=hs-linenum>44: </span><span class='hs-comment'>--   -- concatNL (Cons x (takeNL n l)) (dropNL n l)</span>
-<span class=hs-linenum>45: </span><span class='hs-comment'>--   -- Cons x (concatNL (takeNL n l) (dropNL n l))</span>
+<span class=hs-linenum>43: </span><span class='hs-comment'>--   -- concatListN (takeListN (S n) (Cons x l)) (dropListN (S n) (Cons x l))</span>
+<span class=hs-linenum>44: </span><span class='hs-comment'>--   -- concatListN (Cons x (takeListN n l)) (dropListN n l)</span>
+<span class=hs-linenum>45: </span><span class='hs-comment'>--   -- Cons x (concatListN (takeListN n l) (dropListN n l))</span>
 <span class=hs-linenum>46: </span><span class='hs-comment'>--   -- --</span>
 <span class=hs-linenum>47: </span><span class='hs-comment'>--   -- -- IH</span>
-<span class=hs-linenum>48: </span><span class='hs-comment'>--   -- concatNL n l</span>
+<span class=hs-linenum>48: </span><span class='hs-comment'>--   -- concatListN n l</span>
 <span class=hs-linenum>49: </span>
 </pre>
 </body>

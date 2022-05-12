@@ -1,1 +1,0 @@
-#Dec#NameBeginprop3_proof#NameEnd#TypeBeginN -> NL -> NL -> Proof#TypeEnd#Lambda#NameBeginn#NameEnd#Lambda#NameBeginxs#NameEnd#Lambda#NameBeginys#NameEnd#Exp#ExpBeginleqN_addN (countNL n xs) (countNL n ys)#ExpEnd#Exp#ExpBeginaddN_countNL_concatNL n xs ys#ExpEnd#TrivialPreExp

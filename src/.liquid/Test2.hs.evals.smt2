@@ -37,34 +37,31 @@
 (declare-fun GHC.Classes.$62$$61$ () Int)
 (declare-fun lq_tmp$36$x$35$$35$752 () Int)
 (declare-fun Data.Foldable.length () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB () Test2.N)
 (declare-fun papp6 () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823835$35$$35$d7RF () Int)
 (declare-fun GHC.List.iterate () Int)
 (declare-fun GHC.Classes.$61$$61$ () Int)
 (declare-fun GHC.List.scanl1 () Int)
 (declare-fun GHC.Types.True () Bool)
+(declare-fun lq_anf$36$$35$$35$7205759403792828601$35$$35$d96x () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828603$35$$35$d96z () Int)
 (declare-fun Language.Haskell.TH.Syntax.ClassD () Int)
 (declare-fun GHC.List.splitAt () Int)
 (declare-fun fst () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Types.$58$$35$$35$2 () Int)
+(declare-fun n$35$$35$a952 () Test2.N)
 (declare-fun Language.Haskell.TH.Syntax.ForeignD () Int)
 (declare-fun snd () Int)
 (declare-fun GHC.List.repeat () Int)
 (declare-fun GHC.List.break () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823841$35$$35$d7RL () Int)
 (declare-fun GHC.Maybe.Just () Int)
 (declare-fun Language.Haskell.TH.Syntax.TySynInstD () Int)
 (declare-fun GHC.List.tail () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823843$35$$35$d7RN () Int)
 (declare-fun Language.Haskell.TH.Syntax.PatSynD () Int)
-(declare-fun n_0$35$$35$a7QX () Test2.N)
 (declare-fun GHC.Types.KindRepTyConApp () Int)
 (declare-fun Language.Haskell.TH.Syntax.InstanceD () Int)
 (declare-fun Language.Haskell.TH.Syntax.TySynD () Int)
 (declare-fun GHC.Num.Integer.IP () Int)
 (declare-fun lit$36$N () Str)
-(declare-fun lq_anf$36$$35$$35$7205759403792823837$35$$35$d7RH () Int)
 (declare-fun Test2.add () Int)
 (declare-fun GHC.Real.quotRem () Int)
 (declare-fun GHC.Maybe.Nothing () Int)
@@ -75,36 +72,35 @@
 (declare-fun VV$35$$35$F$35$$35$6 () Int)
 (declare-fun Data.Foldable.null () Int)
 (declare-fun papp1 () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823832$35$$35$d7RC () Int)
 (declare-fun lit$36$lh$45$tactics$45$test$45$0.1.0.0$45$6lICFxXVHY31MfrqHLaYxI () Str)
 (declare-fun GHC.Enum.C$58$Bounded () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE () Test2.N)
 (declare-fun GHC.Types.KindRepVar () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG () Test2.N)
 (declare-fun papp4 () Int)
 (declare-fun GHC.Types.$58$ () Int)
 (declare-fun Language.Haskell.TH.Syntax.FunD () Int)
 (declare-fun Language.Haskell.TH.Syntax.SigD () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828600$35$$35$d96w () Int)
 (declare-fun is$36$GHC.Types.$91$$93$ () Int)
 (declare-fun GHC.Base.. () Int)
 (declare-fun Proof.trivial () Int)
 (declare-fun GHC.Base.id () Int)
 (declare-fun cast_as_int () Int)
 (declare-fun GHC.Classes.$124$$124$ () Int)
+(declare-fun ds_d96g () Test2.N)
 (declare-fun addrLen () Int)
 (declare-fun Data.Either.Left () Int)
 (declare-fun GHC.Classes.$38$$38$ () Int)
 (declare-fun GHC.Classes.C$58$IP () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823842$35$$35$d7RM () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828597$35$$35$d96t () Int)
 (declare-fun is$36$GHC.Types.C$35$ () Int)
 (declare-fun GHC.Real.$58$$37$ () Int)
 (declare-fun lit$36$Test2 () Str)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$44$$41$$35$$35$2 () Int)
 (declare-fun Data.Tuple.snd () Int)
 (declare-fun GHC.Base.$43$$43$ () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828593$35$$35$d96p () Int)
 (declare-fun lq_tmp$36$x$35$$35$504 () Test2.N)
 (declare-fun totalityError () Int)
-(declare-fun n$35$$35$a7QW () Test2.N)
 (declare-fun GHC.List.cycle () Int)
 (declare-fun GHC.Stack.Types.EmptyCallStack () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$41$$35$$35$1 () Int)
@@ -114,7 +110,6 @@
 (declare-fun lq_tmp$36$x$35$$35$657 () Int)
 (declare-fun papp2 () Int)
 (declare-fun GHC.Real.divMod () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823833$35$$35$d7RD () Int)
 (declare-fun tail () Int)
 (declare-fun lq_tmp$36$x$35$$35$766 () Int)
 (declare-fun charX () Int)
@@ -133,20 +128,18 @@
 (declare-fun isJust () Int)
 (declare-fun GHC.Classes.$62$ () Int)
 (declare-fun GHC.List.span () Int)
-(declare-fun m$35$$35$a7Qh () Test2.N)
 (declare-fun GHC.List.scanr1 () Int)
 (declare-fun GHC.Types.C$35$ () Int)
 (declare-fun GHC.List.zipWith () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823839$35$$35$d7RJ () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828592$35$$35$d96o () Int)
 (declare-fun len () Int)
 (declare-fun is$36$GHC.Tuple.$40$$44$$41$ () Int)
 (declare-fun Language.Haskell.TH.Syntax.DataInstD () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u () Test2.N)
 (declare-fun Language.Haskell.TH.Syntax.ValD () Int)
-(declare-fun ds_d7Ru () Test2.N)
 (declare-fun Proof.$38$$38$$38$ () Int)
 (declare-fun GHC.List.last () Int)
 (declare-fun GHC.Real.rem () Int)
-(declare-fun m$35$$35$a7QV () Test2.N)
 (declare-fun Language.Haskell.TH.Syntax.DefaultSigD () Int)
 (declare-fun Language.Haskell.TH.Syntax.RoleAnnotD () Int)
 (declare-fun GHC.Real.$47$ () Int)
@@ -170,10 +163,8 @@
 (declare-fun head () Int)
 (declare-fun GHC.Real.$94$ () Int)
 (declare-fun GHC.Classes.$60$ () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823840$35$$35$d7RK () Int)
 (declare-fun cast_as () Int)
 (declare-fun GHC.Classes.max () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823844$35$$35$d7RO () Int)
 (declare-fun GHC.Stack.Types.FreezeCallStack () Int)
 (declare-fun GHC.List.dropWhile () Int)
 (declare-fun Language.Haskell.TH.Syntax.KiSigD () Int)
@@ -181,17 +172,21 @@
 (declare-fun GHC.Classes.$60$$61$ () Int)
 (declare-fun GHC.IO.Exception.IOError () Int)
 (declare-fun Language.Haskell.TH.Syntax.OpenTypeFamilyD () Int)
-(declare-fun lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI () Test2.N)
+(declare-fun lq_anf$36$$35$$35$7205759403792828599$35$$35$d96v () Int)
 (declare-fun GHC.Num.Integer.IN () Int)
 (declare-fun GHC.Base.$36$ () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n () Test2.N)
 (declare-fun GHC.Types.TrNameD () Int)
 (declare-fun GHC.Real.$36$W$58$$37$ () Int)
 (declare-fun GHC.Types.KindRepTypeLitS () Int)
 (declare-fun GHC.Real.fromRational () Int)
+(declare-fun n$35$$35$a95I () Test2.N)
 (declare-fun lit$36$$35$Dec$35$NameBeginadd_m_Sn$35$NameEnd$35$TypeBeginN$32$$45$$62$$32$N$32$$45$$62$$32$Proof$35$TypeEnd$35$Lambda$35$NameBeginm$35$NameEnd$35$Lambda$35$NameBeginn$35$NameEnd$35$Case$35$ExpBeginm$35$ExpEnd$35$BeginMatches$35$ItemMatch$35$PatBeginTest2.Z$35$PatEnd$35$$44$$35$AutoPreExp$35$BeginAutoPreExps$35$EndAutoPreExps$35$TrivialPreExp$35$ItemMatch$35$PatBeginTest2.S$32$n_0$35$PatEnd$35$$44$$35$AutoPreExp$35$BeginAutoPreExps$35$ItemAutoExp$35$ExpBeginadd_m_Sn$32$n_0$32$n$35$ExpEnd$35$ItemAutoExp$35$ExpBeginadd_m_Sn$32$n_0$32$n_0$35$ExpEnd$35$ItemAutoExp$35$ExpBeginadd_m_Sn$32$n_0$32$$40$S$32$n$41$$35$ExpEnd$35$ItemAutoExp$35$ExpBeginadd_m_Sn$32$n_0$32$$40$S$32$n_0$41$$35$ExpEnd$35$ItemAutoExp$35$ExpBeginadd_m_Sn$32$n_0$32$$40$S$32$Z$41$$35$ExpEnd$35$ItemAutoExp$35$ExpBeginadd_m_Sn$32$n_0$32$Z$35$ExpEnd$35$EndAutoPreExps$35$TrivialPreExp$35$EndMatches () Str)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$44$$41$$35$$35$1 () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s () Test2.N)
 (declare-fun Language.Haskell.TH.Syntax.PragmaD () Int)
 (declare-fun x_Tuple33 () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q () Test2.N)
 (declare-fun Language.Haskell.TH.Syntax.InfixD () Int)
 (declare-fun GHC.List.drop () Int)
 (declare-fun GHC.Types.GT () Int)
@@ -210,21 +205,26 @@
 (declare-fun GHC.List.head () Int)
 (declare-fun fromJust () Int)
 (declare-fun GHC.Real.fromIntegral () Int)
-(declare-fun n$35$$35$a7Qg () Test2.N)
 (declare-fun Language.Haskell.TH.Syntax.StandaloneDerivD () Int)
+(declare-fun n_0$35$$35$a95J () Test2.N)
 (declare-fun GHC.Classes.compare () Int)
+(declare-fun m$35$$35$a953 () Test2.N)
 (declare-fun GHC.Types.$36$WKindRepTYPE () Int)
 (declare-fun is$36$GHC.Tuple.$40$$44$$44$$41$ () Int)
 (declare-fun Language.Haskell.TH.Syntax.PatSynSigD () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828602$35$$35$d96y () Int)
 (declare-fun GHC.Types.EQ () Int)
 (declare-fun GHC.Real.recip () Int)
 (declare-fun GHC.Num.Integer.IS () Int)
 (declare-fun autolen () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$44$$41$$35$$35$3 () Int)
+(declare-fun m$35$$35$a95H () Test2.N)
 (declare-fun GHC.Types.KindRepTYPE () Int)
 (declare-fun lqdc$35$$35$$36$select$35$$35$GHC.Tuple.$40$$44$$41$$35$$35$2 () Int)
 (declare-fun x_Tuple31 () Int)
 (declare-fun GHC.Stack.Types.PushCallStack () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828595$35$$35$d96r () Int)
+(declare-fun lq_anf$36$$35$$35$7205759403792828604$35$$35$d96A () Int)
 (declare-fun GHC.Real.div () Int)
 (declare-fun GHC.Types.Module () Int)
 (declare-fun GHC.List.take () Int)
@@ -359,7 +359,7 @@
 (push 1)
 (push 1)
 (assert (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0))
-(assert (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB m$35$$35$a7QV))
+(assert (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n m$35$$35$a95H))
 (assert (= (is-Test2.S Test2.Z) false))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false))
 (assert (and (is-Test2.Z Test2.Z) (not (is-Test2.S Test2.Z)) (= Test2.Z Test2.Z)))
@@ -372,17 +372,22 @@
 (push 1)
 (assert (= VV$35$$35$F$35$$35$7 Proof.trivial))
 (assert (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0))
-(assert (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB m$35$$35$a7QV))
-(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n$35$$35$a7QW)) n$35$$35$a7QW))
+(assert (= (is-Test2.Z (Test2.S n$35$$35$a95I)) false))
+(assert (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n m$35$$35$a95H))
+(assert (and (is-Test2.Z lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n) (not (is-Test2.S lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n)) (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n Test2.Z) (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n m$35$$35$a95H)))
 (assert (= (is-Test2.S Test2.Z) false))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false))
 (assert (= (is-Test2.Z Test2.Z) true))
+(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n$35$$35$a95I)) n$35$$35$a95I))
+(assert (= (is-Test2.S (Test2.S n$35$$35$a95I)) true))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true))
-(assert (and (is-Test2.Z lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB) (not (is-Test2.S lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB)) (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB Test2.Z) (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB m$35$$35$a7QV)))
 (assert (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false))
-(assert (= (is-Test2.S (Test2.S n$35$$35$a7QW)) true))
-(assert (= (is-Test2.Z (Test2.S n$35$$35$a7QW)) false))
 (assert true)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
 (push 1)
 (assert (not false))
 (check-sat)
@@ -409,7 +414,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z m$35$$35$a7QV)))
+(assert (not (is-Test2.Z m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Unsat
 (pop 1)
@@ -419,7 +424,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z m$35$$35$a7QV))
+(assert (is-Test2.Z m$35$$35$a95H))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -429,7 +434,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z m$35$$35$a7QV)))
+(assert (not (is-Test2.Z m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Unsat
 (pop 1)
@@ -439,57 +444,52 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z m$35$$35$a7QV))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
+(assert (is-Test2.Z m$35$$35$a95H))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (pop 1)
 (push 1)
+(assert (= lq_anf$36$$35$$35$7205759403792828603$35$$35$d96z (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792828595$35$$35$d96r) lq_anf$36$$35$$35$7205759403792828602$35$$35$d96y)))
 (assert (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0))
-(assert (= lq_anf$36$$35$$35$7205759403792823844$35$$35$d7RO (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792823833$35$$35$d7RD) lq_anf$36$$35$$35$7205759403792823843$35$$35$d7RN)))
-(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) (= lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI (Test2.S Test2.Z)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) Test2.Z)))
-(assert (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB m$35$$35$a7QV))
+(assert (= (is-Test2.Z (Test2.S n$35$$35$a95I)) false))
+(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) (= lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q (Test2.S n$35$$35$a95I)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q) n$35$$35$a95I)))
 (assert (= (is-Test2.S (Test2.S Test2.Z)) true))
 (assert (= (is-Test2.Z (Test2.S Test2.Z)) false))
-(assert (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) true))
-(assert (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) true))
-(assert (and (= lq_anf$36$$35$$35$7205759403792823833$35$$35$d7RD (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a7QX) n_0$35$$35$a7QX)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S n_0$35$$35$a7QX)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) n_0$35$$35$a7QX)))))
 (assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S Test2.Z)) Test2.Z))
-(assert (= lq_anf$36$$35$$35$7205759403792823842$35$$35$d7RM (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792823837$35$$35$d7RH) lq_anf$36$$35$$35$7205759403792823841$35$$35$d7RL)))
-(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n$35$$35$a7QW)) n$35$$35$a7QW))
-(assert (= (is-Test2.Z (Test2.S n_0$35$$35$a7QX)) false))
-(assert (= lq_anf$36$$35$$35$7205759403792823841$35$$35$d7RL (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792823839$35$$35$d7RJ) lq_anf$36$$35$$35$7205759403792823840$35$$35$d7RK)))
+(assert (= lq_anf$36$$35$$35$7205759403792828604$35$$35$d96A (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792828593$35$$35$d96p) lq_anf$36$$35$$35$7205759403792828603$35$$35$d96z)))
+(assert (= lq_anf$36$$35$$35$7205759403792828602$35$$35$d96y (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792828597$35$$35$d96t) lq_anf$36$$35$$35$7205759403792828601$35$$35$d96x)))
+(assert (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n m$35$$35$a95H))
 (assert (= (is-Test2.S Test2.Z) false))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false))
-(assert (and (= lq_anf$36$$35$$35$7205759403792823832$35$$35$d7RC (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a7QX) n$35$$35$a7QW)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S n$35$$35$a7QW)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) n$35$$35$a7QW)))))
-(assert (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) false))
-(assert (and (= lq_anf$36$$35$$35$7205759403792823839$35$$35$d7RJ (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)))))
-(assert (and (= lq_anf$36$$35$$35$7205759403792823835$35$$35$d7RF (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)))))
-(assert (= lq_anf$36$$35$$35$7205759403792823843$35$$35$d7RN (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792823835$35$$35$d7RF) lq_anf$36$$35$$35$7205759403792823842$35$$35$d7RM)))
-(assert (and (= lq_anf$36$$35$$35$7205759403792823837$35$$35$d7RH (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)))))
+(assert (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) false))
+(assert (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) true))
+(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u))
+(assert (and (= lq_anf$36$$35$$35$7205759403792828597$35$$35$d96t (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)))))
+(assert (and (= lq_anf$36$$35$$35$7205759403792828599$35$$35$d96v (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)))))
+(assert (and (= lq_anf$36$$35$$35$7205759403792828595$35$$35$d96r (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)))))
 (assert (= (is-Test2.Z Test2.Z) true))
-(assert (= VV$35$$35$F$35$$35$6 (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792823832$35$$35$d7RC) lq_anf$36$$35$$35$7205759403792823844$35$$35$d7RO)))
-(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) (= lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG (Test2.S n_0$35$$35$a7QX)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG) n_0$35$$35$a7QX)))
-(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) (= lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE (Test2.S n$35$$35$a7QW)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE) n$35$$35$a7QW)))
-(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB)) (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB m$35$$35$a7QV) (= lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB (Test2.S n_0$35$$35$a7QX)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792823831$35$$35$d7RB) n_0$35$$35$a7QX)))
-(assert (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) true))
-(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n_0$35$$35$a7QX)) n_0$35$$35$a7QX))
-(assert (= (is-Test2.S (Test2.S n_0$35$$35$a7QX)) true))
-(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE))
-(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG))
-(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI))
-(assert (and (= lq_anf$36$$35$$35$7205759403792823840$35$$35$d7RK (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a7QX) Test2.Z)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S Test2.Z)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) Test2.Z)))))
+(assert (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) false))
+(assert (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) true))
+(assert (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) true))
+(assert (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) false))
+(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n$35$$35$a95I)) n$35$$35$a95I))
+(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n_0$35$$35$a95J)) n_0$35$$35$a95J))
+(assert (and (= lq_anf$36$$35$$35$7205759403792828593$35$$35$d96p (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a95J) n_0$35$$35$a95J)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S n_0$35$$35$a95J)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) n_0$35$$35$a95J)))))
+(assert (= (is-Test2.S (Test2.S n$35$$35$a95I)) true))
+(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) (= lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u (Test2.S Test2.Z)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) Test2.Z)))
+(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) (= lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s (Test2.S n_0$35$$35$a95J)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s) n_0$35$$35$a95J)))
+(assert (= VV$35$$35$F$35$$35$6 (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792828592$35$$35$d96o) lq_anf$36$$35$$35$7205759403792828604$35$$35$d96A)))
 (assert (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true))
-(assert (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) false))
-(assert (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) false))
+(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q))
+(assert (= lq_anf$36$$35$$35$7205759403792828601$35$$35$d96x (apply$35$$35$0 (apply$35$$35$0 Proof.$38$$38$$38$ lq_anf$36$$35$$35$7205759403792828599$35$$35$d96v) lq_anf$36$$35$$35$7205759403792828600$35$$35$d96w)))
+(assert (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s))
+(assert (and (= lq_anf$36$$35$$35$7205759403792828600$35$$35$d96w (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a95J) Test2.Z)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S Test2.Z)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) Test2.Z)))))
+(assert (and (is-Test2.S lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n) (not (is-Test2.Z lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n)) (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n m$35$$35$a95H) (= lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n (Test2.S n_0$35$$35$a95J)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792828591$35$$35$d96n) n_0$35$$35$a95J)))
 (assert (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false))
-(assert (= (is-Test2.S (Test2.S n$35$$35$a7QW)) true))
-(assert (= (is-Test2.Z (Test2.S n$35$$35$a7QW)) false))
+(assert (= (is-Test2.Z (Test2.S n_0$35$$35$a95J)) false))
+(assert (and (= lq_anf$36$$35$$35$7205759403792828592$35$$35$d96o (apply$35$$35$20 (apply$35$$35$20 Test2.add_m_Sn n_0$35$$35$a95J) n$35$$35$a95I)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S n$35$$35$a95I)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) n$35$$35$a95I)))))
+(assert (= (is-Test2.S (Test2.S n_0$35$$35$a95J)) true))
 (assert true)
 (push 1)
 (assert (not false))
@@ -497,7 +497,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z m$35$$35$a7QV)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -507,17 +507,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z m$35$$35$a7QV))
-(check-sat)
-; SMT Says: Unsat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -527,7 +517,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -537,7 +527,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -547,7 +537,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -557,7 +547,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -567,7 +557,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -577,7 +567,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z m$35$$35$a7QV)))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -587,17 +577,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z m$35$$35$a7QV))
-(check-sat)
-; SMT Says: Unsat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -607,7 +587,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -617,7 +597,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -627,27 +607,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (not false))
-(check-sat)
-; SMT Says: Sat
-(pop 1)
-(push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -677,7 +637,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -687,7 +647,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -697,7 +657,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -707,7 +667,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -717,7 +677,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -727,7 +687,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -737,7 +697,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -747,7 +707,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -757,7 +717,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -767,7 +727,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -777,7 +737,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -787,7 +747,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -797,7 +757,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -807,7 +767,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -817,7 +777,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -827,7 +787,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -837,12 +797,27 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Test2.Z n_0$35$$35$a95J))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
 (assert (not false))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -852,7 +827,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -862,7 +837,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -872,7 +847,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -882,29 +857,44 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
 (assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (not false))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
 (assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Test2.Z m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not false))
 (check-sat)
 ; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Test2.Z m$35$$35$a95H))
+(check-sat)
+; SMT Says: Unsat
 (pop 1)
 (push 1)
 (assert (not false))
@@ -912,7 +902,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -922,7 +912,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -932,7 +922,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -942,7 +932,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -952,7 +942,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -962,19 +952,29 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
 (assert (not false))
+(check-sat)
+; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (not (is-Test2.Z m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (not false))
 (check-sat)
 ; SMT Says: Sat
+(pop 1)
+(push 1)
+(assert (is-Test2.Z m$35$$35$a95H))
+(check-sat)
+; SMT Says: Unsat
 (pop 1)
 (push 1)
 (assert (not false))
@@ -982,7 +982,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -992,7 +992,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1002,7 +1002,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1012,7 +1012,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1022,7 +1022,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1032,7 +1032,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1042,7 +1042,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1052,7 +1052,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1062,7 +1062,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1072,7 +1072,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1082,7 +1082,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1092,7 +1092,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1102,7 +1102,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1112,7 +1112,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1122,7 +1122,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1132,7 +1132,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1142,7 +1142,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1152,18 +1152,18 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
-(assert (and (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW)))))) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW))))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (Test2.S Test2.Z))) (Test2.S Test2.Z)) (= (is-Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) n_0$35$$35$a7QX) (ite (is-Test2.Z n_0$35$$35$a7QX) n_0$35$$35$a7QX (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) n_0$35$$35$a7QX)))) (= (is-Test2.Z lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a7QV) n$35$$35$a7QW) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW))))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S Test2.Z)) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S Test2.Z) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S Test2.Z))))) (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (is-Test2.Z (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW)))) false) (= (is-Test2.S (Test2.S Test2.Z)) true) (= (is-Test2.S (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW)))))) true) (= (is-Test2.Z (Test2.S Test2.Z)) false) (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) true) (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) true) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S Test2.Z)) Test2.Z) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW)))) (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n$35$$35$a7QW)) n$35$$35$a7QW) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG))))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE))))) (= (is-Test2.Z (Test2.S n_0$35$$35$a7QX)) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S n_0$35$$35$a7QX)) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S n_0$35$$35$a7QX) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S n_0$35$$35$a7QX))))) (= (is-Test2.S (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW))))) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a7QV) (Test2.S n$35$$35$a7QW)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW)))) (= (is-Test2.Z (Test2.S (Test2.S Test2.Z))) false) (= (is-Test2.S (Test2.S (Test2.S Test2.Z))) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a7QV) (Test2.S n$35$$35$a7QW)) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW)))))) (= (is-Test2.S Test2.Z) false) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) Test2.Z) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW)) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW))))) (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S n$35$$35$a7QW)) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S n$35$$35$a7QW))))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW))) (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW)) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG) (ite (is-Test2.Z n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE) (ite (is-Test2.Z n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)))) (= (is-Test2.Z Test2.Z) true) (= (is-Test2.S (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW)))) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a7QV) n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) Test2.Z) (ite (is-Test2.Z n_0$35$$35$a7QX) Test2.Z (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) Test2.Z)))) (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW)) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW))))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S Test2.Z) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S Test2.Z))))) (= (is-Test2.Z (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW))) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW)))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) (ite (is-Test2.Z n_0$35$$35$a7QX) (Test2.S (Test2.S Test2.Z)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) (Test2.S (Test2.S Test2.Z)))))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n_0$35$$35$a7QX)) n_0$35$$35$a7QX) (= (is-Test2.S (Test2.S n_0$35$$35$a7QX)) true) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW))))) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW)))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI)) lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a7QX) n$35$$35$a7QW) (ite (is-Test2.Z n_0$35$$35$a7QX) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a7QX)) n$35$$35$a7QW)))) (= (is-Test2.Z (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW)))))) false) (= (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW))) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) (Test2.S n$35$$35$a7QW) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) (Test2.S n$35$$35$a7QW)))))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792823834$35$$35$d7RE)) false) (= (is-Test2.S (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW))) true) (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792823836$35$$35$d7RG)) false) (= (Test2.S lq_anf$36$$35$$35$7205759403792823838$35$$35$d7RI) (Test2.S (Test2.S Test2.Z))) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (is-Test2.S (Test2.S n$35$$35$a7QW)) true) (= (is-Test2.Z (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)) n$35$$35$a7QW (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))) n$35$$35$a7QW))))) false) (= (is-Test2.Z (Test2.S n$35$$35$a7QW)) false)))
+(assert (and (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I))) (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I)) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (Test2.S Test2.Z))) (Test2.S Test2.Z)) (= (is-Test2.S (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I))))) true) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I))))) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I)))) (= (apply$35$$35$0 (as len Int) (as GHC.Types.$91$$93$ Int)) 0) (= (is-Test2.Z (Test2.S n$35$$35$a95I)) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s) (ite (is-Test2.Z n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q) (ite (is-Test2.Z n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S n$35$$35$a95I)) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S n$35$$35$a95I))))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S (Test2.S Test2.Z)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S (Test2.S Test2.Z)))))) (= (is-Test2.S (Test2.S Test2.Z)) true) (= (is-Test2.S (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I)))))) true) (= (is-Test2.Z (Test2.S Test2.Z)) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) n$35$$35$a95I) (ite (is-Test2.Z n_0$35$$35$a95J) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) n$35$$35$a95I)))) (= (is-Test2.Z lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) false) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S Test2.Z)) Test2.Z) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I)))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I)))) (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S n_0$35$$35$a95J)) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S n_0$35$$35$a95J) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S n_0$35$$35$a95J))))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I)))))) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I))))) (= (is-Test2.Z (Test2.S (Test2.S Test2.Z))) false) (= (is-Test2.S (Test2.S (Test2.S Test2.Z))) true) (= (is-Test2.Z (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I)))) false) (= (is-Test2.S Test2.Z) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a95H) (Test2.S n$35$$35$a95I)) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I)))))) (= (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I))) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I)))))) (= (apply$35$$35$1 (as is$36$GHC.Types.$58$ Int) (as GHC.Types.$91$$93$ Int)) false) (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) false) (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) true) (= (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I)) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I))))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u)) lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) (= (is-Test2.Z (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I))) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I)) (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I))))) (= (is-Test2.Z (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I))))) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s))))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q))))) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) Test2.Z) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) n_0$35$$35$a95J) (ite (is-Test2.Z n_0$35$$35$a95J) n_0$35$$35$a95J (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) n_0$35$$35$a95J)))) (= (is-Test2.Z Test2.Z) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a95H) n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I))) (= (Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) (Test2.S (Test2.S Test2.Z))) (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) false) (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) true) (= (is-Test2.S (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) true) (= (is-Test2.Z (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) false) (= (is-Test2.S (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I))) true) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n$35$$35$a95I)) n$35$$35$a95I) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S n_0$35$$35$a95J)) n_0$35$$35$a95J) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a95H) (Test2.S n$35$$35$a95I)) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I)))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) (Test2.S Test2.Z)) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S Test2.Z) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S Test2.Z))))) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add m$35$$35$a95H) n$35$$35$a95I) (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) n$35$$35$a95I (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) n$35$$35$a95I))))) (= (is-Test2.Z (Test2.S (ite (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))) (Test2.S n$35$$35$a95I)))))) false) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) Test2.Z) (ite (is-Test2.Z n_0$35$$35$a95J) Test2.Z (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) Test2.Z)))) (= (is-Test2.S (Test2.S n$35$$35$a95I)) true) (= (is-Test2.S (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)) (Test2.S n$35$$35$a95I)))) true) (= (apply$35$$35$24 (apply$35$$35$20 Test2.add n_0$35$$35$a95J) lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) (ite (is-Test2.Z n_0$35$$35$a95J) (Test2.S Test2.Z) (Test2.S (apply$35$$35$24 (apply$35$$35$20 Test2.add (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 n_0$35$$35$a95J)) (Test2.S Test2.Z))))) (= (apply$35$$35$1 (as is$36$GHC.Types.$91$$93$ Int) (as GHC.Types.$91$$93$ Int)) true) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q)) lq_anf$36$$35$$35$7205759403792828594$35$$35$d96q) (= (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 (Test2.S lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s)) lq_anf$36$$35$$35$7205759403792828596$35$$35$d96s) (= (apply$35$$35$1 (as isJust Int) (as GHC.Maybe.Nothing Int)) false) (= (is-Test2.Z (Test2.S n_0$35$$35$a95J)) false) (= (is-Test2.S lq_anf$36$$35$$35$7205759403792828598$35$$35$d96u) true) (= (is-Test2.S (Test2.S n_0$35$$35$a95J)) true)))
 (push 1)
 (assert (not false))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1173,7 +1173,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1183,7 +1183,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1193,7 +1193,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1203,7 +1203,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1213,7 +1213,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1223,7 +1223,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1233,7 +1233,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1243,7 +1243,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1253,7 +1253,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1263,7 +1263,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H))))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1273,7 +1273,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a95H)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1283,7 +1283,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV))))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1293,7 +1293,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z (lqdc$35$$35$$36$select$35$$35$Test2.S$35$$35$1 m$35$$35$a7QV)))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1303,7 +1303,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1313,7 +1313,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1323,7 +1323,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1333,7 +1333,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1343,7 +1343,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1353,7 +1353,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1363,7 +1363,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1373,7 +1373,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1383,7 +1383,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1393,7 +1393,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1403,7 +1403,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (not (is-Test2.Z n_0$35$$35$a7QX)))
+(assert (not (is-Test2.Z n_0$35$$35$a95J)))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)
@@ -1413,7 +1413,7 @@
 ; SMT Says: Sat
 (pop 1)
 (push 1)
-(assert (is-Test2.Z n_0$35$$35$a7QX))
+(assert (is-Test2.Z n_0$35$$35$a95J))
 (check-sat)
 ; SMT Says: Sat
 (pop 1)

@@ -5,7 +5,7 @@
 {-@ LIQUID "--reflection" @-}
 {-@ LIQUID "--ple-local" @-}
 
-module Prop2 where
+module TIP.Prop2 where
 
 import Data
 import Proof
