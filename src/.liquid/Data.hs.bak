@@ -125,6 +125,13 @@ lastListN :: N -> ListN -> N
 lastListN x Nil = x
 lastListN x (Cons h t) = lastListN h t
 
+{-@ reflect lastListN' @-}
+lastListN' :: ListN -> N 
+lastListN' Nil = Z
+lastListN' (Cons x Nil) = x
+lastListN' (Cons x xs) = lastListN' xs
+
+
 {-@ reflect nullListN @-}
 nullListN :: ListN -> Bool
 nullListN Nil = True
@@ -139,6 +146,16 @@ initConcatListN xs (Cons y ys) = concatListN xs (initListN ys)
 reverseListN :: ListN -> ListN
 reverseListN Nil = Nil
 reverseListN (Cons h t) = concatListN (reverseListN t) (singletonListN h)
+
+{-@ reflect lastOfTwo @-}
+lastOfTwo :: ListN -> ListN -> N
+lastOfTwo xs Nil = lastListN' xs
+lastOfTwo xs ys = lastListN' ys
+
+{-@ reflect deleteListN @-}
+deleteListN :: N -> ListN -> ListN
+deleteListN x Nil = Nil
+deleteListN x (Cons y ys) = if x == y then deleteListN x ys else Cons y (deleteListN x ys)
 
 {-@
 data ListN2 = Nil2 | Cons2 N N ListN2

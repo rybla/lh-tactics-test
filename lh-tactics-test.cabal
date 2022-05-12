@@ -26,15 +26,13 @@ source-repository head
 library
   exposed-modules:
       Data
-      TIP.Prop57
-      TIP.Prop58
-      TIP.Prop59
+      TIP.Prop70
   other-modules:
       Paths_lh_tactics_test
   hs-source-dirs:
       src
   build-depends:
-      lh-tactics ==0.1.0.15
+      lh-tactics ==0.1.0.19
     , liquid-base ==4.15.0.0
     , liquidhaskell ==0.8.10.7
     , template-haskell ==2.17.0.0
