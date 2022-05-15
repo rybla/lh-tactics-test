@@ -1,8 +1,0 @@
-1:1-1:1::Test2.$trModule :: "GHC.Types.Module"
-23:1-23:4::Test2.add :: "x1:Test2.N -> x2:Test2.N -> {VV : Test2.N | VV == add x1 x2}"
-23:7-23:8::n :: "Test2.N"
-23:11-23:12::n :: "{v : Test2.N | v == n}"
-24:15-24:26::Test2.S :: "x1:Test2.N -> {v : Test2.N | v == S x1\n                             && lqdc##$select v == x1}"
-24:17-24:26::lq_anf$##7205759403792828590 :: "{v : Test2.N | v == add m n}"
-24:22-24:23::m :: "{v : Test2.N | v == m}"
-24:24-24:25::n :: "{v : Test2.N | v == n}"

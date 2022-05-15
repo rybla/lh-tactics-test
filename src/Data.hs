@@ -2,10 +2,24 @@
 
 module Data where
 
+import Proof
+
 -- (P => Q) <=> (P \/ -Q)
 {-@ reflect implies @-}
 implies :: Bool -> Bool -> Bool
 implies p q = if p then q else True
+
+{-@ 
+assumption :: b:Bool -> {b}
+@-}
+assumption :: Bool -> Proof 
+assumption b = undefined
+
+-- Function
+
+{-@ reflect constant @-}
+constant :: a -> b -> a 
+constant a _ = a
 
 -- N
 
@@ -39,7 +53,8 @@ leqN (S m) (S n) = leqN m n
 
 {-@ reflect leN @-}
 leN :: N -> N -> Bool
-leN Z n = False
+leN Z Z = False
+leN Z (S n) = True
 leN m Z = False
 leN (S m) (S n) = leN m n
 
@@ -48,6 +63,12 @@ maxN :: N -> N -> N
 maxN Z n = n
 maxN m Z = m
 maxN (S m) (S n) = S (maxN m n)
+
+{-@ reflect minN @-}
+minN :: N -> N -> N 
+minN Z n = Z
+minN m Z = Z 
+minN (S m) (S n) = S (minN m n)
 
 -- ListN
 
@@ -70,13 +91,26 @@ takeListN (S n) (Cons h l) = Cons h (takeListN n l)
 {-@ reflect dropListN @-}
 dropListN :: N -> ListN -> ListN
 dropListN _ Nil = Nil
-dropListN Z (Cons h l) = Cons h l
+dropListN Z l = l
 dropListN (S n) (Cons h l) = dropListN n l
+
+{-@ reflect dropWhileListN @-}
+dropWhileListN :: (N -> Bool) -> ListN -> ListN
+dropWhileListN f Nil = Nil
+dropWhileListN f (Cons x xs) =
+  if f x then dropWhileListN f xs else Cons x xs
+
+{-@ reflect takeWhileListN @-}
+takeWhileListN :: (N -> Bool) -> ListN -> ListN
+takeWhileListN f Nil = Nil
+takeWhileListN f (Cons x xs) =
+  if f x then Cons x (takeWhileListN f xs) else Nil
 
 {-@ reflect countListN @-}
 countListN :: N -> ListN -> N
 countListN n Nil = Z
-countListN n (Cons h l) = if n == h then S (countListN n l) else countListN n l
+countListN n (Cons h l) = 
+  if n == h then S (countListN n l) else countListN n l
 
 {-@ reflect lengthListN @-}
 lengthListN :: ListN -> N
@@ -102,6 +136,12 @@ sortListN :: ListN -> ListN
 sortListN Nil = Nil
 sortListN (Cons h t) = insertListN h (sortListN t)
 
+{-@ reflect sortedListN @-}
+sortedListN :: ListN -> Bool 
+sortedListN Nil = True
+sortedListN (Cons x Nil) = True 
+sortedListN (Cons x1 xs'@(Cons x2 xs'')) = leqN x1 x2 && sortedListN xs'
+
 {-@ reflect elemListN @-}
 elemListN :: N -> ListN -> Bool
 elemListN x Nil = False
@@ -119,6 +159,14 @@ initListN (Cons h t) = Cons h (initListN t)
 {-@ reflect singletonListN @-}
 singletonListN :: N -> ListN 
 singletonListN n = Cons n Nil
+
+{-@ reflect ins1 @-}
+ins1 :: N -> ListN -> ListN
+ins1 n Nil = singletonListN n
+ins1 n (Cons x xs) =
+  if n == x 
+    then Cons x xs
+    else Cons x (ins1 n xs)
 
 {-@ reflect lastListN @-}
 lastListN :: N -> ListN -> N 
@@ -170,9 +218,29 @@ zipListN (Cons x xs) (Cons y ys) = Cons2 x y (zipListN xs ys)
 
 {-@ reflect dropListN2 @-}
 dropListN2 :: N -> ListN2 -> ListN2
-dropListN2 Z _ = Nil2
-dropListN2 (S n) Nil2 = Nil2
-dropListN2 (S n) (Cons2 x1 x2 xs) = Cons2 x1 x2 (dropListN2 n xs)
+dropListN2 Z xs = xs
+dropListN2 _ Nil2 = Nil2
+dropListN2 (S n) (Cons2 x1 x2 xs) = dropListN2 n xs
+
+{-@ reflect takeListN2 @-}
+takeListN2 :: N -> ListN2 -> ListN2
+takeListN2 Z _ = Nil2
+takeListN2 _ Nil2 = Nil2
+takeListN2 (S n) (Cons2 x1 x2 xs) = Cons2 x1 x2 (takeListN2 n xs)
+
+{-@ reflect concatListN2 @-}
+concatListN2 :: ListN2 -> ListN2 -> ListN2 
+concatListN2 Nil2 ys = ys
+concatListN2 (Cons2 x1 x2 xs) ys = Cons2 x1 x2 (concatListN2 xs ys)
+
+{-@ reflect singletonListN2 @-}
+singletonListN2 :: N -> N -> ListN2 
+singletonListN2 x1 x2 = Cons2 x1 x2 Nil2
+
+{-@ reflect reverseListN2 @-}
+reverseListN2 :: ListN2 -> ListN2
+reverseListN2 Nil2 = Nil2
+reverseListN2 (Cons2 x1 x2 xs) = concatListN2 (reverseListN2 xs) (singletonListN2 x1 x2)
 
 -- TreeN
 
