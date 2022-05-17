@@ -4,6 +4,10 @@ module Data where
 
 import Proof
 
+{-@ check :: b:{Bool | b} -> {b} @-}
+check :: Bool -> Proof 
+check b = trivial
+
 -- (P => Q) <=> (P \/ -Q)
 {-@ reflect implies @-}
 implies :: Bool -> Bool -> Bool

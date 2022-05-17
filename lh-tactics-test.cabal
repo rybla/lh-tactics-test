@@ -26,7 +26,7 @@ source-repository head
 library
   exposed-modules:
       Data
-      TIP.Prop86
+      TIP.Prop72
   other-modules:
       Paths_lh_tactics_test
   hs-source-dirs:
