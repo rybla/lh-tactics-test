@@ -28,18 +28,33 @@ lemma2 :: n:N -> m:N -> {S (subN n m) == subN (S n) m}
 lemma2 :: N -> N -> Proof 
 lemma2 n m = undefined -- ! ADMITTED
 
+{-@ idr_addN :: n:N -> {addN n Z == n} @-}
+idr_addN :: N -> Proof 
+idr_addN n = undefined
+
+{-@ addN_m_Sn :: m:N -> n:N -> {addN m (S n) == S (addN m n)} @-}
+addN_m_Sn :: N -> N -> Proof 
+addN_m_Sn m n = undefined
+
+{-@ addN_n_n :: n:N -> {subN n n == Z} @-}
+addN_n_n :: N -> Proof 
+addN_n_n n = undefined
+
 return []
 
--- ! FAILS
 {-@ automatic-instances proof @-}
 {-@
 proof :: n:N -> m:N -> {subN (addN m n) n == m}
 @-}
-proof = undefined -- TODO
 -- [tactic|
 -- proof :: N -> N -> Proof
 -- proof n m =
 --   induct n;
---   induct m;
---   auto [lemma1, lemma2, addN] 3
+--   auto [idr_addN, addN_m_Sn, addN_n_n] 2
 -- |]
+-- %tactic:begin:proof
+proof :: N -> N -> Proof
+proof = \n -> \m -> case n of
+                        Data.Z -> idr_addN m
+                        Data.S n_0 -> proof n_0 m &&& addN_m_Sn m n_0
+-- %tactic:end:proof

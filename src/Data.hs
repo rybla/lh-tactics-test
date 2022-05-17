@@ -10,10 +10,10 @@ implies :: Bool -> Bool -> Bool
 implies p q = if p then q else True
 
 {-@ 
-assumption :: b:Bool -> {b}
+posit :: b:Bool -> {b}
 @-}
-assumption :: Bool -> Proof 
-assumption b = undefined
+posit :: Bool -> Proof 
+posit b = undefined
 
 -- Function
 
@@ -127,7 +127,7 @@ lengthListN_int (Cons h t) = 1 + lengthListN_int t
 insertListN :: N -> ListN -> ListN
 insertListN n Nil = Cons n Nil
 insertListN n (Cons h t) =
-  if leN n h
+  if leqN n h
     then Cons n (Cons h t)
     else Cons h (insertListN n t)
 
@@ -215,6 +215,11 @@ zipListN :: ListN -> ListN -> ListN2
 zipListN Nil _ = Nil2
 zipListN _ Nil = Nil2
 zipListN (Cons x xs) (Cons y ys) = Cons2 x y (zipListN xs ys)
+
+{-@ reflect zipConcatListN @-}
+zipConcatListN :: N -> ListN -> ListN -> ListN2
+zipConcatListN _ _ Nil = Nil2
+zipConcatListN x xs (Cons y ys) = Cons2 x y (zipListN xs ys)
 
 {-@ reflect dropListN2 @-}
 dropListN2 :: N -> ListN2 -> ListN2

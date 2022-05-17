@@ -21,18 +21,21 @@ return []
 {-@ reflect prop @-}
 prop m n = leqN m (addN n m)
 
--- ! FAILS
 {-@ automatic-instances proof @-}
 {-@
 proof :: m:N -> n:N -> {prop m n}
 @-}
-[tactic|
+-- [tactic|
+-- proof :: N -> N -> Proof
+-- proof m n =
+--   induct m;
+--   auto [comm_addN, S]
+-- |]
+-- %tactic:begin:proof
 proof :: N -> N -> Proof
-proof m n =
-  induct n;
-  auto [comm_addN]
-|]
+proof = \m -> \n -> case m of
+                        Data.Z -> trivial
+                        Data.S n_0 -> proof n_0 n &&& (comm_addN (S n_0) (S n) &&& comm_addN (S n) n_0)
+-- %tactic:end:proof
 
--- use {comm_addN n m};
--- induct n as [/n'];
--- use {comm_addN n' m} requires [n']
+-- leqN (S m) (addN n (S m))
