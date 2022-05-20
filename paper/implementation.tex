@@ -1,18 +1,22 @@
 \section{Implementation}
 
+There are two EDSLs:
+- EDSL1 (proof macro EDSL): the EDSL that the user uses to write proof macros
+- EDSL2: the subset of Haskell that proof macros can expand into i.e. the image of EDSL1 under preprocessing, augmented with metadata used in pruning
+
 The proof macro system involves two stages:
 - preprocessing:
-  - preprocess EDSL into augmented subset of Haskell
-  - embed augmented subset of Haskell into Haskell
+  - preprocess ESL1 into EDSL2
+  - embed EDSL2 into Haskell code to be spliced
 - pruning:
-  - pruning algorithm over augmented subset of Haskell 
-    - augmentation keeps track of pruning-relevant metadata e.g. which terms have been prune/kept from an auto site
+  - pruning algorithm over EDSL2 
+    - EDSL2 has pruning-relevant metadata e.g. which terms have been prune/kept from an auto site
     - in each step of the pruning algorithm, checks if current prune is valid by embedding the current pruned expression into Haskell then running Liquid Haskell
 
 \subsection{Preprocessing}
 
-The proof macro is written by the user in an ESDL that appears inside a Haskell quasiquotation.
-The EDSL has the following syntax:
+EDSL1 is used by the user to write proof macros inside of quasiquotes of the form \texttt{[tactic|...|]}.
+Grammar of EDSL1:
 \begin{align*}
   \textit{decl}~ ::= &
     \textit{name} ~ : ~ \textit{type} \\ &
@@ -30,9 +34,59 @@ The EDSL has the following syntax:
     \textbf{trivial}
 \end{align*}
 
-The above proof macro ESDL is preprocessed into an augmented subset of Haskell. 
-The particular subset is exactly the image of the EDSL preprocessor.
-The conceptual distinction between the ESDL and the augmented substet is that preprocessing the EDSL requires a context and producing many expressions per single EDSL instruction. 
-The augmented subset 
+The language EDSL1, defined above, is preprocessed into EDSL2 which is a subset of Haskell augmented with metadata. 
+The conceptual distinction between EDSL1 and EDSL2 is that preprocessing EDSL1 requires a context and producing many expressions per single EDSL1 instruction, whereas EDSL2 is strictly an embedding into Haskell and so each EDSL2 expression corresponds to exactly one Haskell expression.
+
+Grammar of EDSL2:
+\begin{align*}
+  \textit{decl}~ ::= &
+    \textit{name} ~ : ~ \textit{type} \\ &
+    \textit{name} ~ \overline{\textit{name}} ~ = ~ \textit{expr}
+  \\
+  \textit{expr}~ ::= &
+    \mathbf{\lambda} ~ \textit{name} ~ \textbf{->} ~ \textit{instr} \\ &
+    \textbf{case} ~ \textit{exp} ~ \textbf{of} ~ \overline{\textit{pat} ~ \textbf{->} ~ \textit{exp} ;} \\ & 
+    \textbf{if} ~ \textit{exp} ~ \textbf{then} ~ \textit{exp} ~ \textbf{else} ~ \textit{exp} \\ & 
+    \textbf{auto} ~ [\overline{\textit{exp} ;}] \textit{pruning-metadata} \\ & 
+    \textbf{trivial}
+\end{align*}
+
+An EDSL1 declaration is preprocessed into an EDSL2 declaration like so:
+
+\begin{verbatim}
+pp : EDSL1-decl -> EDSL2-decl
+pp  (name, args, type, instrs) =
+  set function name to name
+  set output type to type
+  for each arg:
+    get output type as a -> b 
+    store type of arg as a
+    set output type to b
+  pp instrs
+
+pp : [EDSL1-instr] -> EDSL2-expr
+pp [] = []
+pp (instr : instrs) = case instr of 
+  intro x -> do
+    (a <- b) <- get output type
+    type of x := a
+    output type := b
+    (\x -> (pp instrs))
+  destruct exp requires xs -> do
+    if all of xs are in scope then 
+      pss <- get patterns for deconstructing exp 
+      let ms = 
+            [ (ps -> do 
+                for each p in ps do 
+                  type of p := compute via reify environment datatype
+              ) | ps <- pss ]
+      (case exp of ms)
+
+    
+\end{verbatim}
 
 \subsection{Pruning}
+
+\subsubsection{Linear Pruning}
+
+For each auto site (i.e. each appearance of \textbf{auto} in the preprocessed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
