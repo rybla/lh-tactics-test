@@ -54,39 +54,79 @@ Grammar of EDSL2:
 An EDSL1 declaration is preprocessed into an EDSL2 declaration like so:
 
 \begin{verbatim}
-pp : EDSL1-decl -> EDSL2-decl
-pp  (name, args, type, instrs) =
+preprocDecl : EDSL1-decl -> EDSL2-decl
+preprocDecl (name, args, type, instrs) =
   set function name to name
   set output type to type
-  for each arg:
+  for each arg
     get output type as a -> b 
     store type of arg as a
     set output type to b
-  pp instrs
+  preproc instrs
 
-pp : [EDSL1-instr] -> EDSL2-expr
-pp [] = []
-pp (instr : instrs) = case instr of 
+// stateful
+preproc : [EDSL1-instr] -> EDSL2-expr
+preproc [] = []
+preproc (instr : instrs) = case instr of 
   intro x -> do
-    (a <- b) <- get output type
+    [|a <- b|] <- get output type
     type of x := a
     output type := b
-    (\x -> (pp instrs))
+    [|\x -> $(preproc instrs)|]
   destruct exp requires xs -> do
     if all of xs are in scope then 
-      pss <- get patterns for deconstructing exp 
-      let ms = 
-            [ (ps -> do 
-                for each p in ps do 
-                  type of p := compute via reify environment datatype
-              ) | ps <- pss ]
-      (case exp of ms)
+      varss <- get patterns for deconstructing exp
+      constrs <- constructors of the datatype of exp
+      matches <- 
+        for each (vars, constr) in (varss * constrs)
+          args <- argument types of constr
+          for each (var, arg) in in (pats * args)
+            type of var := arg
+          [|ps -> $(preproc instrs)|]
+      [|case exp of matches|]
+    else
+      preproc instrs
+  induct exp requires xs -> do
+    if all of xs are in scope then 
+      varss <- get patterns for deconstructing exp
+      constrs <- constructors of the datatype of exp
+      matches <-
+        for each (vars, constr) in (varss * constrs)
+          args <- argument types of constr
+          for each (var, arg) in in (pats * args)
+            if exp is an argument to the top-level proposition then
+              add var to context of recursive-safe expression to fill the
+              respective argument of a recursive call
+            type of var := arg
+          [|ps -> $(preproc instrs)|]
+      [|case exp of matches|]
+    else
+      preproc instrs
+  auto hints depth ->
+    generate all neutral forms in context, up to depth
+    when a recursion is generated, at least one of its arguments must be something from the context of recursive safe expressions for that argument (which is populated via induct)
+  assert exp requires xs ->
+    if all of xs are in scope then
+      [|if exp then $(preproc instrs) else True|]
+    else
+      preproc instrs
+  dismiss exp requires xs ->
+    if all of xs are in scope then
+      [|if exp then True else $(preproc instrs)|]
+    else
+      preproc instrs
+  use exp requires xs -> 
+    [|use exp &&& $(preproc instrs)]
+  condition exp requires xs ->
+    [|if exp then $(preproc instrs) else $(preproc instrs)]
+  trivial ->
+    [|trivial|]
 
-    
+
 \end{verbatim}
 
 \subsection{Pruning}
 
 \subsubsection{Linear Pruning}
 
-For each auto site (i.e. each appearance of \textbf{auto} in the preprocessed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
+For each auto site (i.e. each apreprocearance of \textbf{auto} in the preprocessed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
