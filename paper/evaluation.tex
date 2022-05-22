@@ -1,1 +1,18 @@
 \section{Evaluation}
+
+The benefits we aim to provide with these proof macros are:
+- conciseness: the macros cater towards a specific subset of LH that is used for extrinsic-style proofs, so the interface to this subset can be more specific and restricted than generic programs
+- reduced redundancy: often, multiple logical branchings can be handled by the same proof macro (due to the modularity the macros achieve in a similar style to tactics), and proof macro branchings (such as destruct, induct, condition) allow the handling proof macro to be written just once and then used in all of the branches
+- modularity: in the same style as tactics, the auto proof macro is contextual and so the same use of auto can be used to solve many different proof goals by leveraging contextual information such as the lemmas, variables, and sound recursions.
+
+To verify the applicability of these benefits, we selected an independently-curated collection of properties to be proved in an extrinsic style using Liquid Haskell: https://github.com/mustafahafidi/qc-to-lh. The original use of these properties was to demonstrate the usefulness of another approach to generating Liquid Haskell proofs that has some similarities to our approach.
+TODO: describe similarities and differences
+The properties are relatively basic properties about the natural numbers, lists of natural numbers or pairs of natural numbers, and trees of natural numbers.
+
+
+\subsection{Results}
+
+All of the properties were able to be proven using our proof macro tool.
+Each property was proven more consisely than if the proof had been written as a general Haskell program.
+TODO: how exaclty to measure this (conciseness)?
+This was achieved through reduced redundancy and leveraging the macro-ness of having as a target a specific subset of Haskell.=
