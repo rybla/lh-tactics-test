@@ -49,12 +49,12 @@
 }
 
 \author{Leonidas Lampropoulos}
+\email{leonidas@umd.edu}
 \affiliation{%
   \institution{University of Maryland}
   \city{College Park}
   \country{USA}
 }
-\email{leonidas@umd.edu}
 
 %%
 %% By default, the full list of authors will be used in the page
@@ -68,7 +68,23 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-  Proof Macros for Liquid Haskell
+Liquid Haskell is a popular verifier for properties of Haskell programs,
+leveraging the power of SMT solvers to ease the prover's burden.
+%
+However, this reliance on SMT does not come without a price: often,
+convincing the Liquid Haskell typechecker of the correctness of a
+program necessitates giving opaque hints to the underlying solver, a
+process that sometimes requires intricate knowledge of the inner workings
+of Liquid Haskell.
+
+In this work, we present {\em Liquid Proof Macros}, an extensible
+metaprogramming technique and framework for simplifying the
+development of Liquid Haskell proofs.
+%
+We describe how Template Haskell can be used to generate Liquid
+Haskell proof terms, use it to develop a tactic-inspired DSL for
+writing user-friendlier proofs, and evaluate this framework against
+prior work on Liquid Haskell proof automation.
 \end{abstract}
 
 %%
@@ -99,13 +115,35 @@
 
 \section{Introduction}
 
-Writing Liquid Haskell proofs is hard.
-Using Template Haskell we can make it easier!
-
-Our contributions are:
 \begin{itemize}
-\item A methodology for using Template Haskell to automatically construct Liquid Haskell hints.
-\item An instantiation of that framework for automating Liquid Haskell inductive proofs.
+\item Writing Liquid Haskell proofs is made easier because of SMT.
+\item But relying on SMT also has the surprising effect of making writing Liquid
+  Haskell proofs hard.
+\item Why? Because it often requires significant insights into how the system
+  works under the hood.
+\item Using Template Haskell we can make it easier!
+\item
+\item For concreteness, consider the following Haskell code which does X.
+\item \leo{Code here}
+\item In traditional Liquid Haskell, we could prove the Y property of X as follows:
+\item \leo{Proof (hopefully ugly) about the code}
+\item While this proof is simple, one needs to make a recursive call with appropriate
+  arguments - not to construct a proof term, but rather to bring the terms refinements
+  within the scope of the SMT solver!
+\item We propose a more familiar framework for writing such proofs, inspired by
+  tactic-based reasoning in other proof assistants, that relies on Template Haskell
+  to generate Liquid Haskell proof terms.
+\item Using this framework, the above proof can simply become:
+\item \leo{Tactic-based Proof here (hopefully pretty)}
+\item \leo{Short explanation of how it works}
+\end{itemize}  
+
+In the rest of the paper we make the following contributions:
+\begin{itemize}
+\item We describe a methodology for using Template Haskell to automatically construct Liquid Haskell hints.
+\item We develop an extensible framework using this methodology for automating inductive proofs in Liquid Haskell.
+\item We evaluate our framework against prior work that attempted to
+  bring tactic-inspired reasoning in Liquid Haskell.
 \end{itemize}
 
 \section{Extended Example}
@@ -118,9 +156,9 @@ Sample citation: \cite{liu20typeclasses}
 
 % TODO
 
-\include{implementation.tex}
+\input{implementation.tex}
 
-\include{evaluation.tex}
+\input{evaluation.tex}
 
 %%
 %% The acknowledgments section is defined using the "acks" environment
