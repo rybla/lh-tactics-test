@@ -1,11 +1,15 @@
 %% Notes
 
 \usepackage{xcolor}
+\usepackage{xspace}
+
 \definecolor{darkgreen}{RGB}{0,150,0}
 \newcommand\todo[1]{\ifdraft\textcolor{red}{\textbf{TODO:} #1}\fi}
 \newcommand\nv[1]{\ifdraft\textcolor{purple}{\textbf{NV:} #1}\fi}
 \newcommand\mmg[1]{\ifdraft\textcolor{teal}{\textbf{MMG:} #1}\fi}
 \newcommand\leo[1]{\ifdraft\textcolor{darkgreen}{\textbf{LEO:} #1}\fi}
+
+\newcommand{\cn}{\ifdraft\textsuperscript{\textcolor{blue}{[citation needed]}}\xspace\fi}
 
 %% Text 
 \newcommand\ie{{i.e.,}\xspace}
@@ -15,3 +19,4 @@
 %% System names
 \newcommand\Fstar{F${}^*$}
 
+\input{listings.tex}

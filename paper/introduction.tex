@@ -1,51 +1,69 @@
 \section{Introduction}
 
-Liquid Haskell allows the user to specify refinements in type signatures.
-A refinement is a boolean predicates over values of the type the refinement augments.
-Refinements can be used to specify properties of functions.
+\leo{Obviously this needs rewriting:}
+%
+Liquid Haskell\cn is a popular verifier for Haskell programs,
+leveraging the power of SMT solvers like Z3~\cn and CVC4\cn to prove
+the correctness of diverse applications ranging from
+optimizations~\cite{TPE2018} to string matching
+algorithms~\cite{TaleOfTwoProvers}. Specifications for these
+applications are written in the form of {\em refinement types}\cn,
+boolean predicates over program values.
 
-\subsection{Extrinsic Specification}
-
-Example: the function "min" can be defined as follows:
+For concreteness, consider the following \LC{min} function that
+computes the minimum of two natural numbers:
+\begin{code}
   min :: N -> N -> N 
   min Z _ = Z
   min _ Z = Z
   min (S m) (S n) = S (min m n)
+\end{code}
 
-Here is a property we expect to be true of "min":
-  forall a b c, min (min a b) c == min a (min b c)
-
-So, we can define a refine type to encode this property as follows:
-  a:N -> b:N -> c:N -> {min (min a b) c == min a (min b c)}
-
-Then, we can write a term with this type as a proof that the property holds:
-  {-@ assoc_min :: a:N -> b:N -> c:N -> {min (min a b) c == min a (min b c)} @-}
+\newcommand{\imin}{\textit{min}~}
+Naturally, we would expect such a function to be associative, that is:
+$$ \forall a ~ b ~ c. ~ \imin (\imin a~b) == \imin a~(\imin~b~c) $$
+%
+In Liquid Haskell, we can express associativity by defining a
+refinement type to encode this property, and prove it by defining
+a term of this type:
+\begin{code}
+  {-@ assoc_min :: a:N -> b:N -> c:N ->
+        {min (min a b) c == min a (min b c)} @-}
   assoc_min :: N -> N -> N -> Proof
-  assoc_min a b c = ... 
+  assoc_min a b c = ...
+\end{code}
 
-This stye of specifying properties about functions is an "extrinsic" style, since the specification/proof of the function is an independent type/term from the function itself.
-% TODO: is this relevant?
-% , and the types of the function are not refined in proof-relevant ways.
+To facilitate proofs in this ``extrinsic'' style, Liquid Haskell
+reduces typechecking of refinement types to verification conditions
+that SMT solvers reason about. However, while SMT solvers are
+pre-programmed with a wide assortment of facts about various domains
+such as integer arithmetic and boolean logic, they don't really know
+anything about user-defined data types like \LC{N} or user-defined
+functions like \LC{min}. To that end, Liquid Haskell lifts
+user-defined data types and functions into a representation that can
+be handled symbolically by SMT solvers\cn. Still, many true properties
+of user-defined data types and functions are still not automatically
+verifiable: users must guide, via refined Haskell code, the SMT solver
+to simpler cases that can be checked automatically.
 
-\subsection{The Limits of SMT Solvers}
+Unfortunately, given the lack of interactivity of Liquid Haskell, it
+is not always clear what the gap in understanding between the user and
+the SMT solver is, which often makes writing such refined code a
+tedious and frustrating process. Consider again associativity for the
+\LC{min} function. On paper, we can informally reason that
+associativity holds by induction on the natural numbers that are inputs
+to \LC{min}, due to its simple recursive structure. In Liquid Haskell,
+the refined code that finally convinces the SMT solver that the
+program typechecks is shown in Figure~\ref{fig:assoc-min-proof}.
 
-Liquid Haskell takes advantage of an SMT solve  (e.g. Z3) to check if a boolean expression, which can contain variables, holds for any assignement of those variables (i.e. the expression is satisfied by every model i.e. the negation of the expression is satified by no models).
-The SMT solver is pre-programmed with some facts, such as about integer arithmetic and boolean logic.
-For example, an SMT solver could check that the following boolean expression is always true (for all choices of a, b):
-  a < b => a < b + 1
-But, an off-the-shelf SMT solver like Z3 doesn't know anything about neither user-defined data types like "N" nor user-defined functions like "min".
-Liquid Haskell lifts user-defined data types and functions into a representation that can be handled symbolically by the SMT solver.
-But in doing so, there are many true properties of user-defined data types and functions that cannot be automatically discovered by the SMT solver.
-Recalling the example from above, the SMT solver by itself is unable to check that "assoc_min" is true.
-The Liquid Haskell user must guide, via refined Haskell code, the SMT solver to simpler cases that can be checked automatically.
 
-\subsection{Extended Example}
-
-For "assoc_min", induction on the three "N" inputs is sufficient due to the simple recursive structure of "min" on its two inputs.
-The SMT solver, however, does not know about induction (unlike Coq where a tactic "induction" could solve this goal right away).
-And, because of Liquid Haskell's limited capabilities for quantifying over predicates (TODO: include reference here), it is unfeasible to write the induction principle for natural numbers as a refined Haskell function.
-So, a proof of "assoc_min" is written as follows:
-  {-@ assoc_min :: a:N -> b:N -> c:N -> {min (min a b) c == min a (min b c)} @-}
+% The SMT solver, however, does not know about induction (unlike Coq where a tactic "induction" could solve this goal right away).
+% And, because of Liquid Haskell's limited capabilities for quantifying over predicates (TODO: include reference here), it is unfeasible to write the induction principle for natural numbers as a refined Haskell function.
+% So, a proof of "assoc\_min" is written as follows:
+\begin{figure}
+\begin{code}
+  {-@ assoc_min :: a:N -> b:N -> c:N ->
+        {min (min a b) c == min a (min b c)} @-}
   assoc_min :: N -> N -> N -> Proof
   assoc_min a b c =
     case a of 
@@ -69,10 +87,45 @@ So, a proof of "assoc_min" is written as follows:
           case c of
             Z -> trivial
             S c -> assoc_min a b c
-Note that each of branch of pattern-matching on a, b, c is necessary to write out explicitly because otherwise the SMT solver would not know how to "simplify" the "min x y" expression, since it knows only the equations "min Z _ = Z, min _ Z = Z, min (S x) (S y) = S (min x y)".
-Liquid Haskell uses Haskell as a base language for writing this sort of logic, and also allows an intrinsic style of specification which requires the proof to be interleaved with the Haskell code, as Haskell code.
-But for the extrinsic style of verification, the full verbosity required is cumbersome and suffers from the inability of the Liquid Haskell system to fully support proof-relevant manipulations (e.g. reasoning about higher-order functions/predicates).
+\end{code}
+\caption{Liquid Haskell proof term for associativity of \texttt{min}}
+\label{fig:assoc-min-proof}
+\end{figure}
+
+Each of the branches of pattern matching on \LC{a}, \LC{b}, and \LC{c}
+must be written out explicitly. Otherwise, the SMT solver would not
+know how to simplify the \LC{min} expressions in the refinement---the
+only facts it knows are the three equations that were used to define
+\LC{min}: \LC{min Z _ = Z}, \LC{min _ Z = Z}, and
+%
+\LC{min (S x) (S y) = S (min x y)}.
+%
+\leo{Not sure about the concluding bit after this, but something
+  should go here for sure as a punchline.}
+Liquid Haskell uses Haskell as a base language for
+writing this sort of logic, and also allows an intrinsic style of
+specification which requires the proof to be interleaved with the
+Haskell code, as Haskell code.  But for the extrinsic style of
+verification, the full verbosity required is cumbersome and suffers
+from the inability of the Liquid Haskell system to fully support
+proof-relevant manipulations (e.g. reasoning about higher-order
+functions/predicates).
 % TODO: explain in more detail the last clause, if relevant enough
+
+\paragraph*{Liquid Proof Macros}
+
+\begin{figure}
+\begin{code}
+  {-@ assoc_min :: a:N -> b:N -> c:N ->
+        {min (min a b) c == min a (min b c)} @-}
+  [tactic|
+    assoc_min :: N -> N -> N -> Proof
+    assoc_min a b c = induct a; induct b; induct c
+  |]
+\end{code}
+\caption{Associativity of \texttt{min} using Liquid Proof Macros}
+\label{fig:assoc-min-macro}
+\end{figure}
 
 The proof macro system introduced by this paper addresses these concerns and more by providing a macro interface to the user that allows them to concisely express terms of the subset of Haskell code that is useful for writing these SMT guides through Haskell control flow.
 
@@ -94,315 +147,312 @@ Macros II:
 - use e: includes the refinement of the expression e into the refinement context
 - trivia: includes the trivial proof into the refinement context
 
-The proof of "assoc_min" can be expressed shortly as follows:
-  {-@ assoc_min :: a:N -> b:N -> c:N -> {min (min a b) c == min a (min b c)} @-}
-  [tactic|
-  assoc_min :: N -> N -> N -> Proof
-  assoc_min a b c = induct a; induct b; induct c
-  |]
+The proof of "assoc\_min" can be expressed shortly as follows:
+
+
 The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
-Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc_min" in position 0.
+Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
 The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
 Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
 So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
-In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
+In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
 
 % TODO: some other examples to consider analyzing. I know the "assoc_min" example is particularly simple, but it does very much display the conciseness advantage, and doesn't have to use any lemmas
 
--- prop15_lemma
-
-{-@ reflect prop15_lemma @-}
-prop15_lemma :: N -> N -> ListN -> Bool
-prop15_lemma n x l = lengthListN (insertListN n l) == lengthListN (Cons x l)
-
-return []
-
-{-@ automatic-instances prop15_lemma_proof @-}
-{-@
-prop15_lemma_proof :: n:N -> x:N -> l:ListN -> {prop15_lemma n x l}
-@-}
--- %tactic:begin:prop15_lemma_proof
-prop15_lemma_proof :: N -> N -> ListN -> Proof
-prop15_lemma_proof = \n -> \x -> \l -> case l of
-                                           Data.Nil -> trivial
-                                           Data.Cons n_0 listN_1 -> prop15_lemma_proof n x listN_1
--- %tactic:end:prop15_lemma_proof
-
--- [tactic|
--- prop15_lemma_proof :: N -> N -> ListN -> Proof
--- prop15_lemma_proof n x l =
---   induct l
--- |]
-
--- prop15
-
-{-@ reflect prop15 @-}
-prop15 :: N -> ListN -> Bool
-prop15 n l = lengthListN (insertListN n l) == S (lengthListN l)
-
-return []
-
-{-@ automatic-instances prop15_proof @-}
-{-@
-prop15_proof :: n:N -> l:ListN -> {prop15 n l}
-@-}
--- %tactic:begin:prop15_proof
-prop15_proof :: N -> ListN -> Proof
-prop15_proof = \n -> \l -> case l of
-                               Data.Nil -> trivial
-                               Data.Cons n_0 listN_1 -> prop15_proof n listN_1
--- %tactic:end:prop15_proof
-
--- [tactic|
--- prop15_proof :: N -> ListN -> Proof
--- prop15_proof n l =
---   induct l;
---   auto [prop15_lemma_proof]
--- |]
-
--- prop20_lemma
-
-{-@ reflect prop20_lemma @-}
-prop20_lemma :: N -> ListN -> Bool
-prop20_lemma h t = lengthListN (insertListN h (sortListN t)) == S (lengthListN (sortListN t))
-
-return []
-
-{-@
-prop20_lemma_proof :: h:N -> l:ListN -> {prop20_lemma h l}
-@-}
-prop20_lemma_proof :: N -> ListN -> Proof 
-prop20_lemma_proof h l = undefined
-
--- prop20
-
-{-@ reflect prop20 @-}
-prop20 :: ListN -> Bool
-prop20 l = lengthListN (sortListN l) == lengthListN l
-
-return []
-
-{-@ automatic-instances prop20_proof @-}
-{-@
-prop20_proof :: l:ListN -> {prop20 l}
-@-}
--- %tactic:begin:prop20_proof
-prop20_proof :: ListN -> Proof
-prop20_proof = \l -> case l of
-                         Data.Nil -> trivial
-                         Data.Cons n_0
-                                   listN_1 -> prop20_proof listN_1 &&& prop20_lemma_proof n_0 listN_1
--- %tactic:end:prop20_proof
-
--- [tactic|
--- prop20_proof :: ListN -> Proof
--- prop20_proof l =
---   induct l;
---   auto [prop20_lemma_proof]
--- |]
-
-% prop 24
-
-{-@ reflect prop @-}
-prop a b = ((maxN a b) == a) == (leqN b a)
-
-{-@ automatic-instances proof @-}
-{-@
-proof :: a:N -> b:N -> {prop a b}
-@-}
--- [tactic|
--- proof :: N -> N -> Proof
--- proof a b = induct a; induct b
--- |]
--- %tactic:begin:proof
-proof :: N -> N -> Proof
-proof = \a -> \b -> case a of
-                        Data.Z -> case b of
-                                      Data.Z -> trivial
-                                      Data.S n_0 -> trivial
-                        Data.S n_0 -> case b of
-                                          Data.Z -> trivial
-                                          Data.S n_1 -> proof n_0 n_1
--- %tactic:end:proof
-
-% prop27
-
-module TIP.Prop27 where
-
-import Data
-import Proof
-import Tactic.Core.Quote
-
-{-@ reflect prop @-}
-prop x xs ys = 
-  if elemListN x ys then 
-    elemListN x (concatListN xs ys)
-  else 
-    True
-
-{-@ automatic-instances proof @-}
-{-@
-proof :: x:N -> xs:ListN -> ys:ListN -> {prop x xs ys}
-@-}
--- elemListN x1 (concatListN (Cons x2 xs) ys)
--- elemListN x1 (Cons x2 (concatListN xs ys))
--- if x1 == x2 then 
---   QED
--- else
---   elemListN x1 (concatListN xs ys)
--- [tactic|
--- proof :: N -> ListN -> ListN -> Proof
--- proof x xs ys =
---   induct xs;
---   condition {elemListN x ys}
--- |]
--- %tactic:begin:proof
-proof :: N -> ListN -> ListN -> Proof
-proof = \x -> \xs -> \ys -> case xs of
-                                Data.Nil -> if elemListN x ys then trivial else trivial
-                                Data.Cons n_0 listN_1 -> if elemListN x ys
-                                                          then proof x listN_1 ys
-                                                          else trivial
--- %tactic:end:proof
-
-% prop31
-
-{-@ reflect prop @-}
-prop a b c = minN (minN a b) c == minN a (minN b c)
-
-{-@ automatic-instances proof @-}
-{-@
-proof :: a:N -> b:N -> c:N -> {prop a b c}
-@-}
--- [tactic|
--- proof :: N -> N -> N -> Proof
--- proof a b c = induct a; induct b; induct c
--- |]
--- %tactic:begin:proof
-proof :: N -> N -> N -> Proof
-proof = \a -> \b -> \c -> case a of
-                              Data.Z -> case b of
-                                            Data.Z -> case c of
-                                                          Data.Z -> trivial
-                                                          Data.S n_0 -> trivial
-                                            Data.S n_0 -> case c of
-                                                              Data.Z -> trivial
-                                                              Data.S n_1 -> trivial
-                              Data.S n_0 -> case b of
-                                                Data.Z -> case c of
-                                                              Data.Z -> trivial
-                                                              Data.S n_1 -> trivial
-                                                Data.S n_1 -> case c of
-                                                                  Data.Z -> trivial
-                                                                  Data.S n_2 -> proof n_0 n_1 n_2
--- %tactic:end:proof
-
--- prop47_lemma
-
-{-@ reflect prop47_lemma @-}
-prop47_lemma :: N -> N -> Bool
-prop47_lemma m n = maxN m n == maxN n m
-
-return []
-
-{-@ automatic-instances prop47_lemma_proof @-}
-{-@
-prop47_lemma_proof :: m:N -> n:N -> {prop47_lemma m n}
-@-}
-prop47_lemma_proof :: N -> N -> Proof
-prop47_lemma_proof m n = undefined
-
--- prop47
-
-{-@ reflect prop47 @-}
-prop47 :: TreeN -> Bool
-prop47 t = heightTreeN t == heightTreeN (mirrorTreeN t)
-
-return []
-
-{-@ automatic-instances prop47_proof @-}
-{-@
-prop47_proof :: t:TreeN -> {prop47 t}
-@-}
--- %tactic:begin:prop47_proof
-prop47_proof :: TreeN -> Proof
-prop47_proof = \t -> case t of
-                         Data.Leaf -> trivial
-                         Data.Node n_0
-                                   treeN_1
-                                   treeN_2 -> prop47_proof treeN_2 &&& (prop47_proof treeN_1 &&& prop47_lemma_proof (heightTreeN treeN_2) (heightTreeN treeN_1)) 
-                                   -- * finds even more efficient proof than I thought of!
--- %tactic:end:prop47_proof
-
--- [tactic|
--- prop47_proof :: TreeN -> Proof
--- prop47_proof t = induct t; auto [prop47_lemma_proof, heightTreeN, mirrorTreeN] 3
--- |]
-
-% prop52
-
-{-@ automatic-instances lemma @-}
-{-@
-lemma :: n:N -> xs:ListN -> ys:ListN -> {countListN n (concatListN xs ys) == countListN n (concatListN ys xs)}
-@-}
-lemma :: N -> ListN -> ListN -> Proof
-lemma n xs ys = undefined
-
-return []
-
--- * takes 3m47s to prune
-{-@ automatic-instances proof @-}
-{-@
-proof :: n:N -> xs:ListN -> {countListN n xs == countListN n (reverseListN xs)}
-@-}
--- %tactic:begin:proof
-proof :: N -> ListN -> Proof
-proof = \n -> \xs -> case xs of
-                         Data.Nil -> trivial
-                         Data.Cons n_0
-                                   listN_1 -> proof n listN_1 &&& lemma n (singletonListN n_0) (reverseListN listN_1)
--- %tactic:end:proof
--- [tactic|
--- proof :: N -> ListN -> Proof
--- proof n xs =
---   induct xs;
---   auto [lemma, reverseListN, singletonListN] 3
--- |]
-
-% prop68
-
-{-@
-lemma1 :: a:N -> b:N -> c:N -> {(leqN a b && leqN b c) => leqN a c}
-@-}
-lemma1 :: N -> N -> N -> Proof
-lemma1 a b c = undefined
-
-{-@ lemma2 :: a:N -> {leqN a (S a)} @-}
-lemma2 :: N -> Proof 
-lemma2 = undefined
-
-return []
-
-{-@ reflect prop @-}
-prop x ys = lengthListN (deleteListN x ys) `leqN` lengthListN ys
-
-{-@ automatic-instances proof @-}
-{-@
-proof :: x:N -> ys:ListN -> {prop x ys}
-@-}
--- [tactic|
--- proof :: N -> ListN -> Proof
--- proof x ys =
---   induct ys as [/y ys'];
---   condition {x == y} requires [y];
---   use {lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys)} requires [y, ys'];
---   auto [lemma2, lengthListN]
--- |]
--- %tactic:begin:proof
-proof :: N -> ListN -> Proof
-proof = \x -> \ys -> case ys of
-                         Data.Nil -> trivial
-                         Data.Cons y ys' -> if x == y
-                                             then lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys) &&& (proof y ys' &&& lemma2 (lengthListN ys'))
-                                             else lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys) &&& proof x ys'
--- %tactic:end:proof
+% -- prop15_lemma
+%  
+% {-@ reflect prop15_lemma @-}
+% prop15_lemma :: N -> N -> ListN -> Bool
+% prop15_lemma n x l = lengthListN (insertListN n l) == lengthListN (Cons x l)
+%  
+% return []
+%  
+% {-@ automatic-instances prop15_lemma_proof @-}
+% {-@
+% prop15_lemma_proof :: n:N -> x:N -> l:ListN -> {prop15_lemma n x l}
+% @-}
+% -- %tactic:begin:prop15_lemma_proof
+% prop15_lemma_proof :: N -> N -> ListN -> Proof
+% prop15_lemma_proof = \n -> \x -> \l -> case l of
+%                                            Data.Nil -> trivial
+%                                            Data.Cons n_0 listN_1 -> prop15_lemma_proof n x listN_1
+% -- %tactic:end:prop15_lemma_proof
+%  
+% -- [tactic|
+% -- prop15_lemma_proof :: N -> N -> ListN -> Proof
+% -- prop15_lemma_proof n x l =
+% --   induct l
+% -- |]
+%  
+% -- prop15
+%  
+% {-@ reflect prop15 @-}
+% prop15 :: N -> ListN -> Bool
+% prop15 n l = lengthListN (insertListN n l) == S (lengthListN l)
+%  
+% return []
+%  
+% {-@ automatic-instances prop15_proof @-}
+% {-@
+% prop15_proof :: n:N -> l:ListN -> {prop15 n l}
+% @-}
+% -- %tactic:begin:prop15_proof
+% prop15_proof :: N -> ListN -> Proof
+% prop15_proof = \n -> \l -> case l of
+%                                Data.Nil -> trivial
+%                                Data.Cons n_0 listN_1 -> prop15_proof n listN_1
+% -- %tactic:end:prop15_proof
+%  
+% -- [tactic|
+% -- prop15_proof :: N -> ListN -> Proof
+% -- prop15_proof n l =
+% --   induct l;
+% --   auto [prop15_lemma_proof]
+% -- |]
+%  
+% -- prop20_lemma
+%  
+% {-@ reflect prop20_lemma @-}
+% prop20_lemma :: N -> ListN -> Bool
+% prop20_lemma h t = lengthListN (insertListN h (sortListN t)) == S (lengthListN (sortListN t))
+%  
+% return []
+%  
+% {-@
+% prop20_lemma_proof :: h:N -> l:ListN -> {prop20_lemma h l}
+% @-}
+% prop20_lemma_proof :: N -> ListN -> Proof 
+% prop20_lemma_proof h l = undefined
+%  
+% -- prop20
+%  
+% {-@ reflect prop20 @-}
+% prop20 :: ListN -> Bool
+% prop20 l = lengthListN (sortListN l) == lengthListN l
+%  
+% return []
+%  
+% {-@ automatic-instances prop20_proof @-}
+% {-@
+% prop20_proof :: l:ListN -> {prop20 l}
+% @-}
+% -- %tactic:begin:prop20_proof
+% prop20_proof :: ListN -> Proof
+% prop20_proof = \l -> case l of
+%                          Data.Nil -> trivial
+%                          Data.Cons n_0
+%                                    listN_1 -> prop20_proof listN_1 &&& prop20_lemma_proof n_0 listN_1
+% -- %tactic:end:prop20_proof
+%  
+% -- [tactic|
+% -- prop20_proof :: ListN -> Proof
+% -- prop20_proof l =
+% --   induct l;
+% --   auto [prop20_lemma_proof]
+% -- |]
+%  
+% % prop 24
+%  
+% {-@ reflect prop @-}
+% prop a b = ((maxN a b) == a) == (leqN b a)
+%  
+% {-@ automatic-instances proof @-}
+% {-@
+% proof :: a:N -> b:N -> {prop a b}
+% @-}
+% -- [tactic|
+% -- proof :: N -> N -> Proof
+% -- proof a b = induct a; induct b
+% -- |]
+% -- %tactic:begin:proof
+% proof :: N -> N -> Proof
+% proof = \a -> \b -> case a of
+%                         Data.Z -> case b of
+%                                       Data.Z -> trivial
+%                                       Data.S n_0 -> trivial
+%                         Data.S n_0 -> case b of
+%                                           Data.Z -> trivial
+%                                           Data.S n_1 -> proof n_0 n_1
+% -- %tactic:end:proof
+%  
+% % prop27
+%  
+% module TIP.Prop27 where
+%  
+% import Data
+% import Proof
+% import Tactic.Core.Quote
+%  
+% {-@ reflect prop @-}
+% prop x xs ys = 
+%   if elemListN x ys then 
+%     elemListN x (concatListN xs ys)
+%   else 
+%     True
+%  
+% {-@ automatic-instances proof @-}
+% {-@
+% proof :: x:N -> xs:ListN -> ys:ListN -> {prop x xs ys}
+% @-}
+% -- elemListN x1 (concatListN (Cons x2 xs) ys)
+% -- elemListN x1 (Cons x2 (concatListN xs ys))
+% -- if x1 == x2 then 
+% --   QED
+% -- else
+% --   elemListN x1 (concatListN xs ys)
+% -- [tactic|
+% -- proof :: N -> ListN -> ListN -> Proof
+% -- proof x xs ys =
+% --   induct xs;
+% --   condition {elemListN x ys}
+% -- |]
+% -- %tactic:begin:proof
+% proof :: N -> ListN -> ListN -> Proof
+% proof = \x -> \xs -> \ys -> case xs of
+%                                 Data.Nil -> if elemListN x ys then trivial else trivial
+%                                 Data.Cons n_0 listN_1 -> if elemListN x ys
+%                                                           then proof x listN_1 ys
+%                                                           else trivial
+% -- %tactic:end:proof
+%  
+% % prop31
+%  
+% {-@ reflect prop @-}
+% prop a b c = minN (minN a b) c == minN a (minN b c)
+%  
+% {-@ automatic-instances proof @-}
+% {-@
+% proof :: a:N -> b:N -> c:N -> {prop a b c}
+% @-}
+% -- [tactic|
+% -- proof :: N -> N -> N -> Proof
+% -- proof a b c = induct a; induct b; induct c
+% -- |]
+% -- %tactic:begin:proof
+% proof :: N -> N -> N -> Proof
+% proof = \a -> \b -> \c -> case a of
+%                               Data.Z -> case b of
+%                                             Data.Z -> case c of
+%                                                           Data.Z -> trivial
+%                                                           Data.S n_0 -> trivial
+%                                             Data.S n_0 -> case c of
+%                                                               Data.Z -> trivial
+%                                                               Data.S n_1 -> trivial
+%                               Data.S n_0 -> case b of
+%                                                 Data.Z -> case c of
+%                                                               Data.Z -> trivial
+%                                                               Data.S n_1 -> trivial
+%                                                 Data.S n_1 -> case c of
+%                                                                   Data.Z -> trivial
+%                                                                   Data.S n_2 -> proof n_0 n_1 n_2
+% -- %tactic:end:proof
+%  
+% -- prop47_lemma
+%  
+% {-@ reflect prop47_lemma @-}
+% prop47_lemma :: N -> N -> Bool
+% prop47_lemma m n = maxN m n == maxN n m
+%  
+% return []
+%  
+% {-@ automatic-instances prop47_lemma_proof @-}
+% {-@
+% prop47_lemma_proof :: m:N -> n:N -> {prop47_lemma m n}
+% @-}
+% prop47_lemma_proof :: N -> N -> Proof
+% prop47_lemma_proof m n = undefined
+%  
+% -- prop47
+%  
+% {-@ reflect prop47 @-}
+% prop47 :: TreeN -> Bool
+% prop47 t = heightTreeN t == heightTreeN (mirrorTreeN t)
+%  
+% return []
+%  
+% {-@ automatic-instances prop47_proof @-}
+% {-@
+% prop47_proof :: t:TreeN -> {prop47 t}
+% @-}
+% -- %tactic:begin:prop47_proof
+% prop47_proof :: TreeN -> Proof
+% prop47_proof = \t -> case t of
+%                          Data.Leaf -> trivial
+%                          Data.Node n_0
+%                                    treeN_1
+%                                    treeN_2 -> prop47_proof treeN_2 &&& (prop47_proof treeN_1 &&& prop47_lemma_proof (heightTreeN treeN_2) (heightTreeN treeN_1)) 
+%                                    -- * finds even more efficient proof than I thought of!
+% -- %tactic:end:prop47_proof
+%  
+% -- [tactic|
+% -- prop47_proof :: TreeN -> Proof
+% -- prop47_proof t = induct t; auto [prop47_lemma_proof, heightTreeN, mirrorTreeN] 3
+% -- |]
+%  
+% % prop52
+%  
+% {-@ automatic-instances lemma @-}
+% {-@
+% lemma :: n:N -> xs:ListN -> ys:ListN -> {countListN n (concatListN xs ys) == countListN n (concatListN ys xs)}
+% @-}
+% lemma :: N -> ListN -> ListN -> Proof
+% lemma n xs ys = undefined
+%  
+% return []
+%  
+% -- * takes 3m47s to prune
+% {-@ automatic-instances proof @-}
+% {-@
+% proof :: n:N -> xs:ListN -> {countListN n xs == countListN n (reverseListN xs)}
+% @-}
+% -- %tactic:begin:proof
+% proof :: N -> ListN -> Proof
+% proof = \n -> \xs -> case xs of
+%                          Data.Nil -> trivial
+%                          Data.Cons n_0
+%                                    listN_1 -> proof n listN_1 &&& lemma n (singletonListN n_0) (reverseListN listN_1)
+% -- %tactic:end:proof
+% -- [tactic|
+% -- proof :: N -> ListN -> Proof
+% -- proof n xs =
+% --   induct xs;
+% --   auto [lemma, reverseListN, singletonListN] 3
+% -- |]
+%  
+% % prop68
+%  
+% {-@
+% lemma1 :: a:N -> b:N -> c:N -> {(leqN a b && leqN b c) => leqN a c}
+% @-}
+% lemma1 :: N -> N -> N -> Proof
+% lemma1 a b c = undefined
+%  
+% {-@ lemma2 :: a:N -> {leqN a (S a)} @-}
+% lemma2 :: N -> Proof 
+% lemma2 = undefined
+%  
+% return []
+%  
+% {-@ reflect prop @-}
+% prop x ys = lengthListN (deleteListN x ys) `leqN` lengthListN ys
+%  
+% {-@ automatic-instances proof @-}
+% {-@
+% proof :: x:N -> ys:ListN -> {prop x ys}
+% @-}
+% -- [tactic|
+% -- proof :: N -> ListN -> Proof
+% -- proof x ys =
+% --   induct ys as [/y ys'];
+% --   condition {x == y} requires [y];
+% --   use {lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys)} requires [y, ys'];
+% --   auto [lemma2, lengthListN]
+% -- |]
+% -- %tactic:begin:proof
+% proof :: N -> ListN -> Proof
+% proof = \x -> \ys -> case ys of
+%                          Data.Nil -> trivial
+%                          Data.Cons y ys' -> if x == y
+%                                              then lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys) &&& (proof y ys' &&& lemma2 (lengthListN ys'))
+%                                              else lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys) &&& proof x ys'
+% -- %tactic:end:proof
