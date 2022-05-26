@@ -1,5 +1,40 @@
 \section{Implementation}
 
+
+The proof macro system introduced by this paper addresses these concerns and more by providing a macro interface to the user that allows them to concisely express terms of the subset of Haskell code that is useful for writing these SMT guides through Haskell control flow.
+
+The proof macro system defines a DSL that can be written in "tactic" quasiquotes, and then this DSL term is expanded to the verbose Haskell term after type checking and pruning (to be explained soon).
+
+
+
+The overarching idea behind the proof macro system is that an extrinsic proof has the following structure, involving two kinds of components:
+I. match control flow (e.g. conditions, cases, anything that adds information to the refinement context) of some functions that appear in the specification
+II. at each leaf of the resulting control-flow structure, use some lemmas and/or recursions to provide enough information to the refinement context that the SMT can automatically check that leaf's goal.
+
+
+The proof macro system provides macros for each kind of component:
+Macros I:
+- induct x: does case analysis on x, and if x was an input variable then notes that in each match, the pattern's variables are valid to use in recursive calls at the position of the input variable (this is taken to account in the "auto" c)
+- destruct x: does case analysis on x
+- assert b: conditions on b and treats the False case as trivial 
+- dismiss b: conditions on b and treats the True case as trivial
+- condition b: conditions on b and handles both cases
+Macros II:
+- auto: generates all well-typed applications of terms in context (with output type Proof), using terms in context, up to a depth
+- use e: includes the refinement of the expression e into the refinement context
+- trivia: includes the trivial proof into the refinement context
+
+The proof of "assoc\_min" can be expressed shortly as follows:
+
+
+The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
+Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
+The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
+Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
+So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
+In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
+
+
 There are two EDSLs:
 - EDSL1 (proof macro EDSL): the EDSL that the user uses to write proof macros
 - EDSL2: the subset of Haskell that proof macros can expand into i.e. the image of EDSL1 under preprocessing, augmented with metadata used in pruning
