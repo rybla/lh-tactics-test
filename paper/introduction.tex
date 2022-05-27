@@ -1,17 +1,16 @@
 \section{Introduction}
 
-\leo{Obviously this needs rewriting:}
-%
-Liquid Haskell\cn is a popular verifier for Haskell programs,
-leveraging the power of SMT solvers like Z3~\cn and CVC4\cn to prove
-the correctness of diverse applications ranging from
-optimizations~\cite{TPE2018} to string matching
+Liquid Haskell\cite{liquidHaskell} is a popular verifier for Haskell
+programs, leveraging the power of SMT solvers~\cite{BarST-RR-10} like
+Z3~\cn and CVC4\cn to prove the correctness of diverse applications
+ranging from optimizations~\cite{TPE2018} to string matching
 algorithms~\cite{TaleOfTwoProvers}. Specifications for these
-applications are written in the form of {\em refinement types}\cn,
-boolean predicates over program values.
+applications are written in the form of {\em refinement
+  types}\cite{RefinementForML}, boolean predicates over program
+values.
 
 For concreteness, consider the following \LC{min} function that
-computes the minimum of two natural numbers:
+computes the minimum of two natural numbers (\LC{N}):
 \begin{code}
   min :: N -> N -> N 
   min Z _ = Z
@@ -25,24 +24,38 @@ $$ \forall a ~ b ~ c. ~ \imin (\imin a~b) == \imin a~(\imin~b~c) $$
 %
 In Liquid Haskell, we can express associativity by defining a
 refinement type to encode this property, and prove it by defining
-a term of this type:
+a term of the following type:
+%
 \begin{code}
   {-@ assoc_min :: a:N -> b:N -> c:N ->
-        {min (min a b) c == min a (min b c)} @-}
+      {_:() | min (min a b) c == min a (min b c)}
+  @-}
   assoc_min :: N -> N -> N -> Proof
   assoc_min a b c = ...
 \end{code}
+%
+The Haskell type of \LC{assoc_min} is a function with three natural
+number arguments that returns a \LC{Proof}, which (to GHC) is just a
+type synonym for \LC{()}. The Liquid Haskell type of \LC{assoc_min},
+however, is much more interesting: its return type does not only
+specify that the output is a unit, but {\em refines} it so that
+associativity of \LC{min} holds for its input arguments. In other
+words, the only interesting thing about the result of this function
+is its refinement, which constitutes an ``extrinsic style'' proof
+of associativity. This is a common enough pattern that Liquid Haskell
+supports dropping the ``\LC{_:()}'' part of the refinement for brevity,
+as we will also do in the remainder of this paper.
 
-To facilitate proofs in this ``extrinsic'' style, Liquid Haskell
-reduces typechecking of refinement types to verification conditions
-that SMT solvers reason about. However, while SMT solvers are
-pre-programmed with a wide assortment of facts about various domains
-such as integer arithmetic and boolean logic, they don't really know
-anything about user-defined data types like \LC{N} or user-defined
-functions like \LC{min}. To that end, Liquid Haskell lifts
-user-defined data types and functions into a representation that can
-be handled symbolically by SMT solvers\cn. Still, many true properties
-of user-defined data types and functions are still not automatically
+But how does Liquid Haskell decide if the refinement type is true? By
+reducing typechecking to verification conditions that SMT solvers
+reason about. However, while SMT solvers are pre-programmed with a
+wide assortment of facts about various domains such as integer
+arithmetic and boolean logic, they don't really know anything about
+user-defined data types like \LC{N} or user-defined functions like
+\LC{min}. To that end, Liquid Haskell lifts user-defined data types
+and functions into a representation that can be handled symbolically
+by SMT solvers~\cite{VazouTCSNWJ18}. Still, many true properties of
+user-defined data types and functions are still not automatically
 verifiable: users must guide, via refined Haskell code, the SMT solver
 to simpler cases that can be checked automatically.
 
@@ -72,27 +85,27 @@ program typechecks is shown in Figure~\ref{fig:assoc-min-proof}.
           Z ->
             case c of
               Z -> trivial
-              S c -> trivial
-          S b ->
+              S c' -> trivial
+          S b' ->
             case c of
               Z -> trivial
-              S c -> trivial
-    S a ->
+              S c' -> trivial
+    S a' ->
       case b of 
         Z ->
           case c of
             Z -> trivial
-            S c -> trivial
-        S b ->
+            S c' -> trivial
+        S b' ->
           case c of
             Z -> trivial
-            S c -> assoc_min a b c
+            S c' -> assoc_min a' b' c'
 \end{code}
 \caption{Liquid Haskell proof term for associativity of \texttt{min}}
 \label{fig:assoc-min-proof}
 \end{figure}
 
-Each of the branches of pattern matching on \LC{a}, \LC{b}, and \LC{c}
+{\em All} of the branches of pattern matching on \LC{a}, \LC{b}, and \LC{c}
 must be written out explicitly. Otherwise, the SMT solver would not
 know how to simplify the \LC{min} expressions in the refinement---the
 only facts it knows are the three equations that were used to define
@@ -100,36 +113,56 @@ only facts it knows are the three equations that were used to define
 %
 \LC{min (S x) (S y) = S (min x y)}.
 %
-\leo{Not sure about the concluding bit after this, but something
-  should go here for sure as a punchline.}
-Liquid Haskell uses Haskell as a base language for
-writing this sort of logic, and also allows an intrinsic style of
-specification which requires the proof to be interleaved with the
-Haskell code, as Haskell code.  But for the extrinsic style of
-verification, the full verbosity required is cumbersome and suffers
-from the inability of the Liquid Haskell system to fully support
-proof-relevant manipulations (e.g. reasoning about higher-order
-functions/predicates).
-% TODO: explain in more detail the last clause, if relevant enough
+Liquid Haskell understands the constraints introduced by this case analysis,
+and takes them into account in order to discharge most cases---the non-recursive
+ones that involve at least one \LC{Z}. The proof conclusion in such cases is \LC{trivial},
+which is again just a synonym for the term-level \LC{()}.
 
-\leo{Can we write something like snd (assocmin a b c, ()) instead of
-  the recursive call? Or at least point out that the only purpose is
-  to bring its refinement in scope---NOT to construct a pretty recursive
-  proof term.}
+However, in the recursive case of \LC{min}, the Liquid Haskell typechecker needs
+additional help, in the form of a recursive call to \LC{assoc_min a' b' c'}, which
+brings its refinement in scope for the SMT solver and allows it to conclude that
+the induced verification condition holds. Crucially, this refinement is again the
+only thing that matters: while the structure of the term gives the appearance
+of a proof term in the style of Coq or Agda, the actual return value doesn't matter.
+We could just as well have written something like
+\begin{code}
+  snd (assoc_min a' b' c', ())
+\end{code}
+and Liquid Haskell would still gladly accept the definition.
+
+Even in this simple example of associativity of \LC{min}, the full
+verbosity required is cumbersome and obscures the fact that the
+underlying argument is a straightforward induction. In larger
+developments where the SMT solver might need to rely on helper lemmas,
+this problem only becomes more pronounced.  Other proof assistants,
+such as Coq or Lean, unconstrained by the maturity and complexity of
+an ecosystem like Haskell's, rely on interactive tactics in these
+situations to aid users' proof efforts.
+
+\smallskip
+
+{\em What can we do within the confines of the existing Haskell
+  ecosystem to aid users?}
+% proofs, this problem is even more pronounced suffers
+% from the inability of the Liquid Haskell system to fully support
+% proof-relevant manipulations (e.g. reasoning about higher-order
+% functions/predicates).
+% % TODO: explain in more detail the last clause, if relevant enough
+
 
 \paragraph*{Liquid Proof Macros}
 
 In this paper, we show how to leverage the power of Template Haskell
-to automate such extrinsic Liquid Haskell proof term generation.  We
-develop {\em Liquid Proof Macros}, an extensible DSL in which users
-can write intutive proofs that resemble automated tactics%
+to automate proof term generation for Liquid Haskell.  We develop {\em
+  Liquid Proof Macros}, an extensible DSL in which users can write
+intutive proofs that resemble automated tactics%
 \footnote{We refrain calling our DSL tactics, as that suggests a
   notion of interactivity that is impossible in the current version
   of Liquid Haskell.}%
 %
-in proof assistants such as Coq\cn or Lean\cn, including case
-analysis, induction, and proof search. The proof of associativity of
-\LC{min} using Liquid Proof macros can be seen in
+of more traditional proof assistants, including case analysis,
+induction, conditioning, and proof search. The proof of associativity
+of \LC{min} using Liquid Proof macros can be seen in
 Figure~\ref{fig:assoc-min-macro}.
 
 These macros are then elaborated using Template Haskell to a subset of

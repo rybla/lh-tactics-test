@@ -77,15 +77,16 @@ often necessitates giving hints to the underlying solver, which can be
 a tedious and verbose process that sometimes requires intricate
 knowledge of Liquid Haskell's inner workings.
 
-In this work, we present {\em Liquid Proof Macros}, an extensible
+In this paper, we present {\em Liquid Proof Macros}, an extensible
 metaprogramming technique and framework for simplifying the
 development of Liquid Haskell proofs.
 %
-We describe how this framework leverages Template Haskell 
+We describe how to leverage Template Haskell 
 to generate Liquid Haskell proof terms, via a tactic-inspired DSL interface for
-more concise and user-friendly proofs.
+more concise and user-friendly proofs, 
 %
-\leo{Finally, demonstrate useful benchmark}
+and we demonstrate the capabilities of this framework by automating
+a wide variety of proofs from an existing Liquid Haskell benchmark.
 \end{abstract}
 
 %%
@@ -115,17 +116,6 @@ more concise and user-friendly proofs.
 \maketitle
 
 \input{introduction.tex}
-
-
-\section{Extended Example}
-
-\leo{Comments work?}
-
-Sample citation: \cite{liu20typeclasses}
-
-\section{Using Template Haskell for Liquid Proofs}
-
-% TODO
 
 \input{implementation.tex}
 
