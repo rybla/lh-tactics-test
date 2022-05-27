@@ -1,11 +1,8 @@
 \section{Implementation}
 
-
 The proof macro system introduced by this paper addresses these concerns and more by providing a macro interface to the user that allows them to concisely express terms of the subset of Haskell code that is useful for writing these SMT guides through Haskell control flow.
 
-The proof macro system defines a DSL that can be written in "tactic" quasiquotes, and then this DSL term is expanded to the verbose Haskell term after type checking and pruning (to be explained soon).
-
-
+The proof macro system defines a DSL that can be written in ``tactic'' quasiquotes, and then this DSL term is expanded to the verbose Haskell term after type checking and pruning (to be explained soon).
 
 The overarching idea behind the proof macro system is that an extrinsic proof has the following structure, involving two kinds of components:
 I. match control flow (e.g. conditions, cases, anything that adds information to the refinement context) of some functions that appear in the specification
@@ -14,15 +11,15 @@ II. at each leaf of the resulting control-flow structure, use some lemmas and/or
 
 The proof macro system provides macros for each kind of component:
 Macros I:
-- induct x: does case analysis on x, and if x was an input variable then notes that in each match, the pattern's variables are valid to use in recursive calls at the position of the input variable (this is taken to account in the "auto" c)
-- destruct x: does case analysis on x
-- assert b: conditions on b and treats the False case as trivial 
-- dismiss b: conditions on b and treats the True case as trivial
-- condition b: conditions on b and handles both cases
+- \code{induct x}: does case analysis on x, and if x was an input variable then notes that in each match, the pattern's variables are valid to use in recursive calls at the position of the input variable (this is taken to account in the "auto" c)
+- \code{destruct x}: does case analysis on x
+- \code{assert b}: conditions on b and treats the False case as trivial 
+- \code{dismiss b}: conditions on b and treats the True case as trivial
+- \code{condition b}: conditions on b and handles both cases
 Macros II:
-- auto: generates all well-typed applications of terms in context (with output type Proof), using terms in context, up to a depth
-- use e: includes the refinement of the expression e into the refinement context
-- trivia: includes the trivial proof into the refinement context
+- \code{auto}: generates all well-typed applications of terms in context (with output type Proof), using terms in context, up to a depth
+- \code{use e}: includes the refinement of the expression e into the refinement context
+- \code{trivial}: includes the trivial proof into the refinement context
 
 The proof of "assoc\_min" can be expressed shortly as follows:
 
