@@ -1,5 +1,33 @@
 \section{Implementation}
 
+Organization idea:
+\begin{enumerate}
+  \item Overview the entire procedure:
+  \begin{enumerate}
+    \item The user writes a proof macro term in ``tactic'' quasiquotes as their proof, in EDSL1 i.e. the proof macro language
+    \item The proof macro term is preprocessed into a ``proto proof term'' in EDSL2 i.e. the metadata-augmented subset of Haskell relevant for extrinsic proofs
+    \item The ``proto proof term'' is embedded into Haskell, then spliced the place of the original proof macro. The file is checked.
+    \item If the check passes, then the proto proof term is pruned by repeatedly pruning the proto proof term, embedding and splicing it into the place of the original proof macro, and checking if the pruned result still passes.
+    \item The resulting proof term is a valid proof as determined by Liquid Haskell.
+  \end{enumerate}
+  \item Detail the features of EDSL1 and the intended behaviors
+  \item Briefly describe the details of EDSL2
+  \begin{enumerate}
+    \item Describe how each feature in EDSL1 is implemented by a preprocessing transformation into EDSL2
+    \item Preprocessing EDSL1 into EDSL2 is a contextual transformation, since it needs to keep track of an environment which includes various information (see Language.Core.Syntax.Environment'')
+    \item How the ``auto'' term in EDSL2 includes metadata for which terms have have been pruned and which have been determined necessary.
+  \end{enumerate}
+  \item Detail pruning procedure
+  \begin{enumerate}
+    \item Clearly, this can be done more efficiently.
+    \item Point out further possible work like checking for well-typed applications where the function has refined argument types.
+  \end{enumerate}
+\end{enumerate}
+
+% 
+% 
+% 
+
 The proof macro system introduced by this paper addresses these concerns and more by providing a macro interface to the user that allows them to concisely express terms of the subset of Haskell code that is useful for writing these SMT guides through Haskell control flow.
 
 The proof macro system defines a DSL that can be written in ``tactic'' quasiquotes, and then this DSL term is expanded to the verbose Haskell term after type checking and pruning (to be explained soon).
