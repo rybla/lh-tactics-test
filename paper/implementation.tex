@@ -23,7 +23,6 @@ Macros II:
 
 The proof of "assoc\_min" can be expressed shortly as follows:
 
-
 The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
 Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
 The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
@@ -87,25 +86,25 @@ Grammar of EDSL2:
 An EDSL1 declaration is preprocessed into an EDSL2 declaration like so:
 
 \begin{verbatim}
-preprocDecl : EDSL1-decl -> EDSL2-decl
-preprocDecl (name, args, type, instrs) =
+preprocessDecl : EDSL1-decl -> EDSL2-decl
+preprocessDecl (name, args, type, instrs) =
   set function name to name
   set output type to type
   for each arg
     get output type as a -> b 
     store type of arg as a
     set output type to b
-  preproc instrs
+  preprocess instrs
 
 // stateful
-preproc : [EDSL1-instr] -> EDSL2-expr
-preproc [] = []
-preproc (instr : instrs) = case instr of 
+preprocess : [EDSL1-instr] -> EDSL2-expr
+preprocess [] = []
+preprocess (instr : instrs) = case instr of 
   intro x -> do
     [|a <- b|] <- get output type
     type of x := a
     output type := b
-    [|\x -> $(preproc instrs)|]
+    [|\x -> $(preprocess instrs)|]
   destruct exp requires xs -> do
     if all of xs are in scope then 
       varss <- get patterns for deconstructing exp
@@ -115,10 +114,10 @@ preproc (instr : instrs) = case instr of
           args <- argument types of constr
           for each (var, arg) in in (pats * args)
             type of var := arg
-          [|ps -> $(preproc instrs)|]
+          [|ps -> $(preprocess instrs)|]
       [|case exp of matches|]
     else
-      preproc instrs
+      preprocess instrs
   induct exp requires xs -> do
     if all of xs are in scope then 
       varss <- get patterns for deconstructing exp
@@ -131,27 +130,27 @@ preproc (instr : instrs) = case instr of
               add var to context of recursive-safe expression to fill the
               respective argument of a recursive call
             type of var := arg
-          [|ps -> $(preproc instrs)|]
+          [|ps -> $(preprocess instrs)|]
       [|case exp of matches|]
     else
-      preproc instrs
+      preprocess instrs
   auto hints depth ->
     generate all neutral forms in context, up to depth
     when a recursion is generated, at least one of its arguments must be something from the context of recursive safe expressions for that argument (which is populated via induct)
   assert exp requires xs ->
     if all of xs are in scope then
-      [|if exp then $(preproc instrs) else True|]
+      [|if exp then $(preprocess instrs) else True|]
     else
-      preproc instrs
+      preprocess instrs
   dismiss exp requires xs ->
     if all of xs are in scope then
-      [|if exp then True else $(preproc instrs)|]
+      [|if exp then True else $(preprocess instrs)|]
     else
-      preproc instrs
+      preprocess instrs
   use exp requires xs -> 
-    [|use exp &&& $(preproc instrs)]
+    [|use exp &&& $(preprocess instrs)]
   condition exp requires xs ->
-    [|if exp then $(preproc instrs) else $(preproc instrs)]
+    [|if exp then $(preprocess instrs) else $(preprocess instrs)]
   trivial ->
     [|trivial|]
 
