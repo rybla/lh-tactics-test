@@ -1,0 +1,25 @@
+\section{Further Work}
+
+- integrate into Liquid Haskell as a plugin or part of the Liquid Haskell plugin
+- handle the splices code implicitly, rather than having to splice the new code in place
+  - i.e. make it more like normal Template Haskell splicing
+- handle lemma applications where the lemma has refined arguments
+  - this currently isn't supported because Template Haskell doesn't know about refinements
+- support polymorphism
+  - requires a custom unification algorithm because Template Haskell doesn't have \LC{unify}
+  - there's a family of extensions related to polymorphism, such as supporting tyepclass constraints, etc.
+- support deeper pattern matching
+  - currently, descruct and induct are the only two ways to pattern match, and they only pattern match on exactly one level of destruction
+- more efficient pruning
+  - need to search for an arbitrary subset of the generated lemma applications, so at worst linear search is asymptotically best, BUT usually we are looking for a set of 0-2 lemma applications, so can do better in practice 
+- more advanced forms of \LC{auto} tactic
+  - \LC{refine e[?1, ..., ?n]} tactic:
+    - the expression \LC{e[?1, ..., ?n]} is a neutral form that contains a collection of holes.
+    - since \LC{e} is in neutral form, each hole can have its type determined by context
+    - then, the same \LC{auto} implementation can be invoked to generate terms to fill these holes, using things in scope
+    - the resulting neutral forms can be pruned as usual for results from \LC{auto}
+- better auto hints interface
+  - basically, start copying features from Coq 
+  - pre-defined collections of hints
+  - include/exclude hints at top level or per definition
+  - allow arbitrary neutral forms as hints -- not just variables
