@@ -30,7 +30,13 @@ Organization idea:
 
 %  TODO: use running example, simpler than min_assoc -- something that uses induct, auto (with lemma hints), cond
   
- 
+The proof macro system processes an input proof macro into an output Liquid Haskell proof term into stages:
+\begin{enumerate}
+  \item The user writes the input proof macro in Template Haskell quasiquotes. Then the user runs \TheTool \todo{how to talk about this executable} on the file containing the target proof macro to process. The quasiquoted proof macro is parsed into \LangA.
+  \item The \LangATerm is processed into a corresponding \LangBTerm, and all metadata values are given initial defaults.
+  \item The \LangBTerm is cached, embedded into Haskell, and then spliced in place of the original proof macro. 
+  \item The cached \LangBTerm is repeatedly pruned, making use of the metadata to track pruning progress, where each pruning step involves removing some proof terms contained inside of the entire \LangBTerm, embedding and splicing it in place of the original proof macro, and then running Liquid Haskell to check that the prune step was valid.
+\end{enumerate}
   
 %  The proof macro system provides macros for each kind of component:
 %  Macros I:
