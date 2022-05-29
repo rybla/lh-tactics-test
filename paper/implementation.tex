@@ -27,8 +27,6 @@ Organization idea:
 % 
 % * real start
 % 
-
-%  TODO: use running example, simpler than min_assoc -- something that uses induct, auto (with lemma hints), cond
   
 The proof macro system processes an input proof macro into an output Liquid Haskell proof term into stages:
 \begin{enumerate}
@@ -79,10 +77,11 @@ There are two main types of proof macros:
   The control flow macros are:
   \begin{itemize}
     \item
-    $\TC{induct} ~ x$ --- patterm matches on $x$, which must be a function argument in the macro declaration.
+    $\TC{induct} ~ x$ --- patterm matches on $x$, which must be a function argument in the declaration macro.
     In each case of the pattern match, the introduced variables are included in the recursion context at the corresponding argument position of $x$.
     This recursion context keeps track of what expressions are allowed to be given as an argument, in that argument position, to a recursion.
     A macro-processing branch is created for each case.
+    Note that the hints and height arguments to this macro are optional, and take values \code{[]} and \TC{3} respectively by default.
     \item $\TC{destruct} ~ \textit{exp}$ --- pattern matches on $\textit{exp}$. A macro-processing branch is created for each case.
     \item $\TC{condition} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{then} and \TC{else} branches respectively.
     \item $\TC{assert} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{then} branch, but the \TC{else} branch is only filled with \TC{trivial}.
@@ -92,7 +91,7 @@ There are two main types of proof macros:
   \todo{think of better name? perhaps \textit{evidence-providing}?}
   \textit{Evidence} macros are processed into terms that provide evidence to the Liquid Haskell checker, such as introducing a lemma to the refinement context.
   \todo{is this the right place to put this note?}
-  Note that if a sequence of macros given in macro declaration (i.e. \textit{decl-macro}) does \textit{not} end in an evidence macro, then an \TC{auto} macro is included implicitly at the end of the sequence.
+  Note that if a sequence of macros given in declaration macro (i.e. \textit{decl-macro}) does \textit{not} end in an evidence macro, then an \TC{auto} macro is included implicitly at the end of the sequence.
   The evidence macros are:
   \begin{itemize}
     \item
@@ -104,24 +103,27 @@ There are two main types of proof macros:
   \end{itemize}
 \end{itemize}
 
+For example, the following is a proof macro for generating a proof that
+if \LC{x} is in a list \LC{xs}, then \LC{x} is also in the list \LC{xs ++ ys}:
+\begin{code}
+  {-@ 
+  elem_concat ::
+    x:N -> xs:[N] -> ys:[N] ->
+    {elem x ys ==> elem x (xs ++ ys)}
+  @-}
+  [tactic|
+  elem_concat :: N -> [N] -> [N] -> Proof
+  elem_concat x xs ys =
+    induct xs;
+    condition {elem x ys}
+  |]
+\end{code}
 
 
 % TODO: put this in the implementation details section:
 Note that, for Liquid Haskell, the refinement of the type of \TC{f x y, trivial)} is the same as the refinement of the type of \TC{f x y}.
 So, the refinement of the expression's type can be included into the refinement context by simply adding it into the resulting Haskell expression
 
-%  The proof macro system provides macros for each kind of component:
-%  Macros I:
-%  - \code{induct x}: does case analysis on x, and if x was an input variable then notes that in each match, the pattern's variables are valid to use in recursive calls at the position of the input variable (this is taken to account in the "auto" c)
-%  - \code{destruct x}: does case analysis on x
-%  - \code{assert b}: conditions on b and treats the False case as trivial 
-%  - \code{dismiss b}: conditions on b and treats the True case as trivial
-%  - \code{condition b}: conditions on b and handles both cases
-%  Macros II:
-%  - \code{auto}: generates all well-typed applications of terms in context (with output type Proof), using terms in context, up to a depth
-%  - \code{use e}: includes the refinement of the expression e into the refinement context
-%  - \code{trivial}: includes the trivial proof into the refinement context
-  
  The proof of "assoc\_min" can be expressed shortly as follows:
   
  The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
@@ -130,20 +132,6 @@ So, the refinement of the expression's type can be included into the refinement 
  Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
  So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
  In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
-  
-  
- There are two EDSLs:
- - EDSL1 (proof macro EDSL): the EDSL that the user uses to write proof macros
- - EDSL2: the subset of Haskell that proof macros can expand into i.e. the image of EDSL1 under preprocessing, augmented with metadata used in pruning
-  
- The proof macro system involves two stages:
- - preprocessing:
-   - preprocess ESL1 into EDSL2
-   - embed EDSL2 into Haskell code to be spliced
- - pruning:
-   - pruning algorithm over EDSL2 
-     - EDSL2 has pruning-relevant metadata e.g. which terms have been prune/kept from an auto site
-     - in each step of the pruning algorithm, checks if current prune is valid by embedding the current pruned expression into Haskell then running Liquid Haskell
   
 \subsection{Preprocessing}
   
@@ -254,12 +242,48 @@ So, the refinement of the expression's type can be included into the refinement 
      [|if exp then $(preprocess instrs) else $(preprocess instrs)]
    trivial ->
      [|trivial|]
-  
-  
  \end{verbatim}
+
+ %  TODO: use running example, simpler than min_assoc -- something that uses induct, auto (with lemma hints), cond
+
+Consider the following example proof macro:
+% {-@ reflect prop @-}
+% prop x xs ys = 
+%   if elemListN x ys then 
+%     elemListN x (concatListN xs ys)
+%   else 
+%     True
+%  
+% {-@ automatic-instances proof @-}
+% {-@
+% proof :: x:N -> xs:ListN -> ys:ListN -> {prop x xs ys}
+% @-}
+% -- elemListN x1 (concatListN (Cons x2 xs) ys)
+% -- elemListN x1 (Cons x2 (concatListN xs ys))
+% -- if x1 == x2 then 
+% --   QED
+% -- else
+% --   elemListN x1 (concatListN xs ys)
+% -- [tactic|
+% -- proof :: N -> ListN -> ListN -> Proof
+% -- proof x xs ys =
+% --   induct xs;
+% --   condition {elemListN x ys}
+% -- |]
+% -- %tactic:begin:proof
+% proof :: N -> ListN -> ListN -> Proof
+% proof = \x -> \xs -> \ys -> case xs of
+%                                 Data.Nil -> if elemListN x ys then trivial else trivial
+%                                 Data.Cons n_0 listN_1 -> if elemListN x ys
+%                                                           then proof x listN_1 ys
+%                                                           else trivial
+The following procedure describes how \LC{elem_concat} is processed into \LangB:
+\begin{enumerate}
+  \item 
+\end{enumerate}
   
- \subsection{Pruning}
-  
- \subsubsection{Linear Pruning}
-  
- For each auto site (i.e. each apreprocearance of \textbf{auto} in the preprocessed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
+\subsection{Pruning}
+
+\subsubsection{Linear Pruning}
+
+For each auto site (i.e. each apreprocearance of \textbf{auto} in the preprocessed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
