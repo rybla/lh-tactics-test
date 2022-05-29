@@ -24,18 +24,13 @@ Organization idea:
   \end{enumerate}
 \end{enumerate}
 
+% 
+% * real start
+% 
+
+%  TODO: use running example, simpler than min_assoc -- something that uses induct, auto (with lemma hints), cond
+  
  
- 
- 
-  
- The proof macro system introduced by this paper addresses these concerns and more by providing a macro interface to the user that allows them to concisely express terms of the subset of Haskell code that is useful for writing these SMT guides through Haskell control flow.
-  
- The proof macro system defines a DSL that can be written in ``tactic'' quasiquotes, and then this DSL term is expanded to the verbose Haskell term after type checking and pruning (to be explained soon).
-  
- The overarching idea behind the proof macro system is that an extrinsic proof has the following structure, involving two kinds of components:
- I. match control flow (e.g. conditions, cases, anything that adds information to the refinement context) of some functions that appear in the specification
- II. at each leaf of the resulting control-flow structure, use some lemmas and/or recursions to provide enough information to the refinement context that the SMT can automatically check that leaf's goal.
-  
   
 %  The proof macro system provides macros for each kind of component:
 %  Macros I:

@@ -198,6 +198,16 @@ We discuss limitations of our work in Section~\ref{sec:limitations}
 and related work in Section~\ref{sec:related}, before concluding with
 directions for future work~\ref{sec:future}.
 
+% TODO: not sure where to put this (probably should be deleted, since it would have gone here somewhere in the introduction)
+% The proof macro system introduced by this paper addresses these concerns and more by providing a macro interface to the user that allows them to concisely express terms of the subset of Haskell code that is useful for writing these SMT guides through Haskell control flow.
+  
+%  The proof macro system defines a DSL that can be written in ``tactic'' quasiquotes, and then this DSL term is expanded to the verbose Haskell term after type checking and pruning (to be explained soon).
+  
+%  The overarching idea behind the proof macro system is that an extrinsic proof has the following structure, involving two kinds of components:
+%  I. match control flow (e.g. conditions, cases, anything that adds information to the refinement context) of some functions that appear in the specification
+%  II. at each leaf of the resulting control-flow structure, use some lemmas and/or recursions to provide enough information to the refinement context that the SMT can automatically check that leaf's goal.
+  
+
 % TODO: some other examples to consider analyzing. I know the "assoc_min" example is particularly simple, but it does very much display the conciseness advantage, and doesn't have to use any lemmas
 
 % -- prop15_lemma
