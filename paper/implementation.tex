@@ -32,12 +32,84 @@ Organization idea:
   
 The proof macro system processes an input proof macro into an output Liquid Haskell proof term into stages:
 \begin{enumerate}
-  \item The user writes the input proof macro in Template Haskell quasiquotes. Then the user runs \TheTool \todo{how to talk about this executable} on the file containing the target proof macro to process. The quasiquoted proof macro is parsed into \LangA.
-  \item The \LangATerm is processed into a corresponding \LangBTerm, and all metadata values are given initial defaults.
-  \item The \LangBTerm is cached, embedded into Haskell, and then spliced in place of the original proof macro. 
-  \item The cached \LangBTerm is repeatedly pruned, making use of the metadata to track pruning progress, where each pruning step involves removing some proof terms contained inside of the entire \LangBTerm, embedding and splicing it in place of the original proof macro, and then running Liquid Haskell to check that the prune step was valid.
+  \item 
+  The user writes the input proof macro in Template Haskell quasiquotes. 
+  Then the user runs \TheTool \todo{how to talk about this executable} on the file containing the target proof macro to process. 
+  The quasiquoted proof macro is parsed into \LangA.
+  \item
+  The \LangATerm is processed into a corresponding \LangBTerm, and all metadata values are given initial defaults.
+  \item
+  The \LangBTerm is cached, embedded into Haskell, and then spliced in place of the original proof macro. 
+  \item 
+  The cached \LangBTerm is repeatedly pruned, using metadata to track pruning progress, where each pruning step involves removing some proof terms contained inside of the entire \LangBTerm, embedding and splicing it in place of the original proof macro, and then running Liquid Haskell to check that the prune step was valid.
 \end{enumerate}
   
+\subsection{The \LangA}
+
+The \LangA defines a collection of proof macros that are meant to resemble Coq tactics.
+The proof macro system is designed to be extendible, so that new proof macros can be added easily by adding a new constructor to the \LangA and then handling the new case for preprocessing.
+The syntax for \LangA is the following:
+
+\begin{align*}
+  \textit{decl-macro} ::= &
+    f ~ : ~ \textut{typ} \\ &
+    f ~ \overline{y_i} ~ = ~ \overline{\textit{exp-macro} ;}
+  \\[1em]
+  \textit{exp-macro} ::= &
+    \TC{induct} ~ x \\ | &
+    \TC{destruct} ~ \textit{exp} \\ | &
+    \TC{assert} ~ \textit{exp} \\ | &
+    \TC{dismiss} ~ \textit{exp} \\ | &
+    \TC{condition} ~ \textit{exp} \\ | &
+    \TC{auto} ~ [\overline{\textit{x} ,}] ~ n \\ | &
+    \TC{use} ~ \textit{exp} \\ | &
+    \TC{trivial}
+  \\[1em]
+  \textit{exp} ::= \text{Haskell expression} \\
+  \textit{typ} ::= \text{Haskell type (monomorphic)} \\
+  \textit{f, x, y_i} ::= \textit{Haskell name} \\
+  \textit{n} \in \mathbb{N}
+\end{align*}
+
+There are two main types of proof macros: 
+\begin{itemize}
+  \item
+  \textit{Control flow} macros are processed into control flow structures, such as pattern matching. 
+  If such a macro yields a control flow structure that has mutliple branches, then a macro-processing branch is created for each of these branches, and the sequence of proof macros following it are processed in each of these branches.
+  The control flow macros are:
+  \begin{itemize}
+    \item
+    $\TC{induct} ~ x$ --- patterm matches on $x$, which must be a function argument in the macro declaration.
+    In each case of the pattern match, the introduced variables are included in the recursion context at the corresponding argument position of $x$.
+    This recursion context keeps track of what expressions are allowed to be given as an argument, in that argument position, to a recursion.
+    A macro-processing branch is created for each case.
+    \item $\TC{destruct} ~ \textit{exp}$ --- pattern matches on $\textit{exp}$. A macro-processing branch is created for each case.
+    \item $\TC{condition} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{then} and \TC{else} branches respectively.
+    \item $\TC{assert} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{then} branch, but the \TC{else} branch is only filled with \TC{trivial}.
+    \item $\TC{dismiss} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{else} branch, but the \TC{then} branch is only filled with \TC{trivial}.
+  \end{itemize}
+  \item
+  \todo{think of better name? perhaps \textit{evidence-providing}?}
+  \textit{Evidence} macros are processed into terms that provide evidence to the Liquid Haskell checker, such as introducing a lemma to the refinement context.
+  \todo{is this the right place to put this note?}
+  Note that if a sequence of macros given in macro declaration (i.e. \textit{decl-macro}) does \textit{not} end in an evidence macro, then an \TC{auto} macro is included implicitly at the end of the sequence.
+  The evidence macros are:
+  \begin{itemize}
+    \item
+    $\TC{auto} ~ [\overline{\textit{x} ,}] ~ n$ --- generates all well-typed neutral forms that have type \TC{Proof}, up to height $n$, using variables in context and given as hints. 
+    The height of a neutral form is the height of its AST, where applications are multi-ary rather than nested binary (e.g. \TC{f x y z} has height 2 rather than height 4).
+    Recursive neutral forms are also generated in this way, but have the additional restriction that a recursive neutral form must have as one of its arguments a variable from that argument position's recursion context, ensuring that Liquid Haskell will be able to determine that the resulting Haskell function is terminating.
+    \item $\TC{use} ~ \textit{exp}$ --- includes the refinement of the expression's type into the refinement context.
+    \item $\TC{trivial}$ --- includes \TC{trivial :: Proof} into the resulting Haskell term. Note that \TC{trivial = ()} and \TC{Proof = ()}.
+  \end{itemize}
+\end{itemize}
+
+
+
+% TODO: put this in the implementation details section:
+Note that, for Liquid Haskell, the refinement of the type of \TC{f x y, trivial)} is the same as the refinement of the type of \TC{f x y}.
+So, the refinement of the expression's type can be included into the refinement context by simply adding it into the resulting Haskell expression
+
 %  The proof macro system provides macros for each kind of component:
 %  Macros I:
 %  - \code{induct x}: does case analysis on x, and if x was an input variable then notes that in each match, the pattern's variables are valid to use in recursive calls at the position of the input variable (this is taken to account in the "auto" c)
