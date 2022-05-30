@@ -115,7 +115,7 @@ For example, the following is a proof macro for generating a proof of ``if \LC{x
   elem_concat :: N -> [N] -> [N] -> Proof
   elem_concat x xs ys =
     induct xs;
-    condition {elem x ys}
+    assert {elem x ys}
   |]
 \end{code}
 
