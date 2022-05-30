@@ -134,18 +134,36 @@ For example, the following is a proof macro for generating a proof of ``if \LC{x
 
 The \LangB is a subset of Haskell with some additional metadata.
 The syntax of \LangB is the following:
-% \begin{align*}
-%   \textit{decl}~ ::= &
-%     \textit{name} ~ : ~ \textit{type} \\ &
-%     \textit{name} ~ \overline{\textit{name}} ~ = ~ \textit{expr}
-%   \\
-%   \textit{expr}~ ::= &
-%     \mathbf{\lambda} ~ \textit{name} ~ \textbf{->} ~ \textit{instr} \\ &
-%     \textbf{case} ~ \textit{exp} ~ \textbf{of} ~ \overline{\textit{pat} ~ \textbf{->} ~ \textit{exp} ;} \\ & 
-%     \textbf{if} ~ \textit{exp} ~ \textbf{then} ~ \textit{exp} ~ \textbf{else} ~ \textit{exp} \\ & 
-%     \textbf{auto} ~ [\overline{\textit{exp} ;}] \textit{pruning-metadata} \\ & 
-%     \textbf{trivial}
-% \end{align*}
+\begin{align*}
+  \textit{decl-proto} ::= &
+  ~ f ~ : ~ \textit{typ} \\ &
+  ~ f ~ = ~ \overline{\textit{exp-proto} ;}
+  \\
+  \textit{exp-proto}~ ::= &
+    ~ \MC{\lambda} ~ \textit{name} ~ \MC{\rightarrow} ~ \textit{exp-proto} \\ \mid &
+    ~ \MC{case} ~ \textit{exp} ~ \MC{of} ~ \overline{\textit{pat} ~ \MC{\rightarrow} ~ \textit{exp-proto} ;} \\ \mid &
+    ~ \MC{if} ~ \textit{exp} ~ \MC{then} ~ \textit{exp-proto} ~ \MC{else} ~ \textit{exp-proto} \\ \mid &
+    % ~ \MC{Auto} ~ \{ \textit{init}~=~[\overline{\textit{exp}},], ~ \textit{kept}~=~[\overline{\textit{exp}},], ~ \textit{pruned}~=~[\overline{\textit{exp}},] \} ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+    ~ \MC{Auto} \\ &
+    ~ \hspace{0.5em} \{ \textit{init}~=~[\overline{\textit{exp}},], \\ &
+    ~ \hspace{0.5em} \textit{kept}~=~[\overline{\textit{exp}},], \\ &
+    ~ \hspace{0.5em} \textit{pruned}~=~[\overline{\textit{exp}},] \} \\ &
+    ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+    ~ \textit{exp} ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+    ~ \text{trivial}
+  \\[1em]
+  \textit{exp} ::= & ~ \textit{Haskell expression} 
+  \\
+  \textit{pat} ::= & ~ \textit{Haskell pattern} 
+  \\
+  \textit{typ} ::= & ~ \textit{Haskell type (monomorphic)} 
+  \\
+  f, x ::= & ~ \textit{Haskell name} 
+  \\
+  n \in & ~ \mathbb{N}
+\end{align*}
+
+
 %  
 A term of \LangB can be directly embedded into Haskell by processing the \LC{Auto} structure in this way:
 \todo{how to format this?}
