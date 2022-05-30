@@ -103,8 +103,7 @@ There are two main types of proof macros:
   \end{itemize}
 \end{itemize}
 
-For example, the following is a proof macro for generating a proof that
-if \LC{x} is in a list \LC{xs}, then \LC{x} is also in the list \LC{xs ++ ys}:
+For example, the following is a proof macro for generating a proof of ``if \LC{x} is in a list \LC{xs}, then \LC{x} is also in the list \LC{xs ++ ys}'':
 \begin{code}
   {-@ 
   elem_concat ::
