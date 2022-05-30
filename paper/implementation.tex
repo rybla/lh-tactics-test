@@ -5,7 +5,7 @@ Organization idea:
   \item Overview the entire procedure:
   \begin{enumerate}
     \item The user writes a proof macro term in ``tactic'' quasiquotes as their proof, in EDSL1 i.e. the proof macro language
-    \item The proof macro term is preprocessed into a ``proto proof term'' in EDSL2 i.e. the metadata-augmented subset of Haskell relevant for extrinsic proofs
+    \item The proof macro term is processed into a ``proto proof term'' in EDSL2 i.e. the metadata-augmented subset of Haskell relevant for extrinsic proofs
     \item The ``proto proof term'' is embedded into Haskell, then spliced the place of the original proof macro. The file is checked.
     \item If the check passes, then the proto proof term is pruned by repeatedly pruning the proto proof term, embedding and splicing it into the place of the original proof macro, and checking if the pruned result still passes.
     \item The resulting proof term is a valid proof as determined by Liquid Haskell.
@@ -13,7 +13,7 @@ Organization idea:
   \item Detail the features of EDSL1 and the intended behaviors
   \item Briefly describe the details of EDSL2
   \begin{enumerate}
-    \item Describe how each feature in EDSL1 is implemented by a preprocessing transformation into EDSL2
+    \item Describe how each feature in EDSL1 is implemented by a processing transformation into EDSL2
     \item Preprocessing EDSL1 into EDSL2 is a contextual transformation, since it needs to keep track of an environment which includes various information (see Language.Core.Syntax.Environment'')
     \item How the ``auto'' term in EDSL2 includes metadata for which terms have have been pruned and which have been determined necessary.
   \end{enumerate}
@@ -45,7 +45,7 @@ The proof macro system processes an input proof macro into an output Liquid Hask
 \subsection{The \LangA}
 
 The \LangA defines a collection of proof macros that are meant to resemble Coq tactics.
-The proof macro system is designed to be extendible, so that new proof macros can be added easily by adding a new constructor to the \LangA and then handling the new case for preprocessing.
+The proof macro system is designed to be extendible, so that new proof macros can be added easily by adding a new constructor to the \LangA and then handling the new case for processing.
 The syntax for \LangA is the following:
 
 \begin{align*}
@@ -78,11 +78,11 @@ There are two main types of proof macros:
   \begin{itemize}
     \item
     $\TC{induct} ~ x$ --- patterm matches on $x$, which must be a function argument in the declaration macro.
-    In each case of the pattern match, the introduced variables are included in the recursion context at the corresponding argument position of $x$.
+    In each case of the pattern match, the introduced variables are included in the recursion context at the corresponding argument position of $x$, and the original $x$ is removed from the context.
     This recursion context keeps track of what expressions are allowed to be given as an argument, in that argument position, to a recursion.
     A macro-processing branch is created for each case.
-    Note that the hints and height arguments to this macro are optional, and take values \code{[]} and \TC{3} respectively by default.
-    \item $\TC{destruct} ~ \textit{exp}$ --- pattern matches on $\textit{exp}$. A macro-processing branch is created for each case.
+    \item 
+    $\TC{destruct} ~ \textit{exp}$ --- pattern matches on $\textit{exp}$. A macro-processing branch is created for each case.
     \item $\TC{condition} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{then} and \TC{else} branches respectively.
     \item $\TC{assert} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{then} branch, but the \TC{else} branch is only filled with \TC{trivial}.
     \item $\TC{dismiss} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \TC{else} branch, but the \TC{then} branch is only filled with \TC{trivial}.
@@ -98,6 +98,7 @@ There are two main types of proof macros:
     $\TC{auto} ~ [\overline{\textit{x} ,}] ~ n$ --- generates all well-typed neutral forms that have type \TC{Proof}, up to height $n$, using variables in context and given as hints. 
     The height of a neutral form is the height of its AST, where applications are multi-ary rather than nested binary (e.g. \TC{f x y z} has height 2 rather than height 4).
     Recursive neutral forms are also generated in this way, but have the additional restriction that a recursive neutral form must have as one of its arguments a variable from that argument position's recursion context, ensuring that Liquid Haskell will be able to determine that the resulting Haskell function is terminating.
+    Note that the hints and height arguments to this macro are optional, and take values \code{[]} and \TC{3} respectively by default.
     \item $\TC{use} ~ \textit{exp}$ --- includes the refinement of the expression's type into the refinement context.
     \item $\TC{trivial}$ --- includes \TC{trivial :: Proof} into the resulting Haskell term. Note that \TC{trivial = ()} and \TC{Proof = ()}.
   \end{itemize}
@@ -106,63 +107,20 @@ There are two main types of proof macros:
 % TODO: for sake a readability, I used the usual list notations such as [N] and (++). is this ok? since in the actual implementation, I decided not to overload the built-in Haskell list notations
 For example, the following is a proof macro for generating a proof of ``if \LC{x} is in a list \LC{xs}, then \LC{x} is also in the list \LC{xs ++ ys}'':
 \begin{code}
-  {-@ 
-  elem_concat ::
-    x:N -> xs:[N] -> ys:[N] ->
-    {elem x ys ==> elem x (xs ++ ys)}
-  @-}
+  prop x xs ys = if elem x ys then elem x (xs ++ ys) else True
+
+  {-@ elem_concat :: x:N -> xs:[N] -> ys:[N] -> {prop x xy ys} @-}
   [tactic|
   elem_concat :: N -> [N] -> [N] -> Proof
   elem_concat x xs ys =
-    induct xs;
-    assert {elem x ys}
+    assert {elem x ys};
+    induct xs
   |]
 \end{code}
 
+\subsection{The \LangB}
 
-% 
-% TODO: all text below this is temporary
-% 
-
-% TODO: put this in the implementation details section:
-Note that, for Liquid Haskell, the refinement of the type of \TC{f x y, trivial)} is the same as the refinement of the type of \TC{f x y}.
-So, the refinement of the expression's type can be included into the refinement context by simply adding it into the resulting Haskell expression
-
- The proof of "assoc\_min" can be expressed shortly as follows:
-  
- The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
- Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
- The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
- Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
- So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
- In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
-  
-\subsection{Preprocessing}
-  
-%s EDSL1 is used by the user to write proof macros inside of quasiquotes of the form \texttt{[tactic|...|]}
-%  
-% %Grammar of EDSL1:
-% \begin{align*}
-%   \textit{decl}~ ::= &
-%     \textit{name} ~ : ~ \textit{type} \\ &
-%     \textit{name} ~ \overline{\textit{name}} ~ = ~ \overline{\textit{instr} ; }
-%   \\
-%    \textit{instr} ~ ::= &
-%      \textbf{intro} ~ \textit{name} \\ | &
-%      \textbf{destruct} ~ \textit{name} ~ (\textbf{as} ~ \textit{destruct-pat}) ([\overline{\textit{flag},}]) \\ | &
-%      \textbf{induct} ~ \textit{name} ~ (\textbf{as} ~ \textit{pat}) ([\overline{\textit{induct-flag},}]) \\ | &
-%      \textbf{auto} ~ (\overline{\textit{name},}) (\textit{nat}) \\ | &
-%      \textbf{condition} ~ \textit{exp} ~ (\textbf{requires} ~ [\overline{\textit{name},}]) \\ | &
-%      \textbf{assert} ~ \textit{exp} ~ (\textbf{requires} ~ [\overline{\textit{name},}]) \\ | &
-%      \textbf{dismiss} ~ \textit{exp} ~ (\textbf{requires} ~ [\overline{\textit{name},}]) \\ | &
-%      \textbf{use} ~ \textit{exp} ~ (\textbf{requires} ~ [\overline{\textit{name},}]) \\ | &
-%      \textbf{trivial}
-%  \end{align*}
-%   
- The language EDSL1, defined above, is preprocessed into EDSL2 which is a subset of Haskell augmented with metadata. 
- The conceptual distinction between EDSL1 and EDSL2 is that preprocessing EDSL1 requires a context and producing many expressions per single EDSL1 instruction, whereas EDSL2 is strictly an embedding into Haskell and so each EDSL2 expression corresponds to exactly one Haskell expression.
-  
-% Grammar of EDSL2:
+Grammar of \LangB:
 % \begin{align*}
 %   \textit{decl}~ ::= &
 %     \textit{name} ~ : ~ \textit{type} \\ &
@@ -176,28 +134,29 @@ So, the refinement of the expression's type can be included into the refinement 
 %     \textbf{trivial}
 % \end{align*}
 %  
- An EDSL1 declaration is preprocessed into an EDSL2 declaration like so:
+A \LangA term is processed into an \LangB term via the following algorithm:
   
- \begin{verbatim}
- preprocessDecl : EDSL1-decl -> EDSL2-decl
- preprocessDecl (name, args, type, instrs) =
+% TODO: should I convert this to an algorithmic format? or should I just not include this algorithm's full detail at all
+\begin{verbatim}
+ processDecl : EDSL1-decl -> EDSL2-decl
+ processDecl (name, args, type, instrs) =
    set function name to name
    set output type to type
    for each arg
      get output type as a -> b 
      store type of arg as a
      set output type to b
-   preprocess instrs
+   process instrs
   
  // stateful
- preprocess : [EDSL1-instr] -> EDSL2-expr
- preprocess [] = []
- preprocess (instr : instrs) = case instr of 
+ process : [EDSL1-instr] -> EDSL2-expr
+ process [] = []
+ process (instr : instrs) = case instr of 
    intro x -> do
      [|a <- b|] <- get output type
      type of x := a
      output type := b
-     [|\x -> $(preprocess instrs)|]
+     [|\x -> $(process instrs)|]
    destruct exp requires xs -> do
      if all of xs are in scope then 
        varss <- get patterns for deconstructing exp
@@ -207,10 +166,10 @@ So, the refinement of the expression's type can be included into the refinement 
            args <- argument types of constr
            for each (var, arg) in in (pats * args)
              type of var := arg
-           [|ps -> $(preprocess instrs)|]
+           [|ps -> $(process instrs)|]
        [|case exp of matches|]
      else
-       preprocess instrs
+       process instrs
    induct exp requires xs -> do
      if all of xs are in scope then 
        varss <- get patterns for deconstructing exp
@@ -223,71 +182,102 @@ So, the refinement of the expression's type can be included into the refinement 
                add var to context of recursive-safe expression to fill the
                respective argument of a recursive call
              type of var := arg
-           [|ps -> $(preprocess instrs)|]
+           [|ps -> $(process instrs)|]
        [|case exp of matches|]
      else
-       preprocess instrs
+       process instrs
    auto hints depth ->
      generate all neutral forms in context, up to depth
      when a recursion is generated, at least one of its arguments must be something from the context of recursive safe expressions for that argument (which is populated via induct)
    assert exp requires xs ->
      if all of xs are in scope then
-       [|if exp then $(preprocess instrs) else True|]
+       [|if exp then $(process instrs) else True|]
      else
-       preprocess instrs
+       process instrs
    dismiss exp requires xs ->
      if all of xs are in scope then
-       [|if exp then True else $(preprocess instrs)|]
+       [|if exp then True else $(process instrs)|]
      else
-       preprocess instrs
+       process instrs
    use exp requires xs -> 
-     [|use exp &&& $(preprocess instrs)]
+     [|use exp &&& $(process instrs)]
    condition exp requires xs ->
-     [|if exp then $(preprocess instrs) else $(preprocess instrs)]
+     [|if exp then $(process instrs) else $(process instrs)]
    trivial ->
      [|trivial|]
- \end{verbatim}
+\end{verbatim}
 
- %  TODO: use running example, simpler than min_assoc -- something that uses induct, auto (with lemma hints), cond
+% TODO: how to properly reference this
+Recall the proof macro used to prove \TC{elem_concat}.
+The macro declaration begins with a type signature and then \TC{elem_concat x xs ys}.
+From the type signature, the proof macro system can deduce the types of \TC{x}, \TC{xs}, and \TC{ys} and bring these variables into context.
+\footnote{Unfortunately, types of local bindings cannot be inferred wiht Template Haskell, so the type signature is in fact necessary.}
+The sequence of proof macros begins with \TC{assert {elem x ys}}, which conditions on \TC{elem x ys} and then fills with \TC{else} case with \TC{trivial}.
+The last proof macro is \TC{induct xs}, which pattern matches on \TC{xs} into 2 macro-processing branching: \TC{[]} and \TC{x':xs'}.
+\footnote{In the implementation, these fresh variables are given unique suffixes, but this unecessarily intrudes on readability.}
+In the second branch, the variables \TC{x'} and \TC{xs'} are added to the recursion context for the 2nd argument position, since \TC{xs} is in the 2nd argument position.
+Finally, since the last proof macro was \textit{not} an evidence macro, a \TC{auto} is implicitly appended.
+This \TC{auto} is processed in each branch resulting from \TC{induct xs}.
+In the branch for \TC{[]}, the only values in scope are \TC{x} and \TC{ys}, so there are no neutral forms to generate.
+The recursion \TC{elem_concat x ys ys} is not generated because none of the arguments are from the recursion context of their respective argument position.
+In the branch for \TC{[]}, the values in sccope are \TC{x}, \TC{x'}, \TC{xs'}, and \TC{ys}, so there are several neutral forms that can be generated -- in particular, several recursions:
+\begin{itemize}
+  \item \TC{elem_concat x' xs' xs'}
+  \item \TC{elem_concat x' xs' ys}
+  \item \TC{elem_concat x xs' xs'}
+  \item \TC{elem_concat x xs' ys}
+\end{itemize}
+These are valid recursions because all of them have at least one argument from the recursion context at that argument position: \TC{xs'}.
+Altogether, the resulting \LangBTerm is the following:
+\begin{code}
+  elem_concat :: N -> [N] -> [N] -> Proof
+  elem_concat = \x xs ys ->
+    if elem x ys then
+      case xs of
+        Nil -> trivial
+        Cons x' xs' -> Auto
+          { init = [ elem_concat x' xs' xs' 
+                   , elem_concat x' xs' ys
+                   , elem_concat x  xs' xs'
+                   , elem_concat x  xs' ys ]
+          , kept = []
+          , pruned = [] }
+    else
+      trivial
+\end{code}
+Here, the \TC{Auto} structure corresponds to the term
+\begin{code}
+  elem_concat x' xs' xs' &&&
+  elem_concat x' xs' ys  &&&
+  elem_concat x  xs' xs' &&&
+  elem_concat x  xs' ys
+\end{code}
+with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
-Consider the following example proof macro:
-% {-@ reflect prop @-}
-% prop x xs ys = 
-%   if elemListN x ys then 
-%     elemListN x (concatListN xs ys)
-%   else 
-%     True
-%  
-% {-@ automatic-instances proof @-}
-% {-@
-% proof :: x:N -> xs:ListN -> ys:ListN -> {prop x xs ys}
-% @-}
-% -- elemListN x1 (concatListN (Cons x2 xs) ys)
-% -- elemListN x1 (Cons x2 (concatListN xs ys))
-% -- if x1 == x2 then 
-% --   QED
-% -- else
-% --   elemListN x1 (concatListN xs ys)
-% -- [tactic|
-% -- proof :: N -> ListN -> ListN -> Proof
-% -- proof x xs ys =
-% --   induct xs;
-% --   condition {elemListN x ys}
-% -- |]
-% -- %tactic:begin:proof
-% proof :: N -> ListN -> ListN -> Proof
-% proof = \x -> \xs -> \ys -> case xs of
-%                                 Data.Nil -> if elemListN x ys then trivial else trivial
-%                                 Data.Cons n_0 listN_1 -> if elemListN x ys
-%                                                           then proof x listN_1 ys
-%                                                           else trivial
-The following procedure describes how \LC{elem_concat} is processed into \LangB:
-\begin{enumerate}
-  \item 
-\end{enumerate}
+Of course, it turns out that not all of these terms are needed for a valid proof.
+The pruning process, described in the next subsection, describes how the \TC{Auto} structure's metadata is used statefully to safely prune the unnecessary terms.
   
 \subsection{Pruning}
 
 \subsubsection{Linear Pruning}
 
-For each auto site (i.e. each apreprocearance of \textbf{auto} in the preprocessed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
+For each auto site (i.e. each apreprocearance of \textbf{auto} in the processed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
+
+% 
+% ! TEMPORARY
+% 
+
+% TODO: where to put this?
+Note that, for Liquid Haskell, the refinement of the type of \TC{f x y, trivial)} is the same as the refinement of the type of \TC{f x y}.
+So, the refinement of the expression's type can be included into the refinement context by simply adding it into the resulting Haskell expression
+
+% TODO: where to put this? i have a different example i used for this section, so do I need to bring back assoc_min again?
+The proof of "assoc\_min" can be expressed shortly as follows:
+  
+ The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
+ Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
+ The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
+ Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
+ So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
+ In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
+  
