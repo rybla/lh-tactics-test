@@ -120,7 +120,8 @@ For example, the following is a proof macro for generating a proof of ``if \LC{x
 
 \subsection{The \LangB}
 
-Grammar of \LangB:
+The \LangB is a subset of Haskell with some additional metadata.
+The syntax of \LangB is the following:
 % \begin{align*}
 %   \textit{decl}~ ::= &
 %     \textit{name} ~ : ~ \textit{type} \\ &
@@ -134,9 +135,15 @@ Grammar of \LangB:
 %     \textbf{trivial}
 % \end{align*}
 %  
-A \LangA term is processed into an \LangB term via the following algorithm:
-  
+A term of \LangB can be directly embedded into Haskell by processing the \TC{Auto} structure in this way:
+% TODO: how to format this?
+\begin{code}
+  Auto { init = [a1, ..., aM], init = [b1, ..., bN], pruned } ==>
+  a1 &&& ... &&& aM &&& b1 &&& ... &&& bN
+\end{code}
+
 % TODO: should I convert this to an algorithmic format? or should I just not include this algorithm's full detail at all
+A \LangA term is processed into an \LangB term via the following algorithm:
 \begin{verbatim}
  processDecl : EDSL1-decl -> EDSL2-decl
  processDecl (name, args, type, instrs) =
@@ -261,7 +268,17 @@ The pruning process, described in the next subsection, describes how the \TC{Aut
 
 \subsubsection{Linear Pruning}
 
-For each auto site (i.e. each apreprocearance of \textbf{auto} in the processed EDSL2), each \textit{exp} it uses is pruned one at a time, checking to see if Liquid Haskell still passes after the pruning. If a prune succeeds the pruned \textit{exp} is discarded, otherwise the pruned \textit{exp} is returned to the original \textbf{auto} site.
+For each \TC{Auto} structure in a \LangBTerm, each \textit{exp} in its \TC{init} field is attempted to be pruned one at a time.
+This is done by moving the \textit{exp} from the \TC{init} field to the \TC{pruned} field, embedding and splicing the new \LangBTerm into the original Haskell file in place of the original proof macro, and then running Liquid Haskell to check if this prune was safe.
+If it was then pruning continues with the rest of the \textit{exp}s in the \TC{init} fields of the \TC{Auto} structures, otherwise this prune is undone, and the \textit{exp} that was attempted to be pruned is instead moved to the \TC{kept} field before continuing pruning.
+
+% TODO: pretty sure this shouldn't be included
+\subsubsection{Superlinear Pruning}
+
+Since the set of \textit{exp}s that can be safely pruned is an arbitrary subset of all the \textit{exp}s in \TC{Auto} structures in a \LangBTerm, given the information available at this stage, it is impossible to achieve generally superlinear pruning runtime. 
+However, very often the size of the subset of \textit{exp}s that need to be kept is constant size -- around 1-4.
+So in practice it may be feasible to perform a sort of binary search.
+% TODO: describe more?
 
 % 
 % ! TEMPORARY
