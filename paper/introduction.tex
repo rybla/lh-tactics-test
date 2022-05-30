@@ -143,12 +143,11 @@ situations to aid users' proof efforts.
 
 {\em What can we do within the confines of the existing Haskell
   ecosystem to aid users?}
-% proofs, this problem is even more pronounced suffers
-% from the inability of the Liquid Haskell system to fully support
-% proof-relevant manipulations (e.g. reasoning about higher-order
-% functions/predicates).
-% % TODO: explain in more detail the last clause, if relevant enough
-
+  Without interactivity, an interface to concise proof generators must expand to
+  a proof term all at once i.e. a macro. So, we developed an macro
+  system for generating Liquid Haskell proof terms, using existing
+  metaprogramming tools for Haskell.
+  % TODO: any other limitations to mention, that directed us to this solution?
 
 \paragraph*{Liquid Proof Macros}
 
