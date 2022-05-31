@@ -292,84 +292,68 @@ apparent when we discuss pruning below.
 \begin{code}
   Auto { init = [a1, ..., aM]
        , kept = [b1, ..., bN]
-       , pruned = _ }
-
-  ==>
-
+       , pruned = _ } ==>
   a1 &&& ... &&& aM &&& b1 &&& ... &&& bN
 \end{code}
 
 \leo{Semantics of proof macros as proto-buf?}
 \todo{should I convert this to an algorithmic format? or should I just not include this algorithm's full detail at all}
 A \LangA term is processed into an \LangB term via the following algorithm:
+
+% \newpage
+\newcommand{\Rho}{\mathrm{P}}
+\newcommand{\expandsTo}{\rightsquigarrow}
+\newcommand{\macroHole}[2]{\Box_{#1 ; ~ #2}}
+
+% TODO: transition
+In the following rules, $\Gamma$ is the type macro-context which associates
+variables to Haskell types, and $\Rho$ is the recursion context which associates
+arguments of the top-level declaration to a type macro-context.
+\begin{align*}
+\begin{array}{l}
+  \Gamma \vdash x : \alpha \\
+  \Rho \ni x \mapsto \varnothing \\
+  \hline 
+  \Gamma; \Rho 
+  \vdash
+  \MC{induct} ~ x
+  \expandsTo 
+  \MC{case} ~ x ~ \MC{of} ~ 
+  \overline{
+    c_i ~ \overline{y_{i,j}} ~ \rightarrow ~ 
+    \macroHole
+      {(\Gamma \cup \{\overline{y_{i,j}:\beta_{i,j}}\}) \setminus \{x:\alpha\}}
+      {\Rho[ x \mapsto \{\overline{y_{i,j}:\beta_{i,j}}\} ]};
+  }
+\\[1em]
+  \Gamma \vdash e : \alpha \\
+  \alpha ~ \text{has constructors} ~ \overline{c_i : \overline{\beta_{i,j} \rightarrow} ~ \alpha} \\
+  \hline 
+  \Gamma; \Rho
+  \vdash
+  \MC{destruct} ~ e
+  \expandsTo 
+  \MC{case} ~ e ~ \MC{of} ~
+  \overline{
+    c_i ~ \overline{y_{i,j}} ~ \rightarrow ~ 
+    \macroHole
+      {\Gamma \cup \{\overline{y_{i,j}:\beta_{i,j}}\}}
+      {\Rho};
+  }
+\\[1em]
+  \Gamma \vdash e : \MC{Proof} \\
+  \hline
+  \Gamma; \Rho
+  \vdash 
+  \MC{use} \{ e \} 
+  \expandsTo
+  e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
+\end{array}
+\end{align*}
+
+% TODO: write table of rules in mathematical notation
 \begin{verbatim}
- processDecl : EDSL1-decl -> EDSL2-decl
- processDecl (name, args, type, instrs) =
-   set function name to name
-   set output type to type
-   for each arg
-     get output type as a -> b 
-     store type of arg as a
-     set output type to b
-   process instrs
-  
- // stateful
- process : [EDSL1-instr] -> EDSL2-expr
- process [] = []
- process (instr : instrs) = case instr of 
-   intro x -> do
-     [|a <- b|] <- get output type
-     type of x := a
-     output type := b
-     [|\x -> $(process instrs)|]
-   destruct exp requires xs -> do
-     if all of xs are in scope then 
-       varss <- get patterns for deconstructing exp
-       constrs <- constructors of the datatype of exp
-       matches <- 
-         for each (vars, constr) in (varss * constrs)
-           args <- argument types of constr
-           for each (var, arg) in in (pats * args)
-             type of var := arg
-           [|ps -> $(process instrs)|]
-       [|case exp of matches|]
-     else
-       process instrs
-   induct exp requires xs -> do
-     if all of xs are in scope then 
-       varss <- get patterns for deconstructing exp
-       constrs <- constructors of the datatype of exp
-       matches <-
-         for each (vars, constr) in (varss * constrs)
-           args <- argument types of constr
-           for each (var, arg) in in (pats * args)
-             if exp is an argument to the top-level proposition then
-               add var to context of recursive-safe expression to fill the
-               respective argument of a recursive call
-             type of var := arg
-           [|ps -> $(process instrs)|]
-       [|case exp of matches|]
-     else
-       process instrs
-   auto hints depth ->
-     generate all neutral forms in context, up to depth
-     when a recursion is generated, at least one of its arguments must be something from the context of recursive safe expressions for that argument (which is populated via induct)
-   assert exp requires xs ->
-     if all of xs are in scope then
-       [|if exp then $(process instrs) else True|]
-     else
-       process instrs
-   dismiss exp requires xs ->
-     if all of xs are in scope then
-       [|if exp then True else $(process instrs)|]
-     else
-       process instrs
-   use exp requires xs -> 
-     [|use exp &&& $(process instrs)]
-   condition exp requires xs ->
-     [|if exp then $(process instrs) else $(process instrs)]
-   trivial ->
-     [|trivial|]
+ 
 \end{verbatim}
 
 \todo{how to properly reference this}
