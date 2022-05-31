@@ -179,40 +179,79 @@ Figure~\ref{fig:proof-macro-lang} exhibit such functionality:
 
   This macro creates a pattern match on $x$, which is assumed to be a
   function argument defined in the macro declaration, using the typing
-  information available to Template Haskell. 
-  In each case of
-  the pattern match, any pattern variables are included in the recursion context at the corresponding
-  argument position of $x$, and the original $x$ is removed from the
-  context.  This recursion context keeps track of what expressions are
-  allowed to be given as an argument, in that argument position, to a
-  recursion.  A macro-processing branch is created for each case.
+  information available to Template Haskell.  In each case of the
+  pattern match, any pattern variables are only included in the recursion
+  context at the corresponding argument position of $x$, and the
+  original $x$ is removed. This ensures that \LC{auto} will not construct
+  non-terminating recursive calls.
 
-\item 
-    $\MC{destruct} ~ \textit{exp}$ --- pattern matches on $\textit{exp}$. A macro-processing branch is created for each case.
-    \item $\MC{condition} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \MC{then} and \MC{else} branches respectively.
-    \item $\MC{assert} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \MC{then} branch, but the \MC{else} branch is only filled with \MC{trivial}.
-    \item $\MC{dismiss} ~ \textit{exp}$ --- conditions on $\text{exp}$. A macro-processing branch is created for the \MC{else} branch, but the \MC{then} branch is only filled with \MC{trivial}.
-  \end{itemize}
+\item $\MC{destruct} ~ \textit{exp}$:
 
+  This macro corresponds to simple case analysis. Similarly to
+  \LC{induct}, it creates a pattern match on $\textit{exp}$, but it
+  does not modify the recursion context.  --- pattern matches on
+  $\textit{exp}$. 
 
-\todo{for sake a readability, I used the usual list notations such as [N] and (++). is this ok? since in the actual implementation, I decided not to overload the built-in Haskell list notations}
-For example, the following is a proof macro for generating a proof of ``if \LC{x} is in a list \LC{xs}, then \LC{x} is also in the list \LC{xs ++ ys}'':
+\item $\MC{condition} ~ \textit{exp}$:
+
+  This macro conditions on $\text{exp}$ creating an \LC{if} statement
+  in the proof term. A macro-processing branch is created for each of
+  the \MC{then} and \MC{else} branches respectively.
+
+\item $\MC{assert} ~ \textit{exp}$:
+
+  Simplified version of \LC{condition}, that only creates a
+  macro-processing branch for the \MC{then} branch, while the
+  \MC{else} branch is only filled with \MC{trivial}.
+  
+\item $\MC{dismiss} ~ \textit{exp}$:
+
+  Dual of \LC{assert}.
+
+\end{itemize}
+
+For concreteness, as a running example for the rest of the paper, consider
+the following interaction between the list append and membership functions,
+\footnote{For the sake of readability, we used the usual list
+  notations such as (++) for list append, rather than their refined
+  list counterparts.}%
+%
+which states that if a number \LC{x} is an element of a list \LC{xs},
+then \LC{x} is also in the list \LC{xs ++ ys} for an arbitrary list \LC{ys}:
 \begin{code}
-  prop x xs ys = if elem x ys then elem x (xs ++ ys) else True
+  concatElemP :: N -> [N] -> [N] -> Bool
+  concatElemP x xs ys
+    | elem x xs = elem x (xs ++ ys)
+    | otherwise = True
 
-  {-@ elem_concat :: x:N -> xs:[N] -> ys:[N] -> {prop x xy ys} @-}
+  {-@ concatElem :: x:N -> xs:[N] -> ys:[N] ->
+      {concatElemP x xy ys} @-}
   [tactic|
-  elem_concat :: N -> [N] -> [N] -> Proof
-  elem_concat x xs ys =
-    assert {elem x ys};
-    induct xs
+  concatElem :: N -> [N] -> [N] -> Proof
+  concatElem x xs ys =
+    assert {elem x xs};
+    induct xs;
+    auto -- This is unnecessary!
   |]
 \end{code}
 
+At a high level, what this proof macro does is condition on the
+expression \LC{elem x xs} (from the \LC{assert} macro), pattern match
+on \LC{xs} (from the \LC{induct} macro), and search for ways to
+complete the proof, potentially using the tail of \LC{xs} for a
+recursive call (from \LC{auto}). This is achieved by expanding these
+macros back into a subset of Haskell, which we call the {\em \LangB}.
+
 \subsection{The \LangB}
 
-The \LangB is a subset of Haskell with some additional metadata.
-The syntax of \LangB is the following:
+The \LangB is at its core a subset of Haskell expressions with some
+additional metadata.  Figure~\ref{fig:langb-syntax} depicts its
+syntax, which contains lambdas, pattern matching with case, if
+statements, Liquid Haskell's conjunction \LC{&&&} and \LC{trivial}, as
+well as a special construct \LC{Auto} that keeps track of 3 lists of
+arbitrary Haskell expressions. 
+
+\begin{figure}
 \begin{align*}
   \textit{decl-proto} ::= &
   ~ f ~ : ~ \textit{typ} \\ &
@@ -222,14 +261,14 @@ The syntax of \LangB is the following:
     ~ \MC{\lambda} ~ \textit{name} ~ \MC{\rightarrow} ~ \textit{exp-proto} \\ \mid &
     ~ \MC{case} ~ \textit{exp} ~ \MC{of} ~ \overline{\textit{pat} ~ \MC{\rightarrow} ~ \textit{exp-proto} ;} \\ \mid &
     ~ \MC{if} ~ \textit{exp} ~ \MC{then} ~ \textit{exp-proto} ~ \MC{else} ~ \textit{exp-proto} \\ \mid &
-    % ~ \MC{Auto} ~ \{ \textit{init}~=~[\overline{\textit{exp}},], ~ \textit{kept}~=~[\overline{\textit{exp}},], ~ \textit{pruned}~=~[\overline{\textit{exp}},] \} ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+  % ~ \MC{Auto} ~ \{ \textit{init}~=~[\overline{\textit{exp}},], ~ \textit{kept}~=~[\overline{\textit{exp}},], ~ \textit{pruned}~=~[\overline{\textit{exp}},] \} ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+    ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+    ~ \textit{exp} ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
+    ~ \text{trivial} \\ \mid &
     ~ \MC{Auto} \\ &
     ~ \hspace{0.5em} \{ \textit{init}~=~[\overline{\textit{exp}},], \\ &
     ~ \hspace{0.5em} \textit{kept}~=~[\overline{\textit{exp}},], \\ &
     ~ \hspace{0.5em} \textit{pruned}~=~[\overline{\textit{exp}},] \} \\ &
-    ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
-    ~ \textit{exp} ~ \&\&\& ~ \textit{exp-proto} \\ \mid &
-    ~ \text{trivial}
   \\[1em]
   \textit{exp} ::= & ~ \textit{Haskell expression} 
   \\
@@ -241,16 +280,26 @@ The syntax of \LangB is the following:
   \\
   n \in & ~ \mathbb{N}
 \end{align*}
+\caption{Syntax of the \LangB}
+\label{fig:langb-syntax}
+\end{figure}
 
-
-%  
-A term of \LangB can be directly embedded into Haskell by processing the \LC{Auto} structure in this way:
-\todo{how to format this?}
+With the exception of \LC{Auto}, terms in the \LangB can be directly
+embedded into Haskell. In turn, \LC{Auto} can be embedded by
+translating the \LC{kept} and \LC{init} lists of expressions to
+sequences of Liquid Haskell conjunctions---the reason will become
+apparent when we discuss pruning below.
 \begin{code}
-  Auto { init = [a1, ..., aM], init = [b1, ..., bN], pruned } ==>
+  Auto { init = [a1, ..., aM]
+       , kept = [b1, ..., bN]
+       , pruned = _ }
+
+  ==>
+
   a1 &&& ... &&& aM &&& b1 &&& ... &&& bN
 \end{code}
 
+\leo{Semantics of proof macros as proto-buf?}
 \todo{should I convert this to an algorithmic format? or should I just not include this algorithm's full detail at all}
 A \LangA term is processed into an \LangB term via the following algorithm:
 \begin{verbatim}
