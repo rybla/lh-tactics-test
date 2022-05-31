@@ -305,34 +305,35 @@ consisely than the generated proof term.
 % (deleteListN x ys')) (lengthListN ys') (lengthListN ys) &&& proof x ys' --
 % %tactic:end:proof
 
-\subsection{Limitations}
+% TODO: this has been moved to further-work.tex
+% \subsection{Limitations}
 
-Although the evaulation provides significant evidence that the proof macro
-system can in many cases meet our goals, it also comes with several limitations.
-\todo{should I just talk about these all in the further work section?}
+% Although the evaulation provides significant evidence that the proof macro
+% system can in many cases meet our goals, it also comes with several limitations.
+% \todo{should I just talk about these all in the further work section?}
 
-\paragraph{No polymorphism for \LC{auto}.} The \LC{auto} macro cannot handle
-  polymorphism, because it only uses syntactic equality when checking if an
-  value's type is compatible with the type expected for an argument in a neutral
-  form being generated.
+% \paragraph{No polymorphism for \LC{auto}.} The \LC{auto} macro cannot handle
+%   polymorphism, because it only uses syntactic equality when checking if an
+%   value's type is compatible with the type expected for an argument in a neutral
+%   form being generated.
 
-\paragraph{No abstract macros.} There is no way to define a \textit{abstract}
-  macro that expands into a sequence of macros. This results in needless
-  redundancy where many proofs contain the same sequence of macros, differing
-  only in the particular argument given.
+% \paragraph{No abstract macros.} There is no way to define a \textit{abstract}
+%   macro that expands into a sequence of macros. This results in needless
+%   redundancy where many proofs contain the same sequence of macros, differing
+%   only in the particular argument given.
   
-\paragraph{Slow pruning algorithm.} The pruning algorithm used is guaranteed to
-  find the subset of the \LC{auto}-generated \textit{exp}s that make the proof
-  pass, if such a subset exists, but it is a slow process. As show in figure
-  \ref{fig:evaluation}, sometimes the number of \textit{exp}s geneated is too
-  large to be pruned in a reasonable amount of time. \todo{how to qualify this
-  formally? just pick a time limit?}
+% \paragraph{Slow pruning algorithm.} The pruning algorithm used is guaranteed to
+%   find the subset of the \LC{auto}-generated \textit{exp}s that make the proof
+%   pass, if such a subset exists, but it is a slow process. As show in figure
+%   \ref{fig:evaluation}, sometimes the number of \textit{exp}s geneated is too
+%   large to be pruned in a reasonable amount of time. \todo{how to qualify this
+%   formally? just pick a time limit?}
   
-\paragraph{No \LC{auto} hints with refined argument types.} If an \LC{auto}
-  macro is given a hint \LC{h :: (a:A | f a) -> B}, where \LC{f :: A -> Bool} is
-  a predicate over \LC{A}, the proof macro system may generate a neutral form
-  \LC{f x} where Liquid Haskell cannot deduce that \LC{f x} holds. In this
-  situation, Liquid Haskell will reject the proof before pruning begins, so the
-  problematic neutral form cannot be pruned. The proof macro system has no way
-  to filter out these sorts of neutral forms because Template Haskell doesn't
-  have access to refinement information.
+% \paragraph{No \LC{auto} hints with refined argument types.} If an \LC{auto}
+%   macro is given a hint \LC{h :: (a:A | f a) -> B}, where \LC{f :: A -> Bool} is
+%   a predicate over \LC{A}, the proof macro system may generate a neutral form
+%   \LC{f x} where Liquid Haskell cannot deduce that \LC{f x} holds. In this
+%   situation, Liquid Haskell will reject the proof before pruning begins, so the
+%   problematic neutral form cannot be pruned. The proof macro system has no way
+%   to filter out these sorts of neutral forms because Template Haskell doesn't
+%   have access to refinement information.
