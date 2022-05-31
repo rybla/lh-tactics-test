@@ -309,8 +309,11 @@ A \LangA term is processed into an \LangB term via the following algorithm:
 In the following rules, $\Gamma$ is the type macro-context which associates
 variables to Haskell types, and $\Rho$ is the recursion context which associates
 arguments of the top-level declaration to a type macro-context.
-\begin{align*}
-\begin{array}{l}
+
+\begin{figure*}
+{\centering
+\[
+\begin{array}{c}
   \Gamma \vdash x : \alpha \\
   \Rho \ni x \mapsto \varnothing \\
   \hline 
@@ -349,7 +352,11 @@ arguments of the top-level declaration to a type macro-context.
   \expandsTo
   e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
 \end{array}
-\end{align*}
+\]
+}
+\caption{Proof macro semantics}
+\label{fig:proof-macro-semantics}
+\end{figure*}
 
 % TODO: write table of rules in mathematical notation
 \begin{verbatim}
