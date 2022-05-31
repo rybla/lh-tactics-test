@@ -1,25 +1,93 @@
-\section{Further Work}
+\section{Limitations and Further Work}
 
-- integrate into Liquid Haskell as a plugin or part of the Liquid Haskell plugin
-- handle the splices code implicitly, rather than having to splice the new code in place
-  - i.e. make it more like normal Template Haskell splicing
-- handle lemma applications where the lemma has refined arguments
-  - this currently isn't supported because Template Haskell doesn't know about refinements
-- support polymorphism
-  - requires a custom unification algorithm because Template Haskell doesn't have \LC{unify}
-  - there's a family of extensions related to polymorphism, such as supporting tyepclass constraints, etc.
-- support deeper pattern matching
-  - currently, descruct and induct are the only two ways to pattern match, and they only pattern match on exactly one level of destruction
-- more efficient pruning
-  - need to search for an arbitrary subset of the generated lemma applications, so at worst linear search is asymptotically best, BUT usually we are looking for a set of 0-2 lemma applications, so can do better in practice 
-- more advanced forms of \LC{auto} tactic
-  - \LC{refine e[?1, ..., ?n]} tactic:
-    - the expression \LC{e[?1, ..., ?n]} is a neutral form that contains a collection of holes.
-    - since \LC{e} is in neutral form, each hole can have its type determined by context
-    - then, the same \LC{auto} implementation can be invoked to generate terms to fill these holes, using things in scope
-    - the resulting neutral forms can be pruned as usual for results from \LC{auto}
-- better auto hints interface
-  - basically, start copying features from Coq 
-  - pre-defined collections of hints
-  - include/exclude hints at top level or per definition
-  - allow arbitrary neutral forms as hints -- not just variables
+The main goal of this paper is to demonstrate how existing tools in the Haskell
+ecosystem can be used to provide a much better interface to a large category of
+common Liquid Haskell proofs. However, our implementation comes with various
+limitations, and we discuss how further work can extend the current
+implementation to address them.
+
+\paragraph{Polymorphic hints for \LC{auto}.}
+The \LC{auto} macro cannot handle polymorphism, because it only uses syntactic
+equality when checking if an value's type is compatible with the type expected
+for an argument in a neutral form being generated.
+
+\paragraph{Abstract macros.} 
+There is no way to define a \textit{abstract} macro that expands into a sequence
+of macros. This results in needless redundancy where many proofs contain the
+same sequence of macros, differing only in the particular argument given.
+  
+\paragraph{Pruning algorithm runtime complexity.} 
+The pruning algorithm used is guaranteed to find the subset of the
+\LC{auto}-generated \textit{exp}s that make the proof pass, if such a subset
+exists, but it is a slow process. As show in figure \ref{fig:evaluation},
+sometimes the number of \textit{exp}s geneated is too large to be pruned in a
+reasonable amount of time. \todo{how to qualify this formally? just pick a time
+limit?}
+  
+\paragraph{Refined argument types of hints for \LC{auto}.} 
+If an \LC{auto} macro is given a hint \LC{h :: (a:A | f a) -> B}, where
+\LC{f ::A -> Bool} is a predicate over \LC{A}, the proof macro system may
+generate a neutral form \LC{f x} where Liquid Haskell cannot deduce that 
+\LC{f x} holds. In this situation, Liquid Haskell will reject the proof before
+pruning begins, so the problematic neutral form cannot be pruned. The proof
+macro system has no way to filter out these sorts of neutral forms because
+Template Haskell doesn't have access to refinement information.
+
+\paragraph{Liquid Haskell plugin}.
+The user interface to Liquid Haskell developed into a plugin that works in
+tandem with the Haskell build system \textit{stack} \todo{citation}. Currently,
+the proof macro systen requires the user to run its tool on each file
+individually, and each proof macro individually for pruning. The user experience
+would be dramatically improved if the proof macro system was integrated into the
+existing Liquid Haskell plugin, and run automatically when the project is built.
+
+\paragraph{Template-Haskell-style implicit splicing.} 
+Template Haskell splices code implicitly during compilation, in such a way that
+the splices are never actually displayed inline with the user's original code.
+Currently, Template Haskell is not well-supported by Liquid Haskell \todo{cite a
+github issue maybe?}, so the proof macro system must overwrite the user's
+original file to explicitly splice the generated code in, even though the
+spliced code is generated inside Template Haskell's quotation monad, \LC{Q}, and
+encoded in Template Haskell's types for code data, \LC{Dec} and \LC{Exp} for
+declarations and expressions respectively. This explicit splicing makes it more
+cumbersome to make changes quickly and let the original source file take full
+advantage of conciseness allowed by the proof macro system.
+
+\paragraph{Deep Pattern Matching.}
+The proof macro system currently only supports simple pattern matching via the
+\LC{destruct} and \LC{induct} macros. However, systems such as Coq's tactic
+langauge demonstrates how deeper pattern matching can be given a convenient
+interface and be very useful. Deep pattern matching features can be implemented
+in the \LangA in such a way that they expand to series of normal macros that are
+already fully implemented.
+
+\paragraph{Advanced \LC{auto} variants.}
+The \LC{auto} macro has the minimal amount of complexity needed to be useful. It
+simply generates every neutral form it can up to a certain syntactic height.
+However, more specific kinds of similar searches in the space of neutral terms
+can be allowed, such as a \LC{refined-auto} macro that take as input a neutral
+form with holes in place of some of its (perhaps nested) arguments. Then, the
+macro system would generate all neutral forms that correspond to the original
+neutral form with its holes filled by neutral forms. For example,
+\begin{code}
+  refined-auto (f (f a _) _) 3
+\end{code}
+where \LC{f :: A -> B -> A}, \LC{a :: A},
+would generate all neutral forms of the form \LC{f (f a b1) b2} where 
+\LC{b1, b2 :: B} range over all neutral forms constructed from values in context
+(including valid recursions) up to certain syntactic height \LC{3}. These
+generated neutral forms can subsequently be pruned in the same way that neutral
+forms generated by \LC{auto} are.
+
+\paragraph{Hints databases.}
+The \LC{auto} tactic currently accepts as an optional argument a list of
+hints which each a variable name in context. When \LC{auto} is expanded, these
+hints are included in the context of values that can be used to generate neutral
+forms. It would be more convenient to be able to pre-define collections of
+common hints that are used in many different proofs, as is done in Coq
+\todo{citation}, rather than require the user to provide the explicit list of
+hints every time they use \LC{auto}. Additionally, arbitrary neutral forms (e.g.
+partially applied lemmas) should be allowed as hints rather than just variables.
+
+% TODO: explain why only neutral forms can be used as hints and such: I must be
+% able to deduce their type just by looking at the types of variables in context
