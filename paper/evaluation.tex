@@ -75,11 +75,30 @@ lemmas.
 
 We measured \todo{definitions of our measurements}
 
-\begin{figure}
-  % TODO: gather this data
-  \todo{include table here, perhaps with some sort of categorization of the proofs? not sure exactly what data to show in the table}
+\todo{format data better}
+\begin{figure*}
+  \begin{tabular}{ll}
+    \hline
+    Measure label & Measure value
+    \\ \hline
+    Number of inductive proof & 
+      66
+    \\
+    Number of inductive proofs solved by simple macros &
+      45 (0.68 of inductive proofs)
+    \\
+    LOC increase after macro expansion & 
+      median: 7, mean: 15.77, std: 34.66 
+    \\ 
+    LOC increase after macro expansion and pruning & 
+      median: 2, mean: 2.61, std: 3.3
+    \\
+    Number of reasonably\footnote{\todo{Define this}} prune-able proofs &
+      73 (0.92 of proofs)
+    \\ \hline
+   \end{tabular}
   \label{fig:evaluation}
-\end{figure}
+\end{figure*}
 
 \todo{ideas for data to include
 \begin{itemize}

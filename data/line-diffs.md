@@ -151,7 +151,7 @@ Prop45: 3 - 3 = 0
 Prop54: 5 - 5 = 0
 Prop60: 10 - 3 = 7
 Prop31: 17 - 3 = 14 [unpruned]
-Prop83: 9 - 6 - 3
+Prop83: 9 - 6 = 3
 Prop21: 5 - 3 = 2
 Prop70: 12 - 7 = 5
 Prop44: 3 - 3 = 0
