@@ -254,14 +254,19 @@ in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
   e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
   }\\
 \\  
-  \inference{\Gamma \vdash a_i:A_i && n \in \mathbb{N}}
+  \inference{\Gamma \vdash x_i:A_i && n \in \mathbb{N}}
   {\Gamma; \Rho
   \vdash 
-  \macro{auto} ~ [\overline{a_i}] ~ n
+  \macro{auto} ~ [\overline{x_i}] ~ n
   \expandsTo
-  \mathsf{auto}(\Gamma, \Rho, \overline{a_i}, n) ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}}
-    \end{array}
-    \]
+  \mathsf{auto}(\Gamma, \Rho, \overline{x_i}, n) ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}}
+\\[2em]
+  \begin{array}{l}
+    \mathsf{auto}(\Gamma, \Rho, \overline{x_i}, 0) = \MC{trivial}
+    \\
+    \mathsf{auto}(\Gamma, \Rho, \overline{x_i}, 1 + n) = \todo{}
+  \end{array}
+\end{array} \]
 \end{minipage}
 \caption{Proof macro semantics}
 \label{fig:proof-macro-semantics}
