@@ -93,7 +93,7 @@ Prop28: 5 - 3 = 2
 Prop7: 5 - 4 = 1
 Prop59: 5 - 5 = 0
 Prop3: 5 - 5 = 0
-Prop49: TODO
+Prop49: 19 - 7 = 12
 Prop18: 5 - 3 = 2
 Prop58: 19 - 6 = 13
 Prop48: 5 - 3 = 2
@@ -103,7 +103,7 @@ Prop39: 7 - 7 = 0
 Prop68: 7 - 7 = 0
 Prop78: 6 - 5 = 1
 Prop29: 5 - 5 = 0
-Prop6: 0 - 5 = -5
+Prop6: 8 - 5 = 3
 Prop57: 18 - 6 = 12
 Prop32: 9 - 3 = 6
 Prop63: 9 - 5 = 4
