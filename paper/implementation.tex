@@ -339,15 +339,16 @@ refinement context.
   $\MC{Proof} = \MC{()}$, using this macro effectively means that the
   SMT solver can discharge any remaining obligations.
 
-\item $\MC{use} ~ \textit{exp}$:
+\item $\macro{use} ~ \textit{exp}$:
 
   This macro makes the refinement type of the expression available to
   the SMT solver using Liquid Haskell's conjunction \LC{&&&}, similar
   to how \LC{assoc_min a' b' c'} was needed to conclude the proof in
   Figure~\ref{fig:assoc-min-proof}.
   
-\item $\MC{auto} ~ [\overline{\textit{x} ,}] ~ n$:
+\item $\macro{auto} ~ [\overline{\textit{x}}] ~ n$:
 
+  \leo{TODO: Update text to refer to updated figure}
   This is the most complicated proof macro, and the core of our
   frameworks automation. It takes two optional parameters, a sequence
   $\overline{\textit{x}}$ of {\em hints}, and a natural number $n$,
@@ -358,53 +359,52 @@ refinement context.
   of the proof (see the control-flow macros below).
 \end{itemize}
 
-If a sequence of macros given by the user does {\em not} end in an
-evidence macro, then a default \LC{auto} macro with no hints and height
-\LC{3} will be implicitly included at the end of the sequence. That is,
-the proof macro of Figure~\ref{fig:assoc-min-macro} is equivalent to
-the following one:
-\begin{code}
-  {-@ assoc_min :: a:N -> b:N -> c:N ->
-        {min (min a b) c == min a (min b c)} @-}
-  [tactic|
-    assoc_min :: N -> N -> N -> Proof
-    assoc_min a b c = induct a; induct b; induct c; auto [] 3
-  |]
-\end{code}
+\leo{End of fixed part}
 
+Armed with the expansion relation for a single proof macro, we can
+formalize the expansion of a macro sequence
+(Figure~\ref{fig:sequence-semantics}). The empty proof macro sequence
+is expanded into a \LC{trivial}---as that has no effect on SMT
+resolution. To expand a sequence $T; Ts$ in some contexts $\Gamma$ and
+$\Rho$ , we expand $T$ to some \LangBTerm $t$, and for every hole
+$\macroHole{\Gamma_i}{\Rho_i}$ in $t$, we recursively expand the
+sequence $Ts$ in the updated context, and replace the hole with the
+result.  That is, whenever proof macros introduce multiple branches,
+the rest of the sequence of proof macros is expanded into each such
+branch.\leo{point out Unlike what coq does?}
 
-
-
-With this notation, we can define expansion of a sequence 
-\[
+\begin{figure}
+  \[
+  \begin{array}{c}
+  \inference{}{\Sem{\cdot}{\macroHole{\Gamma}{\Rho}}{\MC{trivial}}}\\
+\\    
   \inference
       { \Expand{\Gamma}{\Rho}{T}{t}\\
             \macroHole{\Gamma_i}{\Rho_i} \in t && 
             \Sem{Ts}{\macroHole{\Gamma_i}{\Rho_i}}{t_i}
           }
       { \Sem{T;Ts}{\macroHole{\Gamma}{\Rho}}{t[t_i/\macroHole{\Gamma_i}{\Rho_i}]}}
-\]
-\[
-\begin{array}{c}
-  \inference{}{\Sem{\cdot}{\macroHole{\Gamma}{\Rho}}
-    {\mathsf{auto}(\Gamma, \Rho, [], 3)}} \\
-  \\
-\end{array}
-\]
+  \end{array}
+  \]
+  \caption{Proof Macro Sequence Expansion}
+  \label{fig:sequence-semantics}
+\end{figure}
+
+Finally, before expansion of a sequence we preprocess it: if it does
+{\em not} end in an evidence macro, then a default \macro{auto} macro
+with no hints and height \LC{3} will be implicitly included at the end
+of the sequence. That is, the proof macro of
+Figure~\ref{fig:assoc-min-macro} is equivalent to the following one
+that includes an explicit \macro{auto} macro:
+\begin{code}
+  induct a; induct b; induct c; auto [] 3
+\end{code}
 
 
 
 
 
-
-
-
-
-Whenever such macros
-introduce multiple branches, the rest of the sequence of proof macros
-is expanded into each such branch.
-
-
+\paragraph{Extended Example}
 
 For concreteness, as a running example for the rest of the paper, consider
 the following interaction between the list append and membership functions,
