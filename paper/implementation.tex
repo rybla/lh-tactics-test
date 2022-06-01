@@ -303,7 +303,7 @@ A \LangA term is processed into an \LangB term via the following algorithm:
 % \newpage
 \newcommand{\Rho}{\mathrm{P}}
 \newcommand{\expandsTo}{\rightsquigarrow}
-\newcommand{\macroHole}[2]{\Box_{#1 ; ~ #2}}
+\newcommand{\macroHole}[2]{\Box_{#1 ; #2}}
 
 % TODO: transition
 In the following rules, $\Gamma$ is the type macro-context which associates
@@ -316,41 +316,84 @@ arguments of the top-level declaration to a type macro-context.
 \begin{array}{c}
   \Gamma \vdash x : \alpha \\
   \Rho \ni x \mapsto \varnothing \\
-  \hline 
+  \Gamma_i := (\Gamma \cup \{\overline{y_{i,j}:\beta_{i,j}}\}) \setminus \{x:\alpha\} \\
+  \Rho_i := \Rho[ x \mapsto \{\overline{y_{i,j}:\beta_{i,j}}\} ] \\
+  \hline \\[-1em] 
   \Gamma; \Rho 
   \vdash
-  \MC{induct} ~ x
+  \macro{induct} ~ x
   \expandsTo 
   \MC{case} ~ x ~ \MC{of} ~ 
   \overline{
     c_i ~ \overline{y_{i,j}} ~ \rightarrow ~ 
     \macroHole
-      {(\Gamma \cup \{\overline{y_{i,j}:\beta_{i,j}}\}) \setminus \{x:\alpha\}}
-      {\Rho[ x \mapsto \{\overline{y_{i,j}:\beta_{i,j}}\} ]};
+      {\Gamma_i}
+      {\Rho_i};
   }
 \\[1em]
   \Gamma \vdash e : \alpha \\
   \alpha ~ \text{has constructors} ~ \overline{c_i : \overline{\beta_{i,j} \rightarrow} ~ \alpha} \\
-  \hline 
+  \Gamma_i := \Gamma \cup \{\overline{y_{i,j}:\beta_{i,j}}\} \\
+  \hline \\[-1em] 
   \Gamma; \Rho
   \vdash
-  \MC{destruct} ~ e
+  \macro{destruct} ~ e
   \expandsTo 
   \MC{case} ~ e ~ \MC{of} ~
   \overline{
     c_i ~ \overline{y_{i,j}} ~ \rightarrow ~ 
     \macroHole
-      {\Gamma \cup \{\overline{y_{i,j}:\beta_{i,j}}\}}
+      {\Gamma_i}
       {\Rho};
   }
+\\[1em]
+  \Gamma \vdash e:\MC{Bool} \\
+  \hline
+  \Gamma; \Rho
+  \vdash
+  \macro{condition} ~ e
+  \expandsTo
+  \MC{if} ~ e ~ \MC{then} ~ \macroHole{\Gamma}{\Rho} ~ \MC{else} ~ \macroHole{\Gamma}{\Rho}
+\\[1em]
+  \Gamma \vdash e:\MC{Bool} \\
+  \hline
+  \Gamma; \Rho
+  \vdash
+  \macro{assert} ~ e
+  \expandsTo
+  \MC{if} ~ e ~ \MC{then} ~ \macroHole{\Gamma}{\Rho} ~ \MC{else} ~ \MC{trivial}
+\\[1em]
+  \Gamma \vdash e:\MC{Bool} \\
+  \hline
+  \Gamma; \Rho
+  \vdash
+  \macro{dismiss} ~ e
+  \expandsTo
+  \MC{if} ~ e ~ \MC{then} ~ \MC{trivial} ~ \MC{else} ~ \macroHole{\Gamma}{\Rho}
+\\[1em]
+  \Gamma \vdash \overline{a_i:A_i} \\
+  n \in \mathbb{N} \\
+  \hline 
+  \Gamma; \Rho
+  \vdash 
+  \macro{auto} ~ [\overline{_i}] ~ n
+  \expandsTo
+  \mathsf{auto}(\Gamma, \Rho, \overline{a_i}, n) ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
 \\[1em]
   \Gamma \vdash e : \MC{Proof} \\
   \hline
   \Gamma; \Rho
   \vdash 
-  \MC{use} \{ e \} 
+  \macro{use} ~ \{ e \} 
   \expandsTo
   e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
+\\[1em]
+  \hline
+  \Gamma; \Rho
+  \vdash
+  \macro{trivial}
+  \expandsTo
+  \MC{trivial}
 \end{array}
 \]
 }
