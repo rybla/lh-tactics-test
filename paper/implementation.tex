@@ -132,69 +132,6 @@ discussing pruning later in this section.\leo{Hint here?}
 \subsection{The \LangA}
 \label{sec:proof-macro-lang}
 
-
-The \LangA defines a collection of proof macros that aim to concisely
-describe the high-level structure of a Liquid Haskell proof. This
-collection is designed to be extensible, so that new proof macros can
-be added easily by adding a new constructor to the \LangA and then
-handling the new case for processing.  The syntax for \LangA appears
-in Figure~\ref{fig:proof-macro-lang}, and consists of atomic macros
-that can be sequenced together using \LC{;}. Liquid Haskell users can
-write such sequences of proof macros, like the three \macro{induct}s
-in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
-\LangB.
-
-To expand each proof macro, we need to take into account the expansion
-of any macros that preceded it in the sequence. To that end, we
-introduce two contexts, a typing context $\Gamma$ is the type
-macro-context which associates variables to Haskell types, and a
-recursion context $\Rho$ which associates arguments of the top-level
-declaration to a type macro-context, to facilitate proof
-automation. We formalize this expansion as a 4-place relation
-\[
-\Expand{\Gamma}{\Rho}{T}{t}
-\]
-which states that a proof macro $T$ in the contexts $\Gamma$ and
-$\Rho$ expands to a \LangBTerm $t$, that can contain holes to be
-filled in by expansion of subsequent macros, in potentially updated
-contexts $\Gamma'$ and $\Rho'$.
-\[
-  \inference
-      { \Expand{\Gamma}{\Rho}{T}{t}\\
-            \macroHole{\Gamma_i}{\Rho_i} \in t && 
-            \Sem{Ts}{\macroHole{\Gamma_i}{\Rho_i}}{t_i}
-          }
-      { \Sem{T;Ts}{\macroHole{\Gamma}{\Rho}}{t[t_i/\macroHole{\Gamma_i}{\Rho_i}]}}
-\]
-\[
-\begin{array}{c}
-  \inference{}{\Sem{\cdot}{\macroHole{\Gamma}{\Rho}}
-    {\mathsf{auto}(\Gamma, \Rho, [], 3)}} \\
-  \\
-\end{array}
-\]
-
-
-This expansion process is formalized in
-Figure~\ref{fig:proof-macro-semantics}.
-
-
-
-Sequences of macros are then
-expanded into a \LangBTerm, taking into account the partial expansion
-of any already expanded prefix; we formalize this expansion in
-Figure~\ref{fig:proof-macro-semantics}.
-
-
-We can broadly identify two types of proof macros: {\em control-flow}
-and {\em evidence} macros. Control flow macros correspond to proof
-terms that alter the control flow of the program, such as pattern
-matching.  Evidence macros are processed into terms that provide
-evidence to the Liquid Haskell typechecker, such as introducing a
-lemma to the refinement context.
-
-
-
 \begin{figure}
 \begin{align*}
   \textit{decl-macro} ::= &
@@ -223,8 +160,16 @@ lemma to the refinement context.
 \label{fig:proof-macro-lang}
 \end{figure}
 
-
-
+The \LangA defines a collection of proof macros that aim to concisely
+describe the high-level structure of a Liquid Haskell proof. This
+collection is designed to be extensible, so that new proof macros can
+be added easily by adding a new constructor to the \LangA and then
+handling the new case for processing.  The syntax for \LangA appears
+in Figure~\ref{fig:proof-macro-lang}, and consists of atomic macros
+that can be sequenced together using \LC{;}. Liquid Haskell users can
+write such sequences of proof macros, like the three \macro{induct}s
+in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
+\LangB.
 
 
 \begin{figure*}
@@ -294,6 +239,11 @@ lemma to the refinement context.
   \expandsTo
   \MC{if} ~ e ~ \MC{then} ~ \MC{trivial} ~ \MC{else} ~ \macroHole{\Gamma}{\Rho}}\\
   \\
+  \inference{}{\Gamma; \Rho
+  \vdash
+  \macro{trivial}
+  \expandsTo
+  \MC{trivial}} \quad
   \inference{
     \Gamma \vdash e : \MC{Proof}
   }
@@ -301,12 +251,7 @@ lemma to the refinement context.
   \vdash 
   \macro{use} ~ \{ e \} 
   \expandsTo
-  e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}} \quad 
-  \inference{}{\Gamma; \Rho
-  \vdash
-  \macro{trivial}
-  \expandsTo
-  \MC{trivial}
+  e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
   }\\
 \\  
   \inference{\Gamma \vdash a_i:A_i && n \in \mathbb{N}}
@@ -322,17 +267,67 @@ lemma to the refinement context.
 \label{fig:proof-macro-semantics}
 \end{figure*}
 
+To expand each proof macro, we need to take into account the expansion
+of any macros that preceded it in the sequence. To that end, we
+introduce two contexts, a typing context $\Gamma$ is the type
+macro-context which associates variables to Haskell types, and a
+recursion context $\Rho$ which associates arguments of the top-level
+declaration to a type macro-context, to facilitate proof
+automation. We formalize this expansion as a 4-place relation
+\[
+\Expand{\Gamma}{\Rho}{T}{t}
+\]
+which states that a proof macro $T$ in the contexts $\Gamma$ and
+$\Rho$ expands to a \LangBTerm $t$, that can contain holes to be
+filled in by expansion of subsequent macros, in potentially updated
+contexts $\Gamma'$ and $\Rho'$. We annotate each hole with these
+contexts, writing $\macroHole{\Gamma}{\Rho}$.  This expansion process
+is formalized in Figure~\ref{fig:proof-macro-semantics}, and we can
+broadly identify two types of proof macros: {\em control-flow} and
+{\em evidence} macros.
 
-Whenever such macros
-introduce multiple branches, the rest of the sequence of proof macros
-is expanded into each such branch.
+\paragraph*{Control-Flow macros}
+
+Control flow macros correspond to proof terms that alter the control
+flow of the program, such as pattern matching. The first five
+constructs from Figure~\ref{fig:proof-macro-semantics} exhibit such
+functionality:
+
+\begin{itemize}
+\item $\macro{induct} ~ x$, $\macro{destruct} ~ e$:
+
+  Given a variable $x$ that has type $\alpha$ in a context $\Gamma$,
+%  assumed to be a function argument defined in the macro declaration,
+  $\macro{induct} ~ x$ creates a pattern match on $x$, with a branch
+  for every constructor of $\alpha$. The body of each branch is a hole
+  $\macroHole{\Gamma_i}{\Rho_i}$, with the typing context updated to
+  include the pattern variables and the recursion context updated
+  \leo{??}. Similarly, given a well typed Haskell expression $e$ with
+  type $\alpha$ in a context $\Gamma$, $\macro{destruct} ~ e$ also
+  creates a pattern match where each branch is a hole. The only
+  difference from \macro{induct} is that it does not modify the
+  recursion context.
+
+\item $\macro{condition} ~ e$, $\macro{assert} ~ e$, $\macro{dismiss} ~ e$:
+
+  These three macros all expand into \LC{if} statements with the given
+  boolean expression $e$ as its condition. The difference lies in the
+  holes produced in this expansion: \macro{condition} creates a hole
+  $\macroHole{\Gamma}{\Rho}$ for both the \LC{then} and the \LC{else}
+  branches, \macro{assert} only creates such a hole for the \LC{then}
+  branch with the \LC{else} branch being \LC{trivial}, and \LC{dismiss}
+  is the dual of \LC{assert}.
+\end{itemize}
 
 \paragraph{Evidence Macros}
 
+Evidence macros are processed into terms that provide evidence to the
+Liquid Haskell typechecker, such as introducing a lemma to the
+refinement context.
 
 \begin{itemize}
 
-\item $\MC{trivial}$:
+\item $\macro{trivial}$:
 
   This macro expands into Liquid Haskell's \LC{trivial :: Proof} in
   the resulting Haskell term. Since $\MC{trivial} = \MC{()}$ and
@@ -341,9 +336,10 @@ is expanded into each such branch.
 
 \item $\MC{use} ~ \textit{exp}$:
 
-  This macro makes the refinement type of the expression available
-  to the SMT solver, similar to how \LC{assoc_min a' b' c'} was needed
-  to conclude the proof in Figure~\ref{fig:assoc-min-proof}.
+  This macro makes the refinement type of the expression available to
+  the SMT solver using Liquid Haskell's conjunction \LC{&&&}, similar
+  to how \LC{assoc_min a' b' c'} was needed to conclude the proof in
+  Figure~\ref{fig:assoc-min-proof}.
   
 \item $\MC{auto} ~ [\overline{\textit{x} ,}] ~ n$:
 
@@ -371,49 +367,39 @@ the following one:
   |]
 \end{code}
 
-\paragraph*{Control-Flow macros}
 
-Control flow macros correspond to proof terms that alter the control
-flow of the program, such as pattern matching. Whenever such macros
+
+
+With this notation, we can define expansion of a sequence 
+\[
+  \inference
+      { \Expand{\Gamma}{\Rho}{T}{t}\\
+            \macroHole{\Gamma_i}{\Rho_i} \in t && 
+            \Sem{Ts}{\macroHole{\Gamma_i}{\Rho_i}}{t_i}
+          }
+      { \Sem{T;Ts}{\macroHole{\Gamma}{\Rho}}{t[t_i/\macroHole{\Gamma_i}{\Rho_i}]}}
+\]
+\[
+\begin{array}{c}
+  \inference{}{\Sem{\cdot}{\macroHole{\Gamma}{\Rho}}
+    {\mathsf{auto}(\Gamma, \Rho, [], 3)}} \\
+  \\
+\end{array}
+\]
+
+
+
+
+
+
+
+
+
+Whenever such macros
 introduce multiple branches, the rest of the sequence of proof macros
-is expanded into each such branch. The first five constructs from
-Figure~\ref{fig:proof-macro-lang} exhibit such functionality:
+is expanded into each such branch.
 
-\begin{itemize}
-\item $\MC{induct} ~ x$:
 
-  This macro creates a pattern match on $x$, which is assumed to be a
-  function argument defined in the macro declaration, using the typing
-  information available to Template Haskell.  In each case of the
-  pattern match, any pattern variables are only included in the recursion
-  context at the corresponding argument position of $x$, and the
-  original $x$ is removed. This ensures that \LC{auto} will not construct
-  non-terminating recursive calls.
-
-\item $\MC{destruct} ~ \textit{exp}$:
-
-  This macro corresponds to simple case analysis. Similarly to
-  \LC{induct}, it creates a pattern match on $\textit{exp}$, but it
-  does not modify the recursion context.  --- pattern matches on
-  $\textit{exp}$. 
-
-\item $\MC{condition} ~ \textit{exp}$:
-
-  This macro conditions on $\text{exp}$ creating an \LC{if} statement
-  in the proof term. A macro-processing branch is created for each of
-  the \MC{then} and \MC{else} branches respectively.
-
-\item $\MC{assert} ~ \textit{exp}$:
-
-  Simplified version of \LC{condition}, that only creates a
-  macro-processing branch for the \MC{then} branch, while the
-  \MC{else} branch is only filled with \MC{trivial}.
-  
-\item $\MC{dismiss} ~ \textit{exp}$:
-
-  Dual of \LC{assert}.
-
-\end{itemize}
 
 For concreteness, as a running example for the rest of the paper, consider
 the following interaction between the list append and membership functions,
