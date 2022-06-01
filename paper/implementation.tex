@@ -469,8 +469,8 @@ A \LangA term is processed into an \LangB term via the following algorithm:
 y
 
 \todo{how to properly reference this}
-Recall the proof macro used to prove \LC{elem_concat}.
-The macro declaration begins with a type signature and then \LC{elem_concat x xs ys}.
+Recall the proof macro used to prove \LC{concatElem}.
+The macro declaration begins with a type signature and then \LC{concatElem x xs ys}.
 From the type signature, the proof macro system can deduce the types of \LC{x}, \LC{xs}, and \LC{ys} and bring these variables into context.
 \footnote{Unfortunately, types of local bindings cannot be inferred wiht Template Haskell, so the type signature is in fact necessary.}
 % TODO: (elem x ys) should be {elem x ys}, but causes {too many {}} error
@@ -481,27 +481,27 @@ In the second branch, the variables \LC{x'} and \LC{xs'} are added to the recurs
 Finally, since the last proof macro was \textit{not} an evidence macro, a \LC{auto} is implicitly appended.
 This \LC{auto} is processed in each branch resulting from \LC{induct xs}.
 In the branch for \LC{[]}, the only values in scope are \LC{x} and \LC{ys}, so there are no neutral forms to generate.
-The recursion \LC{elem_concat x ys ys} is not generated because none of the arguments are from the recursion context of their respective argument position.
+The recursion \LC{concatElem x ys ys} is not generated because none of the arguments are from the recursion context of their respective argument position.
 In the branch for \LC{[]}, the values in sccope are \LC{x}, \LC{x'}, \LC{xs'}, and \LC{ys}, so there are several neutral forms that can be generated -- in particular, several recursions:
 \begin{itemize}
-  \item \LC{elem_concat x' xs' xs'}
-  \item \LC{elem_concat x' xs' ys}
-  \item \LC{elem_concat x xs' xs'}
-  \item \LC{elem_concat x xs' ys}
+  \item \LC{concatElem x' xs' xs'}
+  \item \LC{concatElem x' xs' ys}
+  \item \LC{concatElem x xs' xs'}
+  \item \LC{concatElem x xs' ys}
 \end{itemize}
 These are valid recursions because all of them have at least one argument from the recursion context at that argument position: \LC{xs'}.
 Altogether, the resulting \LangBTerm is the following:
 \begin{code}
-  elem_concat :: N -> [N] -> [N] -> Proof
-  elem_concat = \x xs ys ->
+  concatElem :: N -> [N] -> [N] -> Proof
+  concatElem = \x xs ys ->
     if elem x ys then
       case xs of
         Nil -> trivial
         Cons x' xs' -> Auto
-          { init = [ elem_concat x' xs' xs' 
-                   , elem_concat x' xs' ys
-                   , elem_concat x  xs' xs'
-                   , elem_concat x  xs' ys ]
+          { init = [ concatElem x' xs' xs' 
+                   , concatElem x' xs' ys
+                   , concatElem x  xs' xs'
+                   , concatElem x  xs' ys ]
           , kept = []
           , pruned = [] }
     else
@@ -509,10 +509,10 @@ Altogether, the resulting \LangBTerm is the following:
 \end{code}
 Here, the \LC{Auto} structure corresponds to the term
 \begin{code}
-  elem_concat x' xs' xs' &&&
-  elem_concat x' xs' ys  &&&
-  elem_concat x  xs' xs' &&&
-  elem_concat x  xs' ys
+  concatElem x' xs' xs' &&&
+  concatElem x' xs' ys  &&&
+  concatElem x  xs' xs' &&&
+  concatElem x  xs' ys
 \end{code}
 with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
@@ -527,18 +527,18 @@ For each \LC{Auto} structure in a \LangBTerm, each \textit{exp} in its \LC{init}
 This is done by moving the \textit{exp} from the \LC{init} field to the \LC{pruned} field, embedding and splicing the new \LangBTerm into the original Haskell file in place of the original proof macro, and then running Liquid Haskell to check if this prune was safe.
 If it was then pruning continues with the rest of the \textit{exp}s in the \LC{init} fields of the \LC{Auto} structures, otherwise this prune is undone, and the \textit{exp} that was attempted to be pruned is instead moved to the \LC{kept} field before continuing pruning.
 
-Recall the \LangBTerm that resulted from processing the proof macro used to prove \LC{elem_concat}.
+Recall the \LangBTerm that resulted from processing the proof macro used to prove \LC{concatElem}.
 There is an \LC{Auto} structure that clearly has a few \textit{exp}s that can be pruned since they are unnecessary for the proof.
 The subset of necessary \textit{exp}s is found via the linear pruning procedure, trying to remove each \textit{exp} one at a time to see which can be safely removed.
 After pruning, the final resulting \LangBTerm can be embedded into Haskell a last time and presented to the user as a valid proof:
 
 \begin{code}
-  elem_concat :: N -> [N] -> [N] -> Proof
-  elem_concat = \x xs ys ->
+  concatElem :: N -> [N] -> [N] -> Proof
+  concatElem = \x xs ys ->
     if elem x ys then
       case xs of
         Nil -> trivial
-        Cons x' xs' -> elem_concat x xs' ys
+        Cons x' xs' -> concatElem x xs' ys
     else
       trivial
 \end{code}
