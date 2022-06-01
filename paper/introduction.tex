@@ -128,7 +128,10 @@ We could just as well have written something like
 \begin{code}
   snd (assoc_min a' b' c', ())
 \end{code}
-and Liquid Haskell would still gladly accept the definition.
+and Liquid Haskell would still gladly accept the definition. In fact,
+Liquid Haskell's conjunction operator (\LC{&&&}) is defined exactly
+this way: it takes two \LC{Proof}s and returns the second one---its
+only effect is making the refinement of both arguments visible to the SMT solver.
 
 Even in this simple example of associativity of \LC{min}, the full
 verbosity required is cumbersome and obscures the fact that the
