@@ -254,23 +254,41 @@ in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
   e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
   }\\
 \\  
-  \inference{\Gamma \vdash x_i:A_i && n \in \mathbb{N}}
+  \inference{\Gamma \vdash x_i:\alpha_i && n \in \mathbb{N}}
   {\Gamma; \Rho
   \vdash 
   \macro{auto} ~ [\overline{x_i}] ~ n
   \expandsTo
-  \mathsf{auto}(\Gamma, \Rho, \overline{x_i}, n) ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}}
+  \mathsf{auto}(\Gamma \cup \{ \overline{x_i} \}, \Rho, \MC{Proof}, n) ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}}
+  % 
+  % 
 \\[2em]
-  \begin{array}{l}
-    \mathsf{auto}(\Gamma, \Rho, \overline{x_i}, 0) = \MC{trivial}
+  % 
+  % auto metafunction
+  % 
+  \begin{array}{lcl}
+    \mathsf{auto}(\Gamma, \Rho, \alpha, 0) &=& \{ \MC{trivial} \}
     \\
-    \mathsf{auto}(\Gamma, \Rho, \overline{x_i}, 1 + n) = \todo{}
+    \mathsf{auto}(\Gamma, \Rho, \beta, 1 + n) &=&
+      \{ f ~ a_1 ~ \cdots ~ a_n \mid
+        \Gamma \vdash f : \alpha_1 \rightarrow \cdots \rightarrow a_n \rightarrow \beta,~
+        a_i \in \mathsf{auto}(\Gamma, \Rho, \alpha_i, n)
+      \}
+      \\ &\cup&
+      \{ r ~ a_1 ~ \cdots ~ a_n \mid
+        \Gamma \vdash r : \alpha_1 \rightarrow \cdots \rightarrow a_n \rightarrow \beta,~
+        a_i \in \Rho_i,~
+        x_i \mapsto \Rho_i \in \Rho
+      \}
+      \\ &&
+      \text{where $r$ is the function defined at the top-level}
   \end{array}
 \end{array} \]
 \end{minipage}
 \caption{Proof macro semantics}
 \label{fig:proof-macro-semantics}
 \end{figure*}
+\todo{is ``where $r$ is the function defined at the top-level'' the right way to phrase that?}
 
 To expand each proof macro, we need to take into account the expansion
 of any macros that preceded it in the sequence. To that end, we
@@ -503,7 +521,7 @@ The pruning process, described in the next subsection, describes how the \LC{Aut
   
 \subsection{Pruning}
 
-\subsubsection{Linear Pruning}
+% \subsubsection{Linear Pruning}
 
 For each \LC{Auto} structure in a \LangBTerm, each \textit{exp} in its \LC{init} field is attempted to be pruned one at a time.
 This is done by moving the \textit{exp} from the \LC{init} field to the \LC{pruned} field, embedding and splicing the new \LangBTerm into the original Haskell file in place of the original proof macro, and then running Liquid Haskell to check if this prune was safe.
@@ -527,13 +545,13 @@ After pruning, the final resulting \LangBTerm can be embedded into Haskell a las
 
 \todo{onclusion of Linear Pruning subsection}
 
-\todo{pretty sure this shouldn't be included}
-\subsubsection{Superlinear Pruning}
+% \todo{pretty sure this shouldn't be included}
+% \subsubsection{Superlinear Pruning}
 
-Since the set of \textit{exp}s that can be safely pruned is an arbitrary subset of all the \textit{exp}s in \LC{Auto} structures in a \LangBTerm, given the information available at this stage, it is impossible to achieve generally superlinear pruning runtime. 
-However, very often the size of the subset of \textit{exp}s that need to be kept is constant size -- around 1-4.
-So in practice it may be feasible to perform a sort of binary search.
-\todo{describe more?}
+% Since the set of \textit{exp}s that can be safely pruned is an arbitrary subset of all the \textit{exp}s in \LC{Auto} structures in a \LangBTerm, given the information available at this stage, it is impossible to achieve generally superlinear pruning runtime. 
+% However, very often the size of the subset of \textit{exp}s that need to be kept is constant size -- around 1-4.
+% So in practice it may be feasible to perform a sort of binary search.
+% \todo{describe more?}
 
 \section*{Temporary}
 
