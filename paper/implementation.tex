@@ -456,17 +456,88 @@ complete the proof, potentially using the tail of \LC{xs} for a
 recursive call (from \LC{auto}). This is achieved by expanding these
 macros back into a subset of Haskell, which we call the {\em \LangB}.
 
-
-
-
-
-\leo{Semantics of proof macros as proto-buf?}
-\todo{should I convert this to an algorithmic format? or should I just not include this algorithm's full detail at all}
-A \LangA term is processed into an \LangB term via the following algorithm:
-
-
-% TODO: transition
-y
+% TODO: step-by-step expansion 
+\begin{figure*}
+  \begin{minipage}{\textwidth}
+    \begin{align*}
+      \Gamma &= \{ \MC{x}:\MC{N}, \MC{xs}:\MC{[N]}, \MC{ys}:\MC{[N]} \} \\
+      \Rho &= \{ x \mapsto \varnothing, xs \mapsto \varnothing, ys \mapsto \varnothing \} 
+    \end{align*}
+    \begin{align*} \begin{array}{rl}
+      &
+      \Interp
+        { \macro{assert}~\{\MC{elem~x~xs}\} ; ~
+          \macro{induct}~\MC{xs} 
+        }
+        { \Gamma ; \Rho }
+      \\ =&
+      \Interp
+        { \macro{assert}~\{\MC{elem~x~xs}\} ; ~
+          \macro{induct}~\MC{xs} ; ~
+          \macro{auto}~\MC{[]}~\MC{3}
+        }
+        { \Gamma ; \Rho }
+      % 
+      \\ =&
+      % 
+        \MC{if}~\MC{elem~x~xs}~\MC{then}
+        \\& \hspace{1em} 
+          \Interp
+            { \macro{induct}~\MC{xs} ; ~
+              \macro{auto}~\MC{[]}~\MC{3}
+            }
+            { \Gamma ; \Rho }
+        \\& \MC{else}~\MC{trivial}
+      % 
+      \\ =&
+      % 
+        \MC{if}~\MC{elem~x~xs}~\MC{then}
+        \\& \hspace{1em} 
+          \MC{case}~\MC{xs}~\MC{of}
+          \\& \hspace{2em}
+            \MC{[]}~\MC{\rightarrow}~
+            \Interp
+              { \macro{auto}~\MC{[]}~\MC{3} }
+              { \Gamma ; \Rho }
+            \\& \hspace{2em}
+            \MC{Cons~x'~xs'}~\MC{\rightarrow}~
+            \Interp
+              { \macro{auto}~\MC{[]}~\MC{3} }
+              { \Gamma ; \Rho[ \MC{xs} \mapsto \{ \MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]} \} ] }
+        \\& \MC{else}~\MC{trivial}
+      % 
+      \\ =&
+      % 
+        \MC{if}~\MC{elem~x~xs}~\MC{then}
+        \\& \hspace{1em} 
+          \MC{case}~\MC{xs}~\MC{of}
+          \\& \hspace{2em}
+            \MC{[]}~\MC{\rightarrow}~\mathsf{auto}(\Gamma, \Rho, \MC{3})~\MC{\&\&\&}~\MC{trivial}
+            \\& \hspace{2em}
+            \MC{Cons~x'~xs'}~\MC{\rightarrow}~\mathsf{auto}(\Gamma, \Rho[ \MC{xs} \mapsto \{ \MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]} \} ], \MC{3})~\MC{\&\&\&}~\MC{trivial}
+        \\& \MC{else}~\MC{trivial}
+      % 
+      \\ =&
+      % 
+        \MC{if}~\MC{elem~x~xs}~\MC{then}
+        \\& \hspace{1em} 
+          \MC{case}~\MC{xs}~\MC{of}
+          \\& \hspace{2em}
+            \MC{[]}~\MC{\rightarrow}~\MC{trivial}
+            \\& \hspace{2em}
+            \MC{Cons~x'~xs'}~\MC{\rightarrow}
+            \\& \hspace{3em}
+              \MC{concatElem~x'~xs'~xs'}~\MC{\&\&\&}~
+              \MC{concatElem~x'~xs'~ys}~\MC{\&\&\&}~
+              \MC{concatElem~x~xs'~xs'}~\MC{\&\&\&}~
+            \\& \hspace{3em}
+              \MC{concatElem~x~xs'~ys}~\MC{\&\&\&}~
+              \MC{trivial}
+        \\& \MC{else}~\MC{trivial}
+      % 
+    \end{array} \end{align*}
+  \end{minipage}
+\end{figure*}
 
 \todo{how to properly reference this}
 Recall the proof macro used to prove \LC{concatElem}.
