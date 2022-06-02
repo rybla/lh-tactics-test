@@ -521,13 +521,21 @@ the \LangB as shown in Figure~\ref{fig:step-by-step}.
             \MC{[]}~\MC{\rightarrow}~\MC{trivial}~\MC{\&\&\&}~\MC{trivial}
             \\& \hspace{2em}
             \MC{Cons~x'~xs'}~\MC{\rightarrow}
-            \\& \hspace{3em}
-              \MC{concatElem~x'~xs'~xs'}~\MC{\&\&\&}~
-              \MC{concatElem~x'~xs'~ys}~\MC{\&\&\&}~
-              \MC{concatElem~x~xs'~xs'}~\MC{\&\&\&}~
-            \\& \hspace{3em}
-              \MC{concatElem~x~xs'~ys}~\MC{\&\&\&}~
-              \MC{trivial}
+            % \\& \hspace{3em}
+            %   \MC{concatElem~x'~xs'~xs'}~\MC{\&\&\&}~
+            %   \MC{concatElem~x'~xs'~ys}~\MC{\&\&\&}~
+            %   \MC{concatElem~x~xs'~xs'}~\MC{\&\&\&}~
+            % \\& \hspace{3em}
+            %   \MC{concatElem~x~xs'~ys}~\MC{\&\&\&}~
+            %   \MC{trivial}
+            \\& \hspace{3em} \MC{Auto}
+            \\& \hspace{4em} \MC{\{~init~=}
+            \\& \hspace{5em} \MC{[~concatElem~x'~xs'~xs'}
+            \\& \hspace{5em} \MC{,~concatElem~x'~xs'~ys}
+            \\& \hspace{5em} \MC{,~concatElem~x~xs'~xs'}
+            \\& \hspace{5em} \MC{,~concatElem~x~xs'~ys~]}
+            \\& \hspace{4em} \MC{,~kept~=~[]}
+            \\& \hspace{4em} \MC{,~pruned~=~[]~\}}
         \\& \MC{else}~\MC{trivial}
       % 
     \end{array} \end{align*}
@@ -579,32 +587,36 @@ neutral forms available:
 \end{itemize}
 All of these recursive calls are potentially valid, as they all have
 at least one argument from the recursion context at that argument
-position: \LC{xs'}.  Altogether, the resulting \LangBTerm is the
-following:
-\begin{code}
-  concatElem :: N -> [N] -> [N] -> Proof
-  concatElem = \x xs ys ->
-    if elem x ys then
-      case xs of
-        Nil -> trivial
-        Cons x' xs' -> Auto
-          { init = [ concatElem x' xs' xs' 
-                   , concatElem x' xs' ys
-                   , concatElem x  xs' xs'
-                   , concatElem x  xs' ys ]
-          , kept = []
-          , pruned = [] }
-    else
-      trivial
-\end{code}
-Here, the \LC{Auto} structure corresponds to the term
-\begin{code}
-  concatElem x' xs' xs' &&&
-  concatElem x' xs' ys  &&&
-  concatElem x  xs' xs' &&&
-  concatElem x  xs' ys
-\end{code}
-with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
+position: \LC{xs'}.
+Observe that this list of neutral forms appears in the \LC{Auto} structure in the 
+final step of figure ~\ref{fig:step-by-step}.
+
+% Altogether, the resulting \LangBTerm is the
+% following:
+% \begin{code}
+%   concatElem :: N -> [N] -> [N] -> Proof
+%   concatElem = \x xs ys ->
+%     if elem x ys then
+%       case xs of
+%         Nil -> trivial
+%         Cons x' xs' -> Auto
+%           { init = [ concatElem x' xs' xs' 
+%                    , concatElem x' xs' ys
+%                    , concatElem x  xs' xs'
+%                    , concatElem x  xs' ys ]
+%           , kept = []
+%           , pruned = [] }
+%     else
+%       trivial
+% \end{code}
+% Here, the \LC{Auto} structure corresponds to the term
+% \begin{code}
+%   concatElem x' xs' xs' &&&
+%   concatElem x' xs' ys  &&&
+%   concatElem x  xs' xs' &&&
+%   concatElem x  xs' ys
+% \end{code}
+% with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
 Of course, it turns out that not all of these terms are needed for a
 valid proof.  The pruning process, which we describe next, uses the
