@@ -36,92 +36,103 @@
 
 % % ? END OUTLINE
 
-The proof macro system introduced in this paper aims to provide the following
-benefits to Liquid Haskell proof developers.
+When designing Liquid Proof Macros, we wanted users to benefit along the following three axis:
 
-\paragraph{Conciseness.} Extrinsic proofs are mostly written in a
-particular subset of Haskell, the \LangB. So, the proof macros can give a more
-concise interface to writing terms specifically in \LangB. As a result, we
-expect the proofs of a wide variety of theorems to each be much shorter when
-written as a proof macro compared to when written in general Haskell code.
+\paragraph{Conciseness.}
 %
-\paragraph{Reduced redundancy.} As is demonstrated frequently with Coq's
-``\LC{;}'' tactic combinator, often all branches of a control flow branching
-can be handled by the same proof strategy. Rather than require the user to
-provide their implementation of that proof strategy in each branch or to
-define various lemmas to encapsulate the relevant contexts in each branch, the
-macros automatically apply the once-written proof strategy (encoded by the
-sequence of proof macros that follow the control flow proof macro) in each
-branch. See figure \ref{fig:assoc-min-proof} for an example of how
-significantly this can contract proof terms.
+Extrinsic proofs are mostly written in a particular subset of Haskell,
+the \LangB. Using metaprogramming to generate terms in this subset we
+would expect proofs to be shorter than when written out explicitly.
 %
-\paragraph{Modularity.} Even though many proofs can be encapsulated by the
-same proof strategy (e.g. simple induction) vanilla Liquid Haskell requires
-that strategy to be written out in full verbosity in each instance (e.g.
-pattern matching on a list of a natural number, and then supplying the tail or
-predecessor to the recursive call in the second cases respectively). The proof
-macro system allows the user to efficiently and modularly encode proof
-strategies in such a way that the same sequence of proof macros can be used to
-prove a wide variety of similar theorems that use the same proof strategy.
+%\paragraph{Reduced redundancy.}
+%
+Moreover, as most proof assistant users are familiar with, often many
+different branches of a proof can be handled by the same proof
+strategy. Rather than requiring users to replicate the same proof term
+in each branch, proof macros allow for writing such strategies once
+and applying them across all branches.
 
-\paragraph{Practicality} Proof search can be a very inefficient process, so it
-was essential for the tool to derive minimal proof terms that can be easily
-examined by the user.
+\paragraph{Modularity.}
+%
+Even though many proofs can be encapsulated by the same proof strategy
+(e.g. simple induction), vanilla Liquid Haskell requires that strategy
+to be written out in full verbosity in each instance (e.g.  pattern
+matching on a list of a natural numbers, and then supplying the tail
+or predecessor to the recursive call in the second cases
+respectively). The proof macro system allows the user to modularly
+encode proof strategies in such a way that the same sequence of proof
+macros can be used to prove a wide variety of similar theorems that
+use the same proof strategy.
+
+\paragraph{Practicality}
+%
+Proof search in the style can be a very inefficient process yielding
+unreadable proof terms. By pruning the resulting terms, we aimed to
+keep the prover's burden low while still deriving minimal proof terms
+in the end.\leo{Not sure about this}
 
 \smallskip
 
-\todo{wording; how much detail to include here}
-To evaluate these claims, we proved an independently-selected set of 84 Liquid
-Haskell theorems that were used in previous work as a benchmark for a Liquid
-Haskell proof automation tool \todo{include citation,
-https://github.com/mustafahafidi/qc-to-lh}. The benchmark consists of a
-collection of predicates (i.e. Haskell functions that return \LC{Bool}) over
-natural numbers, lists, and binary trees that mostly can be proven to hold over
-all inputs using simple proof strategies and a few theorem-specific, admitted
-lemmas.
+To evaluate our design, we turned to a prior benchmark suite of 80+
+Liquid Haskell proofs~\cite{TacticThesis}, that consists of a
+collection of boolean predicates over natural numbers, lists, and
+binary trees, ranging from very simple facts to inductive properties
+that require auxiliary lemmas.
 
-We measured \todo{definitions of our measurements}
+Using Liquid Proof Macros we were able to concisely prove ($<16$ LoC
+for all and $<10$ LoC for all but two). Figure~\ref{fig:loc-eval}
+shows the lines of code across all such benchmark using (1) Liquid
+Proof Macros (2) the expanded proof term (3) the pruned minimal proof
+term. We found that in all cases proof macros where smaller than the
+Liquid Haskell proof terms, with a (geometric) average of 57\%
+reduction in LoC compared to the minimal pruned version. Moreover, to
+give an estimate of the cost of proof search, the unpruned expanded
+splice generated by Template Haskell was $2.88\times$ larger on
+average.
 
-\todo{format data better}
-\begin{figure*}
-  \begin{tabular}{ll}
-    \hline
-    Measure label & Measure value
-    \\ \hline
-    Number of inductive proof & 
-      66
-    \\
-    Number of inductive proofs solved by simple macros &
-      45 (0.68 of inductive proofs)
-    \\
-    LOC increase after macro expansion & 
-      median: 7, mean: 15.77, std: 34.66 
-    \\ 
-    LOC increase after macro expansion and pruning & 
-      median: 2, mean: 2.61, std: 3.3
-    \\
-    Number of reasonably\footnote{\todo{Define this}} prune-able proofs &
-      73 (0.92 of proofs)
-    \\ \hline
-   \end{tabular}
-  \label{fig:evaluation}
-\end{figure*}
+%  
+% \todo{format data better}
+% \begin{figure*}
+%   \begin{tabular}{ll}
+%     \hline
+%     Measure label & Measure value
+%     \\ \hline
+%     Number of inductive proof & 
+%       66
+%     \\
+%     Number of inductive proofs solved by simple macros &
+%       45 (0.68 of inductive proofs)
+%     \\
+%     LOC increase after macro expansion & 
+%       median: 7, mean: 15.77, std: 34.66 
+%     \\ 
+%     LOC increase after macro expansion and pruning & 
+%       median: 2, mean: 2.61, std: 3.3
+%     \\
+%     Number of reasonably\footnote{\todo{Define this}} prune-able proofs &
+%       73 (0.92 of proofs)
+%     \\ \hline
+%    \end{tabular}
+%   \label{fig:evaluation}
+% \end{figure*}
 
-\todo{ideas for data to include
-\begin{itemize}
-  \item percent of inductive proofs that were proven with just ``induct x1; ...
-  induct xN''
-  \item percent of proofs that resulted in set of auto-generationed exps that
-  were too large to prune automatically
-  \item number of lines in proof macro vs number of lines in generated proof
-  term
-\end{itemize}
-}
+\leo{Maybe some interesting examples here/outlier discussion?}
 
-Each of the theorems were able to be proven using the proof macro system more
-consisely than the generated proof term.
-
-\todo{pick a few interesting examples?}
+% \todo{ideas for data to include
+% \begin{itemize}
+%   \item percent of inductive proofs that were proven with just ``induct x1; ...
+%   induct xN''
+%   \item percent of proofs that resulted in set of auto-generationed exps that
+%   were too large to prune automatically
+%   \item number of lines in proof macro vs number of lines in generated proof
+%   term
+% \end{itemize}
+% }
+%  
+% Each of the theorems were able to be proven using the proof macro system more
+% consisely than the generated proof term.
+%  
+% \todo{pick a few interesting examples?}
 
 % -- prop15_lemma
 %
