@@ -1,17 +1,19 @@
 \section{Introduction}
 
 Liquid Haskell\cite{liquidHaskell} is a popular verifier for Haskell
-programs, leveraging the power of SMT solvers~\cite{BarST-RR-10} like
-Z3~\cn and CVC4\cn to prove the correctness of diverse applications
-ranging from optimizations~\cite{TPE2018} to string matching
-algorithms~\cite{TaleOfTwoProvers}. Specifications for these
-applications are written in the form of {\em refinement
-  types}\cite{RefinementForML}, boolean predicates over program
+programs, leveraging the power of SMT solvers~\cite{BarST-RR-10} (such
+as Z3~\cite{Z3} or CVC4~\cite{CVC4}) to prove the correctness of
+diverse applications ranging from optimizations~\cite{TPE2018} to
+string matching algorithms~\cite{TaleOfTwoProvers}. Specifications for
+these applications are written in the form of {\em refinement
+  types}~\cite{RefinementForML}, boolean predicates over program
 values.
 
 For concreteness, consider the following \LC{min} function that
-computes the minimum of two natural numbers (\LC{N}):
+computes the minimum of two natural numbers, defined inductively:
 \begin{code}
+  data N = Z | S N
+  
   min :: N -> N -> N 
   min Z _ = Z
   min _ Z = Z
@@ -20,11 +22,11 @@ computes the minimum of two natural numbers (\LC{N}):
 
 \newcommand{\imin}{\textit{min}~}
 Naturally, we would expect such a function to be associative, that is:
-$$ \forall a ~ b ~ c. ~ \imin (\imin a~b) == \imin a~(\imin~b~c) $$
+$$ \forall a ~ b ~ c. ~ \imin (\imin a~b)~c == \imin a~(\imin~b~c) $$
 %
 In Liquid Haskell, we can express associativity by defining a
 refinement type to encode this property, and prove it by defining
-a term of the following type:
+a term of that type:
 %
 \begin{code}
   {-@ assoc_min :: a:N -> b:N -> c:N ->
