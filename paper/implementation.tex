@@ -40,21 +40,20 @@ Figure~\ref{fig:assoc-min-macro} to a low-level Liquid Haskell proof
 such as the one in Figure~\ref{fig:assoc-min-proof} is a
 multi-stage process, which we will describe in detail in this section.
 
-\begin{itemize}
-\item First, we describe the \LangB which is the langage that our Liquid
-  Proof macros expand to. The \LangB is a subset of Haskell, with some
-  annotations that are necessary for simplification, but which can
-  be straightforwardly erased to obtain valid Liquid Haskell terms.
-\item Second, we formally introduce the \LangA in which users write
-  proofs, an extensible collection of high-level constructs (such as
-  \LC{induct}) that facilitate SMT reasoning. We show how a \LangATerm can be
-  expanded into a \LangBTerm, which is then cached, embedded in Haskell,
-  and spliced in place of the original \LangATerm.
-\item Finally, cached terms are repeatedly pruned to remove
-  potentially unnecessary proof terms, using Liquid Haskell as the
-  validity oracle.
-  
-\end{itemize}
+First, we describe the \LangB which is the langage that our Liquid
+Proof macros expand to. The \LangB is a subset of Haskell, with some
+annotations that are necessary for simplification, but which can be
+straightforwardly erased to obtain valid Liquid Haskell terms.
+
+Second, we formally introduce the \LangA in which users write proofs,
+an extensible collection of high-level constructs (such as
+\LC{induct}) that facilitate SMT reasoning. We show how a \LangATerm
+can be expanded into a \LangBTerm, which is then cached, embedded in
+Haskell, and spliced in place of the original \LangATerm.
+
+Finally, cached terms are repeatedly pruned to remove potentially
+unnecessary proof terms, using Liquid Haskell as the validity oracle.
+
 
 \subsection{The \LangB}
 \label{sec:proto-proof}
@@ -105,11 +104,14 @@ With the exception of \LC{Auto}, terms in the \LangB can be directly
 embedded into Haskell. In turn, \LC{Auto} can be embedded by
 translating the \LC{kept} and \LC{init} lists of expressions to
 sequences of Liquid Haskell conjunctions---we will expand on this when
-discussing pruning later in this section.\leo{Hint here?}
+discussing pruning later in this section. That is:
 \begin{code}
   Auto { init = [a1, ..., aM]
        , kept = [b1, ..., bN]
-       , pruned = _ } ==>
+       , pruned = _ }
+\end{code}
+is embedded in Haskell as:
+\begin{code}
   a1 &&& ... &&& aM &&& b1 &&& ... &&& bN
 \end{code}
 
@@ -164,11 +166,11 @@ The \LangA defines a collection of proof macros that aim to concisely
 describe the high-level structure of a Liquid Haskell proof. This
 collection is designed to be extensible, so that new proof macros can
 be added easily by adding a new constructor to the \LangA and then
-handling the new case for processing.  The syntax for \LangA appears
-in Figure~\ref{fig:proof-macro-lang}, and consists of atomic macros
-that can be sequenced together using \LC{;}. Liquid Haskell users can
-write such sequences of proof macros, like the three \macro{induct}s
-in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
+defining its expansion.  The syntax for \LangA appears in
+Figure~\ref{fig:proof-macro-lang}, and consists of atomic macros that
+can be sequenced together. Liquid Haskell users can write such
+sequences of proof macros, like the three \macro{induct}s in
+Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
 \LangB.
 
 
@@ -254,25 +256,23 @@ in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
   e ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}
   }\\
 \\  
-  \inference{\Gamma \vdash x_i:\alpha_i && n \in \mathbb{N}}
-  {\Gamma; \Rho
-  \vdash 
-  \macro{auto} ~ [\overline{x_i}] ~ n
-  \expandsTo
-  \mathsf{auto}(\Gamma \cup \{ \overline{x_i} \}, \Rho, \MC{Proof}, n) ~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}}
-  % 
-  % 
+\inference{\Gamma \vdash x_i:\alpha_i && n \in \mathbb{N} &&
+   \mathit{is = \mathsf{generate} (\Gamma \cup \{ \overline{x_i} \}, \Rho, \MC{Proof}, n)}}
+            {\Expand{\Gamma}{\Rho}{\macro{auto} ~ [\overline{x_i}] ~ n}
+            {\mathtt{Auto} \{ \mathit{init} = is, \mathit{kept} = [], \mathit{pruned} = [] \}~ \MC{\&\&\&} ~ \macroHole{\Gamma}{\Rho}}}
+%  % 
+%  % 
 \\[2em]
   % 
   % auto metafunction
   % 
   \begin{array}{lcl}
-    \mathsf{auto}(\Gamma, \Rho, \alpha, 0) &=& \{ \MC{trivial} \}
+    \mathsf{generate}(\Gamma, \Rho, \alpha, 0) &=& \{ \MC{trivial} \}
     \\
-    \mathsf{auto}(\Gamma, \Rho, \beta, 1 + n) &=&
+    \mathsf{generate}(\Gamma, \Rho, \beta, 1 + n) &=&
       \{ f ~ a_1 ~ \cdots ~ a_n \mid
         \Gamma \vdash f : \alpha_1 \rightarrow \cdots \rightarrow a_n \rightarrow \beta,~
-        a_i \in \mathsf{auto}(\Gamma, \Rho, \alpha_i, n)
+        a_i \in \mathsf{generate}(\Gamma, \Rho, \alpha_i, n)
       \}
       \\ &\cup&
       \{ r ~ a_1 ~ \cdots ~ a_n \mid
@@ -280,34 +280,35 @@ in Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
         a_i \in \Rho_i,~
         x_i \mapsto \Rho_i \in \Rho
       \}
-      \\ &&
-      \text{where $r$ is the function defined at the top-level}
+      \\ 
+%      && \text{where $r$ is the function defined at the top-level}
   \end{array}
 \end{array} \]
 \end{minipage}
 \caption{Proof macro semantics}
 \label{fig:proof-macro-semantics}
 \end{figure*}
-\todo{is ``where $r$ is the function defined at the top-level'' the right way to phrase that?}
 
 To expand each proof macro, we need to take into account the expansion
 of any macros that preceded it in the sequence. To that end, we
-introduce two contexts, a typing context $\Gamma$ is the type
-macro-context which associates variables to Haskell types, and a
-recursion context $\Rho$ which associates arguments of the top-level
-declaration to a type macro-context, to facilitate proof
-automation. We formalize this expansion as a 4-place relation
+introduce two contexts, a typing context $\Gamma$ which associates
+variables to Haskell types, and a recursion context $\Rho$ which
+associates arguments of the top-level declaration to a (potentially
+empty) set of subterms that can be used to instantiate recursive calls
+without triggering an infinite loop.  We formalize this expansion as a
+4-place relation
 \[
 \Expand{\Gamma}{\Rho}{T}{t}
 \]
 which states that a proof macro $T$ in the contexts $\Gamma$ and
-$\Rho$ expands to a \LangBTerm $t$, that can contain holes to be
-filled in by expansion of subsequent macros, in potentially updated
-contexts $\Gamma'$ and $\Rho'$. We annotate each hole with these
-contexts, writing $\macroHole{\Gamma}{\Rho}$.  This expansion process
-is formalized in Figure~\ref{fig:proof-macro-semantics}, and we can
-broadly identify two types of proof macros: {\em control-flow} and
-{\em evidence} macros.
+$\Rho$ expands to a \LangBTerm $t$. We allow this term $t$ to contain
+holes that will be filled in by expansion of subsequent macros, but in
+potentially updated contexts $\Gamma'$ and $\Rho'$. We annotate each
+hole with these contexts, writing $\macroHole{\Gamma}{\Rho}$.  This
+expansion process is formalized in
+Figure~\ref{fig:proof-macro-semantics}, and we can broadly identify
+two types of proof macros: {\em control-flow} and {\em evidence}
+macros.
 
 \paragraph*{Control-Flow macros}
 
@@ -324,8 +325,10 @@ functionality:
   $\macro{induct} ~ x$ creates a pattern match on $x$, with a branch
   for every constructor of $\alpha$. The body of each branch is a hole
   $\macroHole{\Gamma_i}{\Rho_i}$, with the typing context updated to
-  include the pattern variables and the recursion context updated
-  \leo{??}. Similarly, given a well typed Haskell expression $e$ with
+  include the (fresh) pattern variables $\{y_{ij}\}$ and their
+  bindings, and with the recursion context updated to signify that any
+  $y_{ij}$ could be used to make terminating recursive
+  calls. Similarly, given a well typed Haskell expression $e$ with
   type $\alpha$ in a context $\Gamma$, $\macro{destruct} ~ e$ also
   creates a pattern match where each branch is a hole. The only
   difference from \macro{induct} is that it does not modify the
@@ -366,9 +369,8 @@ refinement context.
   
 \item $\macro{auto} ~ [\overline{\textit{x}}] ~ n$:
 
-  \leo{TODO: Update text to refer to updated figure}
-  This is the most complicated proof macro, and the core of our
-  frameworks automation. It takes two optional parameters, a sequence
+  Finally, the \macro{auto} macro is the core of our framework's
+  automation.  It takes two optional parameters, a sequence
   $\overline{\textit{x}}$ of {\em hints}, and a natural number $n$,
   and it generates all well-typed neutral forms of type \LC{Proof} up
   to height $n$ that use variables from the current context or the
@@ -376,8 +378,6 @@ refinement context.
   separate recursion context that is specially constructed in the rest
   of the proof (see the control-flow macros below).
 \end{itemize}
-
-\leo{End of fixed part}
 
 Armed with the expansion relation for a single proof macro, we can
 formalize the expansion of a macro sequence
@@ -418,20 +418,17 @@ that includes an explicit \macro{auto} macro:
   induct a; induct b; induct c; auto [] 3
 \end{code}
 
-
-
-
-
 \paragraph{Extended Example}
 
-For concreteness, as a running example for the rest of the paper, consider
-the following interaction between the list append and membership functions,
+For concreteness, consider the following predicate which states that
+if a number \LC{x} is an element of a list \LC{xs}, then \LC{x} is
+also in the list \LC{xs ++ ys} for an arbitrary list \LC{ys}, along
+with a corresponding Liquid Haskell theorem that is proved with a short
+Liquid Proof macro.
 \footnote{For the sake of readability, we used the usual list
   notations such as (++) for list append, rather than their refined
   list counterparts.}%
 %
-which states that if a number \LC{x} is an element of a list \LC{xs},
-then \LC{x} is also in the list \LC{xs ++ ys} for an arbitrary list \LC{ys}:
 \begin{code}
   concatElemP :: N -> [N] -> [N] -> Bool
   concatElemP x xs ys
@@ -444,17 +441,15 @@ then \LC{x} is also in the list \LC{xs ++ ys} for an arbitrary list \LC{ys}:
   concatElem :: N -> [N] -> [N] -> Proof
   concatElem x xs ys =
     assert {elem x xs};
-    induct xs;
-    auto -- This is unnecessary!
+    induct xs
   |]
 \end{code}
 
 At a high level, what this proof macro does is condition on the
-expression \LC{elem x xs} (from the \LC{assert} macro), pattern match
-on \LC{xs} (from the \LC{induct} macro), and search for ways to
-complete the proof, potentially using the tail of \LC{xs} for a
-recursive call (from \LC{auto}). This is achieved by expanding these
-macros back into a subset of Haskell, which we call the {\em \LangB}.
+expression \LC{elem x xs}, pattern match on \LC{xs}, and search for
+ways to complete the proof, potentially using the tail of \LC{xs} for
+a recursive call. This is achieved by expanding these macros back into
+the \LangB as shown in Figure~\ref{fig:step-by-step}.
 
 % TODO: step-by-step expansion 
 \begin{figure*}
@@ -464,14 +459,14 @@ macros back into a subset of Haskell, which we call the {\em \LangB}.
       \Rho &= \{ x \mapsto \varnothing, xs \mapsto \varnothing, ys \mapsto \varnothing \} 
     \end{align*}
     \begin{align*} \begin{array}{rl}
-      &
-      \Interp
-        { \macro{assert}~\{\MC{elem~x~xs}\} ; ~
-          \macro{induct}~\MC{xs} 
-        }
-        { \Gamma ; \Rho }
-      \\ =&
-      \Interp
+%      &
+%      \Interp
+%        { \macro{assert}~\{\MC{elem~x~xs}\} ; ~
+%          \macro{induct}~\MC{xs} 
+%        }
+%        { \Gamma ; \Rho }
+%      \\ =&
+      & \Interp
         { \macro{assert}~\{\MC{elem~x~xs}\} ; ~
           \macro{induct}~\MC{xs} ; ~
           \macro{auto}~\MC{[]}~\MC{3}
@@ -503,7 +498,7 @@ macros back into a subset of Haskell, which we call the {\em \LangB}.
             \MC{Cons~x'~xs'}~\MC{\rightarrow}~
             \Interp
               { \macro{auto}~\MC{[]}~\MC{3} }
-              { \Gamma ; \Rho[ \MC{xs} \mapsto \{ \MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]} \} ] }
+              { \Gamma \cup \{\MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]}\}; \Rho[ \MC{xs} \mapsto \{ \MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]} \} ] }
         \\& \MC{else}~\MC{trivial}
       % 
       \\ =&
@@ -512,9 +507,9 @@ macros back into a subset of Haskell, which we call the {\em \LangB}.
         \\& \hspace{1em} 
           \MC{case}~\MC{xs}~\MC{of}
           \\& \hspace{2em}
-            \MC{[]}~\MC{\rightarrow}~\mathsf{auto}(\Gamma, \Rho, \MC{3})~\MC{\&\&\&}~\MC{trivial}
+            \MC{[]}~\MC{\rightarrow}~\mathsf{generate}(\Gamma, \Rho, \mathtt{Proof}, \MC{3})~\MC{\&\&\&}~\MC{trivial}
             \\& \hspace{2em}
-            \MC{Cons~x'~xs'}~\MC{\rightarrow}~\mathsf{auto}(\Gamma, \Rho[ \MC{xs} \mapsto \{ \MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]} \} ], \MC{3})~\MC{\&\&\&}~\MC{trivial}
+            \MC{Cons~x'~xs'}~\MC{\rightarrow}~\mathsf{generate}(\Gamma\cup \{\MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]}\}, \Rho[ \MC{xs} \mapsto \{ \MC{x'}:\MC{N}, \MC{xs'}:\MC{[N]} \} ], \mathtt{Proof}, \MC{3})~\MC{\&\&\&}~\MC{trivial}
         \\& \MC{else}~\MC{trivial}
       % 
       \\ =&
@@ -523,7 +518,7 @@ macros back into a subset of Haskell, which we call the {\em \LangB}.
         \\& \hspace{1em} 
           \MC{case}~\MC{xs}~\MC{of}
           \\& \hspace{2em}
-            \MC{[]}~\MC{\rightarrow}~\MC{trivial}
+            \MC{[]}~\MC{\rightarrow}~\MC{trivial}~\MC{\&\&\&}~\MC{trivial}
             \\& \hspace{2em}
             \MC{Cons~x'~xs'}~\MC{\rightarrow}
             \\& \hspace{3em}
@@ -537,31 +532,55 @@ macros back into a subset of Haskell, which we call the {\em \LangB}.
       % 
     \end{array} \end{align*}
   \end{minipage}
+  \caption{Step-by-step Expansion of a Proof Macro}
+  \label{fig:step-by-step}
 \end{figure*}
 
-\todo{how to properly reference this}
-Recall the proof macro used to prove \LC{concatElem}.
-The macro declaration begins with a type signature and then \LC{concatElem x xs ys}.
-From the type signature, the proof macro system can deduce the types of \LC{x}, \LC{xs}, and \LC{ys} and bring these variables into context.
-\footnote{Unfortunately, types of local bindings cannot be inferred wiht Template Haskell, so the type signature is in fact necessary.}
-% TODO: (elem x ys) should be {elem x ys}, but causes {too many {}} error
-The sequence of proof macros begins with \LC{assert (elem x ys)}, which conditions on \LC{elem x ys} and then fills with \LC{else} case with \LC{trivial}.
-The last proof macro is \LC{induct xs}, which pattern matches on \LC{xs} into 2 macro-processing branching: \LC{[]} and \LC{x':xs'}.
-\footnote{In the implementation, these fresh variables are given unique suffixes, but this unecessarily intrudes on readability.}
-In the second branch, the variables \LC{x'} and \LC{xs'} are added to the recursion context for the 2nd argument position, since \LC{xs} is in the 2nd argument position.
-Finally, since the last proof macro was \textit{not} an evidence macro, a \LC{auto} is implicitly appended.
-This \LC{auto} is processed in each branch resulting from \LC{induct xs}.
-In the branch for \LC{[]}, the only values in scope are \LC{x} and \LC{ys}, so there are no neutral forms to generate.
-The recursion \LC{concatElem x ys ys} is not generated because none of the arguments are from the recursion context of their respective argument position.
-In the branch for \LC{[]}, the values in sccope are \LC{x}, \LC{x'}, \LC{xs'}, and \LC{ys}, so there are several neutral forms that can be generated -- in particular, several recursions:
+Based on the declaration of \LC{concatElem} inside the quasiquotter,
+we can initialize the typing context with the types for \LC{x},
+\LC{xs}, and \LC{ys}. 
+\footnote{Types of local bindings cannot be inferred with Template
+  Haskell, so the type signature is in fact necessary.}%
+%
+Similarly, the recursion context is initialized with the empty set for
+all of the function arguments.
+%
+The proof macro sequence is then preprocessed to append \macro{auto} \LC{[] 3}
+at its end, as it doesn't end with an explicit evidence macro.
+
+\todo{(elem x ys) should be {elem x ys}, but causes {too many {}} error} %
+%
+The first proof macro in the sequence is \LC{assert (elem x ys)},
+which creates an \texttt{if} statement whose condition is \LC{elem x ys}
+and whose \texttt{else} branch is simply \LC{trivial}.
+%
+The \texttt{then} branch is a hole $\macroHole{\Gamma}{\Rho}$, which
+will be filled by expanding the rest of the sequence, beginning with
+\macro{induct} \LC{xs}.
+
+The \macro{induct} \LC{xs} macro expands into a pattern matching with
+two cases, one for the empty list and one for a nonempty list \LC{x':xs'},
+for fresh variables \LC{x'} and \LC{xs'}.
+%
+%\footnote{In the implementation, these fresh variables are given unique suffixes, but this unecessarily intrudes on readability.}
+Both branch bodies are holes to be filled by the expansion of an \macro{auto} macro, but at different contexts.
+%
+The empty list branch did not introduce any new variables, and as a result
+both the typing and the recursion contexts remain unchanged. In the nonempty
+branch, the variables \LC{x'} and \LC{xs'} are added to both the typing and to the the recursion context for the 2nd argument position, since \LC{xs} is in the 2nd argument position.
+
+Finally, the \macro{auto} macros are expanded using the $\mathsf{generate}$ metafunction, which yields just \LC{trivial} in the empty case, and a bunch of different potential recursive calls in the nonempty case, as there are several
+neutral forms available:
 \begin{itemize}
   \item \LC{concatElem x' xs' xs'}
   \item \LC{concatElem x' xs' ys}
   \item \LC{concatElem x xs' xs'}
   \item \LC{concatElem x xs' ys}
 \end{itemize}
-These are valid recursions because all of them have at least one argument from the recursion context at that argument position: \LC{xs'}.
-Altogether, the resulting \LangBTerm is the following:
+All of these recursive calls are potentially valid, as they all have
+at least one argument from the recursion context at that argument
+position: \LC{xs'}.  Altogether, the resulting \LangBTerm is the
+following:
 \begin{code}
   concatElem :: N -> [N] -> [N] -> Proof
   concatElem = \x xs ys ->
@@ -587,8 +606,10 @@ Here, the \LC{Auto} structure corresponds to the term
 \end{code}
 with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
-Of course, it turns out that not all of these terms are needed for a valid proof.
-The pruning process, described in the next subsection, describes how the \LC{Auto} structure's metadata is used statefully to safely prune the unnecessary terms.
+Of course, it turns out that not all of these terms are needed for a
+valid proof.  The pruning process, which we describe next, uses the
+\LC{Auto} structure's metadata statefully to safely prune such
+unnecessary terms.
   
 \subsection{Pruning}
 
@@ -597,6 +618,10 @@ The pruning process, described in the next subsection, describes how the \LC{Aut
 For each \LC{Auto} structure in a \LangBTerm, each \textit{exp} in its \LC{init} field is attempted to be pruned one at a time.
 This is done by moving the \textit{exp} from the \LC{init} field to the \LC{pruned} field, embedding and splicing the new \LangBTerm into the original Haskell file in place of the original proof macro, and then running Liquid Haskell to check if this prune was safe.
 If it was then pruning continues with the rest of the \textit{exp}s in the \LC{init} fields of the \LC{Auto} structures, otherwise this prune is undone, and the \textit{exp} that was attempted to be pruned is instead moved to the \LC{kept} field before continuing pruning.
+%
+This process is very similar to shrinking in the style of
+QuickCheck~\cite{ClaessenH00} from the property-based testing
+literature.
 
 Recall the \LangBTerm that resulted from processing the proof macro used to prove \LC{concatElem}.
 There is an \LC{Auto} structure that clearly has a few \textit{exp}s that can be pruned since they are unnecessary for the proof.
@@ -613,8 +638,10 @@ After pruning, the final resulting \LangBTerm can be embedded into Haskell a las
     else
       trivial
 \end{code}
-
-\todo{onclusion of Linear Pruning subsection}
+%
+Note that this is the minimal proof a user would need to write
+in Liquid Haskell to convince its typechecker that \LC{concatElem}
+is well typed.
 
 % \todo{pretty sure this shouldn't be included}
 % \subsubsection{Superlinear Pruning}
@@ -624,19 +651,19 @@ After pruning, the final resulting \LangBTerm can be embedded into Haskell a las
 % So in practice it may be feasible to perform a sort of binary search.
 % \todo{describe more?}
 
-\section*{Temporary}
-
-\todo{where to put this?}
-Note that, for Liquid Haskell, the refinement of the type of \LC{f x y, trivial)} is the same as the refinement of the type of \LC{f x y}.
-So, the refinement of the expression's type can be included into the refinement context by simply adding it into the resulting Haskell expression
-
-% \todo{where to put this? i have a different example i used for this section, so do I need to bring back \LC{assoc\_min} again?}
-The proof of \LC{assoc\_min} can be expressed shortly as follows:
-  
- The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
- Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
- The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
- Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
- So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
- In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
-  
+% \section*{Temporary}
+%  
+% \todo{where to put this?}
+% Note that, for Liquid Haskell, the refinement of the type of \LC{f x y, trivial)} is the same as the refinement of the type of \LC{f x y}.
+% So, the refinement of the expression's type can be included into the refinement context by simply adding it into the resulting Haskell expression
+%  
+% % \todo{where to put this? i have a different example i used for this section, so do I need to bring back \LC{assoc\_min} again?}
+% The proof of \LC{assoc\_min} can be expressed shortly as follows:
+%   
+%  The "induct a" macro does case analsis on "a", resulting in two branches. Since both branches are to be handled, the following two macros are executed in both branches (matching the behavior of the ";" tactic combinator in Coq).
+%  Additionally, in the "S a'" case, the "induct a" tactic notices that "a'" was introduced by inducting on an input variable term in positon 0, so "a'" is marked as a valid argument to a recursive call to "assoc\_min" in position 0.
+%  The same happens for "induct b" and "induct c", yielding the same branches of the verbose Haskell term.
+%  Finally, every proof macro implicitly ends with "auto" unless it ends with "trivial" or "use e".
+%  So, in each of the 9 branches, "auto" is executed to generate all well-typed terms of type "Proof" using things in local context.
+%  In all but the "S a', S b', S c'" case, there are no such well-typed applications, since the only way to produce a term of type "Proof" is to use "assoc\_min", but only in that final is there a term in context that is available to use as the argument to a recursive call to "assoc\_min", for each of its argment positions (which are 0, 1, 2 since it has 3 arguments and each is inducted on).
+%   
