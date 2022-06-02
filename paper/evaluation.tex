@@ -66,10 +66,14 @@ use the same proof strategy.
 
 \paragraph{Practicality}
 %
-Proof search in the style can be a very inefficient process yielding
-unreadable proof terms. By pruning the resulting terms, we aimed to
-keep the prover's burden low while still deriving minimal proof terms
-in the end.\leo{Not sure about this}
+The style of proof search used by our proof macro system is very inefficient,
+verily because it includes all generatable nuetral forms (using a limited)
+context without using any sort of guided search. The secondary pruning process,
+which is performed on a passing proto-proof term after proof search is complete,
+aims to recover a minimal proof term for the sake of readability and efficient
+re-checking.
+\leo{Not sure about this}
+\hen{I rephrased things to be more detailed and precise}
 
 \smallskip
 
@@ -78,6 +82,7 @@ Liquid Haskell proofs~\cite{TacticThesis}, that consists of a
 collection of boolean predicates over natural numbers, lists, and
 binary trees, ranging from very simple facts to inductive properties
 that require auxiliary lemmas.
+\hen{mention somewhere that all the proofs we did used PLE}
 
 Using Liquid Proof Macros we were able to concisely prove ($<16$ LoC
 for all and $<10$ LoC for all but two). Figure~\ref{fig:loc-eval}

@@ -70,7 +70,7 @@ arbitrary Haskell expressions.
 \begin{figure}
 \begin{align*}
   \textit{decl-proto} ::= &
-  ~ f ~ : ~ \textit{typ} \\ &
+  ~ f ~ \MC{::} ~ \textit{typ} \\ &
   ~ f ~ = ~ \overline{\textit{exp-proto} ;}
   \\
   \textit{exp-proto}~ ::= &
@@ -105,12 +105,13 @@ embedded into Haskell. In turn, \LC{Auto} can be embedded by
 translating the \LC{kept} and \LC{init} lists of expressions to
 sequences of Liquid Haskell conjunctions---we will expand on this when
 discussing pruning later in this section. That is:
+\hen{how important is it to have the meta-variables in code blocks be in math font?}
 \begin{code}
   Auto { init = [a1, ..., aM]
        , kept = [b1, ..., bN]
        , pruned = _ }
 \end{code}
-is embedded in Haskell as:
+is embedded into Haskell as:
 \begin{code}
   a1 &&& ... &&& aM &&& b1 &&& ... &&& bN
 \end{code}
@@ -137,7 +138,7 @@ is embedded in Haskell as:
 \begin{figure}
 \begin{align*}
   \textit{decl-macro} ::= &
-    ~ f ~ : ~ \textit{typ} \\ &
+    ~ f ~ \MC{::} ~ \textit{typ} \\ &
     ~ f ~ \overline{y_i} ~ = ~ \overline{\textit{exp-macro} ;}
   \\[1em]
   \textit{exp-macro} ::= &
@@ -618,14 +619,13 @@ final step of figure ~\ref{fig:step-by-step}.
 % \end{code}
 % with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
-Of course, it turns out that not all of these terms are needed for a
-valid proof.  The pruning process, which we describe next, uses the
-\LC{Auto} structure's metadata statefully to safely prune such
-unnecessary terms.
-  
 \subsection{Pruning}
 
 % \subsubsection{Linear Pruning}
+
+Of course, it turns out that not all of these terms are needed for a valid
+proof. The pruning process, uses the \LC{Auto} structure's metadata statefully
+to safely prune such unnecessary terms.
 
 For each \LC{Auto} structure in a \LangBTerm, each \textit{exp} in its \LC{init} field is attempted to be pruned one at a time.
 This is done by moving the \textit{exp} from the \LC{init} field to the \LC{pruned} field, embedding and splicing the new \LangBTerm into the original Haskell file in place of the original proof macro, and then running Liquid Haskell to check if this prune was safe.
