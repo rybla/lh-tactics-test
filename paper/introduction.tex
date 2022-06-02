@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Liquid Haskell\cite{liquidHaskell} is a popular verifier for Haskell
+Liquid Haskell~\cite{liquidHaskell} is a popular verifier for Haskell
 programs, leveraging the power of SMT solvers~\cite{BarST-RR-10} (such
 as Z3~\cite{Z3} or CVC4~\cite{CVC4}) to prove the correctness of
 diverse applications ranging from optimizations~\cite{TPE2018} to
@@ -24,9 +24,9 @@ computes the minimum of two natural numbers, defined inductively:
 Naturally, we would expect such a function to be associative, that is:
 $$ \forall a ~ b ~ c. ~ \imin (\imin a~b)~c == \imin a~(\imin~b~c) $$
 %
-In Liquid Haskell, we can express associativity by defining a
-refinement type to encode this property, and prove it by defining
-a term of that type:
+In Liquid Haskell, we can {\em specify} associativity by defining a
+refinement type to encode this property, and we can {\em prove}
+associativity by defining a term of that type:
 %
 \begin{code}
   {-@ assoc_min :: a:N -> b:N -> c:N ->
@@ -36,17 +36,17 @@ a term of that type:
   assoc_min a b c = ...
 \end{code}
 %
-The Haskell type of \LC{assoc_min} is a function with three natural
-number arguments that returns a \LC{Proof}, which (to GHC) is just a
-type synonym for \LC{()}. The Liquid Haskell type of \LC{assoc_min},
-however, is much more interesting: its return type does not only
+To Haskell, the type of \LC{assoc_min} is simply a function with three
+natural number arguments that returns a \LC{Proof}, which is just a
+type synonym for \LC{()}. To Liquid Haskell, however, the type of
+\LC{assoc_min} is much more interesting: its return type does not only
 specify that the output is a unit, but {\em refines} it so that
 associativity of \LC{min} holds for its input arguments. In other
-words, the only interesting thing about the result of this function
-is its refinement, which constitutes an ``extrinsic style'' proof
-of associativity. This is a common enough pattern that Liquid Haskell
-supports dropping the ``\LC{_:()}'' part of the refinement for brevity,
-as we will also do in the remainder of this paper.
+words, the only interesting thing about the result of this function is
+its refinement, which constitutes an ``extrinsic style'' proof of
+associativity. This is a common enough pattern that Liquid Haskell
+supports dropping the ``\LC{_:()}'' part of the refinement for
+brevity, as we will also do in the remainder of this paper.
 
 But how does Liquid Haskell decide if the refinement type is true? By
 reducing typechecking to verification conditions that SMT solvers
@@ -107,18 +107,21 @@ program typechecks is shown in Figure~\ref{fig:assoc-min-proof}.
 \label{fig:assoc-min-proof}
 \end{figure}
 
-{\em All} of the branches of pattern matching on \LC{a}, \LC{b}, and \LC{c}
-must be written out explicitly. Otherwise, the SMT solver would not
-know how to simplify the \LC{min} expressions in the refinement---the
-only facts it knows are the three equations that were used to define
-\LC{min}: \LC{min Z _ = Z}, \LC{min _ Z = Z}, and
+{\em All} of the branches of pattern matching on \LC{a}, \LC{b}, and
+\LC{c} must be written out explicitly. Otherwise, the SMT solver would
+not know how to simplify the \LC{min} expressions in the
+refinement---the only facts it knows are the three equations that were
+used in \LC{min}'s definition:
+%
+\LC{min Z _ = Z}, \LC{min _ Z = Z}, and
 %
 \LC{min (S x) (S y) = S (min x y)}.
 %
-Liquid Haskell understands the constraints introduced by this case analysis,
-and takes them into account in order to discharge most cases---the non-recursive
-ones that involve at least one \LC{Z}. The proof conclusion in such cases is \LC{trivial},
-which is again just a synonym for the term-level \LC{()}.
+Liquid Haskell understands the constraints introduced by pattern
+matching, and takes them into account in order to discharge most
+cases---the non-recursive ones that involve at least one \LC{Z}. The
+proof conclusion in such cases is \LC{trivial}, which is again just a
+synonym for the term-level \LC{()}.
 
 However, in the recursive case of \LC{min}, the Liquid Haskell typechecker needs
 additional help, in the form of a recursive call to \LC{assoc_min a' b' c'}, which
@@ -140,18 +143,24 @@ verbosity required is cumbersome and obscures the fact that the
 underlying argument is a straightforward induction. In larger
 developments where the SMT solver might need to rely on helper lemmas,
 this problem only becomes more pronounced.  Other proof assistants,
-such as Coq or Lean, unconstrained by the maturity and complexity of
-an ecosystem like Haskell's, rely on interactive tactics in these
-situations to aid users' proof efforts.
+such as Coq~\cite{Coq}, Lean~\cite{Lean4}, or
+Isabelle~\cite{Isabelle}, rely on interactive tactics in these
+situations to aid users' proof efforts. But developers of these tactic
+languages enjoy a transparent API to interact with the current proof
+state, and an essentially clean slate to design metaprogramming
+capabilities, which has been exploited to the great benefit of proof
+assistant users~\cite{Ltac, Mtac, ltac2}.
 
-\smallskip
-
-{\em What can we do within the confines of the existing Haskell
-  ecosystem to aid users?}
-  Without interactivity, an interface to concise proof generators must expand to
-  a proof term all at once i.e. a macro. So, we developed an macro
-  system for generating Liquid Haskell proof terms, using existing
-  metaprogramming tools for Haskell.
+Unfortunately, Liquid Haskell interacts with the SMT solver in a very
+opaque manner, and within the Haskell ecosystem metaprogramming
+capabilities are already well established in the form of Template
+Haskell---but not designed specifically with SMT-based verification in
+mind. So then, {\em what can we do within the confines of this mature
+  Haskell ecosystem to aid users?}  Without interactivity, an
+interface to concise proof generators must expand to a proof term all
+at once i.e. it must behave like a macro. Therefore, we developed a
+macro system for generating Liquid Haskell proof terms, using the
+existing metaprogramming tools for Haskell.
   % TODO: any other limitations to mention, that directed us to this solution?
 
 \paragraph*{Liquid Proof Macros}
@@ -164,18 +173,18 @@ intutive proofs that resemble automated tactics%
   notion of interactivity that is impossible in the current version
   of Liquid Haskell.}%
 %
-of more traditional proof assistants, including case analysis,
-induction, conditioning, and proof search. The proof of associativity
-of \LC{min} using Liquid Proof macros can be seen in
-Figure~\ref{fig:assoc-min-macro}.
+ of more traditional proof assistants, including case analysis,
+ induction, conditioning, and proof search. For example, the same
+ proof of associativity of \LC{min} using Liquid Proof macros can be
+ seen in Figure~\ref{fig:assoc-min-macro}.
 
-These macros are then elaborated using Template Haskell to a subset of
-Haskell that resembles, or rather is even more complicated than, the
-one used in Figure~\ref{fig:assoc-min-proof}. To facilitate
-typechecking of larger Liquid Haskell developments, we also augment
-this subset with metadata information, and provide a pruning algorithm
-reminiscent of shrinking in property-based testing\cn, that simplifies
-away any unnecessary components of the proof search process.
+These macros are expanded to a subset of Haskell that resembles, or
+rather is even more complicated than, the one used in
+Figure~\ref{fig:assoc-min-proof}. To facilitate typechecking of larger
+Liquid Haskell developments, we also augment this subset with metadata
+information, and provide a pruning algorithm reminiscent of shrinking
+in property-based testing~\cite{ClaessenH00}, simplifying away any
+unnecessary components that result from proof search.
 
 
 \begin{figure}[t]
@@ -198,6 +207,6 @@ In the rest of the paper we make the following contributions:
 \item We evaluate our framework against prior work that attempted to
   bring tactic-inspired reasoning in Liquid Haskell~\ref{sec:eval}.
 \end{itemize}
-We discuss limitations of our work in Section~\ref{sec:limitations}
-and related work in Section~\ref{sec:related}, before concluding with
+We discuss related work in Section~\ref{sec:related}, before
+concluding with a discussion of the limitations of our framework and
 directions for future work~\ref{sec:future}.
