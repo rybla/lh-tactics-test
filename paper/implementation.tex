@@ -655,6 +655,21 @@ Note that this is the minimal proof a user would need to write
 in Liquid Haskell to convince its typechecker that \LC{concatElem}
 is well typed.
 
+\section{Explicitly Introduced Variables}
+\hen{
+I should mention briefly how introduced variables are handled i.e. variables
+that can be explicitly introduced by \macro{induct} or \macro{destruct}. See
+Prop72 for an extended example of this in action. Along with explicit
+introductions come explicit uses. For example, if you introduce a variable and
+later was to \macro{use} it, then you need to indicate to the \macro{use}
+the expression you're giving it needs access to a context that may not be in
+every control-flow branch. So, you write
+$\macro{use}~e~\macro{requires}~[\overline{x_i}]$ where the $x_i$ are the
+variables, introduced by preceeding \macro{induct}s or \macro{destruct}s, that
+appear in $e$.
+}
+
+
 % \todo{pretty sure this shouldn't be included}
 % \subsubsection{Superlinear Pruning}
 
