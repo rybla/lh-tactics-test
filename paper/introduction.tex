@@ -29,17 +29,17 @@ refinement type to encode this property, and we can {\em prove}
 associativity by defining a term of that type:
 %
 \begin{code}
-  {-@ assoc_min :: a:N -> b:N -> c:N ->
+  {-@ assocMin :: a:N -> b:N -> c:N ->
       {_:() | min (min a b) c == min a (min b c)}
   @-}
-  assoc_min :: N -> N -> N -> Proof
-  assoc_min a b c = ...
+  assocMin :: N -> N -> N -> Proof
+  assocMin a b c = ...
 \end{code}
 %
-To Haskell, the type of \LC{assoc_min} is simply a function with three
+To Haskell, the type of \LC{assocMin} is simply a function with three
 natural number arguments that returns a \LC{Proof}, which is just a
 type synonym for \LC{()}. To Liquid Haskell, however, the type of
-\LC{assoc_min} is much more interesting: its return type does not only
+\LC{assocMin} is much more interesting: its return type does not only
 specify that the output is a unit, but {\em refines} it so that
 associativity of \LC{min} holds for its input arguments. In other
 words, the only interesting thing about the result of this function is
@@ -81,10 +81,10 @@ program typechecks is shown in Figure~\ref{fig:assoc-min-proof}.
 % So, a proof of "assoc\_min" is written as follows:
 \begin{figure}
 \begin{code}
-  {-@ assoc_min :: a:N -> b:N -> c:N ->
+  {-@ assocMin :: a:N -> b:N -> c:N ->
         {min (min a b) c == min a (min b c)} @-}
-  assoc_min :: N -> N -> N -> Proof
-  assoc_min a b c =
+  assocMin :: N -> N -> N -> Proof
+  assocMin a b c =
     case a of 
       Z ->
         case b of 
@@ -105,7 +105,7 @@ program typechecks is shown in Figure~\ref{fig:assoc-min-proof}.
         S b' ->
           case c of
             Z -> trivial
-            S c' -> assoc_min a' b' c'
+            S c' -> assocMin a' b' c'
 \end{code}
 \caption{Liquid Haskell proof term for associativity of \texttt{min}}
 \label{fig:assoc-min-proof}
@@ -128,14 +128,14 @@ proof conclusion in such cases is \LC{trivial}, which is again just a
 synonym for the term-level \LC{()}.
 
 However, in the recursive case of \LC{min}, the Liquid Haskell typechecker needs
-additional help, in the form of a recursive call to \LC{assoc_min a' b' c'}, which
+additional help, in the form of a recursive call to \LC{assocMin a' b' c'}, which
 brings its refinement in scope for the SMT solver and allows it to conclude that
 the induced verification condition holds. Crucially, this refinement is again the
 only thing that matters: while the structure of the term gives the appearance
 of a proof term in the style of Coq or Agda, the actual return value doesn't matter.
 We could just as well have written something like
 \begin{code}
-  snd (assoc_min a' b' c', ())
+  snd (assocMin a' b' c', ())
 \end{code}
 and Liquid Haskell would still gladly accept the definition. In fact,
 Liquid Haskell's conjunction operator (\LC{&&&}) is defined exactly
@@ -193,11 +193,11 @@ unnecessary components that result from proof search.
 
 \begin{figure}[t]
 \begin{code}
-  {-@ assoc_min :: a:N -> b:N -> c:N ->
+  {-@ assocMin :: a:N -> b:N -> c:N ->
         {min (min a b) c == min a (min b c)} @-}
   [tactic|
-    assoc_min :: N -> N -> N -> Proof
-    assoc_min a b c = induct a; induct b; induct c
+    assocMin :: N -> N -> N -> Proof
+    assocMin a b c = induct a; induct b; induct c
   |]
 \end{code}
 \caption{Associativity of \texttt{min} using Liquid Proof Macros}

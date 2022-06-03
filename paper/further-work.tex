@@ -37,10 +37,10 @@ system would generate all neutral forms that correspond to the
 original neutral form with its holes filled by neutral forms. For
 example,
 \begin{code}
-  refined-auto {assoc_min (f m n) (f _ _)} [] 3
+  refined-auto {assocMin (f m n) (f _ _)} [] 3
 \end{code}
 where \LC{f :: N -> N -> N}, \LC{m}, \LC{n :: N},
-would generate all neutral forms of the form \LC{assoc_min (f m n) (f l k)} where 
+would generate all neutral forms of the form \LC{assocMin (f m n) (f l k)} where 
 \LC{l}, \LC{k :: N} range over all neutral forms constructed from values in
 context (including valid recursions) up to a certain syntactic height.
 
