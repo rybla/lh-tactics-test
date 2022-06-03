@@ -458,8 +458,8 @@ the \LangB as shown in Figure~\ref{fig:step-by-step}.
 \begin{figure*}
   \begin{minipage}{\textwidth}
     \begin{align*}
-      \Gamma &= \{ \MC{x}:\MC{N}, \MC{xs}:\MC{[N]}, \MC{ys}:\MC{[N]} \} \\
-      \Rho &= \{ x \mapsto \varnothing, xs \mapsto \varnothing, ys \mapsto \varnothing \} 
+      \Gamma &= \{ \MC{x}:\MC{N},~ \MC{xs}:\MC{[N]},~ \MC{ys}:\MC{[N]} \} \\
+      \Rho &= \{ x \mapsto \varnothing,~ xs \mapsto \varnothing,~ ys \mapsto \varnothing \} 
     \end{align*}
     \begin{align*} \begin{array}{rl}
 %      &
@@ -538,7 +538,8 @@ the \LangB as shown in Figure~\ref{fig:step-by-step}.
             \\& \hspace{5em} \MC{,~concatElem~x~xs'~xs'}
             \\& \hspace{5em} \MC{,~concatElem~x~xs'~ys~]}
             \\& \hspace{4em} \MC{,~kept~=~[]}
-            \\& \hspace{4em} \MC{,~pruned~=~[]~\}}
+            \\& \hspace{4em} \MC{,~pruned~=~[]~\}} ~ \MC{\&\&\&}
+            \\& \hspace{3em} \MC{trivial}
         \\& \MC{else}~\MC{trivial}
       % 
     \end{array} \end{align*}
