@@ -33,7 +33,7 @@ associativity by defining a term of that type:
       {_:() | min (min a b) c == min a (min b c)}
   @-}
   assocMin :: N -> N -> N -> Proof
-  assocMin a b c = ...
+  assocMin = ...
 \end{code}
 %
 To Haskell, the type of \LC{assocMin} is simply a function with three
@@ -84,7 +84,7 @@ program typechecks is shown in Figure~\ref{fig:assoc-min-proof}.
   {-@ assocMin :: a:N -> b:N -> c:N ->
         {min (min a b) c == min a (min b c)} @-}
   assocMin :: N -> N -> N -> Proof
-  assocMin a b c =
+  assocMin = \a b c ->
     case a of 
       Z ->
         case b of 
