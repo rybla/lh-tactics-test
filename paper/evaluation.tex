@@ -128,16 +128,11 @@ too large, so I had to manually provide lemma applications myself using the
 Here's one below}
 
 \begin{code}
-  {-@
-  sub_m_Sn :: m:N -> n:N -> {subN m n == S (subN m (S n))}
-  @-}
-  sub_m_Sn :: N -> N -> Proof
-  sub_m_Sn m n = undefined
+  {-@ sub_m_Sn ::  m:N -> n:N -> 
+        {subN m n == S (subN m (S n))} @-}
 
-  {-@ automatic-instances sub_Sm_n_Sk @-}
-  {-@
-  sub_Sm_n_Sk :: m:N -> n:N -> k:N -> {(S m - n) - S k == (m - n) - k}
-  @-}
+  {-@ sub_Sm_n_Sk :: m:N -> n:N -> k:N -> 
+        {(S m - n) - S k == (m - n) - k} @-}
   [tactic|
   sub_Sm_n_Sk :: N -> N -> N -> Proof
   sub_Sm_n_Sk m n k = 

@@ -416,7 +416,7 @@ Finally, before expansion of a sequence we preprocess it: if it does
 with no hints and height \LC{3} will be implicitly included at the end
 of the sequence. That is, the proof macro of
 Figure~\ref{fig:assoc-min-macro} is equivalent to the following one
-that includes an explicit \macro{auto} macro:
+that includes an explicit $\macro{auto}~\MC{[]}~\MC{3}$ macro:
 \begin{code}
   induct a; induct b; induct c; auto [] 3
 \end{code}
