@@ -55,15 +55,14 @@ wide assortment of facts about various domains such as integer
 arithmetic and boolean logic, they don't really know anything about
 user-defined data types like \LC{N} or user-defined functions like
 \LC{min}. While a direct encoding of such features to SMT is possible
-in principle~\cite{HALO}, it unfortunately leads to unpredictable
-verification, also known as the ``butterfly
-effect''~\cite{LeinoP16}. To that end, Liquid Haskell lifts
-user-defined data types and functions into a representation that can
-be handled symbolically by SMT solvers~\cite{VazouTCSNWJ18}. Still,
-many true properties of user-defined data types and functions are
-still not automatically verifiable: users must guide, via refined
-Haskell code, the SMT solver to simpler cases that can be checked
-automatically.
+in principle~\cite{HALO}, it leads to unpredictable verification, also
+known as the ``butterfly effect''~\cite{LeinoP16}. To that end, Liquid
+Haskell lifts user-defined data types and functions into a
+representation that can be handled symbolically by SMT
+solvers~\cite{VazouTCSNWJ18}. Still, many true properties of
+user-defined data types and functions remain not automatically
+verifiable: users must guide, via refined Haskell code, the SMT solver
+to simpler cases that can be checked automatically.
 
 Unfortunately, given the lack of interactivity of Liquid Haskell, it
 is not always clear what the gap in understanding between the user and
@@ -155,10 +154,10 @@ state, and an essentially clean slate to design metaprogramming
 capabilities, which has been exploited to the great benefit of proof
 assistant users~\cite{Ltac, Mtac, ltac2}.
 
-Unfortunately, Liquid Haskell interacts with the SMT solver in a very
-opaque manner, and within the Haskell ecosystem metaprogramming
+On the other hand, Liquid Haskell interacts with the SMT solver in a
+very opaque manner, and within the Haskell ecosystem metaprogramming
 capabilities are already well established in the form of Template
-Haskell---but not designed specifically with SMT-based verification in
+Haskell---but not really designed with SMT-based verification in
 mind. So then, {\em what can we do within the confines of this mature
   Haskell ecosystem to aid users?}  Without interactivity, an
 interface to concise proof generators must expand to a proof term all

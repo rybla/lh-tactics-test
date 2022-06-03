@@ -350,7 +350,7 @@ functionality:
   hole $\macroHole{\Gamma}{\Rho}$ for both the \texttt{then} and the
   \texttt{else} branches; \macro{assert} only creates such a hole for
   the \texttt{then} branch with the \texttt{else} branch being
-  \LC{trivial}; and \LC{dismiss} is the dual of \LC{assert}.
+  \LC{trivial}; and \macro{dismiss} is the dual of \macro{assert}.
 \end{itemize}
 
 \paragraph{Evidence Macros}
@@ -372,8 +372,8 @@ refinement context.
 
   This macro makes the refinement type of the expression available to
   the SMT solver using Liquid Haskell's conjunction \LC{&&&}, similar
-  to how \LC{assocMin a' b' c'} was needed to conclude the proof in
-  Figure~\ref{fig:assoc-min-proof}.
+  to how, in Figure~\ref{fig:assoc-min-proof}, a call to
+  \LC{assocMin a' b' c'} was needed to conclude the proof.
   
 \item $\macro{auto} ~ [\overline{\textit{x}}] ~ n$:
 
@@ -397,24 +397,10 @@ $\macroHole{\Gamma_i}{\Rho_i}$ in $t$, we recursively expand the
 sequence $Ts$ in the updated context, and replace the hole with the
 result.  That is, whenever proof macros introduce multiple branches,
 the rest of the sequence of proof macros is expanded into each such
-branch.\leo{point out Unlike what coq does?}
+branch, unlike traditional proof assistants. We will return to this
+point when discussing conditional expansion of macros below
+(Section~\ref{sec:cond-expand}).
 
-\begin{figure}
-  \[
-  \begin{array}{c}
-  \inference{}{\Sem{\cdot}{\macroHole{\Gamma}{\Rho}}{\MC{trivial}}}\\
-\\    
-  \inference
-      { \Expand{\Gamma}{\Rho}{T}{t}\\
-            \macroHole{\Gamma_i}{\Rho_i} \in t && 
-            \Sem{Ts}{\macroHole{\Gamma_i}{\Rho_i}}{t_i}
-          }
-      { \Sem{T;Ts}{\macroHole{\Gamma}{\Rho}}{t[t_i/\macroHole{\Gamma_i}{\Rho_i}]}}
-  \end{array}
-  \]
-  \caption{Proof Macro Sequence Expansion}
-  \label{fig:sequence-semantics}
-\end{figure}
 
 Finally, before expansion of a sequence we preprocess it: if it does
 {\em not} end in an evidence macro, then a default \macro{auto} macro
@@ -452,6 +438,23 @@ Liquid Proof macro.
     induct xs
   |]
 \end{code}
+
+\begin{figure}
+  \[
+  \begin{array}{c}
+  \inference{}{\Sem{\cdot}{\macroHole{\Gamma}{\Rho}}{\MC{trivial}}}\\
+\\    
+  \inference
+      { \Expand{\Gamma}{\Rho}{T}{t}\\
+            \macroHole{\Gamma_i}{\Rho_i} \in t && 
+            \Sem{Ts}{\macroHole{\Gamma_i}{\Rho_i}}{t_i}
+          }
+      { \Sem{T;Ts}{\macroHole{\Gamma}{\Rho}}{t[t_i/\macroHole{\Gamma_i}{\Rho_i}]}}
+  \end{array}
+  \]
+  \caption{Proof Macro Sequence Expansion}
+  \label{fig:sequence-semantics}
+\end{figure}
 
 At a high level, what this proof macro does is condition on the
 expression \LC{elem x xs}, pattern match on \LC{xs}, and search for
@@ -584,7 +587,7 @@ for fresh variables \LC{x'} and \LC{xs'}.
 Both branch bodies are holes to be filled by the expansion of an \macro{auto} macro, but at different contexts.
 %
 The empty list branch did not introduce any new variables, and as a
-result both the typing and the recursion contexts remain unchanged. In
+result both contexts remain unchanged. In
 the nonempty branch, the variables \LC{x'} and \LC{xs'} are added to
 both the typing and to the the recursion context for the second
 argument position, since \LC{xs} is in the second argument position.
@@ -671,7 +674,7 @@ tactics \LC{t1}, \LC{t2}, and \LC{t3} in each of the three subgoals
 produced by \LC{t}. Unfortunately, that can introduce a lot of
 repetition across similarly handled branches.
 
-To counter this repetition, we allowed for optionally prepending
+To counter this repetition, we allowed for optionally pre\-pending
 variable name annotations to proof macros, which causes them to only
 be expanded when those variable names are in scope. So, for example,
 if a user wants to \macro{induct} on a list \LC{l :: [N]} and then
