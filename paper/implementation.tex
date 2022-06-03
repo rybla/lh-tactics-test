@@ -40,22 +40,28 @@ Figure~\ref{fig:assoc-min-macro} to a low-level Liquid Haskell proof
 such as the one in Figure~\ref{fig:assoc-min-proof} is a
 multi-stage process, which we will describe in detail in this section.
 
-First, we introduce the \LangB which is the langage that Liquid
-Proof macros expand to. The \LangB is a subset of Haskell with some
-annotations that are necessary for simplification, but which can be
-straightforwardly erased to obtain valid Liquid Haskell terms.
+First we introduce the {\em \LangB}
+(Section~\ref{sec:proto-proof-lang}), a subset of (surface) Haskell
+with some annotations that are necessary for simplification, but which
+can be straightforwardly erased to obtain valid Liquid Haskell terms.
+This will serve as the langage that Liquid Proof macros expand to.
 
-Second, we formally introduce the \LangA in which users write proofs,
-an extensible collection of high-level constructs (such as
-\macro{induct}) that facilitate SMT reasoning. We show how a \LangATerm
-can be expanded into a \LangBTerm, which is then cached, embedded in
-Haskell, and spliced in place of the original \LangATerm.
+Second, we formally introduce the {\em \LangA} in which users write
+proofs (Section~\ref{sec:proof-macro-lang}), an extensible collection
+of high-level constructs (such as \macro{induct}) that facilitate SMT
+reasoning. We show how a \LangATerm can be expanded into a \LangBTerm,
+which is then cached, embedded in Haskell, and spliced in place of the
+original \LangATerm.
 
-Finally, cached terms are repeatedly pruned to remove potentially
-unnecessary proof terms, using Liquid Haskell as the validity oracle.
+Then, we extend this language to allow for binding-based conditional
+expansion of macros (Section~\ref{sec:cond-expand}), a way of
+organizing branches proofs based on variables introduced during the
+expansion process.
 
-
-
+Finally, we describe how cached terms are repeatedly pruned by using
+the metadata annotations in the \LangB syntax
+(Section~\ref{sec:prune}), removing potentially unnecessary proof terms
+  by using Liquid Haskell as the validity oracle.
 
 \begin{figure}
 \begin{align*}
@@ -92,7 +98,7 @@ unnecessary proof terms, using Liquid Haskell as the validity oracle.
 
 
 \subsection{The \LangB}
-\label{sec:proto-proof}
+\label{sec:proto-proof-lang}
 
 The \LangB is at its core a subset of Haskell expressions with some
 additional metadata.  Figure~\ref{fig:langb-syntax} depicts its
@@ -106,7 +112,6 @@ embedded into Haskell. In turn, \LC{Auto} can be embedded by
 translating the \LC{kept} and \LC{init} lists of expressions to
 sequences of Liquid Haskell conjunctions---we will expand on this when
 discussing pruning later in this section. That is:
-\hen{how important is it to have the meta-variables in code blocks be in math font?}
 \begin{code}
   Auto { init = [a1, ..., aM]
        , kept = [b1, ..., bN]
@@ -624,6 +629,7 @@ Figure~\ref{fig:step-by-step}.
 % with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
 \subsection{Variables and Conditional Expansion}
+\label{sec:cond-expand}
 
 The final piece of the puzzle involves the treatment of variables that
 are introduced during macro expansion. From the proof macros defined
@@ -641,15 +647,15 @@ to include optional name annotations with the following syntax:
 \end{align*}
 
 That is, we allow users to specify names for the variables introduced
-by different branches using the same syntax as Coq's Ltac. However,
-given the strictly sequential nature of our proof macro language, this
-introduces a new problem: what happens when a macro refers to a
-variable that is only introduced in some branches? Potential but
-unsatisfactory solutions would include failing to expand (which is
-overly restrictive) or silently expanding to \LC{trivial} (which would
-lead to accepting proof macros with typos). Instead, we opted to see
-this problem as an opportunity to explore a new point in the design
-space by introducing {\em conditional expansion}.
+by different branches using the same syntax as Coq's
+Ltac~\cite{Ltac}. However, given the strictly sequential nature of our
+proof macro language, this introduces a new problem: what happens when
+a macro refers to a variable that is only introduced in some branches?
+Potential but unsatisfactory solutions would include failing to expand
+(which is overly restrictive) or silently expanding to \LC{trivial}
+(which would lead to accepting proof macros with typos). Instead, we
+opted to see this problem as an opportunity to explore a new point in
+the design space by introducing {\em conditional expansion}.
 
 In particular, tactic languages in traditional proof assistants can
 follow a tree-like pattern. For example, in Coq, one can write:
@@ -694,6 +700,7 @@ binding-based conditional expansion to be particularly useful in
 organizing our macros and avoid redundancy in proofs.
 
 \subsection{Pruning}
+\label{sec:prune}
 
 % \subsubsection{Linear Pruning}
 
