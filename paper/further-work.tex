@@ -1,99 +1,97 @@
 \section{Limitations and Further Work}
 \label{sec:future}
 
-\leo{TODO: Reorganize + conclude}
+In this paper, we demonstrated how we can operate within the bounds of
+the existing Haskell ecosystem, and provide a light weight solution to
+proof automation in Liquid Haskell by leveraging Template Haskell
+functionality. While our framework can already handle a wide variety
+of properties of interest, there are still many reasonable extensions
+to consider, requiring varying degrees of implementation effort.
 
-The main goal of this paper is to demonstrate how existing tools in the Haskell
-ecosystem can be used to provide a much better interface to a large category of
-common Liquid Haskell proofs. However, our implementation comes with various
-limitations, and we discuss how further work can extend the current
-implementation to address them.
 
-\paragraph{Polymorphic hints for \LC{auto}.}
-The \LC{auto} macro cannot handle polymorphism, because it only uses syntactic
-equality when checking if an value's type is compatible with the type expected
-for an argument in a neutral form being generated.
+\paragraph{Simple Extensions}
 
-\paragraph{Abstract macros.} 
-There is no way to define a \textit{abstract} macro that expands into a sequence
-of macros. This results in needless redundancy where many proofs contain the
-same sequence of macros, differing only in the particular argument given.
-  
-\paragraph{Pruning algorithm runtime complexity.} 
-The pruning algorithm used is guaranteed to find the subset of the
-\LC{auto}-generated \textit{exp}s that make the proof pass, if such a subset
-exists, but it is a slow process. As show in figure \ref{fig:evaluation},
-sometimes the number of \textit{exp}s geneated is too large to be pruned in a
-reasonable amount of time. \todo{how to qualify this formally? just pick a time
-limit?}
-  
-\paragraph{Refined argument types of hints for \LC{auto}.} 
-If an \LC{auto} macro is given a hint \LC{h :: (a:A | f a) -> B}, where
-\LC{f ::A -> Bool} is a predicate over \LC{A}, the proof macro system may
-generate a neutral form \LC{f x} where Liquid Haskell cannot deduce that 
-\LC{f x} holds. In this situation, Liquid Haskell will reject the proof before
-pruning begins, so the problematic neutral form cannot be pruned. The proof
-macro system has no way to filter out these sorts of neutral forms because
-Template Haskell doesn't have access to refinement information.
+The proof macro system currently only supports simple pattern matching
+via the \LC{destruct} and \LC{induct} macros. However, tactic
+languages in proof assistants demonstrate how {\em deeper pattern
+  matching} can be given a convenient interface and be very
+useful. Such pattern matching features can easily be implemented in
+the \LangA by expanding them to a sequence of existing Liquid Proof Macros.
 
-\paragraph{Liquid Haskell plugin}.
-The user interface to Liquid Haskell developed into a plugin that works in
-tandem with the Haskell build system \textit{stack} \todo{citation}. Currently,
-the proof macro systen requires the user to run its tool on each file
-individually, and each proof macro individually for pruning. The user experience
-would be dramatically improved if the proof macro system was integrated into the
-existing Liquid Haskell plugin, and run automatically when the project is built.
+In the same spirit, there is currently no way to define an
+\textit{abstract} macro that expands into a sequence of macros,
+resulting in needless redundancy where many proofs contain the same
+sequence of macros, differing only in the particular argument given.
+Such sequences are again straightforward to implement at the framework
+level, as \LangA is easy to extend. However, providing such
+functionality at the user level is a more ambitious endeavor that we
+leave for future work.
 
-\paragraph{Template-Haskell-style implicit splicing.} 
-Template Haskell splices code implicitly during compilation, in such a way that
-the splices are never actually displayed inline with the user's original code.
-Currently, Template Haskell is not well-supported by Liquid Haskell \todo{cite a
-github issue maybe?}, so the proof macro system must overwrite the user's
-original file to explicitly splice the generated code in, even though the
-spliced code is generated inside Template Haskell's quotation monad, \LC{Q}, and
-encoded in Template Haskell's types for code data, \LC{Dec} and \LC{Exp} for
-declarations and expressions respectively. This explicit splicing makes it more
-cumbersome to make changes quickly and let the original source file take full
-advantage of conciseness allowed by the proof macro system.
-
-\paragraph{Deep Pattern Matching.}
-The proof macro system currently only supports simple pattern matching via the
-\LC{destruct} and \LC{induct} macros. However, systems such as Coq's tactic
-langauge demonstrates how deeper pattern matching can be given a convenient
-interface and be very useful. Deep pattern matching features can be implemented
-in the \LangA in such a way that they expand to series of normal macros that are
-already fully implemented.
-
-\paragraph{Advanced \LC{auto} variants.}
-The \LC{auto} macro has the minimal amount of complexity needed to be useful. It
-simply generates every neutral form it can up to a certain syntactic height.
-However, more specific kinds of similar searches in the space of neutral terms
-can be allowed, such as a \LC{refined-auto} macro that take as input a neutral
-form with holes in place of some of its (perhaps nested) arguments. Then, the
-macro system would generate all neutral forms that correspond to the original
-neutral form with its holes filled by neutral forms. For example,
+Finally, our \macro{auto} macro is implemented in the minimally complex way
+while still being useful: it simply generates every neutral form it can up
+to a certain syntactic height.  However, more specific kinds of
+similar searches in the space of neutral terms can be allowed, such as
+a \macro{refined-auto} macro that take as input a neutral form with holes
+in place of some of its (perhaps nested) arguments. Then, the macro
+system would generate all neutral forms that correspond to the
+original neutral form with its holes filled by neutral forms. For
+example,
 \begin{code}
   refined-auto (f (f a _) _) 3
 \end{code}
 where \LC{f :: A -> B -> A}, \LC{a :: A},
 would generate all neutral forms of the form \LC{f (f a b1) b2} where 
 \LC{b1, b2 :: B} range over all neutral forms constructed from values in context
-(including valid recursions) up to certain syntactic height \LC{3}. These
-generated neutral forms can subsequently be pruned in the same way that neutral
-forms generated by \LC{auto} are.
+(including valid recursions) up to a certain syntactic height.
 
-\paragraph{Hints databases.}
-The \LC{auto} tactic currently accepts as an optional argument a list of
-hints which each a variable name in context. When \LC{auto} is expanded, these
-hints are included in the context of values that can be used to generate neutral
-forms. It would be more convenient to be able to pre-define collections of
-common hints that are used in many different proofs, as is done in Coq
-\todo{citation}, rather than require the user to provide the explicit list of
-hints every time they use \LC{auto}. Additionally, arbitrary neutral forms (e.g.
-partially applied lemmas) should be allowed as hints rather than just variables.
+\paragraph{Engineering Challenges}
 
-% TODO: somewhere explain why only neutral forms can be used as hints and such:
-% I must be able to deduce their type just by looking at the types of variables
-% in context
+In addition to the simple extensions described above, our framework
+could currently be improved with some investment in a non-trivial but
+straightforward engineering effort. In particular, the user interface
+to Liquid Haskell has been developed into a plugin that works in
+tandem with the Haskell stack build system. Currently, the proof macro
+system requires the user to run an external tool on proof macros for
+pruning purposes. User experience would be greatly improved if
+the proof macro system was integrated into the existing Liquid Haskell
+plugin, and run automatically when the project is built.
 
-% TODO: some sort of concluding paragraph
+Similarly, Template Haskell splices code implicitly during
+compilation, in such a way that the splices are never actually
+displayed inline with the user's original code.  Currently, Template
+Haskell is not well-supported by Liquid Haskell, and our exteral tool
+explicitly splices the pruned code in for efficiency purposes.  It
+would be interesting to further explore this interaction between
+Template and Liquid Haskell to see if can can get the best of both
+worlds: the conciseness of proof macros with the efficienct
+compilation of the pruned proof terms.
+
+Moreover, the current \macro{auto} macro cannot handle polymorphism,
+because as Template Haskell only provides support for syntactic
+equality when checking if an value's type is compatible with the type
+expected for an argument in a neutral form being generated. Supporting
+polymorphism would require writing a simple unification function at
+the Template Haskell level, which would fit nicely with the rest of
+our framework.
+
+\paragraph{Research Challenges}
+
+Outside of the aforementioned implementation drawbacks that can easily
+be overcome, there remain two significant research questions that
+limit the usability of our current approach. 
+
+First, the pruning algorithm used is guaranteed to find the subset of
+the \macro{auto}-generated \textit{exp}s that make the proof pass, if
+such a subset exists, but it is a slow process. As shown in
+Figure~\ref{fig:loc-eval}, sometimes the number of \textit{exp}s
+generated is too large to be pruned in a reasonable amount of time. A
+smarter approach would need to be devised to scale the minimization to
+larger case studies.
+
+Second, Liquid Proof Macros still suffer from the lack of
+interactivity, which limits their usefulness compared to their tactic
+counterparts in traditional proof assistants. To enable such
+interactivity, we need to fundamentally rethink the way Liquid Haskell
+communicates with the underlying SMT solver. Until then, Liquid Proof
+Macros are a very useful abstraction to reduce the burden of Liquid
+Haskell users.
