@@ -126,25 +126,46 @@ average.
 too large, so I had to manually provide lemma applications myself using the
 \macro{use} macro.
 Here's one below}
+
 \begin{code}
+  {-@
+  sub_m_Sn :: m:N -> n:N -> {subN m n == S (subN m (S n))}
+  @-}
+  sub_m_Sn :: N -> N -> Proof
+  sub_m_Sn m n = undefined
+
+  {-@ automatic-instances sub_Sm_n_Sk @-}
+  {-@
+  sub_Sm_n_Sk :: m:N -> n:N -> k:N -> {(S m - n) - S k == (m - n) - k}
+  @-}
   [tactic|
-  proof :: N -> ListN -> Proof
-  proof i xs = 
-    induct i as [/i'];
-    induct xs as [/x xs'];
-  
-    use {lemma4 (concatListN (reverseListN xs') (singletonListN x))} requires [xs'];
-    use {lemma1 xs'} requires [xs'];
-    use {lemma5 x xs'} requires [x, xs'];
-  
-    use {lemma3'' (subN (lengthListN xs') i') (reverseListN xs') (singletonListN x)} requires [i', x, xs'];
-    use {lemma8 ((lengthListN xs')) i'} requires [i', xs'];
-    use {lemma1 xs'} requires [xs'];
-    use {proof i' xs'} requires [i', xs'];
-  
-    trivial
+  sub_Sm_n_Sk :: N -> N -> N -> Proof
+  sub_Sm_n_Sk m n k = 
+    destruct n as [/n'];
+    use {sub_m_Sn m n'} requires [n']
   |]
 \end{code}
+
+% TODO OLD
+% \begin{code}
+%   [tactic|
+%   proof :: N -> ListN -> Proof
+%   proof i xs = 
+%     induct i as [/i'];
+%     induct xs as [/x xs'];
+  
+%     use {lemma4 (concatListN (reverseListN xs') (singletonListN x))} requires [xs'];
+%     use {lemma1 xs'} requires [xs'];
+%     use {lemma5 x xs'} requires [x, xs'];
+  
+%     use {lemma3'' (subN (lengthListN xs') i') (reverseListN xs') (singletonListN x)} requires [i', x, xs'];
+%     use {lemma8 ((lengthListN xs')) i'} requires [i', xs'];
+%     use {lemma1 xs'} requires [xs'];
+%     use {proof i' xs'} requires [i', xs'];
+  
+%     trivial
+%   |]
+% \end{code}
 
 % \todo{ideas for data to include
 % \begin{itemize}
