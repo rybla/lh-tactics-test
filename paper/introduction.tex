@@ -54,12 +54,16 @@ reason about. However, while SMT solvers are pre-programmed with a
 wide assortment of facts about various domains such as integer
 arithmetic and boolean logic, they don't really know anything about
 user-defined data types like \LC{N} or user-defined functions like
-\LC{min}. To that end, Liquid Haskell lifts user-defined data types
-and functions into a representation that can be handled symbolically
-by SMT solvers~\cite{VazouTCSNWJ18}. Still, many true properties of
-user-defined data types and functions are still not automatically
-verifiable: users must guide, via refined Haskell code, the SMT solver
-to simpler cases that can be checked automatically.
+\LC{min}. While a direct encoding of such features to SMT is possible
+in principle~\cite{HALO}, it unfortunately leads to unpredictable
+verification, also known as the ``butterfly
+effect''~\cite{LeinoP16}. To that end, Liquid Haskell lifts
+user-defined data types and functions into a representation that can
+be handled symbolically by SMT solvers~\cite{VazouTCSNWJ18}. Still,
+many true properties of user-defined data types and functions are
+still not automatically verifiable: users must guide, via refined
+Haskell code, the SMT solver to simpler cases that can be checked
+automatically.
 
 Unfortunately, given the lack of interactivity of Liquid Haskell, it
 is not always clear what the gap in understanding between the user and
@@ -200,13 +204,20 @@ unnecessary components that result from proof search.
 \label{fig:assoc-min-macro}
 \end{figure}
 
-In the rest of the paper we make the following contributions:
+\pagebreak
+In this paper we make the following contributions:
 \begin{itemize}
-\item We describe a methodology for using Template Haskell to automatically construct Liquid Haskell proof terms~\ref{sec:impl-dsl}.
-\item We develop an extensible framework using this methodology for automating inductive proofs in Liquid Haskell~\ref{sec:impl-framework}.
-\item We evaluate our framework against prior work that attempted to
-  bring tactic-inspired reasoning in Liquid Haskell~\ref{sec:eval}.
+\item We describe a methodology for using Template Haskell to
+  automatically construct Liquid Haskell proof terms, and we develop
+  an extensible framework using this methodology for automating
+  inductive proofs in Liquid Haskell
+  (Section~\ref{sec:liquid-proof-macros}).
+\item We evaluate our framework against an existing benchmark
+  containing a wide variety of Liquid Haskell properties, and found
+  that our Liquid Proof Macros can be used to automate all of these
+  properties, leading to a $1.57\times$ reduction in code on average
+  (Section~\ref{sec:eval})
 \end{itemize}
-We discuss related work in Section~\ref{sec:related}, before
+We then discuss related work (Section~\ref{sec:related}), before
 concluding with a discussion of the limitations of our framework and
-directions for future work~\ref{sec:future}.
+directions for future work (Section ~\ref{sec:future}).
