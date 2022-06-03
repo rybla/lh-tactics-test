@@ -37,9 +37,9 @@ system would generate all neutral forms that correspond to the
 original neutral form with its holes filled by neutral forms. For
 example,
 \begin{code}
-  refined-auto (f (f a _) _) 3
+  refined-auto {assoc_min (f a b) (f _ _)} [] 3
 \end{code}
-where \LC{f :: A -> B -> A}, \LC{a :: A},
+where \LC{f :: N -> N -> N}, \LC{a}, \LC{b :: N},
 would generate all neutral forms of the form \LC{f (f a b1) b2} where 
 \LC{b1, b2 :: B} range over all neutral forms constructed from values in context
 (including valid recursions) up to a certain syntactic height.
