@@ -59,11 +59,11 @@ plugin, and run automatically when the project is built.
 Similarly, Template Haskell splices code implicitly during
 compilation, in such a way that the splices are never actually
 displayed inline with the user's original code.  Currently, Template
-Haskell is not well-supported by Liquid Haskell, and our exteral tool
+Haskell is not well-supported by Liquid Haskell, and our external tool
 explicitly splices the pruned code in for efficiency purposes.  It
 would be interesting to further explore this interaction between
 Template and Liquid Haskell to see if can can get the best of both
-worlds: the conciseness of proof macros with the efficienct
+worlds: the conciseness of proof macros with the efficient
 compilation of the pruned proof terms.
 
 Moreover, the current \macro{auto} macro cannot handle polymorphism,

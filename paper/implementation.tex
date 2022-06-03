@@ -44,7 +44,7 @@ First we introduce the {\em \LangB}
 (Section~\ref{sec:proto-proof-lang}), a subset of (surface) Haskell
 with some annotations that are necessary for simplification, but which
 can be straightforwardly erased to obtain valid Liquid Haskell terms.
-This will serve as the langage that Liquid Proof macros expand to.
+This will serve as the language that Liquid Proof macros expand to.
 
 Second, we formally introduce the {\em \LangA} in which users write
 proofs (Section~\ref{sec:proof-macro-lang}), an extensible collection
@@ -444,7 +444,7 @@ Liquid Proof macro.
     | otherwise = True
 
   {-@ concatElem :: x:N -> xs:[N] -> ys:[N] ->
-      {concatElemP x xy ys} @-}
+      {concatElemP x xs ys} @-}
   [tactic|
   concatElem :: N -> [N] -> [N] -> Proof
   concatElem x xs ys =
@@ -583,12 +583,16 @@ for fresh variables \LC{x'} and \LC{xs'}.
 %\footnote{In the implementation, these fresh variables are given unique suffixes, but this unecessarily intrudes on readability.}
 Both branch bodies are holes to be filled by the expansion of an \macro{auto} macro, but at different contexts.
 %
-The empty list branch did not introduce any new variables, and as a result
-both the typing and the recursion contexts remain unchanged. In the nonempty
-branch, the variables \LC{x'} and \LC{xs'} are added to both the typing and to the the recursion context for the 2nd argument position, since \LC{xs} is in the 2nd argument position.
+The empty list branch did not introduce any new variables, and as a
+result both the typing and the recursion contexts remain unchanged. In
+the nonempty branch, the variables \LC{x'} and \LC{xs'} are added to
+both the typing and to the the recursion context for the second
+argument position, since \LC{xs} is in the second argument position.
 
-Finally, the \macro{auto} macros are expanded using the $\mathsf{generate}$ metafunction, which yields just \LC{trivial} in the empty case, and a bunch of different potential recursive calls in the nonempty case, as there are several
-neutral forms available:
+Finally, the \macro{auto} macros are expanded using the
+$\mathsf{generate}$ metafunction, which yields just \LC{trivial} in
+the empty case, and a bunch of different potential recursive calls in
+the nonempty case, as there are several neutral forms available:
 \begin{itemize}
   \item \LC{concatElem x' xs' xs'}
   \item \LC{concatElem x' xs' ys}

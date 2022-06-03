@@ -11,7 +11,7 @@ and metaprogramming framework for the F* language~\cite{fstar}. In
 this work, \citeauthor{MetaF} face the same issues that Liquid Haskell
 users face: how to reconcile the automatic but black-box nature of
 SMT-aided program verifiers with the expressive tactic-based facilities of
-interactive theorem provers. Their approach is similar in nature to hours,
+interactive theorem provers. Their approach is similar in nature to ours,
 but enjoys the benefit of developing the metaprogramming framework with
 the particular use case of verification in mind. In contrast, we showed
 how one can work within the already established constraints and limitations
@@ -69,7 +69,7 @@ hammer fails, without resorting back to tactic-based reasoning.
 Naturally, we are not the first to attempt automating Liquid Haskell
 proof generation.  First, \citet{VazouTCSNWJ18} introduced {\em proof
   by logical evaluation}, a proof search technique inspired by
-abstract interepretation to automate equational reasoning in Liquid
+abstract interpretation to automate equational reasoning in Liquid
 Haskell, by increasing the burden on the SMT solver. This is largely
 orthogonal to Liquid Proof Macros, as it operates on function
 definitions while our macros are focused on structural reasoning and
