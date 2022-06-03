@@ -622,6 +622,76 @@ Figure~\ref{fig:step-by-step}.
 % \end{code}
 % with the additional metadata that no terms have been \textit{kept} (i.e. determined to be not safely pruned) and \textit{pruned} (i.e. determined to be safely pruned).
 
+\subsection{Variables and Conditional Expansion}
+
+The final piece of the puzzle involves the treatment of variables that
+are introduced during macro expansion. From the proof macros defined
+above, such variables can only be introduced by \macro{induct} and
+\macro{destruct}. These control flow macros do not, by default, give the
+user the ability to name the introduced variables --- the generated
+names are fresh via Template Haskell. Extending our framework with
+this capability is just a matter of changing the \macro{induct} and
+\macro{destruct} constructors from Figure~\ref{fig:proof-macro-lang}
+to include optional name annotations with the following syntax:
+
+\begin{align*}
+  & \macro{induct} ~ e ~ \macro{as} ~ \MC{[} \overline{x_i} / \overline{y_i} / \cdots \MC{]}\\
+  & \macro{destruct} ~ e ~ \macro{as} ~ ~ \MC{[} \overline{x_i} / \overline{y_i} / \cdots \MC{]}
+\end{align*}
+
+That is, we allow users to specify names for the variables introduced
+by different branches using the same syntax as Coq's Ltac. However,
+given the strictly sequential nature of our proof macro language, this
+introduces a new problem: what happens when a macro refers to a
+variable that is only introduced in some branches? Potential but
+unsatisfactory solutions would include failing to expand (which is
+overly restrictive) or silently expanding to \LC{trivial} (which would
+lead to accepting proof macros with typos). Instead, we opted to see
+this problem as an opportunity to explore a new point in the design
+space by introducing {\em conditional expansion}.
+
+In particular, tactic languages in traditional proof assistants can
+follow a tree-like pattern. For example, in Coq, one can write:
+\begin{code}
+  t; [t1|t2|t3]
+\end{code}
+and that will execute the tactic \LC{t}, followed by executing the
+tactics \LC{t1}, \LC{t2}, and \LC{t3} in each of the three subgoals
+produced by \LC{t}. Unfortunately, that can introduce a lot of
+repetition across similarly handled branches.
+
+To counter this repetition, we allowed for optionally prepending
+variable name annotations to proof macros, which causes them to only
+be expanded when those variable names are in scope. So, for example,
+if a user wants to \macro{induct} on a list \LC{l :: [N]} and then
+\macro{destruct} on the head of the list they can write the following:
+\begin{code}
+  induct l as [ / x xs];
+  [x:] destruct x
+\end{code}
+%
+Moreover, by reusing names, more complicated expansion structures can
+be achieved. For instance, if we were dealing with a sequence data
+structure that has both its first and last element exposed (as is the
+case in finger trees~\cite{FingerTrees}), we could selectively destruct
+the first (or last!) element of it after induction. That is, given the
+following \LC{Seq} datatype:
+%
+\begin{code}
+  data Seq a = Nil | Unit a | More a (Seq a) a
+\end{code}
+%
+the following proof macro would only be expanded in the \LC{Unit} and
+\LC{More} cases:
+\begin{code}
+  induct s as [ / x / x s' y];
+  [x:] destruct x
+\end{code}
+%
+Anecdotally, when carrying out our evaluation, we found this
+binding-based conditional expansion to be particularly useful in
+organizing our macros and avoid redundancy in proofs.
+
 \subsection{Pruning}
 
 % \subsubsection{Linear Pruning}
@@ -658,43 +728,6 @@ Note that this is the minimal proof a user would need to write
 in Liquid Haskell to convince its typechecker that \LC{concatElem}
 is well typed.
 
-\subsection{Explicitly Introduced Variables}
-
-Note that the only proof macros that can introduced variables into context are
-\macro{induct} and \macro{destruct}. These control flow macros do not by default
-give the user the ability to name the introduced variables --- the generated
-names are fresh via Template Haskell. However, some proofs require referencing
-variables introduced by previous proof macros in later proof macros. For
-example, if the user wanted to \macro{induct} on a list and then later
-\macro{destruct} the tail of that list. So, in a similar style to Coq's
-\LC{induction} and \LC{destruct} tactics, the proof macro system provides the
-following optional syntax for explicitly introducing variables by name with
-\macro{induct} and \macro{destruct}.
-\begin{align*}
-  & \macro{induct} ~ x ~ \macro{as} ~ \MC{[} \overline{ \overline{y_i} / } \MC{]}
-  \\
-  & \macro{destruct} ~ x ~ \macro{as} ~ \MC{[} \overline{ \overline{y_i} / } \MC{]}
-\end{align*}
-However, this introduces the complication that proof macros that appear after a
-proof macro using this syntax may refer to variables that may not always be in
-scope. For example, if the user \macro{induct}s on a list and then later
-\macro{destruct}s on the tail of the list, the later \macro{destruct}ion should
-only be performed in the branch where the original list does in fact have a
-tail. In general, later macros that refer to variables that were introduced
-explicitly by a previous macro should not be expanded in control flow branches
-where the variable is not in context. To enforce this, each macro has the
-following syntax that can be optionally appended, taking the deault value $[]$,
-where the $x_i$ are the variables that were explicitly introduced by previous
-macros and are referenced inside of \textit{macro}.
-\begin{align*}
-  \mathit{macro} ~ \macro{requires} ~ \MC{[} \overline{x_i} \MC{]}
-\end{align*}
-So, the user that wants to \macro{induct} on a list \LC{xs :: [N]} and then
-\macro{destruct} on the tail of the list can write the following.
-\begin{code}
-  induct xs as [ / x' xs'];
-  destruct xs' requires [xs']
-\end{code}
 
 % \hen{
 % I should mention briefly how introduced variables are handled i.e. variables
