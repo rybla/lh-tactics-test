@@ -340,7 +340,9 @@ functionality:
   type $\alpha$ in a context $\Gamma$, $\macro{destruct} ~ e$ also
   creates a pattern match where each branch body is a hole. The only
   difference from \macro{induct} is that it does not modify the
-  recursion context, but gets to operate on arbitrary expressions.
+  recursion context, but gets to operate on arbitrary expressions. See figure
+  \ref{fig:step-by-step} for an example of how the $\macro{induct}$ macro
+  expands step-by-step.
 
 \item $\macro{condition} ~ e$, $\macro{assert} ~ e$, $\macro{dismiss} ~ e$:
 
