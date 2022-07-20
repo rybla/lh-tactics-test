@@ -297,15 +297,18 @@ Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
 \LangB.
 
 
-To expand each proof macro, we need to take into account the expansion of any
-macros that preceded it in the sequence. To that end, we introduce two contexts,
-a typing context $\Gamma$ which associates variables to Haskell types, and a
-recursion context $\Rho$ which associates arguments of the top-level declaration
-to a (potentially empty) set of subterms that can be used to instantiate
-recursive calls without triggering an infinite loop\footnote{in Figure
-\ref{fig:assoc-min-proof}, only \texttt{a'}, \texttt{b'}, and \texttt{c'} are in
-scope to use as arguments for the recursive call \texttt{assocMin a' b' c'}}. We
-formalize this expansion as a 4-place relation
+To expand each proof macro, we need to take into account the expansion
+of any macros that preceded it in the sequence. To that end, we
+introduce two contexts, a typing context $\Gamma$ which associates
+variables to Haskell types, and a recursion context $\Rho$ which
+associates arguments of the top-level declaration to a (potentially
+empty) set of subterms that can be used to instantiate recursive calls
+without triggering an infinite loop. For example, in
+Figure~\ref{fig:assoc-min-proof}, only \texttt{a'}, \texttt{b'}, and
+\texttt{c'} are in scope to use as arguments for the recursive call
+\texttt{assocMin a' b' c'}.
+
+We formalize this expansion as a 4-place relation
 \[
 \Expand{\Gamma}{\Rho}{T}{t}
 \]
@@ -341,9 +344,9 @@ functionality:
   type $\alpha$ in a context $\Gamma$, $\macro{destruct} ~ \{e\}$ also
   creates a pattern match where each branch body is a hole. The only
   difference from \macro{induct} is that it does not modify the
-  recursion context, but gets to operate on arbitrary expressions. See figure
-  \ref{fig:step-by-step} for an example of how the $\macro{induct}$ macro
-  expands step-by-step.
+  recursion context, but gets to operate on arbitrary
+  expressions. Figure~\ref{fig:step-by-step} shows an extended
+  step-by-step example of how the $\macro{induct}$ macro expands.
 
 \item $\macro{condition} ~ \{\textit{exp}\}$, $\macro{assert} ~
 \{\textit{exp}\}$, $\macro{dismiss} ~
