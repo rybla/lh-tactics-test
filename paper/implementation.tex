@@ -150,11 +150,11 @@ is embedded into Haskell as:
   \textit{exp-macro} ::= &
     ~ \macro{induct} ~ x \\ \mid &
     ~ \macro{destruct} ~ \text{exp} \\ \mid &
-    ~ \macro{assert} ~ \textit{exp} \\ \mid &
-    ~ \macro{dismiss} ~ \textit{exp} \\ \mid &
-    ~ \macro{condition} ~ \textit{exp} \\ \mid &
+    ~ \macro{assert} ~ \{\textit{exp}\} \\ \mid &
+    ~ \macro{dismiss} ~ \{\textit{exp}\} \\ \mid &
+    ~ \macro{condition} ~ \{\textit{exp}\} \\ \mid &
     ~ \macro{auto} ~ [\overline{\textit{x} ,}] ~ n \\ \mid &
-    ~ \macro{use} ~ \textit{exp} \\ \mid &
+    ~ \macro{use} ~ \{\textit{exp}\} \\ \mid &
     ~ \macro{trivial}
   \\[1em]
   \textit{exp} ::= & ~ \textit{Haskell expression} 
@@ -199,7 +199,7 @@ is embedded into Haskell as:
   }
   {\Gamma; \Rho
   \vdash
-  \macro{destruct} ~ e
+  \macro{destruct} ~ \{e\}
   \expandsTo 
   \MC{case} ~ e ~ \MC{of} ~
   \overline{
@@ -215,7 +215,7 @@ is embedded into Haskell as:
   {
   \Gamma; \Rho
   \vdash
-  \macro{condition} ~ e
+  \macro{condition} ~ \{e\}
   \expandsTo
   \MC{if} ~ e ~ \MC{then} ~ \macroHole{\Gamma}{\Rho} ~ \MC{else} ~ \macroHole{\Gamma}{\Rho}}\\
   \\
@@ -224,7 +224,7 @@ is embedded into Haskell as:
   }
   {\Gamma; \Rho
   \vdash
-  \macro{assert} ~ e
+  \macro{assert} ~ \{e\}
   \expandsTo
   \MC{if} ~ e ~ \MC{then} ~ \macroHole{\Gamma}{\Rho} ~ \MC{else} ~ \MC{trivial}} \quad
   \inference{
@@ -232,7 +232,7 @@ is embedded into Haskell as:
   }
   {\Gamma; \Rho
   \vdash
-  \macro{dismiss} ~ e
+  \macro{dismiss} ~ \{e\}
   \expandsTo
   \MC{if} ~ e ~ \MC{then} ~ \MC{trivial} ~ \MC{else} ~ \macroHole{\Gamma}{\Rho}}\\
   \\
@@ -327,7 +327,7 @@ constructs from Figure~\ref{fig:proof-macro-semantics} exhibit such
 functionality:
 
 \begin{itemize}
-\item $\macro{induct} ~ x$, $\macro{destruct} ~ e$:
+\item $\macro{induct} ~ x$, $\macro{destruct} ~ \{\textit{exp}\}$:
 
   Given a variable $x$ that has type $\alpha$ in a context $\Gamma$,
 %  assumed to be a function argument defined in the macro declaration,
@@ -338,14 +338,16 @@ functionality:
   bindings, and with the recursion context updated to signify that any
   $y_{ij}$ could be used to make terminating recursive
   calls. Similarly, given a well typed Haskell expression $e$ with
-  type $\alpha$ in a context $\Gamma$, $\macro{destruct} ~ e$ also
+  type $\alpha$ in a context $\Gamma$, $\macro{destruct} ~ \{e\}$ also
   creates a pattern match where each branch body is a hole. The only
   difference from \macro{induct} is that it does not modify the
   recursion context, but gets to operate on arbitrary expressions. See figure
   \ref{fig:step-by-step} for an example of how the $\macro{induct}$ macro
   expands step-by-step.
 
-\item $\macro{condition} ~ e$, $\macro{assert} ~ e$, $\macro{dismiss} ~ e$:
+\item $\macro{condition} ~ \{\textit{exp}\}$, $\macro{assert} ~
+\{\textit{exp}\}$, $\macro{dismiss} ~
+\{e\}$:
 
   These three macros all expand into \texttt{if} statements with the
   given boolean expression $e$ as its condition. The difference lies
@@ -371,7 +373,7 @@ refinement context.
   \MC{()}$ and $\MC{Proof} = \MC{()}$, using this macro effectively
   means that the SMT solver can discharge any remaining obligations.
 
-\item $\macro{use} ~ \textit{exp}$:
+\item $\macro{use} ~ \{\textit{exp}\}$:
 
   This macro makes the refinement type of the expression available to
   the SMT solver using Liquid Haskell's conjunction \LC{&&&}, similar
@@ -686,7 +688,7 @@ if a user wants to \macro{induct} on a list \LC{l :: [N]} and then
 \macro{destruct} on the head of the list they can write the following:
 \begin{code}
   induct l as [ / x xs];
-  [x:] destruct x
+  [x:] destruct {x}
 \end{code}
 %
 Moreover, by reusing names, more complicated expansion structures can
@@ -704,7 +706,7 @@ the following proof macro would only be expanded in the \LC{Unit} and
 \LC{More} cases:
 \begin{code}
   induct s as [ / x / x s' y];
-  [x:] destruct x
+  [x:] destruct {x}
 \end{code}
 %
 Anecdotally, when carrying out our evaluation, we found this
