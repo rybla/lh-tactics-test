@@ -1,5 +1,5 @@
 %% The first command in your LaTeX source must be the \documentclass command.
-\documentclass[sigplan,screen,review,anonymous]{acmart}
+\documentclass[sigplan,screen]{acmart}
 
 \newif\ifdraft\drafttrue
 \input{commands.sty}
@@ -27,6 +27,10 @@
 %% "author year" style.
 %%\citestyle{acmauthoryear}
 
+\usepackage{float}
+%\usepackage{balance}
+%\balance
+
 \begin{document}
 
 \title{Liquid Proof Macros}
@@ -42,6 +46,7 @@
 
 \author{Niki Vazou}
 \email{niki.vazou@imdea.org}
+\orcid{0000-0003-0732-5476}
 \affiliation{%
   \institution{IMDEA}
   \city{Madrid}
@@ -50,6 +55,7 @@
 
 \author{Leonidas Lampropoulos}
 \email{leonidas@umd.edu}
+\orcid{0000-0003-0269-9815}
 \affiliation{%
   \institution{University of Maryland}
   \city{College Park}

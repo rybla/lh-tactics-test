@@ -64,6 +64,16 @@ hammer fails, without resorting back to tactic-based reasoning.
 % \item In Isabelle, hammers and tactics.\leo{Which ones?}
 % \end{itemize}
 
+\paragraph{Dependent Haskell} was initiated by~\citet{Eisenberg16} 
+and is currently under development
+(based on~\href{https://github.com/ghc-proposals/ghc-proposals/pull/378}{ghc-proposal\#378}).
+%
+Yet, there is no current active proposal neither for proof automation 
+nor for the development of a tactic language. 
+Since both our tactic-based proof construction, as well as Dependent 
+Haskell's logic  are constructive, we conjecture that our design Template 
+Haskell design can be easily adjusted to generate Dependent Haskell proof terms. 
+
 \paragraph{Liquid Haskell Automation}
 Naturally, we are not the first to attempt automating Liquid Haskell
 proof generation.  First, \citet{VazouTCSNWJ18} introduced {\em proof
