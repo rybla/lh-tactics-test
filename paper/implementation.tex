@@ -297,14 +297,15 @@ Figure~\ref{fig:assoc-min-macro}, which are then expanded into the
 \LangB.
 
 
-To expand each proof macro, we need to take into account the expansion
-of any macros that preceded it in the sequence. To that end, we
-introduce two contexts, a typing context $\Gamma$ which associates
-variables to Haskell types, and a recursion context $\Rho$ which
-associates arguments of the top-level declaration to a (potentially
-empty) set of subterms that can be used to instantiate recursive calls
-without triggering an infinite loop.  We formalize this expansion as a
-4-place relation
+To expand each proof macro, we need to take into account the expansion of any
+macros that preceded it in the sequence. To that end, we introduce two contexts,
+a typing context $\Gamma$ which associates variables to Haskell types, and a
+recursion context $\Rho$ which associates arguments of the top-level declaration
+to a (potentially empty) set of subterms that can be used to instantiate
+recursive calls without triggering an infinite loop\footnote{in Figure
+\ref{fig:assoc-min-proof}, only \texttt{a'}, \texttt{b'}, and \texttt{c'} are in
+scope to use as arguments for the recursive call \texttt{assocMin a' b' c'}}. We
+formalize this expansion as a 4-place relation
 \[
 \Expand{\Gamma}{\Rho}{T}{t}
 \]
