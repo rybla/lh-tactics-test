@@ -179,7 +179,10 @@ intutive proofs that resemble automated tactics%
  of more traditional proof assistants, including case analysis,
  induction, conditioning, and proof search. For example, the same
  proof of associativity of \LC{min} using Liquid Proof macros can be
- seen in Figure~\ref{fig:assoc-min-macro}.
+ seen in Figure~\ref{fig:assoc-min-macro}. Additionally note that Liquid Proof
+ Macros are not an additional macro system provided on top of Template Haskell,
+ but rather a DSL for generating proof terms for Liquid Haskell (which are
+ Haskell terms) which is expanded in-place via Template Haskell.
 
 These macros are expanded to a subset of Haskell that resembles, or
 rather is even more complicated than, the one used in
