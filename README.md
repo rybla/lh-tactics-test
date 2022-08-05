@@ -108,6 +108,6 @@ the examples in `props-done/` for details on how to use `lh-tactics`.
 
 ## Resources
 
-- [Liquid Proof Macros][liquid-proof-macros]
+- _[Liquid Proof Macros][liquid-proof-macros]_
 
-[liquid-proof-macros]: TODO: url to paper
+[liquid-proof-macros]: https://www.conference-publishing.com/download.php?Event=ICFPWS22HASKELLMAIN&Paper=e31f37ddb4671b0283a52fa225590e&Version=final
