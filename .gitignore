@@ -4,4 +4,4 @@
 .DS_Store
 **/*.tactic-encoding
 **/*.tactic/
-
+/.vscode/
