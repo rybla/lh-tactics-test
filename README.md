@@ -1,5 +1,7 @@
 # lh-tactics-test
 
+Replication package for Haskell'22 paper "Liquid Proof Macros".
+
 ## Documentation
 
 For now, please see our paper _[Liquid Proof Macros][liquid-proof-macros]_ and
