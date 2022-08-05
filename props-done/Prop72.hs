@@ -102,14 +102,14 @@ proof :: i:N -> xs:ListN -> {prop i xs}
 --   induct i as [/i'];
 --   induct xs as [/x xs'];
 -- 
---   use {lemma4 (concatListN (reverseListN xs') (singletonListN x))} requires [xs'];
---   use {lemma1 xs'} requires [xs'];
---   use {lemma5 x xs'} requires [x, xs'];
+--   [xs']: use {lemma4 (concatListN (reverseListN xs') (singletonListN x))};
+--   [xs']: use {lemma1 xs'};
+--   [x, xs']: use {lemma5 x xs'};
 -- 
---   use {lemma3'' (subN (lengthListN xs') i') (reverseListN xs') (singletonListN x)} requires [i', x, xs'];
---   use {lemma8 ((lengthListN xs')) i'} requires [i', xs'];
---   use {lemma1 xs'} requires [xs'];
---   use {proof i' xs'} requires [i', xs'];
+--   [i', x, xs']: use {lemma3'' (subN (lengthListN xs') i') (reverseListN xs') (singletonListN x)};
+--   [i', xs']: use {lemma8 ((lengthListN xs')) i'};
+--   [xs']: use {lemma1 xs'};
+--   [i', xs']: use {proof i' xs'};
 -- 
 --   trivial
 -- |]

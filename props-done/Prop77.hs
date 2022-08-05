@@ -47,8 +47,8 @@ proof :: x:N -> xs:ListN -> {prop x xs}
 --   assert {sortedListN ys};
 --   induct ys as [/y1 ys'];
 --   induct ys' as [/y2 ys''];
---   dismiss {leqN x y1} requires [y1];
---   condition {leqN x y2} requires [y2];
+--   [y1]: dismiss {leqN x y1};
+--   [y2]: condition {leqN x y2};
 --   auto [lemma1, lemma2] 2
 -- |]
 -- %tactic:begin:proof

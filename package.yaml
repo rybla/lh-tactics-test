@@ -25,12 +25,12 @@ dependencies:
   - liquidhaskell == 0.8.10.7
   - liquid-base == 4.15.0.0
   - template-haskell == 2.17.0.0
-  - lh-tactics == 0.1.0.24
+  - lh-tactics == 0.1.0.28
 
 library:
   source-dirs: src
   # ghc-options:
   #   - -fplugin=LiquidHaskell
-  # - -fplugin-opt=LiquidHaskell:--reflection
-  # - -fplugin-opt=LiquidHaskell:--ple-local
-  # - -ddump-splices
+  #   - -fplugin-opt=LiquidHaskell:--reflection
+  #   - -fplugin-opt=LiquidHaskell:--ple-local
+  #   - -ddump-splices

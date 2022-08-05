@@ -41,7 +41,7 @@ proof :: xs:ListN -> ys:ListN -> {prop xs ys}
 --   assert {lengthListN xs == lengthListN ys};
 --   induct xs as [/x xs'];
 --   induct ys as [/y ys'];
---   use {lemma1 (reverseListN xs') (reverseListN ys') (singletonListN x) (singletonListN y)} requires [x, xs', y, ys']
+--   [x, xs', y, ys']: use {lemma1 (reverseListN xs') (reverseListN ys') (singletonListN x) (singletonListN y)}
 -- |]
 -- %tactic:begin:proof
 proof :: ListN -> ListN -> Proof

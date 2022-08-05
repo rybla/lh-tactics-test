@@ -36,7 +36,7 @@ proof :: x:N -> y:N -> xs:ListN -> {prop x y xs}
 -- proof x y ys = 
 --   condition {x == y};
 --   induct ys as [/y' ys'];
---   condition {x == y'} requires [y'];
+--   [y']: condition {x == y'};
 --   auto [lemma]
 -- |]
 -- %tactic:begin:proof

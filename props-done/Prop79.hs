@@ -46,7 +46,7 @@ proof :: m:N -> n:N -> k:N -> {prop m n k}
 -- proof :: N -> N -> N -> Proof
 -- proof m n k = 
 --   destruct n as [/n'];
---   use {lemma m n'} requires [n']
+--   [n']: use {lemma m n'}
 -- |]
 -- %tactic:begin:proof
 proof :: N -> N -> N -> Proof

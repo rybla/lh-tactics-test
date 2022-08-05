@@ -51,8 +51,8 @@ proof :: n:N -> m:N -> xs:ListN -> {prop n m xs}
 --   induct xs as [/x xs'];
 --   destruct n #[remember];
 --   use {comm_addN m n};
---   use {comm_addN m' n} requires [m'];
---   use {proof n m' xs'} requires [m', xs'];
+--   [m']: use {comm_addN m' n};
+--   [m', xs']: use {proof n m' xs'};
 --   trivial
 -- |]
 -- %tactic:begin:proof
@@ -270,6 +270,6 @@ proof = \n -> \m -> \xs -> case m of
 --   induct xs as [/x xs'];
 --   use {comm_addN n Z};
 --   use {comm_addN m n};
---   use {proof n m' xs'} requires [m', xs']
+--   [m', xs']: use {proof n m' xs'}
 -- |]
 

@@ -1,7 +1,6 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE TemplateHaskell #-}
 
--- {-@ LIQUID "--compile-spec" @-}
 {-@ LIQUID "--reflection" @-}
 {-@ LIQUID "--ple-local" @-}
 
@@ -26,24 +25,21 @@ prop1_proof :: n:N -> l:ListN -> {prop1 n l}
 prop1_proof :: N -> ListN -> Proof
 prop1_proof n l =
   induct n;
-  induct l;
+  induct l as [/x y];
   auto [] 2
 |]
 
--- {-@ automatic-instances prop1_proof @-}
--- {-@
--- prop1_proof :: x:N -> l:ListN -> {prop1 x l}
--- @-}
+-- -- %tactic:begin:prop1_proof
 -- prop1_proof :: N -> ListN -> Proof
--- -- prop1_proof x l = undefined
--- prop1_proof Z l = trivial
--- prop1_proof (S n) Nil = trivial
--- prop1_proof (S n) (Cons x l) = prop1_proof n l
---   -- -- HYP
---   -- concatListN (takeListN (S n) (Cons x l)) (dropListN (S n) (Cons x l))
---   -- concatListN (Cons x (takeListN n l)) (dropListN n l)
---   -- Cons x (concatListN (takeListN n l) (dropListN n l))
---   -- --
---   -- -- IH
---   -- concatListN n l
-
+-- prop1_proof
+--   = \ n
+--       -> \ l
+--            -> case n of
+--                 Z -> case l of
+--                        Nil -> trivial
+--                        Cons n_0 listN_1 -> trivial
+--                 S n_0
+--                   -> case l of
+--                        Nil -> trivial
+--                        Cons n_1 listN_2 -> (prop1_proof n_0) listN_2
+-- -- %tactic:end:prop1_proof

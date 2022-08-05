@@ -21,7 +21,7 @@ proof :: x:N -> xs:ListN -> {prop x xs}
 -- proof :: N -> ListN -> Proof
 -- proof x xs = 
 --   induct xs as [/x' xs'];
---   condition {x == x'} requires [x']
+--   [x']: condition {x == x'}
 -- |]
 -- %tactic:begin:proof
 proof :: N -> ListN -> Proof

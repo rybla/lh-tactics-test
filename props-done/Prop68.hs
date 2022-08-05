@@ -33,8 +33,8 @@ proof :: x:N -> ys:ListN -> {prop x ys}
 -- proof :: N -> ListN -> Proof
 -- proof x ys =
 --   induct ys as [/y ys'];
---   condition {x == y} requires [y];
---   use {lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys)} requires [y, ys'];
+--   [y]: condition {x == y};
+--   [y, ys']: use {lemma1 (lengthListN (deleteListN x ys')) (lengthListN ys') (lengthListN ys)};
 --   auto [lemma2, lengthListN]
 -- |]
 -- %tactic:begin:proof

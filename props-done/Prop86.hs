@@ -57,10 +57,10 @@ proof :: x:N -> y:N -> zs:ListN -> {prop x y zs}
 --   assert {leqN x y};
 --   use {lemma x y};
 --   induct zs as [/z zs'];
---   dismiss {leqN y z} requires [z];
+--   [z]: dismiss {leqN y z};
 --   use {lemma1 y z};
---   condition {x == z} requires [z];
---   use {proof x y zs'} requires [zs'];
+--   [z]: condition {x == z};
+--   [zs']: use {proof x y zs'};
 --   trivial
 -- |]
 -- [tactic|
@@ -68,11 +68,11 @@ proof :: x:N -> y:N -> zs:ListN -> {prop x y zs}
 -- proof x y zs =
 --   assert {leqN x y};
 --   induct zs as [/z zs'];
---   condition {leqN y z} requires [z];
+--   [z]: condition {leqN y z};
 --   dismiss {x == y};
---   dismiss {x == z} requires [z];
---   use {lemma2 x z (insertListN y zs)} requires [z];
---   use {proof x y zs'} requires [zs'];
+--   [z]: dismiss {x == z};
+--   [z]: use {lemma2 x z (insertListN y zs)};
+--   [zs']: use {proof x y zs'};
 --   trivial
 -- |]
 -- %tactic:begin:proof

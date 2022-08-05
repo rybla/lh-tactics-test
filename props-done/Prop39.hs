@@ -32,7 +32,7 @@ proof :: n:N -> x:N -> xs:ListN -> {prop n x xs}
 -- proof n x xs =
 --   destruct xs as [/x' xs'];
 --   condition {n == x};
---   condition {n == x'} requires [x'];
+--   [x']: condition {n == x'};
 --   trivial
 -- |]
 -- %tactic:begin:proof
