@@ -1,6 +1,13 @@
 # lh-tactics-test
 
-## Clone `lh-tactics-test` and install the `lh-tactics` library and executable
+## Documentation
+
+For now, please see our paper _[Liquid Proof Macros][liquid-proof-macros]_ and
+the examples in `props-done/` for details on how to use `lh-tactics`.
+
+## Installation
+
+To clonse `lh-tactics-test` and install `lh-tactics`:
 
 ```sh
 # clone the `lh-tatics-test` repository, 
@@ -101,10 +108,16 @@ stack build --ghc-options="-fplugin=LiquidHaskell"
 If `lh-tactics` succeeded, it should have commented out your original proof
 macro usage and put a generated proof term directly underneath it.
 
-## Documentation
+## Data
 
-For now, please see our paper _[Liquid Proof Macros][liquid-proof-macros]_ and
-the examples in `props-done/` for details on how to use `lh-tactics`.
+The evaluation in _[Liquid Proof Macros][liquid-proof-macros]_ was based on the
+data available in `data/`. In particular:
+- `data/easy-inductives.md` shows which properties (from `props-done`) were
+  successfully proven, and which of those only required "easy" proofs (via proof
+  macros)
+- `data/line-diffs.md` shows the differences in line counts between each
+  property's file before/after running `lh-tactics`, and additional line
+  count diffs for before/after running the liquid proof macros pruning procedure
 
 ## Resources
 
