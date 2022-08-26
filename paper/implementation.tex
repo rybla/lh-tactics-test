@@ -59,7 +59,7 @@ organizing branches proofs based on variables introduced during the
 expansion process.
 
 Finally, we describe how cached terms are repeatedly pruned by using
-the metadata annotations in the \LangB syntax
+the metadata annotations in the \LangB 
 (Section~\ref{sec:prune}), removing potentially unnecessary proof terms
   by using Liquid Haskell as the validity oracle.
 
@@ -94,10 +94,11 @@ the metadata annotations in the \LangB syntax
 \end{align*}
 \caption{Syntax of the \LangB}
 \label{fig:langb-syntax}
+\vspace*{-0.5em}
 \end{figure}
 
 
-\subsection{The \LangB}
+\subsection{The Proto-Proof Language}
 \label{sec:proto-proof-lang}
 
 The \LangB is at its core a subset of Haskell expressions with some
@@ -138,7 +139,7 @@ is embedded into Haskell as:
 %  The cached \LangBTerm is repeatedly pruned, using metadata to track pruning progress, where each pruning step involves removing some proof terms contained inside of the entire \LangBTerm, embedding and splicing it in place of the original proof macro, and then running Liquid Haskell to check that the prune step was valid.
 %\end{enumerate}
 %  
-\subsection{The \LangA}
+\subsection{The Proof Macro Language}
 \label{sec:proof-macro-lang}
 
 \begin{figure}
@@ -322,7 +323,7 @@ Figure~\ref{fig:proof-macro-semantics}, and we can broadly identify
 two types of proof macros: {\em control-flow} and {\em evidence}
 macros.
 
-\paragraph*{Control-Flow macros}
+\paragraph*{Control-Flow Macros}
 
 Control flow macros correspond to proof terms that alter the control
 flow of the program, such as pattern matching. The first five
@@ -560,9 +561,9 @@ the \LangB as shown in Figure~\ref{fig:step-by-step}.
       % 
     \end{array} \end{align*}
   \end{minipage}
-  \caption{Step-by-step Expansion of a Proof Macro. Note that the holes
+  \caption{Step-by-step Expansion of a Proof Macro. The holes
   $\macroHole{\Gamma}{\Rho}$ that are generated and then immediately substituted
-  by each step (see Figure \ref{fig:sequence-semantics})} are omitted.
+  by each step (see Figure \ref{fig:sequence-semantics}) are omitted.}
   \label{fig:step-by-step}
 \end{figure*}
 
